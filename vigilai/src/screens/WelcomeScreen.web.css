@@ -1,0 +1,147 @@
+/* Web-specific animations and scrolling for WelcomeScreen */
+
+/* -------------------------------------------------------------
+   GLOBAL HIGH-FIDELITY SCROLL FIX FOR VIGILAI WEB
+   ------------------------------------------------------------- */
+
+/* 1. Reset viewport settings globally */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh !important;
+  height: auto !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate3d(0,0,0);
+  }
+  to {
+    transform: rotate(360deg) translate3d(0,0,0);
+  }
+}
+
+@keyframes rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translate3d(0,0,0);
+  }
+  50% {
+    transform: translateY(-10px) translate3d(0,0,0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.6);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) translate3d(0,0,0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translate3d(0,0,0);
+  }
+}
+
+/* Scroll overrides removed */
+
+/* Apply animations to specific elements */
+.orbit-ring {
+  animation: rotate 8s linear infinite !important;
+}
+
+.orbit-ring-2 {
+  animation: rotate-reverse 12s linear infinite !important;
+}
+
+.icon-glow {
+  animation: float 3s ease-in-out infinite !important;
+  filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.6));
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+  animation: slide-up 0.6s ease-out;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+
+.feature-card:hover {
+  border-color: #00E5FF !important;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2) !important;
+  transform: translateY(-4px) translate3d(0,0,0) !important;
+}
+
+.get-started-btn {
+  animation: pulse-glow 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.6) !important;
+}
+
+.get-started-btn:active {
+  transform: translateY(0) !important;
+}
+
+.sign-in-btn {
+  transition: all 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  border-color: #00E5FF !important;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2) !important;
+}
+
+/* Scrollbar styling for web */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0E17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00E5FF;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00BFA5;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00E5FF #0A0E17;
+}
+
