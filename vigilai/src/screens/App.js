@@ -1,7 +1,25 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+// Inject global styles on web to fix scrolling issues
+if (Platform.OS === 'web') {
+  const style = document.createElement('style');
+  style.textContent = `
+    html, body, #root {
+        width: 100%;
+        min-height: 100%;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+    body {
+        margin: 0;
+    }
+  `;
+  document.head.appendChild(style);
+}
 
 // Import your screen files
 // LoginScreen lives one folder up from src/screens
