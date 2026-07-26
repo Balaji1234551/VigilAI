@@ -8,14 +8,19 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 if (Platform.OS === 'web') {
   const style = document.createElement('style');
   style.textContent = `
+    /* Enforce strict boundaries so React Native ScrollView works */
     html, body, #root {
         width: 100%;
-        min-height: 100%;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
+        height: 100%;
+        overflow: hidden !important;
     }
     body {
         margin: 0;
+        display: flex;
+    }
+    #root {
+        display: flex;
+        flex: 1;
     }
   `;
   document.head.appendChild(style);
