@@ -27,7 +27,7 @@ def seed():
             print("[INFO] Database already contains users. Skipping seeding.")
             return
 
-        print("Seeding database tables with premium mock data...")
+        #print("Seeding database tables with premium mock data...")
         
         # 1. Create Default User
         print("- Seeding user...")

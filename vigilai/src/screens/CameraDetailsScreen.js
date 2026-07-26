@@ -78,7 +78,7 @@ export default function CameraDetailsScreen({ route, navigation }) {
                 source={{ html: `
                   <html>
                     <body style="margin:0;padding:0;background-color:#0F172A;display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden;">
-                      <img src="${Platform.OS === 'android' ? 'http://10.241.125.80:8000' : 'http://localhost:8000'}/api/cameras/${cameraId}/stream" style="width:100%;height:100%;object-fit:cover;" />
+                      <img src="${Platform.OS === 'android' ? 'http://10.202.212.80:8000' : 'http://localhost:8000'}/api/cameras/${cameraId}/stream" style="width:100%;height:100%;object-fit:cover;" />
                     </body>
                   </html>
                 `}}

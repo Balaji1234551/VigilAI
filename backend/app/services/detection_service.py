@@ -11,7 +11,7 @@ from typing import List, Dict, Tuple
 class DetectionService:
     """Service for YOLOv8 real-time object detection."""
     
-    def __init__(self, model_name: str = "yolov8n.pt"):
+    def __init__(self, model_name: str = "models/best.pt"):
         """
         Initialize YOLOv8 model.
         

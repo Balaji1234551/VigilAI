@@ -277,6 +277,40 @@ class EmergencyContact(Base):
         return f"<EmergencyContact(id={self.id}, user_id={self.user_id}, name={self.name})>"
 
 
+# --- Production Feature Models ---
+
+class NotificationLog(Base):
+    """Track Twilio SMS and FCM Push Notification dispatches."""
+    __tablename__ = "notification_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
+    alert_id = Column(Integer, ForeignKey("alerts.id", ondelete="CASCADE"), nullable=True, index=True)
+    channel = Column(String(50), nullable=False) # 'SMS', 'FCM', 'EMAIL'
+    recipient = Column(String(255), nullable=False) # Phone number or FCM token
+    status = Column(String(50), default="pending", nullable=False) # 'sent', 'failed', 'pending'
+    error_message = Column(Text, nullable=True)
+    sent_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    def __repr__(self):
+        return f"<NotificationLog(id={self.id}, channel={self.channel}, status={self.status})>"
+
+
+class CameraHealthLog(Base):
+    """Track camera uptime, FPS drops, and connection failures."""
+    __tablename__ = "camera_health_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    camera_id = Column(Integer, ForeignKey("cameras.id", ondelete="CASCADE"), nullable=False, index=True)
+    status = Column(String(50), nullable=False) # 'online', 'offline', 'low_fps'
+    fps = Column(Float, nullable=True)
+    error_message = Column(Text, nullable=True)
+    logged_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    def __repr__(self):
+        return f"<CameraHealthLog(id={self.id}, camera_id={self.camera_id}, status={self.status})>"
+
+
 # --- Legacy / Backwards Compatibility Models ---
 # Retained so that existing OpenCV privacy zones and face recognition APIs remain functional.
 

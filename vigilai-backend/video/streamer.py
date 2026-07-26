@@ -85,6 +85,16 @@ def generate_mjpeg_stream(camera_id: int, detection_manager: Optional[Any] = Non
                         cv2.putText(frame, text_str, (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
                     except Exception:
                         pass
+                        
+            # Draw real-time FPS metric on the top right
+            try:
+                thread = camera_manager.get_thread(camera_id)
+                fps = thread.actual_fps if thread else 0.0
+                fps_text = f"FPS: {fps:.1f}"
+                cv2.rectangle(frame, (10, 10), (140, 45), (0, 0, 0), -1)
+                cv2.putText(frame, fps_text, (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+            except Exception:
+                pass
 
         # 3. Compress final composited frame to JPEG (Quality 80)
         # Lowers network transfer load while retaining sharp object recognition boundaries

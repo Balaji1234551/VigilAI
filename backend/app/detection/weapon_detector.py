@@ -18,7 +18,7 @@ class WeaponDetector:
     Integrates YOLOv8 object detection, processing every 3rd frame
     to identify weapon classes with high-confidence thresholds.
     """
-    def __init__(self, model_path: str = "yolov8n.pt"):
+    def __init__(self, model_path: str = "models/best.pt"):
         # Load YOLOv8 Nano model
         try:
             import os
@@ -64,7 +64,8 @@ class WeaponDetector:
         # If not the 3rd frame, skip model inference but return existing state to preserve stream boxes
         if self.frame_counters[camera_id] % 3 != 0:
             # We return False and let the manager read from cache to keep visuals responsive
-            return False, 0.0, []
+            last_boxes = getattr(self, f"_last_boxes_{camera_id}", [])
+            return getattr(self, f"_last_alert_{camera_id}", False), 0.0, last_boxes
 
         # Reset frame counter to prevent overflow
         if self.frame_counters[camera_id] >= 300:
@@ -130,5 +131,9 @@ class WeaponDetector:
         
         if is_alert_triggered:
             logger.warning(f"[WeaponDetector Cam {camera_id}] ⚠️ WEAPON DETECTION ALERT TRIGGERED! (5/5 consecutive frames)")
+            
+        # Cache results for skipped frames
+        setattr(self, f"_last_boxes_{camera_id}", boxes)
+        setattr(self, f"_last_alert_{camera_id}", is_alert_triggered)
             
         return is_alert_triggered, max_confidence, boxes

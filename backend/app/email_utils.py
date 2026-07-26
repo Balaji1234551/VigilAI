@@ -3,7 +3,7 @@ import logging
 import threading
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from app.config import SMTP_SERVER, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, SMTP_FROM_EMAIL
+from app.config import SMTP_SERVER, SMTP_PORT, EMAIL_ADDRESS, EMAIL_PASSWORD
 
 logger = logging.getLogger("VigilAI.EmailUtils")
 
@@ -16,13 +16,13 @@ class StandardEmailSenderThread(threading.Thread):
         self.daemon = True
 
     def run(self):
-        if not SMTP_USERNAME or not SMTP_PASSWORD:
+        if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
             logger.error("SMTP credentials are empty. Cannot send verification email.")
             return
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = self.subject
-        msg["From"] = SMTP_FROM_EMAIL or SMTP_USERNAME
+        msg["From"] = EMAIL_ADDRESS
         msg["To"] = self.to_email
         msg.attach(MIMEText(self.html_content, "html"))
 
@@ -30,7 +30,7 @@ class StandardEmailSenderThread(threading.Thread):
             logger.info(f"Sending standard email to {self.to_email}...")
             server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10)
             server.starttls()
-            server.login(SMTP_USERNAME, SMTP_PASSWORD)
+            server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
             server.sendmail(msg["From"], self.to_email, msg.as_string())
             server.quit()
             logger.info(f"Email sent successfully to {self.to_email}")

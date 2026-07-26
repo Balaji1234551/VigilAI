@@ -14,6 +14,63 @@ from app.repositories import AlertRepository
 
 router = APIRouter()
 
+@router.post("/test-notification")
+async def test_notifications(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Test Twilio and FCM push configurations."""
+    from app.services.notification_service import NotificationService
+    
+    class DummyAlert:
+        id = 0
+        anomaly_type = "TEST_ALERT"
+        confidence = 0.99
+        
+    notifier = NotificationService()
+    notifier.notify_user_of_anomaly(db, current_user, DummyAlert(), "Test Camera")
+    return {"status": "success", "message": "Test notifications dispatched (or mocked if missing credentials)"}
+
+
+@router.post("/test-email")
+async def test_email(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Test Email Alert configuration specifically."""
+    from app.alerts.email_alert import send_email_alert
+    from app.models.schemas import EmergencyContact
+    
+    emails = []
+    if current_user.email:
+        emails.append(current_user.email)
+    
+    contacts = db.query(EmergencyContact).filter(EmergencyContact.user_id == current_user.id).all()
+    for contact in contacts:
+        if contact.email:
+            emails.append(contact.email)
+            
+    emails = list(set([e for e in emails if e]))
+    
+    if not emails:
+        raise HTTPException(status_code=400, detail="No email addresses configured.")
+        
+    success = send_email_alert(
+        to_emails=emails,
+        camera_id=9999,  # dummy ID for test
+        camera_name="Test Camera",
+        camera_location="Test Location",
+        anomaly_type="TEST",
+        confidence=0.99,
+        alert_id=0
+    )
+    
+    if success:
+        return {"status": "success", "message": f"Test email dispatched to {len(emails)} recipients."}
+    else:
+        raise HTTPException(status_code=500, detail="Failed to dispatch test email (Rate limit or thread error).")
+
+
 
 @router.post("/", response_model=AlertResponseNew, status_code=201)
 async def trigger_alert(

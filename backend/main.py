@@ -3,6 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from dotenv import load_dotenv
 import os
+
+# Suppress TensorFlow oneDNN and other info/warning logs
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 import queue
 from contextlib import asynccontextmanager
 from fastapi.responses import JSONResponse
@@ -37,7 +42,8 @@ from app.api.endpoints import (
     privacy,
     trusted,
     video,
-    contacts
+    contacts,
+    websockets
 )
 
 # Load environment variables
@@ -78,8 +84,14 @@ async def lifespan(app: FastAPI):
             print(f"Booting camera streams... Found {len(cameras_list)} registered cameras.")
             for cam in cameras_list:
                 if cam.stream_url == "0" or cam.camera_type == "webcam":
-                    print(f"Skipping auto-boot for webcam ID {cam.id}")
+                    print(f"Auto-booting webcam ID {cam.id} for testing!")
+                    pass
+                
+                # Skip the mock cameras so they stop timing out in the console
+                if "pendelcam" in cam.stream_url:
+                    print(f"Skipping auto-boot for mock camera: {cam.camera_name}")
                     continue
+
                 camera_manager.start_camera(cam.id, cam.camera_name, cam.stream_url)
                 recorder_manager.start_recording(cam.id)
                 cam.status = "online"
@@ -172,6 +184,7 @@ for prefix in ["/api", "/api/v1"]:
     app.include_router(privacy_settings.router, prefix=f"{prefix}/privacy-settings", tags=["Privacy Settings"])
     app.include_router(audit_logs.router, prefix=f"{prefix}/audit-logs", tags=["Audit Trails"])
     app.include_router(contacts.router, prefix=f"{prefix}/contacts", tags=["Emergency Contacts"])
+    app.include_router(websockets.router, prefix=f"{prefix}/ws", tags=["WebSockets"])
 
     # Legacy / Backward compatibility routers
     app.include_router(privacy.router, prefix=f"{prefix}/privacy", tags=["Legacy Privacy Zones"])

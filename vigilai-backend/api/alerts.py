@@ -38,10 +38,38 @@ class AlertResponseSchema(BaseModel):
     class Config:
         from_attributes = True
 
+class AlertCreateSchema(BaseModel):
+    camera_id: int
+    anomaly_type: str
+    confidence: float
+    snapshot_path: Optional[str] = None
+    clip_path: Optional[str] = None
+    timestamp: Optional[datetime] = None
+    alert_sent: Optional[int] = 0
 
 # ==========================================
 # ALERTS REST ENDPOINTS
 # ==========================================
+
+@router.post("", response_model=AlertResponseSchema)
+async def create_alert_route(
+    alert_data: AlertCreateSchema,
+    current_user: UserResponseSchema = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    Manually create an alert (e.g. from the live feed trigger).
+    """
+    from database.crud import create_alert
+    
+    data_dict = alert_data.dict()
+    data_dict["user_id"] = current_user.id
+    
+    if not data_dict.get("timestamp"):
+        data_dict["timestamp"] = datetime.utcnow()
+        
+    return create_alert(db, data_dict)
+
 
 @router.get("/list", response_model=List[AlertResponseSchema])
 async def list_alerts_route(

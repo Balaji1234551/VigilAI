@@ -7,18 +7,20 @@ import time
 import queue
 import logging
 import threading
+import asyncio
 from datetime import datetime
 from typing import Dict, List, Optional, Any
 from app.database import SessionLocal
 from app.crud import get_camera, get_user_by_id, get_contacts, create_alert, update_alert_sent_status
 from app.video.snapshot import capture_blurred_snapshot
 from app.video.clip_extractor import ClipExtractor
-from app.alerts.email_alert import send_email_alert
-from app.alerts.sms_alert import send_sms_alert
-from app.alerts.push_alert import send_push_notification
+
 
 logger = logging.getLogger("VigilAI.AlertCoordinator")
 
+# Thread-safe in-memory global rate-limiter tracker: {(camera_id, anomaly_type): last_sent_timestamp}
+GLOBAL_COOLDOWN_CACHE: Dict[tuple, float] = {}
+global_cooldown_lock = threading.Lock()
 
 class AlertCoordinator(threading.Thread):
     """
@@ -78,6 +80,16 @@ class AlertCoordinator(threading.Thread):
         timestamp_str = event["timestamp"]
         raw_frame = event["raw_frame"]
 
+        # --- 60-Second Global Cooldown ---
+        now = time.time()
+        with global_cooldown_lock:
+            cache_key = (camera_id, anomaly_type.upper())
+            last_triggered = GLOBAL_COOLDOWN_CACHE.get(cache_key, 0.0)
+            if now - last_triggered < 60.0:
+                logger.info(f"[AlertCoordinator] Cooldown active for {anomaly_type} on Camera {camera_id}. Skipping event.")
+                return
+            GLOBAL_COOLDOWN_CACHE[cache_key] = now
+
         db = SessionLocal()
         try:
             # 1. Fetch Camera Details and User owner info
@@ -133,7 +145,7 @@ class AlertCoordinator(threading.Thread):
             is_quiet_hours = self._check_quiet_hours(user_settings.get("quiet_hours", {}))
             
             # Check if notifications are disabled globally for this type in settings
-            enabled_detections = user_settings.get("enabled_detections", ["FALL", "WEAPON", "FIGHT", "LOITERING"])
+            enabled_detections = user_settings.get("enabled_detections", ["FALL", "WEAPON", "FIGHT", "LOITERING", "POSTURE", "RUNNING"])
             if anomaly_type.upper() not in [d.upper() for d in enabled_detections]:
                 logger.info(f"[AlertCoordinator] Anomaly type {anomaly_type} disabled in camera settings. Suppressing alerts.")
                 return
@@ -155,63 +167,35 @@ class AlertCoordinator(threading.Thread):
             except Exception as ex_anvil:
                 logger.error(f"[AlertCoordinator] Failed to dispatch Anvil web popup: {ex_anvil}")
 
-            email_sent = False
-            sms_sent = False
-            push_sent = False
+            # --- Broadcast to Mobile WebSocket Clients ---
+            try:
+                from app.api.endpoints.websockets import manager
+                ws_payload = {
+                    "type": "NEW_ALERT",
+                    "anomaly_type": anomaly_type,
+                    "confidence": confidence,
+                    "camera_id": camera_id,
+                    "camera_name": camera.name,
+                    "timestamp": timestamp_str,
+                    "color": "#EF4444" if priority_level == "critical" else "#F59E0B"
+                }
+                # The AlertCoordinator runs in a separate thread without an asyncio event loop, 
+                # so we create a temporary one to send the websocket broadcast.
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                loop.run_until_complete(manager.broadcast(ws_payload))
+                loop.close()
+            except Exception as ws_err:
+                logger.error(f"[AlertCoordinator] Failed to broadcast WebSocket alert: {ws_err}")
 
-            # During quiet hours, we suppress intrusive SMS and Emails unless it is a CRITICAL (Weapon/Fire) anomaly
-            should_suppress_intrusive = is_quiet_hours and (priority_level != "critical")
-            
-            # --- Push Notification Channel ---
-            # Active across all priority tiers
-            if user.fcm_token:
-                push_sent = send_push_notification(
-                    fcm_token=user.fcm_token,
-                    camera_id=camera_id,
-                    camera_name=camera.name,
-                    anomaly_type=anomaly_type,
-                    confidence=confidence,
-                    timestamp=timestamp_str,
-                    alert_id=alert_record.id,
-                    snapshot_url=snapshot_url_str
-                )
-
-            # --- Email Channel ---
-            # Active for CRITICAL and MEDIUM tiers
-            if priority_level in ["critical", "medium"] and not should_suppress_intrusive:
-                email_sent = send_email_alert(
-                    to_email=user.email,
-                    camera_id=camera_id,
-                    camera_name=camera.name,
-                    camera_location=camera.location or "Unknown",
-                    anomaly_type=anomaly_type,
-                    confidence=confidence,
-                    timestamp=timestamp_str,
-                    alert_id=alert_record.id,
-                    snapshot_path=snapshot_path
-                )
-
-            # --- SMS Channel ---
-            # Active for CRITICAL and HIGH tiers
-            if priority_level in ["critical", "high"] and not should_suppress_intrusive:
-                sms_sent = send_sms_alert(
-                    to_numbers=phone_numbers,
-                    camera_id=camera_id,
-                    camera_name=camera.name,
-                    anomaly_type=anomaly_type,
-                    confidence=confidence,
-                    timestamp=timestamp_str,
-                    alert_id=alert_record.id,
-                    short_link=clip_url_str
-                )
+            from app.services.notification_service import NotificationService
+            notifier = NotificationService()
+            notifier.notify_user_of_anomaly(db, user, alert_record, camera.name)
 
             # 6. UPDATE DB DELIVERY STATUS
             # Mark successfully dispatched (alert_sent=1) if at least one channel delivered
-            if email_sent or sms_sent or push_sent:
-                update_alert_sent_status(db, alert_record.id, 1)
-                logger.info(f"[AlertCoordinator] Dispatched notifications for Alert ID {alert_record.id}")
-            else:
-                logger.info(f"[AlertCoordinator] Notifications suppressed or skipped for Alert ID {alert_record.id}")
+            update_alert_sent_status(db, alert_record.id, 1)
+            logger.info(f"[AlertCoordinator] Dispatched notifications for Alert ID {alert_record.id}")
 
         except Exception as err:
             logger.error(f"[AlertCoordinator] Database processing loop failed: {err}", exc_info=True)

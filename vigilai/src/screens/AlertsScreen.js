@@ -31,21 +31,7 @@ export default function AlertsScreen({ navigation }) {
   }, [navigation]);
 
   // Alert templates matching the exact user requirements
-  const alertDataTemplates = [
-    { id: 1, color: '#FF1744', titleKey: 'packageTheft', defaultTitle: 'Package Theft Detected', loc: 'Front Porch • 2 min ago', conf: '94%', isUnread: true, category: 'Theft' },
-    { id: 2, color: '#FF1744', titleKey: 'unauthorizedAccess', defaultTitle: 'Unauthorized Access', loc: 'Backyard Gate • 8 min ago', conf: '91%', isUnread: true, category: 'Intrusion' },
-    { id: 3, color: '#FFC400', titleKey: 'fallDetected', defaultTitle: 'Fall Detected', loc: 'Living Room • 15 min ago', conf: '92%', isUnread: true, category: 'Falls' },
-    { id: 4, color: '#FF1744', titleKey: null, defaultTitle: 'Smoke/Fire Detected', loc: 'Kitchen • 1 hour ago', conf: '88%', isUnread: false, category: 'Fire' },
-    { id: 5, color: '#FFC400', titleKey: null, defaultTitle: 'Vehicle Intrusion', loc: 'Driveway • 2 hours ago', conf: '86%', isUnread: false, category: 'Intrusion' },
-    { id: 6, color: '#FF1744', titleKey: null, defaultTitle: 'Weapon Detected', loc: 'Main Entrance • 3 hours ago', conf: '89%', isUnread: false, category: 'Weapons' },
-    { id: 7, color: '#FFC400', titleKey: null, defaultTitle: 'Physical Altercation', loc: 'Parking Lot • 4 hours ago', conf: '76%', isUnread: false, category: 'Intrusion' },
-    { id: 8, color: '#00E5FF', titleKey: null, defaultTitle: 'Vandalism Detected', loc: 'Side Wall • 5 hours ago', conf: '82%', isUnread: false, category: 'Theft' },
-    { id: 9, color: '#FFC400', titleKey: null, defaultTitle: 'Trespassing Alert', loc: 'Restricted Area • 6 hours ago', conf: '90%', isUnread: false, category: 'Intrusion' },
-    { id: 10, color: '#00E5FF', titleKey: null, defaultTitle: 'Suspicious Loitering', loc: 'Main Entrance • 7 hours ago', conf: '85%', isUnread: false, category: 'Intrusion' },
-    { id: 11, color: '#FFC400', titleKey: null, defaultTitle: 'Perimeter Breach', loc: 'Fence Line • 8 hours ago', conf: '93%', isUnread: false, category: 'Intrusion' },
-    { id: 12, color: '#00E5FF', titleKey: null, defaultTitle: 'Abandoned Object', loc: 'Terminal 3 • 9 hours ago', conf: '87%', isUnread: false, category: 'Theft' },
-    { id: 13, color: '#FF1744', titleKey: null, defaultTitle: 'Medical Emergency', loc: 'Hallway B • 10 hours ago', conf: '95%', isUnread: false, category: 'Medical' },
-  ];
+  const alertDataTemplates = [];
 
   // Store alerts list in state to track dynamic isUnread value on tap
   const [alerts, setAlerts] = useState(alertDataTemplates);

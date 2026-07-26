@@ -206,6 +206,9 @@ app.include_router(ws_router, prefix="/api/ws", tags=["Real-time WebSockets"])
 app.include_router(settings_router, prefix="/api/settings", tags=["User Settings Sync"])
 app.include_router(dashboard_router, prefix="/api/dashboard", tags=["Home Dashboard Stats"])
 
+from api.contacts import router as contacts_router
+app.include_router(contacts_router, prefix="/api/contacts", tags=["Emergency Contacts & SMS"])
+
 
 @app.get("/", tags=["System Diagnostics"])
 async def root_diagnostic():

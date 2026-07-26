@@ -31,6 +31,7 @@ import AlertCalendarScreen from './AlertCalendarScreen';
 import TrustedPersonsScreen from './TrustedPersonsScreen';
 import CameraDetailsScreen from './CameraDetailsScreen';
 import CameraSettingsScreen from './CameraSettingsScreen';
+import EmergencyContactsScreen from './EmergencyContactsScreen';
 import VerificationCodeScreen from './VerificationCodeScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
 import ResetPasswordScreen from './ResetPasswordScreen';
@@ -61,6 +62,7 @@ export default function App() {
           <Stack.Screen name="PatrolMode" component={PatrolModeScreen} />
           <Stack.Screen name="EmergencySOS" component={EmergencySOSScreen} />
           <Stack.Screen name="Notifications" component={NotificationSettingsScreen} />
+          <Stack.Screen name="EmergencyContacts" component={EmergencyContactsScreen} />
           <Stack.Screen name="Privacy" component={PrivacySecurityScreen} />
           <Stack.Screen name="PrivacyZones" component={PrivacyZonesScreen} />
           <Stack.Screen name="AlertDetails" component={AlertDetailsScreen} />

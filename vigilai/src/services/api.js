@@ -4,7 +4,7 @@
  */
 
 // Backend API configuration
-const API_BASE_URL = 'http://10.241.125.80:8000'; // Updated to local IPv4 for physical device testing
+const API_BASE_URL = 'http://10.202.212.80:8000'; // Updated to local IPv4 for physical device testing
 const API_VERSION = 'v1';
 const API_ENDPOINT = `${API_BASE_URL}/api`;
 

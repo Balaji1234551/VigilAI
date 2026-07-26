@@ -165,45 +165,7 @@ def seed_database():
         db.refresh(det3)
 
         # 5. Alerts Table (Table 5)
-        print("- Seeding alerts...")
-        alert1 = Alert(
-            detection_id=det1.id,
-            camera_id=cam1.id,
-            user_id=user_admin.id,
-            anomaly_type="WEAPON",
-            alert_type="Weapon Detected",
-            confidence=0.94,
-            alert_message="CRITICAL: Person carrying a weapon detected near Main Entry Gate. Immediate security dispatch required.",
-            delivery_method="Push Notification",
-            delivery_status="sent",
-            sent_at=datetime.utcnow() - timedelta(hours=2)
-        )
-        alert2 = Alert(
-            detection_id=det2.id,
-            camera_id=cam2.id,
-            user_id=user_admin.id,
-            anomaly_type="FALL",
-            alert_type="Fall Detected",
-            confidence=0.88,
-            alert_message="WARNING: Visitor Fall detected in Building A Lobby Area. Dispatch medical/facility support.",
-            delivery_method="Push Notification",
-            delivery_status="sent",
-            sent_at=datetime.utcnow() - timedelta(minutes=45)
-        )
-        alert3 = Alert(
-            detection_id=det3.id,
-            camera_id=cam1.id,
-            user_id=user_admin.id,
-            anomaly_type="LOITERING",
-            alert_type="Loitering Warning",
-            confidence=0.75,
-            alert_message="INFO: Person has been standing in restricted Outer Perimeter for over 15 minutes.",
-            delivery_method="Push Notification",
-            delivery_status="pending",
-            sent_at=datetime.utcnow() - timedelta(minutes=10)
-        )
-        db.add_all([alert1, alert2, alert3])
-        db.commit()
+        print("- Skipping dummy alerts seeding...")
 
         # 6. Recordings Table (Table 6)
         print("- Seeding video recordings...")

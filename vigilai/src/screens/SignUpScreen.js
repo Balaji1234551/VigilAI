@@ -7,7 +7,7 @@ import Checkbox from 'expo-checkbox';
 
 
 
-const API_URL = Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.241.125.80:8000';
+const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.202.212.80:8000');
 
 export default function SignUpScreen({ route, navigation }) {
   const verifiedEmail = route.params?.verifiedEmail || '';

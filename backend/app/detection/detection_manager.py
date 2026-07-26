@@ -16,6 +16,8 @@ from app.detection.fall_detector import FallDetector
 from app.detection.weapon_detector import WeaponDetector
 from app.detection.fight_detector import FightDetector
 from app.detection.loiter_detector import LoiterDetector
+from app.detection.posture_detector import PostureDetector
+from app.detection.run_detector import RunDetector
 
 logger = logging.getLogger("VigilAI.DetectionManager")
 
@@ -47,6 +49,8 @@ class DetectionManager(threading.Thread):
         self.weapon_detector = WeaponDetector()
         self.fight_detector = FightDetector()
         self.loiter_detector = LoiterDetector()
+        self.posture_detector = PostureDetector()
+        self.run_detector = RunDetector()
         
         # Operational states
         self.is_running = False
@@ -56,7 +60,8 @@ class DetectionManager(threading.Thread):
         # Keep track of active alarms to prevent duplicate spam queueing
         # e.g., {camera_id: {anomaly_type: last_trigger_timestamp}}
         self.active_alarms: Dict[int, Dict[str, float]] = {}
-        self.alarm_cool_down = 30.0  # Prevent queueing same alarm for 30s
+        self.alarm_cool_down = 60.0  # Prevent queueing same alarm for 60s (Fast2SMS rate limit buffer)
+
         
         self.initialized = True
 
@@ -145,12 +150,24 @@ class DetectionManager(threading.Thread):
                         frame_boxes = [b for b in frame_boxes if b["label"] != "PERSON"]
                         frame_boxes.extend(loiter_boxes)
 
+                    # 6. RUN POSTURE DETECTION
+                    is_posture, posture_conf, posture_boxes = self.posture_detector.process_frame(cid, frame, person_boxes)
+                    if posture_boxes:
+                        frame_boxes = [b for b in frame_boxes if b["label"] != "PERSON"]
+                        frame_boxes.extend(posture_boxes)
+
+                    # 7. RUN RUNNING DETECTION
+                    is_run, run_conf, run_boxes = self.run_detector.process_frame(cid, person_boxes)
+                    if run_boxes:
+                        frame_boxes = [b for b in frame_boxes if b["label"] != "PERSON"]
+                        frame_boxes.extend(run_boxes)
+
                     # Update visualization cache
                     self._update_overlay(cid, frame_boxes, frame_skeleton)
 
-                    # 6. ENQUEUE TRIGGERED ANOMALIES
+                    # ENQUEUE TRIGGERED ANOMALIES
                     # Check conditions and push anomalies to AlertCoordinator via Queue
-                    self._evaluate_alerts(cid, frame, is_fall, fall_conf, is_weapon, weapon_conf, is_fight, fight_conf, is_loiter, loiter_dwell)
+                    self._evaluate_alerts(cid, frame, is_fall, fall_conf, is_weapon, weapon_conf, is_fight, fight_conf, is_loiter, loiter_dwell, is_posture, posture_conf, is_run, run_conf)
 
                 except Exception as e:
                     logger.error(f"[DetectionManager] Pipeline error on Camera {cid}: {e}", exc_info=True)
@@ -173,7 +190,11 @@ class DetectionManager(threading.Thread):
         is_fight: bool, 
         fight_conf: float, 
         is_loiter: bool, 
-        loiter_dwell: float
+        loiter_dwell: float,
+        is_posture: bool,
+        posture_conf: float,
+        is_run: bool,
+        run_conf: float
     ):
         """
         Helper method to apply alarm rate-limiting cool-downs and push verified threats to queue.
@@ -186,7 +207,9 @@ class DetectionManager(threading.Thread):
             ("FALL", is_fall, fall_conf),
             ("WEAPON", is_weapon, weapon_conf),
             ("FIGHT", is_fight, fight_conf),
-            ("LOITERING", is_loiter, 0.8)  # Default loitering confidence metric
+            ("LOITERING", is_loiter, 0.8),  # Default loitering confidence metric
+            ("POSTURE", is_posture, posture_conf),
+            ("RUNNING", is_run, run_conf)
         ]
 
         for anomaly_type, is_triggered, confidence in triggers:

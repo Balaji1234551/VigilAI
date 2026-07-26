@@ -6,10 +6,11 @@ import { Camera, Bell, TrendingUp, Shield, ChevronRight, Home, BarChart2, User, 
 import { useTranslation } from '../utils/translations';
 
 import { WebView } from 'react-native-webview';
-import { CameraView, useCameraPermissions } from 'expo-camera';
+import { CameraView, useCameraPermissions, useMicrophonePermissions } from 'expo-camera';
 
 export default function HomeScreen({ navigation }) {
-  const [permission, requestPermission] = useCameraPermissions();
+  const [cameraPermission, requestCameraPermission] = useCameraPermissions();
+  const [micPermission, requestMicPermission] = useMicrophonePermissions();
   const [userName, setUserName] = useState('User');
   const [greetingKey, setGreetingKey] = useState('goodMorning');
   const [dateTimeStr, setDateTimeStr] = useState('');
@@ -23,15 +24,76 @@ export default function HomeScreen({ navigation }) {
 
   const { t } = useTranslation(selectedLang);
 
-  const API_URL = Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.241.125.80:8000';
+  const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.202.212.80:8000');
 
   const [cameraActive, setCameraActive] = useState(false);
+  const cameraRef = React.useRef(null);
+  const isRecording = React.useRef(false);
+
+  useEffect(() => {
+    let active = true;
+
+    const recordChunk = async () => {
+      if (!active || !cameraRef.current || isRecording.current) return;
+      
+      isRecording.current = true;
+      try {
+        // Record a 3-second chunk of real video
+        const video = await cameraRef.current.recordAsync({ maxDuration: 3 });
+        if (video && video.uri && active) {
+          const token = await AsyncStorage.getItem('userToken');
+          
+          let formData = new FormData();
+          formData.append('file', {
+            uri: video.uri,
+            name: 'chunk.mp4',
+            type: 'video/mp4'
+          });
+
+          fetch(`${API_URL}/api/detections/mobile-video`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${token}`
+            },
+            body: formData
+          }).catch(e => console.log("Mobile video upload error:", e));
+        }
+      } catch(e) {
+        console.log("Failed to record video chunk:", e);
+      } finally {
+        isRecording.current = false;
+        // Instantly start the next chunk recording
+        if (active) {
+            setTimeout(recordChunk, 100);
+        }
+      }
+    };
+
+    if (cameraActive) {
+      setTimeout(recordChunk, 1000); // Give camera 1s to initialize
+    }
+
+    return () => {
+      active = false;
+      if (isRecording.current && cameraRef.current) {
+         cameraRef.current.stopRecording();
+      }
+    };
+  }, [cameraActive, API_URL]);
+
 
   const startCamera = async () => {
-    if (!permission?.granted) {
-      const result = await requestPermission();
+    if (!cameraPermission?.granted) {
+      const result = await requestCameraPermission();
       if (!result.granted) {
         alert('Camera permission is required to use this feature.');
+        return;
+      }
+    }
+    if (!micPermission?.granted) {
+      const result = await requestMicPermission();
+      if (!result.granted) {
+        alert('Microphone permission is required for video streaming.');
         return;
       }
     }
@@ -144,7 +206,7 @@ export default function HomeScreen({ navigation }) {
     // 4. Establish WebSocket for Real-Time Updates
     const wsUrl = Platform.OS === 'web' 
         ? 'ws://127.0.0.1:8000/api/ws/alerts' 
-        : 'ws://10.241.125.80:8000/api/ws/alerts'; // Fallback Android IP if needed
+        : 'ws://10.202.212.80:8000/api/ws/alerts'; // Fallback Android IP if needed
         
     const ws = new WebSocket(wsUrl);
     
@@ -331,7 +393,7 @@ export default function HomeScreen({ navigation }) {
               />
             ) : (
               <View style={{ height: 400, overflow: 'hidden' }} pointerEvents="none">
-                <CameraView style={{ flex: 1 }} facing="back" />
+                <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back" mode="video" mute={true} />
               </View>
             )}
 

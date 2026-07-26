@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Eye, Lock, Fingerprint, Download, Trash2, Home, Camera, Bell, BarChart2, User } from 'lucide-react-native';
 
-const API_URL = Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.241.125.80:8000';
+const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.202.212.80:8000');
 
 export default function PrivacySecurityScreen({ navigation }) {
   const [privacy, setPrivacy] = useState({

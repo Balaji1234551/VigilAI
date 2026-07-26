@@ -65,24 +65,23 @@ async def get_activity_heatmap(
     Groups events into 24-hour bins (00:00 to 23:00) using SQLite string-time formatting.
     Guarantees all 24 slots are filled so frontend charts plot correctly.
     """
-    # 1. Query SQLite for hourly event aggregates
-    # strftime('%H') extracts the 2-digit hour "00" through "23" in UTC
+    # 1. Query PostgreSQL for hourly event aggregates
+    # extract('hour') gets the hour 0-23
     results = db.query(
-        func.strftime("%H", Alert.timestamp).label("hour"),
+        func.extract("hour", Alert.timestamp).label("hour"),
         func.count(Alert.id).label("count")
     ).filter(
         Alert.user_id == current_user.id,
         Alert.timestamp >= datetime.utcnow() - timedelta(days=7)
     ).group_by("hour").all()
 
-    # 2. Map query outputs to dictionary
-    db_hour_counts = {r[0]: r[1] for r in results if r[0] is not None}
+    # 2. Map query outputs to dictionary (converting float/Decimal to int)
+    db_hour_counts = {int(float(r[0])): r[1] for r in results if r[0] is not None}
 
     # 3. Create full 24-hour layout, filling missing slots with 0 counts
     complete_heatmap = []
     for h in range(24):
-        hour_str = f"{h:02d}"  # Zero padded (e.g., "05")
-        count = db_hour_counts.get(hour_str, 0)
+        count = db_hour_counts.get(h, 0)
         
         complete_heatmap.append({
             "hour": h,

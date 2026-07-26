@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
 
-from database.db import get_db
+from database.db import get_db, Base
 from database.crud import get_camera, get_cameras, create_camera, update_camera_settings, delete_camera, update_camera_status
 from api.auth import get_current_user, UserResponseSchema
 from video.camera_manager import CameraManager

@@ -107,6 +107,7 @@ export default function ProfileScreen({ navigation }) {
         {/* Settings Menu */}
         <View style={styles.menuCard}>
           <MenuItem icon={<Bell size={20} color="#94A3B8" />} label={t('notificationPref')} onPress={() => navigation.navigate('Notifications')} />
+          <MenuItem icon={<ShieldAlert size={20} color="#94A3B8" />} label="Emergency Contacts" onPress={() => navigation.navigate('EmergencyContacts')} />
           <MenuItem icon={<Shield size={20} color="#94A3B8" />} label={t('privacySecurity')} onPress={() => navigation.navigate('Privacy')} />
           <MenuItem icon={<Smartphone size={20} color="#94A3B8" />} label={t('connectedDevices')} onPress={() => navigation.navigate('ConnectedDevices')} />
           <MenuItem icon={<Globe size={20} color="#94A3B8" />} label={t('language')} rightText={selectedLang} onPress={() => navigation.navigate('Language')} />

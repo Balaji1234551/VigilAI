@@ -119,18 +119,22 @@ class AlertCoordinator(threading.Thread):
                 clip_url_str = f"http://localhost:8000/api/clips/{camera_id}/{clip_path.name}"
 
             # 3. SAVE ALERT RECORD TO SQLITE DB
-            alert_db_data = {
-                "camera_id": camera_id,
-                "user_id": user.id,
-                "anomaly_type": anomaly_type,
-                "confidence": confidence,
-                "snapshot_path": str(snapshot_path) if snapshot_path else None,
-                "clip_path": str(clip_path) if clip_path else None,
-                "timestamp": datetime.utcnow(),
-                "alert_sent": 0
-            }
-            alert_record = create_alert(db, alert_db_data)
-            logger.info(f"[AlertCoordinator] Logged Alert ID {alert_record.id} to database.")
+            try:
+                alert_db_data = {
+                    "camera_id": camera_id,
+                    "user_id": user.id,
+                    "anomaly_type": anomaly_type,
+                    "confidence": confidence,
+                    "snapshot_path": str(snapshot_path) if snapshot_path else None,
+                    "clip_path": str(clip_path) if clip_path else None,
+                    "timestamp": datetime.utcnow(),
+                    "alert_sent": 0
+                }
+                alert_record = create_alert(db, alert_db_data)
+                logger.info(f"✅ [AlertCoordinator] Database Updated: Logged Alert ID {alert_record.id}")
+            except Exception as e:
+                logger.error(f"❌ [AlertCoordinator] Database Updated FAIL: {e}")
+                return
 
             # --- WEBSOCKET BROADCAST ---
             import json
@@ -149,7 +153,11 @@ class AlertCoordinator(threading.Thread):
                     "clip_path": clip_url_str
                 }
             }
-            manager.broadcast_sync(json.dumps(ws_payload))
+            try:
+                manager.broadcast_sync(json.dumps(ws_payload))
+                logger.info("✅ [AlertCoordinator] Dashboard Updated: Websocket broadcast successful")
+            except Exception as e:
+                logger.error(f"❌ [AlertCoordinator] Dashboard Updated FAIL: {e}")
             # ---------------------------
 
             # 4. RESOLVE USER NOTIFICATION PREFERENCES & QUIET HOURS
@@ -162,45 +170,25 @@ class AlertCoordinator(threading.Thread):
             
             is_quiet_hours = False
             if delivery_prefs.get("quietHours", False):
-                # Using default 22:00 to 06:00 if quiet hours enabled globally
                 is_quiet_hours = self._check_quiet_hours({"enabled": True, "start": "22:00", "end": "06:00"})
                 
-            # Add secondary SMS number if provided
             secondary_sms = delivery_prefs.get("secondarySms")
             if secondary_sms:
                 phone_numbers.append(secondary_sms)
             
-            # Deduplicate phone numbers
             phone_numbers = list(set(phone_numbers))
             
-            # Check if notifications are disabled globally for this type
             anomaly_key = anomaly_type.lower()
             if anomaly_key in alerts_prefs and not alerts_prefs[anomaly_key]:
                 logger.info(f"[AlertCoordinator] Anomaly type {anomaly_type} disabled in user global settings. Suppressing alerts.")
                 return
 
-            # 5. DISPATCH MULTI-CHANNEL ALERTS ACCORDING TO PRIORITY MAPS
-            # Priority Level Definitions:
-            # - CRITICAL: weapon, fire (All channels immediately)
-            # - HIGH: fight, fall (Push + SMS)
-            # - MEDIUM: loitering (Push + Email)
-            # - LOW: unknown person (Push only)
-            
             priority_level = self._get_priority_level(anomaly_type)
-            logger.info(f"[AlertCoordinator] Incident Priority determined: {priority_level.upper()}")
-
-            # --- Anvil Real-time Web Dashboard Alert Popup ---
-            try:
-                from anvil_uplink import trigger_anvil_web_alert
-                trigger_anvil_web_alert(anomaly_type, camera.name)
-            except Exception as ex_anvil:
-                logger.error(f"[AlertCoordinator] Failed to dispatch Anvil web popup: {ex_anvil}")
 
             email_sent = False
             sms_sent = False
             push_sent = False
 
-            # During quiet hours, we suppress intrusive SMS and Emails unless it is a CRITICAL (Weapon/Fire) anomaly
             should_suppress_intrusive = is_quiet_hours and (priority_level != "critical")
             
             user_wants_push = delivery_prefs.get("push", True)
@@ -208,21 +196,23 @@ class AlertCoordinator(threading.Thread):
             user_wants_sms = delivery_prefs.get("sms", False)
 
             # --- Push Notification Channel ---
-            # Active across all priority tiers
             if user.fcm_token and user_wants_push:
-                push_sent = send_push_notification(
-                    fcm_token=user.fcm_token,
-                    camera_id=camera_id,
-                    camera_name=camera.name,
-                    anomaly_type=anomaly_type,
-                    confidence=confidence,
-                    timestamp=timestamp_str,
-                    alert_id=alert_record.id,
-                    snapshot_url=snapshot_url_str
-                )
+                try:
+                    push_sent = send_push_notification(
+                        fcm_token=user.fcm_token,
+                        camera_id=camera_id,
+                        camera_name=camera.name,
+                        anomaly_type=anomaly_type,
+                        confidence=confidence,
+                        timestamp=timestamp_str,
+                        alert_id=alert_record.id,
+                        snapshot_url=snapshot_url_str
+                    )
+                    logger.info("✅ [AlertCoordinator] Push notification sent")
+                except Exception as e:
+                    logger.error(f"❌ [AlertCoordinator] Push notification sent FAIL: {e}")
 
             # --- Email Channel ---
-            # Active for CRITICAL and MEDIUM tiers
             if priority_level in ["critical", "medium"] and not should_suppress_intrusive and user_wants_email:
                 email_sent = send_email_alert(
                     to_email=user.email,
@@ -237,21 +227,23 @@ class AlertCoordinator(threading.Thread):
                 )
 
             # --- SMS Channel ---
-            # Active for CRITICAL and HIGH tiers
-            if priority_level in ["critical", "high"] and not should_suppress_intrusive and user_wants_sms:
-                sms_sent = send_sms_alert(
-                    to_numbers=phone_numbers,
-                    camera_id=camera_id,
-                    camera_name=camera.name,
-                    anomaly_type=anomaly_type,
-                    confidence=confidence,
-                    timestamp=timestamp_str,
-                    alert_id=alert_record.id,
-                    short_link=clip_url_str
-                )
+            if priority_level in ["critical", "high"] and not should_suppress_intrusive:
+                try:
+                    sms_sent = send_sms_alert(
+                        to_numbers=phone_numbers,
+                        camera_id=camera_id,
+                        camera_name=camera.name,
+                        anomaly_type=anomaly_type,
+                        confidence=confidence,
+                        timestamp=timestamp_str,
+                        alert_id=alert_record.id,
+                        short_link=clip_url_str
+                    )
+                    logger.info("✅ [AlertCoordinator] SMS sent")
+                except Exception as e:
+                    logger.error(f"❌ [AlertCoordinator] SMS sent FAIL: {e}")
 
             # 6. UPDATE DB DELIVERY STATUS
-            # Mark successfully dispatched (alert_sent=1) if at least one channel delivered
             if email_sent or sms_sent or push_sent:
                 update_alert_sent_status(db, alert_record.id, 1)
                 logger.info(f"[AlertCoordinator] Dispatched notifications for Alert ID {alert_record.id}")

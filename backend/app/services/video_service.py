@@ -10,7 +10,7 @@ class VideoStreamingService:
     def __init__(self):
         # We share one detection service instance across streams to save RAM
         # In a very large production app, you might want to run this in a background worker
-        self.detector = DetectionService(model_name="yolov8n.pt")
+        self.detector = DetectionService(model_name="models/best.pt")
         # Keep track of active streams to avoid opening the same camera multiple times
         self.active_streams = {}
 

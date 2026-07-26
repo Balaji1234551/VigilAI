@@ -43,17 +43,11 @@ ANVIL_UPLINK_KEY = os.getenv("ANVIL_UPLINK_KEY", "")
 # Email SMTP Settings (Default to Gmail port 587)
 SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
-SMTP_USERNAME = os.getenv("SMTP_USERNAME", "")
-SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")  # App Password
-SMTP_FROM_EMAIL = os.getenv("SMTP_FROM_EMAIL", "")
+EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS", "")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD", "")  # App Password
 
-# Twilio SMS API Settings
-TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID", "")
-TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN", "")
-TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER", "")
-
-# Firebase Admin Push Notifications
-FIREBASE_CREDENTIALS_PATH = os.getenv("FIREBASE_CREDENTIALS_PATH", str(BASE_DIR / "firebase_credentials.json"))
+# Fast2SMS Notifications
+FAST2SMS_API_KEY = os.getenv("FAST2SMS_API_KEY", "")
 
 # Security and Cryptography Settings
 JWT_SECRET_KEY = os.getenv("SECRET_KEY", "vigilai_secure_cryptographic_secret_key_2026_token")

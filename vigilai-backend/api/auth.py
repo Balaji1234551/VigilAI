@@ -4,6 +4,7 @@ Implements User Registration, Login (JWT token generation), Logout, Profile fetc
 """
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
 from typing import Dict, Any, Optional
@@ -120,7 +121,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
         if user_id is None:
             raise credentials_exception
         token_data = TokenData(user_id=user_id)
-    except JWTError:
+    except Exception:
         raise credentials_exception
         
     user = get_user_by_id(db, user_id=token_data.user_id)
@@ -285,7 +286,7 @@ async def login_user(form_data: LoginRequestSchema, db: Session = Depends(get_db
         # Create signed token
         access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
         access_token = create_access_token(
-            data={"sub": user.id}, expires_delta=access_token_expires
+            data={"sub": str(user.id)}, expires_delta=access_token_expires
         )
         
         # Update last login timestamp and record audit log

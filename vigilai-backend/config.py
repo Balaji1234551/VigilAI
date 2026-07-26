@@ -12,9 +12,10 @@ load_dotenv(dotenv_path=ENV_PATH)
 
 # Base Project Directories
 BASE_DIR = Path(__file__).parent
-RECORDINGS_DIR = BASE_DIR / "recordings"
-CLIPS_DIR = BASE_DIR / "clips"
-SNAPSHOTS_DIR = BASE_DIR / "snapshots"
+PROJECT_ROOT = BASE_DIR.parent
+RECORDINGS_DIR = PROJECT_ROOT / "backend" / "storage" / "videos"
+CLIPS_DIR = PROJECT_ROOT / "backend" / "storage" / "clips"
+SNAPSHOTS_DIR = PROJECT_ROOT / "backend" / "storage" / "snapshots"
 
 # Automatically ensure storage folders exist
 for directory in [RECORDINGS_DIR, CLIPS_DIR, SNAPSHOTS_DIR]:
@@ -56,8 +57,8 @@ FALL_VELOCITY_THRESHOLD = 15.0       # Threshold for vertical speed (movement do
 FALL_CONSECUTIVE_FRAMES = 10         # Verify fall for at least 10 continuous frames
 
 # YOLOv8 Weapon Detection Parameters
-WEAPON_CONF_THRESHOLD = 0.65
-WEAPON_CONSECUTIVE_FRAMES = 5        # Trigger weapon alarm if spotted in 5 straight analyzed frames
+WEAPON_CONF_THRESHOLD = 0.20
+WEAPON_CONSECUTIVE_FRAMES = 1        # Trigger weapon alarm if spotted in 1 straight analyzed frames
 
 # YOLOv8 Fight Detection Parameters
 FIGHT_DISTANCE_THRESHOLD = 120.0     # Max pixel distance between centroid of 2 individuals to flag potential combat

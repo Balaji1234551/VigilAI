@@ -59,7 +59,7 @@ export default function LanguageScreen({ navigation }) {
         
         // Sync to backend if email exists
         if (userData.email) {
-          const baseUrl = Platform.OS === 'android' ? 'http://10.241.125.80:8000' : 'http://localhost:8000';
+          const baseUrl = Platform.OS === 'android' ? 'http://10.202.212.80:8000' : 'http://localhost:8000';
           
           const response = await fetch(`${baseUrl}/api/v1/auth/profile/${userData.email}`, {
             method: 'PUT',

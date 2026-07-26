@@ -1,150 +1,117 @@
 """
 Fight and Violence Detection Module for VigilAI.
-Tracks multiple person centroids, measures proximity, and implements Farneback Dense Optical Flow
-to detect high-frequency physical combat/shoving velocities (>50px/frame) over 15 consecutive frames.
+Uses MediaPipe Pose to track wrist/limb velocities and person proximity
+to detect high-frequency physical combat.
 """
 import cv2
 import math
+import time
 import logging
+import numpy as np
+import mediapipe as mp
 from typing import Dict, List, Tuple, Optional, Any
 from app.config import FIGHT_DISTANCE_THRESHOLD, FIGHT_VELOCITY_THRESHOLD, FIGHT_CONSECUTIVE_FRAMES
 
 logger = logging.getLogger("VigilAI.FightDetector")
 
-
 class FightDetector:
     """
-    Combines person proximity metrics with dense pixel optical flow vector fields
-    to isolate rapid limb/motion velocities characteristic of physical violence.
+    Uses MediaPipe Pose landmarks to calculate rapid limb motion and proximity.
     """
     def __init__(self):
-        # Store the grayscale version of the previous frame per camera to calculate optical flow
-        self.prev_grays: Dict[int, cv2.Mat] = {}
-        
-        # State tracking: consecutive fight frames per camera
-        self.camera_states: Dict[int, int] = {}
+        self.mp_pose = mp.solutions.pose
+        self.pose = self.mp_pose.Pose(
+            min_detection_confidence=0.5,
+            min_tracking_confidence=0.5,
+            model_complexity=1
+        )
+        self.camera_states: Dict[int, Dict[str, Any]] = {}
+
+    def _get_state(self, camera_id: int) -> Dict[str, Any]:
+        if camera_id not in self.camera_states:
+            self.camera_states[camera_id] = {
+                "consecutive_frames": 0,
+                "last_limbs": {}, # {person_id: {"wrists": (lx,ly,rx,ry), "time": t}}
+                "last_timestamp": time.time()
+            }
+        return self.camera_states[camera_id]
 
     def process_frame(
         self, 
         camera_id: int, 
-        frame: cv2.Mat, 
+        frame: np.ndarray, 
         person_boxes: List[Dict[str, Any]]
     ) -> Tuple[bool, float, List[Dict[str, Any]]]:
-        """
-        Calculates optical flow and cross-person distances.
-        Args:
-            camera_id (int): ID of current stream.
-            frame (cv2.Mat): RGB/BGR image frame.
-            person_boxes (List): Person bounding boxes from YOLOv8.
-        Returns:
-            is_fight (bool): True if verified combat/brawl is occurring.
-            confidence (float): Calculated severity metric.
-            alert_boxes (List): Highlighted bounding boxes of fighting people.
-        """
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        state = self._get_state(camera_id)
         
-        # 1. Initialize state variables if not exist
-        if camera_id not in self.camera_states:
-            self.camera_states[camera_id] = 0
-            self.prev_grays[camera_id] = gray
-            return False, 0.0, []
-
-        prev_gray = self.prev_grays[camera_id]
-        self.prev_grays[camera_id] = gray  # Update history cache
-        
-        # We need at least 2 people to detect a fight/violence
         if len(person_boxes) < 2:
-            self.camera_states[camera_id] = max(0, self.camera_states[camera_id] - 1)
+            state["consecutive_frames"] = max(0, state["consecutive_frames"] - 1)
             return False, 0.0, []
 
-        # 2. Calculate Farneback Dense Optical Flow
-        # pyr_scale=0.5, levels=3, winsize=15, iterations=3, poly_n=5, poly_sigma=1.2
-        # This yields dense flow vectors (dx, dy) for every pixel in the frame
-        flow = cv2.calcOpticalFlowFarneback(
-            prev_gray, 
-            gray, 
-            None, 
-            pyr_scale=0.5, 
-            levels=3, 
-            winsize=15, 
-            iterations=3, 
-            poly_n=5, 
-            poly_sigma=1.2, 
-            flags=0
-        )
-        
-        # Compute flow magnitude matrix
-        magnitude, _ = cv2.cartToPolar(flow[..., 0], flow[..., 1])
+        h, w, _ = frame.shape
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         
         fight_detected_this_frame = False
         highest_velocity = 0.0
         alert_boxes: List[Dict[str, Any]] = []
         
-        # 3. Analyze proximity and velocities between pairs of people
+        # Proximity check
         for i in range(len(person_boxes)):
             for j in range(i + 1, len(person_boxes)):
-                box1 = person_boxes[i]["box"]
-                box2 = person_boxes[j]["box"]
+                b1 = person_boxes[i]["box"]
+                b2 = person_boxes[j]["box"]
                 
-                # Bounding box coordinates: [x1, y1, x2, y2]
-                b1_x1, b1_y1, b1_x2, b1_y2 = box1
-                b2_x1, b2_y1, b2_x2, b2_y2 = box2
+                c1 = ((b1[0] + b1[2]) / 2.0, (b1[1] + b1[3]) / 2.0)
+                c2 = ((b2[0] + b2[2]) / 2.0, (b2[1] + b2[3]) / 2.0)
                 
-                # Centroids
-                c1 = ((b1_x1 + b1_x2) / 2.0, (b1_y1 + b1_y2) / 2.0)
-                c2 = ((b2_x1 + b2_x2) / 2.0, (b2_y1 + b2_y2) / 2.0)
-                
-                # Centroid Euclidean Distance (pixels)
                 dist = math.sqrt((c1[0] - c2[0])**2 + (c1[1] - c2[1])**2)
                 
-                # Check proximity threshold (150px)
                 if dist < FIGHT_DISTANCE_THRESHOLD:
-                    # 4. Measure optical flow velocity inside interacting boundary area
-                    # Find overlap/union bounding coordinates
-                    u_x1 = max(0, min(b1_x1, b2_x1))
-                    u_y1 = max(0, min(b1_y1, b2_y1))
-                    u_x2 = min(frame.shape[1], max(b1_x2, b2_x2))
-                    u_y2 = min(frame.shape[0], max(b1_y2, b2_y2))
+                    # Run MediaPipe pose on the cropped union area to be fast
+                    u_x1 = max(0, int(min(b1[0], b2[0])) - 20)
+                    u_y1 = max(0, int(min(b1[1], b2[1])) - 20)
+                    u_x2 = min(w, int(max(b1[2], b2[2])) + 20)
+                    u_y2 = min(h, int(max(b1[3], b2[3])) + 20)
                     
-                    # Extract flow magnitude sub-region of interacting group
-                    interact_magnitude = magnitude[u_y1:u_y2, u_x1:u_x2]
+                    crop = rgb_frame[u_y1:u_y2, u_x1:u_x2]
+                    if crop.size == 0: continue
                     
-                    if interact_magnitude.size > 0:
-                        # Average motion speed inside the bounding region
-                        avg_velocity = float(interact_magnitude.mean())
-                        highest_velocity = max(highest_velocity, avg_velocity)
+                    results = self.pose.process(crop)
+                    
+                    if results.pose_landmarks:
+                        landmarks = results.pose_landmarks.landmark
+                        L_WRIST = landmarks[self.mp_pose.PoseLandmark.LEFT_WRIST.value]
+                        R_WRIST = landmarks[self.mp_pose.PoseLandmark.RIGHT_WRIST.value]
                         
-                        # Fight Trigger Condition: close proximity AND high rapid motion velocity
-                        if avg_velocity > FIGHT_VELOCITY_THRESHOLD:
-                            fight_detected_this_frame = True
+                        if L_WRIST.visibility > 0.4 or R_WRIST.visibility > 0.4:
+                            now = time.time()
+                            lx = L_WRIST.x * (u_x2 - u_x1) if L_WRIST.visibility > 0.4 else 0
+                            ly = L_WRIST.y * (u_y2 - u_y1) if L_WRIST.visibility > 0.4 else 0
                             
-                            # Highlight the fighting individuals
-                            alert_boxes.append({
-                                "box": (b1_x1, b1_y1, b1_x2, b1_y2),
-                                "label": "VIOLENT ENCOUNTER",
-                                "conf": min(0.99, avg_velocity / 100.0),
-                                "is_anomaly": True
-                            })
-                            alert_boxes.append({
-                                "box": (b2_x1, b2_y1, b2_x2, b2_y2),
-                                "label": "VIOLENT ENCOUNTER",
-                                "conf": min(0.99, avg_velocity / 100.0),
-                                "is_anomaly": True
-                            })
-                            logger.warning(
-                                f"[FightDetector Cam {camera_id}] Proximity alert! Dist={dist:.1f}px, Motion Velocity={avg_velocity:.1f}px/frame"
-                            )
+                            pair_id = f"{i}_{j}"
+                            if pair_id in state["last_limbs"]:
+                                last_lx, last_ly = state["last_limbs"][pair_id]
+                                dt = now - state["last_timestamp"]
+                                if dt > 0:
+                                    vel = math.sqrt((lx - last_lx)**2 + (ly - last_ly)**2) / dt
+                                    highest_velocity = max(highest_velocity, vel)
+                                    
+                                    if vel > FIGHT_VELOCITY_THRESHOLD * 20: # Adjusted for mediapipe space
+                                        fight_detected_this_frame = True
+                                        alert_boxes.append({
+                                            "box": b1, "label": "VIOLENT ENCOUNTER", "conf": 0.9, "is_anomaly": True
+                                        })
+                                        alert_boxes.append({
+                                            "box": b2, "label": "VIOLENT ENCOUNTER", "conf": 0.9, "is_anomaly": True
+                                        })
+                                        
+                            state["last_limbs"][pair_id] = (lx, ly)
+                            state["last_timestamp"] = now
 
-        # 5. Consecutive frame confirmation (15 frames)
         if fight_detected_this_frame:
-            self.camera_states[camera_id] += 1
-            logger.info(f"[FightDetector Cam {camera_id}] Fight frame sequence: {self.camera_states[camera_id]}/15")
+            state["consecutive_frames"] += 1
         else:
-            self.camera_states[camera_id] = max(0, self.camera_states[camera_id] - 1)
+            state["consecutive_frames"] = max(0, state["consecutive_frames"] - 1)
 
-        is_fight_alert = self.camera_states[camera_id] >= FIGHT_CONSECUTIVE_FRAMES
-        
-        if is_fight_alert:
-            logger.warning(f"[FightDetector Cam {camera_id}] ⚠️ FIGHT / VIOLENCE DETECTED! (15/15 frames confirmed)")
-
-        return is_fight_alert, min(1.0, highest_velocity / 100.0), alert_boxes
+        is_fight_alert = state["consecutive_frames"] >= FIGHT_CONSECUTIVE_FRAMES
+        return is_fight_alert, min(1.0, highest_velocity / 1000.0), alert_boxes

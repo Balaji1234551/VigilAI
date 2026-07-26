@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Smartphone, Mail, MessageSquare, Home, Camera, Bell, BarChart2, User } from 'lucide-react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_URL = Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.241.125.80:8000';
+const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.202.212.80:8000');
 
 export default function NotificationSettingsScreen({ navigation }) {
   const [masterToggle, setMasterToggle] = useState(true);
