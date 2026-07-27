@@ -4,16 +4,16 @@ services:
     env: docker
     region: ohio # Adjust if necessary, ohio is standard US east
     plan: free # Change to starter if you upgrade
-    dockerfilePath: backend/Dockerfile
+    dockerfilePath: Dockerfile
     rootDir: backend
     healthCheckPath: /docs
     envVars:
       - key: DB_HOST
         sync: false
       - key: DB_PORT
-        value: 5432
+        value: "5432"
       - key: DB_NAME
-        value: postgres
+        value: "postgres"
       - key: DB_USER
         sync: false
       - key: DB_PASSWORD
