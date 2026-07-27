@@ -8,6 +8,15 @@ import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+# --- FIX FOR PYTORCH 2.6 ULTRALYTICS CRASH ---
+import torch
+original_load = torch.load
+def safe_load(*args, **kwargs):
+    kwargs.setdefault('weights_only', False)
+    return original_load(*args, **kwargs)
+torch.load = safe_load
+# ---------------------------------------------
+
 import queue
 from contextlib import asynccontextmanager
 from fastapi.responses import JSONResponse
