@@ -4,10 +4,30 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-// Remove flaky CSS injection and rely on React Native Web styling
 // Import your screen files
 // LoginScreen lives one folder up from src/screens
 import WelcomeScreen from './WelcomeScreen';
+
+if (Platform.OS === 'web') {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    body, html, #root {
+      overflow-y: auto !important;
+      height: auto !important;
+      min-height: 100vh;
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    body {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  `;
+  document.head.appendChild(style);
+}
 import EmailVerificationScreen from './EmailVerificationScreen';
 import SignUpScreen from './SignUpScreen';
 import LoginScreen from './LoginScreen';
@@ -42,7 +62,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaProvider style={{ flex: 1, height: Platform.OS === 'web' ? '100vh' : '100%', backgroundColor: '#0A0E17', overflow: 'hidden' }}>
+    <SafeAreaProvider style={{ flex: 1, minHeight: Platform.OS === 'web' ? '100vh' : '100%', backgroundColor: '#0A0E17' }}>
       <NavigationContainer>
         <Stack.Navigator 
           initialRouteName="Welcome"
