@@ -13,12 +13,12 @@ from sqlalchemy.orm import sessionmaker, Session
 # Ensure env variables are loaded
 load_dotenv()
 
-# Secure Database Connection variables
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "vigilai_db")
-DB_USER = os.getenv("DB_USER", "postgres")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "postgres")
+# Secure Database Connection variables (Supports Railway PG variables)
+DB_HOST = os.getenv("PGHOST", os.getenv("DB_HOST", "localhost"))
+DB_PORT = os.getenv("PGPORT", os.getenv("DB_PORT", "5432"))
+DB_NAME = os.getenv("PGDATABASE", os.getenv("DB_NAME", "vigilai_db"))
+DB_USER = os.getenv("PGUSER", os.getenv("DB_USER", "postgres"))
+DB_PASSWORD = os.getenv("PGPASSWORD", os.getenv("DB_PASSWORD", "postgres"))
 
 # Base Connection URL Construction (Standard & Async)
 DATABASE_URL_SYNC = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
