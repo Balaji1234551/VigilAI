@@ -22,8 +22,8 @@ RUN mkdir -p storage/recordings storage/snapshots storage/clips models
 # Copy the rest of the application code
 COPY . .
 
-# Expose port 7860 (Hugging Face standard)
-EXPOSE 7860
+# Expose port 8000
+EXPOSE 8000
 
-# Command to run the application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Command to run the application using Render's PORT or fallback to 8000
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
