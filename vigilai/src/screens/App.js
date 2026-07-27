@@ -8,7 +8,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 if (Platform.OS === 'web') {
   const style = document.createElement('style');
   style.textContent = `
-    /* Enforce strict boundaries so React Native ScrollView works */
+    /* Enforce strict vertical boundaries so React Native ScrollView works */
     html, body, #root {
         width: 100%;
         height: 100%;
@@ -17,9 +17,11 @@ if (Platform.OS === 'web') {
     body {
         margin: 0;
         display: flex;
+        flex-direction: column;
     }
     #root {
         display: flex;
+        flex-direction: column;
         flex: 1;
     }
   `;
