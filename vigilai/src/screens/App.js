@@ -4,30 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-// Inject global styles on web to fix scrolling issues
-if (Platform.OS === 'web') {
-  const style = document.createElement('style');
-  style.textContent = `
-    /* Enforce strict vertical boundaries so React Native ScrollView works */
-    html, body, #root {
-        width: 100%;
-        height: 100%;
-        overflow: hidden !important;
-    }
-    body {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-    }
-    #root {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-  `;
-  document.head.appendChild(style);
-}
-
+// Remove flaky CSS injection and rely on React Native Web styling
 // Import your screen files
 // LoginScreen lives one folder up from src/screens
 import WelcomeScreen from './WelcomeScreen';
@@ -65,7 +42,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaProvider style={{ flex: 1, backgroundColor: '#0A0E17' }}>
+    <SafeAreaProvider style={{ flex: 1, height: Platform.OS === 'web' ? '100vh' : '100%', backgroundColor: '#0A0E17', overflow: 'hidden' }}>
       <NavigationContainer>
         <Stack.Navigator 
           initialRouteName="Welcome"
