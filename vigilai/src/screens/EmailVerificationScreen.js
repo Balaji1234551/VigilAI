@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Animated, A
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Mail, CheckCircle, ChevronLeft, Shield } from 'lucide-react-native';
 
-const BACKEND_URL = Platform.OS === 'android' ? 'http://10.202.212.80:8000' : 'http://localhost:8000';
+const BACKEND_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://10.202.212.80:8000');
 
 export default function EmailVerificationScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -27,7 +27,7 @@ export default function EmailVerificationScreen({ navigation }) {
     try {
       const response = await fetch(`${BACKEND_URL}/api/auth/send-verification-code`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Bypass-Tunnel-Reminder': 'true' },
         body: JSON.stringify({ email: email.trim() }),
       });
 
@@ -57,7 +57,7 @@ export default function EmailVerificationScreen({ navigation }) {
     try {
       const response = await fetch(`${BACKEND_URL}/api/auth/verify-code`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Bypass-Tunnel-Reminder': 'true' },
         body: JSON.stringify({ email: email.trim(), code: otp.trim() }),
       });
 

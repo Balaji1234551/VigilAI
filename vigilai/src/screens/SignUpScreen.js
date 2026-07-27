@@ -74,7 +74,7 @@ export default function SignUpScreen({ route, navigation }) {
       // Call API to register user
       const response = await fetch(`${API_URL}/api/auth/register`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Bypass-Tunnel-Reminder': 'true' },
         body: JSON.stringify(registrationData)
       });
 
