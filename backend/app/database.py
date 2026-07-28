@@ -21,8 +21,15 @@ DB_USER = os.getenv("PGUSER", os.getenv("DB_USER", "postgres"))
 DB_PASSWORD = os.getenv("PGPASSWORD", os.getenv("DB_PASSWORD", "postgres"))
 
 # Base Connection URL Construction (Standard & Async)
-DATABASE_URL_SYNC = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-DATABASE_URL_ASYNC = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+_db_url_env = os.getenv("DATABASE_URL")
+if _db_url_env:
+    if _db_url_env.startswith("postgres://"):
+        _db_url_env = _db_url_env.replace("postgres://", "postgresql://", 1)
+    DATABASE_URL_SYNC = _db_url_env
+    DATABASE_URL_ASYNC = _db_url_env.replace("postgresql://", "postgresql+asyncpg://")
+else:
+    DATABASE_URL_SYNC = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    DATABASE_URL_ASYNC = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 # --- Connection Pooling Settings ---
 # pool_size: The number of connections to keep open inside the pool

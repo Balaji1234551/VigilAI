@@ -208,7 +208,8 @@ async def root():
     return {
         "status": "VigilAI System Online",
         "version": "2.0.0",
-        "docs_url": "/docs"
+        "docs_url": "/docs",
+        "db_url_status": "Set" if os.getenv("DATABASE_URL") else "Missing"
     }
 
 
