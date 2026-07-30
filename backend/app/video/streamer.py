@@ -108,3 +108,54 @@ def generate_mjpeg_stream(camera_id: int, detection_manager: Optional[Any] = Non
         elapsed = time.time() - start_time
         sleep_duration = max(0.001, frame_delay - elapsed)
         time.sleep(sleep_duration)
+
+
+def generate_test_stream(url: str) -> Generator[bytes, None, None]:
+    """
+    Dedicated generator for testing camera connections.
+    Opens a single, highly optimized VideoCapture instance to reduce latency and prevent stream buffering/freezing.
+    """
+    try:
+        source = int(url)
+    except ValueError:
+        source = url
+
+    if isinstance(source, str) and (source.startswith("http") or source.startswith("rtsp")):
+        cap = cv2.VideoCapture(source, cv2.CAP_FFMPEG)
+    else:
+        cap = cv2.VideoCapture(source)
+
+    if not cap.isOpened():
+        logger.error(f"Failed to open test stream source: {url}")
+        return
+
+    # Critical Optimization: Minimize buffer size to 1 frame to prevent IP camera lag and freezing
+    cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+    frame_delay = 1.0 / 30.0  # Limit to 30 FPS for smooth preview
+
+    try:
+        while True:
+            start_time = time.time()
+            ret, frame = cap.read()
+            if not ret or frame is None:
+                break
+
+            # Draw a distinct "TEST CONNECTION" watermark
+            cv2.putText(frame, "TEST CONNECTION LIVE", (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
+            
+            # Compress to JPEG
+            ret, jpeg_buffer = cv2.imencode(".jpg", frame, [cv2.IMWRITE_JPEG_QUALITY, 70])
+            if not ret:
+                continue
+
+            yield (
+                b"--frame\r\n"
+                b"Content-Type: image/jpeg\r\n\r\n" + jpeg_buffer.tobytes() + b"\r\n\r\n"
+            )
+
+            # Cap frame rate
+            elapsed = time.time() - start_time
+            sleep_duration = max(0.001, frame_delay - elapsed)
+            time.sleep(sleep_duration)
+    finally:
+        cap.release()

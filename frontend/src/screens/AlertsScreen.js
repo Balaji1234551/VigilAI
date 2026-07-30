@@ -1,0 +1,229 @@
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, StatusBar, Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Bell, Search, Filter, ChevronRight, Home, Camera, BarChart2, User } from 'lucide-react-native';
+import { useTranslation } from '../utils/translations';
+import { useGlobalContext } from '../context/GlobalContext';
+
+export default function AlertsScreen({ navigation }) {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedLang, setSelectedLang] = useState('English');
+  const { t } = useTranslation(selectedLang);
+  
+  const filters = ['All', 'Unread', 'Critical', 'Theft', 'Intrusion', 'Fire', 'Medical', 'Falls', 'Weapons'];
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      const loadLang = async () => {
+        try {
+          const storedLang = await AsyncStorage.getItem('userLanguage');
+          if (storedLang) {
+            setSelectedLang(storedLang);
+          }
+        } catch (e) {
+          console.error('Failed to load language', e);
+        }
+      };
+      loadLang();
+    });
+    return unsubscribe;
+  }, [navigation]);
+
+  const { alerts, isLoading } = useGlobalContext();
+
+  // We can track read state locally or just treat all as unread for now since the backend
+  // handles alert resolution via patch API.
+  const [readAlerts, setReadAlerts] = useState(new Set());
+
+  const handleMarkAsRead = (id) => {
+    setReadAlerts(prev => new Set(prev).add(id));
+  };
+
+  // Dynamic filter and search query processing
+  const mappedAlerts = React.useMemo(() => {
+    return (alerts || []).map(a => ({
+        id: a.id,
+        title: a.anomaly_type || a.title,
+        loc: `${a.camera_name || 'Camera'} • ${new Date(a.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
+        conf: `${Math.round((a.confidence || 0) * 100)}%`,
+        color: a.color || (a.confidence > 0.8 ? '#FF5252' : '#FFD600'),
+        isUnread: !readAlerts.has(a.id),
+        category: a.anomaly_type ? a.anomaly_type.charAt(0).toUpperCase() + a.anomaly_type.slice(1) : 'Unknown'
+    }));
+  }, [alerts, readAlerts]);
+
+  const filteredAlerts = mappedAlerts.filter(alert => {
+    const displayTitle = alert.title;
+    
+    // 1. Search Query Filter
+    const matchesSearch = 
+      displayTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      alert.loc.toLowerCase().includes(searchQuery.toLowerCase());
+      
+    if (!matchesSearch) return false;
+
+    // 2. Category Filter
+    if (activeFilter === 'All') return true;
+    if (activeFilter === 'Unread') return alert.isUnread;
+    if (activeFilter === 'Critical') return alert.color === '#FF5252' || alert.color === '#FF1744';
+    
+    return alert.category === activeFilter;
+  });
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="light-content" />
+      
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>{t('alerts')}</Text>
+        <TouchableOpacity><Filter size={24} color="#FFF" /></TouchableOpacity>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={styles.searchContainer}>
+          <Search size={20} color="#94A3B8" style={styles.searchIcon} />
+          <TextInput 
+            placeholder="Search alerts..." 
+            placeholderTextColor="#64748B" 
+            style={styles.searchInput}
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+          />
+        </View>
+
+        {/* Horizontal scroll view for filters row */}
+        <ScrollView 
+          horizontal 
+          showsHorizontalScrollIndicator={false} 
+          contentContainerStyle={styles.filterScroll}
+          style={styles.filterScrollView}
+        >
+          {filters.map((f) => (
+            <TouchableOpacity 
+              key={f} 
+              style={[styles.filterPill, activeFilter === f && styles.activePill]}
+              onPress={() => setActiveFilter(f)}
+            >
+              <Text style={[styles.filterText, activeFilter === f && styles.activeFilterText]}>{f}</Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+
+        <View style={styles.alertList}>
+          {filteredAlerts.length === 0 ? (
+            <View style={styles.emptyContainer}>
+              <Bell size={48} color="#475569" style={styles.emptyIcon} />
+              <Text style={styles.emptyText}>No alerts found for "{activeFilter}"</Text>
+            </View>
+          ) : (
+            filteredAlerts.map((alert) => {
+              const displayTitle = alert.titleKey ? t(alert.titleKey) : alert.defaultTitle;
+              return (
+                <AlertCard 
+                  key={alert.id} 
+                  {...alert} 
+                  title={displayTitle} 
+                  navigation={navigation} 
+                  onPress={() => handleMarkAsRead(alert.id)}
+                />
+              );
+            })
+          )}
+        </View>
+      </ScrollView>
+
+
+    </SafeAreaView>
+  );
+}
+
+const AlertCard = ({ color, title, loc, conf, isUnread, navigation, onPress }) => (
+  <TouchableOpacity
+    style={styles.alertCard}
+    onPress={() => {
+      if (onPress) onPress();
+      navigation.navigate('AlertDetails', {
+        alert: {
+          title: title.toUpperCase(),
+          camera: loc.split(' • ')[0],
+          time: loc.split(' • ')[1],
+          conf,
+          model: 'YOLOv8 Object Detection',
+          severity: color === '#FF1744' ? 'Critical' : color === '#FFC400' ? 'Warning' : 'Info',
+          status: 'Under Review',
+          color,
+        },
+      });
+    }}
+  >
+    <View style={[styles.alertIcon, { backgroundColor: color }]} />
+    <View style={styles.alertInfo}>
+      <View style={styles.alertHeader}>
+        <Text style={styles.alertTitle}>{title}</Text>
+        {isUnread && <View style={styles.unreadDot} />}
+      </View>
+      <Text style={styles.alertLoc}>{loc}</Text>
+      <Text style={[styles.confText, { color: color }]}>Confidence: {conf}</Text>
+    </View>
+    <ChevronRight size={18} color="#475569" />
+  </TouchableOpacity>
+);
+
+const TabItem = ({ icon, label, active, onPress }) => (
+  <TouchableOpacity style={styles.tabItem} onPress={onPress}>
+    {icon}
+    <Text style={[styles.tabLabel, active && { color: '#00E5FF' }]}>{label}</Text>
+  </TouchableOpacity>
+);
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#0A0E17' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, width: '100%' },
+  headerTitle: { color: '#FFF', fontSize: 24, fontWeight: 'bold' },
+  scrollContent: { paddingHorizontal: 20, paddingBottom: 100, width: '100%' },
+  searchContainer: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#161B29', borderRadius: 12, paddingHorizontal: 15, height: 50, marginBottom: 20 },
+  searchIcon: { marginRight: 10 },
+  searchInput: { flex: 1, color: '#FFF' },
+  filterScrollView: { marginBottom: 25 },
+  filterScroll: { gap: 8, paddingLeft: 4, paddingRight: 20 },
+  filterPill: { 
+    paddingHorizontal: 18, 
+    paddingVertical: 10, 
+    borderRadius: 22, 
+    backgroundColor: '#0F172A', 
+    borderWidth: 1, 
+    borderColor: '#1E293B',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  activePill: { 
+    backgroundColor: '#00E5FF', 
+    borderColor: '#00E5FF' 
+  },
+  filterText: { 
+    color: '#FFF', 
+    fontWeight: '700',
+    fontSize: 13
+  },
+  activeFilterText: { 
+    color: '#0A0E17',
+    fontWeight: 'bold'
+  },
+  alertList: { gap: 12 },
+  alertCard: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#161B29', borderRadius: 15, padding: 15, borderWidth: 1, borderColor: '#1E293B' },
+  alertIcon: { width: 45, height: 45, borderRadius: 12, marginRight: 15 },
+  alertInfo: { flex: 1 },
+  alertHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  alertTitle: { color: '#FFF', fontWeight: 'bold', fontSize: 15 },
+  unreadDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#00E5FF' },
+  alertLoc: { color: '#94A3B8', fontSize: 12, marginVertical: 4 },
+  confText: { fontSize: 11, fontWeight: 'bold' },
+  tabBar: { position: 'absolute', bottom: 0, flexDirection: 'row', backgroundColor: '#0F172A', width: '100%', height: 85, paddingBottom: 25, borderTopWidth: 1, borderColor: '#1E293B' },
+  tabItem: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  tabLabel: { color: '#94A3B8', fontSize: 10, marginTop: 4 },
+  emptyContainer: { alignItems: 'center', justifyContent: 'center', paddingVertical: 60 },
+  emptyIcon: { marginBottom: 15, opacity: 0.5 },
+  emptyText: { color: '#64748B', fontSize: 15, fontWeight: '500' }
+});

@@ -39,10 +39,10 @@ class Camera(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
-    name = Column(String, nullable=False)
+    name = Column("camera_name", String, nullable=False)
     location = Column(String, nullable=True)         # e.g., 'Front Yard', 'Living Room'
-    type = Column(String, nullable=False)             # e.g., 'usb', 'rtsp', 'ip_webcam'
-    url = Column(String, nullable=False)              # index '0' for webcams, rtsp URL, or web shot IP URL
+    type = Column("camera_type", String, nullable=False)             # e.g., 'usb', 'rtsp', 'ip_webcam'
+    url = Column("stream_url", String, nullable=False)              # index '0' for webcams, rtsp URL, or web shot IP URL
     status = Column(String, default="offline")       # 'online' or 'offline'
     settings = Column(JSON, nullable=True)            # JSON config (e.g., {"loiter_time": 30, "enabled_detections": ["fall", "weapon"]})
     created_at = Column(DateTime, default=datetime.utcnow)

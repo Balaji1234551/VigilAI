@@ -71,6 +71,44 @@ async def test_email(
         raise HTTPException(status_code=500, detail="Failed to dispatch test email (Rate limit or thread error).")
 
 
+@router.post("/sos")
+async def trigger_sos(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Trigger an Emergency SOS email to all saved emergency contacts."""
+    from app.alerts.email_alert import send_email_alert
+    from app.models.schemas import EmergencyContact
+    
+    emails = []
+    if current_user.email:
+        emails.append(current_user.email)
+    
+    contacts = db.query(EmergencyContact).filter(EmergencyContact.user_id == current_user.id).all()
+    for contact in contacts:
+        if contact.email:
+            emails.append(contact.email)
+            
+    emails = list(set([e for e in emails if e]))
+    
+    if not emails:
+        raise HTTPException(status_code=400, detail="No email addresses configured. Please add emergency contacts.")
+        
+    success = send_email_alert(
+        to_emails=emails,
+        camera_id=0,  # SOS doesn't need a specific camera
+        camera_name="USER TRIGGERED",
+        camera_location="MANUAL SOS",
+        anomaly_type="EMERGENCY SOS",
+        confidence=1.0,
+        alert_id=0
+    )
+    
+    if success:
+        return {"status": "success", "message": f"SOS alert dispatched to {len(emails)} contacts."}
+    else:
+        raise HTTPException(status_code=500, detail="Failed to dispatch SOS alert.")
+
 
 @router.post("/", response_model=AlertResponseNew, status_code=201)
 async def trigger_alert(

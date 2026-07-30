@@ -124,9 +124,9 @@ class DetectionManager(threading.Thread):
                     frame_skeleton.extend(skeleton)
                     frame_boxes.extend(f_boxes)
 
-                    # 3. RUN WEAPON DETECTION (YOLOv8)
+                    # 3. RUN DYNAMIC YOLO DETECTION
                     # This will automatically skip inference on 2 out of 3 frames to limit processing loads
-                    is_weapon, weapon_conf, w_boxes = self.weapon_detector.process_frame(cid, frame)
+                    dynamic_alerts, w_boxes = self.weapon_detector.process_frame(cid, frame)
                     if w_boxes:
                         frame_boxes.extend(w_boxes)
                     
@@ -167,7 +167,15 @@ class DetectionManager(threading.Thread):
 
                     # ENQUEUE TRIGGERED ANOMALIES
                     # Check conditions and push anomalies to AlertCoordinator via Queue
-                    self._evaluate_alerts(cid, frame, is_fall, fall_conf, is_weapon, weapon_conf, is_fight, fight_conf, is_loiter, loiter_dwell, is_posture, posture_conf, is_run, run_conf)
+                    self._evaluate_alerts(
+                        cid, frame, 
+                        is_fall, fall_conf, 
+                        dynamic_alerts, 
+                        is_fight, fight_conf, 
+                        is_loiter, loiter_dwell, 
+                        is_posture, posture_conf, 
+                        is_run, run_conf
+                    )
 
                 except Exception as e:
                     logger.error(f"[DetectionManager] Pipeline error on Camera {cid}: {e}", exc_info=True)
@@ -185,8 +193,7 @@ class DetectionManager(threading.Thread):
         frame, 
         is_fall: bool, 
         fall_conf: float, 
-        is_weapon: bool, 
-        weapon_conf: float, 
+        dynamic_alerts: List[Tuple[str, float]], 
         is_fight: bool, 
         fight_conf: float, 
         is_loiter: bool, 
@@ -205,12 +212,15 @@ class DetectionManager(threading.Thread):
 
         triggers = [
             ("FALL", is_fall, fall_conf),
-            ("WEAPON", is_weapon, weapon_conf),
             ("FIGHT", is_fight, fight_conf),
             ("LOITERING", is_loiter, 0.8),  # Default loitering confidence metric
             ("POSTURE", is_posture, posture_conf),
             ("RUNNING", is_run, run_conf)
         ]
+        
+        # Append all dynamic YOLO alerts directly to the triggers list
+        for cls_name, conf in dynamic_alerts:
+            triggers.append((cls_name.upper(), True, conf))
 
         for anomaly_type, is_triggered, confidence in triggers:
             if is_triggered:

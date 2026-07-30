@@ -52,7 +52,8 @@ from app.api.endpoints import (
     trusted,
     video,
     contacts,
-    websockets
+    websockets,
+    dashboard
 )
 
 # Load environment variables
@@ -103,7 +104,6 @@ async def lifespan(app: FastAPI):
 
                 camera_manager.start_camera(cam.id, cam.camera_name, cam.stream_url)
                 recorder_manager.start_recording(cam.id)
-                cam.status = "online"
             db.commit()
         except Exception as db_err:
             print(f"Database error during camera startup boot: {db_err}")
@@ -194,6 +194,7 @@ for prefix in ["/api", "/api/v1"]:
     app.include_router(audit_logs.router, prefix=f"{prefix}/audit-logs", tags=["Audit Trails"])
     app.include_router(contacts.router, prefix=f"{prefix}/contacts", tags=["Emergency Contacts"])
     app.include_router(websockets.router, prefix=f"{prefix}/ws", tags=["WebSockets"])
+    app.include_router(dashboard.router, prefix=f"{prefix}/dashboard", tags=["Home Dashboard Stats"])
 
     # Legacy / Backward compatibility routers
     app.include_router(privacy.router, prefix=f"{prefix}/privacy", tags=["Legacy Privacy Zones"])

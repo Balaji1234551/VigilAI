@@ -1,11 +1,14 @@
-import smtplib
+import json
+import urllib.request
 import logging
 import threading
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from app.config import SMTP_SERVER, SMTP_PORT, EMAIL_ADDRESS, EMAIL_PASSWORD
+from app.config import RESEND_API_KEY, EMAIL_ADDRESS
 
 logger = logging.getLogger("VigilAI.EmailUtils")
+
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 class StandardEmailSenderThread(threading.Thread):
     def __init__(self, to_email: str, subject: str, html_content: str):
@@ -16,24 +19,33 @@ class StandardEmailSenderThread(threading.Thread):
         self.daemon = True
 
     def run(self):
+        from app.config import SMTP_SERVER, SMTP_PORT, EMAIL_ADDRESS, EMAIL_PASSWORD
+        
         if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
-            logger.error("SMTP credentials are empty. Cannot send verification email.")
+            logger.error("EMAIL_ADDRESS or EMAIL_PASSWORD is empty. Cannot send verification email.")
             return
 
-        msg = MIMEMultipart("alternative")
-        msg["Subject"] = self.subject
-        msg["From"] = EMAIL_ADDRESS
-        msg["To"] = self.to_email
-        msg.attach(MIMEText(self.html_content, "html"))
-
         try:
-            logger.info(f"Sending standard email to {self.to_email}...")
-            server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10)
-            server.starttls()
-            server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-            server.sendmail(msg["From"], self.to_email, msg.as_string())
-            server.quit()
-            logger.info(f"Email sent successfully to {self.to_email}")
+            logger.info(f"Connecting to SMTP server {SMTP_SERVER}:{SMTP_PORT}...")
+            
+            msg = MIMEMultipart("alternative")
+            msg['Subject'] = self.subject
+            msg['From'] = EMAIL_ADDRESS
+            msg['To'] = self.to_email
+            
+            part = MIMEText(self.html_content, "html")
+            msg.attach(part)
+            
+            with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10) as server:
+                server.ehlo()
+                server.starttls()
+                server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+                server.sendmail(EMAIL_ADDRESS, self.to_email, msg.as_string())
+                
+            logger.info(f"Email sent successfully to {self.to_email} via SMTP.")
+                
+        except smtplib.SMTPAuthenticationError:
+            logger.error(f"Failed to authenticate with SMTP server. Check EMAIL_PASSWORD.")
         except Exception as e:
             logger.error(f"Failed to send email to {self.to_email}: {e}")
 

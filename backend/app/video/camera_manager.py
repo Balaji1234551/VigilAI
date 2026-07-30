@@ -67,18 +67,37 @@ class CameraConnectionThread(threading.Thread):
             return url_str
 
     def _update_db_status(self, status: str):
-        """Helper to synchronously update the camera status in the DB."""
+        """Helper to synchronously update the camera status in the DB and broadcast via WebSockets."""
         try:
             from app.database import SessionLocal
             from app.models.schemas import Camera
             db = SessionLocal()
+            status_changed = False
             try:
                 cam = db.query(Camera).filter(Camera.id == self.camera_id).first()
                 if cam and cam.status != status:
                     cam.status = status
                     db.commit()
+                    status_changed = True
             finally:
                 db.close()
+                
+            if status_changed:
+                try:
+                    import asyncio
+                    from app.api.endpoints.websockets import manager
+                    ws_payload = {
+                        "type": "CAMERA_STATUS_CHANGED",
+                        "camera_id": self.camera_id,
+                        "status": status
+                    }
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                    loop.run_until_complete(manager.broadcast(ws_payload))
+                    loop.close()
+                except Exception as ws_err:
+                    logger.error(f"Failed to broadcast WebSocket status for camera {self.camera_id}: {ws_err}")
+                    
         except Exception as e:
             logger.error(f"Failed to update DB status for camera {self.camera_id}: {e}")
 
@@ -97,16 +116,24 @@ class CameraConnectionThread(threading.Thread):
                 self.is_connected = False
                 logger.info(f"[{self.name}] Connecting to stream source...")
                 
-                cap = cv2.VideoCapture(source)
+                # Ensure low latency by using the FFMPEG backend explicitly for URLs if applicable
+                if isinstance(source, str) and (source.startswith("http") or source.startswith("rtsp")):
+                    cap = cv2.VideoCapture(source, cv2.CAP_FFMPEG)
+                else:
+                    cap = cv2.VideoCapture(source)
+                    
                 if cap.isOpened():
                     # Set custom resolution
                     cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.width)
                     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.height)
                     # Attempt to set target FPS
                     cap.set(cv2.CAP_PROP_FPS, self.target_fps)
+                    # CRITICAL: Minimize buffer size to eliminate stream lag/delay
+                    cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+                    
                     self.is_connected = True
                     self._update_db_status("online")
-                    logger.info(f"[{self.name}] Connected successfully!")
+                    logger.info(f"[{self.name}] Connected successfully with minimized buffer!")
                 else:
                     logger.warning(f"[{self.name}] Connection failed. Retrying in 5 seconds...")
                     self._update_db_status("offline")

@@ -29,7 +29,7 @@ def seed_database():
     print("Dropping all existing database tables for a clean seed...")
     from app.models.schemas import Base
     from app.database import engine
-    # Base.metadata.drop_all(bind=engine) # DISABLED: Do not wipe existing user data!
+    vBase.metadata.drop_all(bind=engine) # DISABLED: Do not wipe existing user data!
 
     print("Initializing database schema...")
     init_db()

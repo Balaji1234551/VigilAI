@@ -45,6 +45,7 @@ SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS", "")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD", "")  # App Password
+RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
 
 # Fast2SMS Notifications
 FAST2SMS_API_KEY = os.getenv("FAST2SMS_API_KEY", "")

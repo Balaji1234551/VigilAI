@@ -10,13 +10,13 @@ from typing import Dict, List, Tuple, Optional, Any
 from ultralytics import YOLO
 from app.config import WEAPON_CONF_THRESHOLD, WEAPON_CONSECUTIVE_FRAMES
 
-logger = logging.getLogger("VigilAI.WeaponDetector")
-
+logger = logging.getLogger("VigilAI.YoloDetector")
 
 class WeaponDetector:
     """
-    Integrates YOLOv8 object detection, processing every 3rd frame
-    to identify weapon classes with high-confidence thresholds.
+    Integrates YOLOv8 object detection, processing every 3rd frame.
+    Dynamically tracks ALL classes found in the loaded model.names (except Person)
+    and flags alerts if an object persists across consecutive frames.
     """
     def __init__(self, model_path: str = "models/best.pt"):
         # Load YOLOv8 Nano model
@@ -26,114 +26,113 @@ class WeaponDetector:
             base_dir = Path(__file__).resolve().parent.parent
             resolved_path = str(base_dir / model_path) if not os.path.isabs(model_path) else model_path
             self.model = YOLO(resolved_path)
-            logger.info(f"YOLOv8 Weapon Detector model loaded successfully from '{resolved_path}'")
+            logger.info(f"YOLOv8 Dynamic Detector model loaded successfully from '{resolved_path}'")
         except Exception as e:
             logger.error(f"Failed to load YOLOv8 model: {e}")
             self.model = None
-
-        # Core Weapon Classes in standard COCO:
-        # Class 43 is "knife". 
-        # Standard COCO lacks "gun", but custom datasets mapping gun to standard or custom classes are fully supported.
-        # We declare a list of target class IDs and also names for extensibility.
-        self.target_class_ids = {43}  # 43 = knife
-        self.target_class_names = {"knife", "gun", "pistol", "revolver", "rifle", "weapon", "handgun"}
-        
-        # State tracking per camera: {camera_id: consecutive_weapon_frames}
-        self.camera_states: Dict[int, int] = {}
+            
+        # State tracking per camera per class: {camera_id: {class_name: consecutive_frames}}
+        self.camera_states: Dict[int, Dict[str, int]] = {}
         # Frame counter per camera to support inference throttling (running every 3rd frame)
         self.frame_counters: Dict[int, int] = {}
 
-    def process_frame(self, camera_id: int, frame: cv2.Mat) -> Tuple[bool, float, List[Dict[str, Any]]]:
+    def process_frame(self, camera_id: int, frame: cv2.Mat) -> Tuple[List[Tuple[str, float]], List[Dict[str, Any]]]:
         """
-        Runs YOLOv8 object detection on every 3rd frame.
+        Runs YOLOv8 object detection dynamically on every 3rd frame.
         Returns:
-            is_weapon_alert (bool): Active confirmed weapon threat.
-            max_confidence (float): Highest confidence score among detected weapons.
+            triggered_alerts (List[Tuple[str, float]]): List of (class_name, confidence) for newly confirmed threats.
             boxes (List): Bounding boxes of detected objects to draw in streamer.
         """
         if self.model is None:
-            return False, 0.0, []
+            return [], []
 
         # 1. Manage frame rate throttling (process every 3rd frame)
         if camera_id not in self.frame_counters:
             self.frame_counters[camera_id] = 0
-            self.camera_states[camera_id] = 0
+            self.camera_states[camera_id] = {}
             
         self.frame_counters[camera_id] += 1
         
         # If not the 3rd frame, skip model inference but return existing state to preserve stream boxes
         if self.frame_counters[camera_id] % 3 != 0:
-            # We return False and let the manager read from cache to keep visuals responsive
             last_boxes = getattr(self, f"_last_boxes_{camera_id}", [])
-            return getattr(self, f"_last_alert_{camera_id}", False), 0.0, last_boxes
+            last_alerts = getattr(self, f"_last_alerts_{camera_id}", [])
+            return last_alerts, last_boxes
 
         # Reset frame counter to prevent overflow
         if self.frame_counters[camera_id] >= 300:
             self.frame_counters[camera_id] = 0
 
         # 2. Run Inference
-        # verbose=False suppresses CLI logging of predictions to keep server console clean
         results = self.model(frame, verbose=False)
         
         boxes: List[Dict[str, Any]] = []
-        weapon_detected_this_frame = False
-        max_confidence = 0.0
+        # Track highest confidence for each class seen in this frame
+        current_frame_classes: Dict[str, float] = {}
         
         if len(results) > 0:
             result = results[0]
-            # Extract detected bounding boxes, confidence, and class mappings
             for box in result.boxes:
                 coords = box.xyxy[0].tolist()  # [x1, y1, x2, y2]
                 conf = float(box.conf[0])
                 cls_id = int(box.cls[0])
                 
-                # Fetch class name mapping from the model
-                class_name = self.model.names[cls_id].lower()
+                # Fetch class name mapping from the model dynamically!
+                class_name = self.model.names[cls_id].upper()
                 
-                # Determine if the detected class represents a knife/weapon
-                is_target_weapon = (cls_id in self.target_class_ids) or (class_name in self.target_class_names)
+                x1, y1, x2, y2 = map(int, coords)
                 
-                # We check the confidence score against the threshold (0.65)
-                if is_target_weapon and conf >= WEAPON_CONF_THRESHOLD:
-                    weapon_detected_this_frame = True
-                    max_confidence = max(max_confidence, conf)
-                    
-                    x1, y1, x2, y2 = map(int, coords)
-                    
-                    boxes.append({
-                        "box": (x1, y1, x2, y2),
-                        "label": class_name.upper(),
-                        "conf": conf,
-                        "is_anomaly": True
-                    })
-                    logger.warning(f"[WeaponDetector Cam {camera_id}] ⚠️ DETECTED {class_name.upper()} with confidence {conf:.2%}")
-                
-                # Also include person bounding boxes if needed (class ID 0 is person), normal rendering
-                elif cls_id == 0 and conf >= 0.5:
-                    x1, y1, x2, y2 = map(int, coords)
-                    boxes.append({
-                        "box": (x1, y1, x2, y2),
-                        "label": "PERSON",
-                        "conf": conf,
-                        "is_anomaly": False
-                    })
+                # "PERSON" is tracked for other analytics (Fall, Fight, Loitering), but does not trigger an email alert directly from here.
+                if class_name == "PERSON":
+                    if conf >= 0.5:
+                        boxes.append({
+                            "box": (x1, y1, x2, y2),
+                            "label": "PERSON",
+                            "conf": conf,
+                            "is_anomaly": False
+                        })
+                else:
+                    # For all other classes (Fire, Smoke, Weapon, Knife, Gun, etc)
+                    if conf >= WEAPON_CONF_THRESHOLD:
+                        # Register the highest confidence seen for this class in this frame
+                        if class_name not in current_frame_classes or conf > current_frame_classes[class_name]:
+                            current_frame_classes[class_name] = conf
+                        
+                        boxes.append({
+                            "box": (x1, y1, x2, y2),
+                            "label": class_name,
+                            "conf": conf,
+                            "is_anomaly": True
+                        })
+                        logger.warning(f"[YoloDetector Cam {camera_id}] ⚠️ DETECTED {class_name} with confidence {conf:.2%}")
 
-        # 3. Apply Consecutive Frame Confirmation Filter
-        if weapon_detected_this_frame:
-            self.camera_states[camera_id] += 1
-            logger.info(f"[WeaponDetector Cam {camera_id}] Weapon frame count: {self.camera_states[camera_id]}/5")
-        else:
-            # Gradually decay counter to avoid instantaneous drops during fast motion
-            self.camera_states[camera_id] = max(0, self.camera_states[camera_id] - 1)
-
-        # Confirm weapon threat if spotted in 5 consecutive processed frames
-        is_alert_triggered = self.camera_states[camera_id] >= WEAPON_CONSECUTIVE_FRAMES
+        # 3. Apply Consecutive Frame Confirmation Filter per Class
+        triggered_alerts = []
+        camera_state = self.camera_states[camera_id]
         
-        if is_alert_triggered:
-            logger.warning(f"[WeaponDetector Cam {camera_id}] ⚠️ WEAPON DETECTION ALERT TRIGGERED! (5/5 consecutive frames)")
+        # Increment counters for classes seen in this frame
+        for cls_name, conf in current_frame_classes.items():
+            camera_state[cls_name] = camera_state.get(cls_name, 0) + 1
+            logger.info(f"[YoloDetector Cam {camera_id}] {cls_name} frame count: {camera_state[cls_name]}/{WEAPON_CONSECUTIVE_FRAMES}")
             
+            # Confirm threat if spotted in consecutive frames
+            if camera_state[cls_name] >= WEAPON_CONSECUTIVE_FRAMES:
+                triggered_alerts.append((cls_name, conf))
+                logger.warning(f"[YoloDetector Cam {camera_id}] ⚠️ {cls_name} ALERT TRIGGERED! ({WEAPON_CONSECUTIVE_FRAMES} consecutive frames)")
+
+        # Decay counters for classes NOT seen in this frame
+        classes_to_remove = []
+        for cls_name in camera_state.keys():
+            if cls_name not in current_frame_classes:
+                camera_state[cls_name] = max(0, camera_state[cls_name] - 1)
+                if camera_state[cls_name] == 0:
+                    classes_to_remove.append(cls_name)
+                    
+        for cls_name in classes_to_remove:
+            del camera_state[cls_name]
+
         # Cache results for skipped frames
         setattr(self, f"_last_boxes_{camera_id}", boxes)
-        setattr(self, f"_last_alert_{camera_id}", is_alert_triggered)
+        setattr(self, f"_last_alerts_{camera_id}", triggered_alerts)
             
-        return is_alert_triggered, max_confidence, boxes
+        return triggered_alerts, boxes

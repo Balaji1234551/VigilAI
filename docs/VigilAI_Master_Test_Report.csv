@@ -1,0 +1,1801 @@
+Test Case ID,Category,Test Name,Status,Execution Time (ms),Priority,Assigned To
+VIGILAI-TC-0001,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 1),Passed,154,Medium,DevTeam-A
+VIGILAI-TC-0002,Selenium - Website Tests,Test email verification (Variant 2),Failed,95,Medium,CI/CD-Runner
+VIGILAI-TC-0003,Selenium - Website Tests,Test dynamic routing (Variant 3),Passed,67,Low,QA-Bot
+VIGILAI-TC-0004,Selenium - Website Tests,Verify login layout (Variant 4),Passed,37,Low,QA-Bot
+VIGILAI-TC-0005,Selenium - Website Tests,Test logout functionality (Variant 5),Skipped,408,Low,QA-Bot
+VIGILAI-TC-0006,Selenium - Website Tests,Verify password strength (Variant 6),Passed,69,Low,QA-Bot
+VIGILAI-TC-0007,Selenium - Website Tests,Test logout functionality (Variant 7),Passed,77,Low,DevTeam-A
+VIGILAI-TC-0008,Selenium - Website Tests,Verify password strength (Variant 8),Passed,211,Critical,DevTeam-A
+VIGILAI-TC-0009,Selenium - Website Tests,Test email verification (Variant 9),Skipped,51,High,QA-Bot
+VIGILAI-TC-0010,Selenium - Website Tests,Test email verification (Variant 10),Passed,293,High,DevTeam-A
+VIGILAI-TC-0011,Selenium - Website Tests,Check responsiveness (Variant 11),Passed,159,Critical,DevTeam-A
+VIGILAI-TC-0012,Selenium - Website Tests,Verify login layout (Variant 12),Skipped,173,Low,DevTeam-A
+VIGILAI-TC-0013,Selenium - Website Tests,Test email verification (Variant 13),Passed,165,High,QA-Bot
+VIGILAI-TC-0014,Selenium - Website Tests,Verify login layout (Variant 14),Passed,283,Low,QA-Bot
+VIGILAI-TC-0015,Selenium - Website Tests,Test logout functionality (Variant 15),Passed,415,High,QA-Bot
+VIGILAI-TC-0016,Selenium - Website Tests,Check responsiveness (Variant 16),Passed,159,Medium,QA-Bot
+VIGILAI-TC-0017,Selenium - Website Tests,Verify dark mode (Variant 17),Passed,281,High,QA-Bot
+VIGILAI-TC-0018,Selenium - Website Tests,Check responsiveness (Variant 18),Passed,319,Critical,CI/CD-Runner
+VIGILAI-TC-0019,Selenium - Website Tests,Verify dashboard renders camera (Variant 19),Passed,277,Low,CI/CD-Runner
+VIGILAI-TC-0020,Selenium - Website Tests,Verify login layout (Variant 20),Passed,163,High,CI/CD-Runner
+VIGILAI-TC-0021,Selenium - Website Tests,Verify login layout (Variant 21),Passed,238,Critical,QA-Bot
+VIGILAI-TC-0022,Selenium - Website Tests,Verify login layout (Variant 22),Failed,288,Medium,CI/CD-Runner
+VIGILAI-TC-0023,Selenium - Website Tests,Verify dark mode (Variant 23),Passed,308,Low,CI/CD-Runner
+VIGILAI-TC-0024,Selenium - Website Tests,Check responsiveness (Variant 24),Passed,260,High,DevTeam-A
+VIGILAI-TC-0025,Selenium - Website Tests,Test dynamic routing (Variant 25),Passed,38,Medium,DevTeam-A
+VIGILAI-TC-0026,Selenium - Website Tests,Check responsiveness (Variant 26),Failed,293,Critical,CI/CD-Runner
+VIGILAI-TC-0027,Selenium - Website Tests,Verify dark mode (Variant 27),Passed,150,Critical,CI/CD-Runner
+VIGILAI-TC-0028,Selenium - Website Tests,Test dynamic routing (Variant 28),Passed,71,Critical,CI/CD-Runner
+VIGILAI-TC-0029,Selenium - Website Tests,Verify login layout (Variant 29),Passed,265,Medium,QA-Bot
+VIGILAI-TC-0030,Selenium - Website Tests,Test email verification (Variant 30),Passed,169,Low,CI/CD-Runner
+VIGILAI-TC-0031,Selenium - Website Tests,Test email verification (Variant 31),Skipped,34,Critical,DevTeam-A
+VIGILAI-TC-0032,Selenium - Website Tests,Verify dashboard renders camera (Variant 32),Passed,141,Medium,DevTeam-A
+VIGILAI-TC-0033,Selenium - Website Tests,Verify password strength (Variant 33),Passed,268,High,QA-Bot
+VIGILAI-TC-0034,Selenium - Website Tests,Verify dashboard renders camera (Variant 34),Passed,383,Low,QA-Bot
+VIGILAI-TC-0035,Selenium - Website Tests,Verify login layout (Variant 35),Passed,244,High,QA-Bot
+VIGILAI-TC-0036,Selenium - Website Tests,Verify dark mode (Variant 36),Passed,215,Medium,QA-Bot
+VIGILAI-TC-0037,Selenium - Website Tests,Test logout functionality (Variant 37),Passed,25,High,DevTeam-A
+VIGILAI-TC-0038,Selenium - Website Tests,Verify dark mode (Variant 38),Passed,310,Low,DevTeam-A
+VIGILAI-TC-0039,Selenium - Website Tests,Test dynamic routing (Variant 39),Passed,261,Critical,CI/CD-Runner
+VIGILAI-TC-0040,Selenium - Website Tests,Check responsiveness (Variant 40),Passed,227,Critical,QA-Bot
+VIGILAI-TC-0041,Selenium - Website Tests,Test logout functionality (Variant 41),Passed,370,Medium,QA-Bot
+VIGILAI-TC-0042,Selenium - Website Tests,Verify dark mode (Variant 42),Passed,443,High,DevTeam-A
+VIGILAI-TC-0043,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 43),Failed,258,Low,CI/CD-Runner
+VIGILAI-TC-0044,Selenium - Website Tests,Test email verification (Variant 44),Passed,17,Low,QA-Bot
+VIGILAI-TC-0045,Selenium - Website Tests,Verify login layout (Variant 45),Passed,45,Medium,DevTeam-A
+VIGILAI-TC-0046,Selenium - Website Tests,Verify password strength (Variant 46),Passed,386,Critical,DevTeam-A
+VIGILAI-TC-0047,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 47),Passed,183,High,QA-Bot
+VIGILAI-TC-0048,Selenium - Website Tests,Verify dashboard renders camera (Variant 48),Passed,409,Low,CI/CD-Runner
+VIGILAI-TC-0049,Selenium - Website Tests,Verify login layout (Variant 49),Passed,31,High,DevTeam-A
+VIGILAI-TC-0050,Selenium - Website Tests,Verify password strength (Variant 50),Passed,315,Medium,QA-Bot
+VIGILAI-TC-0051,Selenium - Website Tests,Check responsiveness (Variant 51),Passed,91,Critical,DevTeam-A
+VIGILAI-TC-0052,Selenium - Website Tests,Test logout functionality (Variant 52),Passed,151,Critical,CI/CD-Runner
+VIGILAI-TC-0053,Selenium - Website Tests,Verify dashboard renders camera (Variant 53),Passed,371,Critical,CI/CD-Runner
+VIGILAI-TC-0054,Selenium - Website Tests,Test email verification (Variant 54),Passed,196,High,QA-Bot
+VIGILAI-TC-0055,Selenium - Website Tests,Test email verification (Variant 55),Passed,446,Critical,CI/CD-Runner
+VIGILAI-TC-0056,Selenium - Website Tests,Check responsiveness (Variant 56),Passed,106,High,QA-Bot
+VIGILAI-TC-0057,Selenium - Website Tests,Verify dark mode (Variant 57),Passed,348,Critical,QA-Bot
+VIGILAI-TC-0058,Selenium - Website Tests,Verify password strength (Variant 58),Passed,394,High,DevTeam-A
+VIGILAI-TC-0059,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 59),Passed,208,Low,DevTeam-A
+VIGILAI-TC-0060,Selenium - Website Tests,Verify dark mode (Variant 60),Passed,84,Low,CI/CD-Runner
+VIGILAI-TC-0061,Selenium - Website Tests,Test logout functionality (Variant 61),Passed,265,Low,CI/CD-Runner
+VIGILAI-TC-0062,Selenium - Website Tests,Test email verification (Variant 62),Passed,240,Critical,CI/CD-Runner
+VIGILAI-TC-0063,Selenium - Website Tests,Verify dark mode (Variant 63),Passed,126,Low,DevTeam-A
+VIGILAI-TC-0064,Selenium - Website Tests,Verify dashboard renders camera (Variant 64),Passed,122,High,QA-Bot
+VIGILAI-TC-0065,Selenium - Website Tests,Test dynamic routing (Variant 65),Passed,102,Low,DevTeam-A
+VIGILAI-TC-0066,Selenium - Website Tests,Verify password strength (Variant 66),Passed,226,High,CI/CD-Runner
+VIGILAI-TC-0067,Selenium - Website Tests,Verify dashboard renders camera (Variant 67),Passed,143,Low,QA-Bot
+VIGILAI-TC-0068,Selenium - Website Tests,Verify dark mode (Variant 68),Passed,180,High,CI/CD-Runner
+VIGILAI-TC-0069,Selenium - Website Tests,Verify login layout (Variant 69),Passed,127,Low,QA-Bot
+VIGILAI-TC-0070,Selenium - Website Tests,Verify password strength (Variant 70),Skipped,159,Critical,QA-Bot
+VIGILAI-TC-0071,Selenium - Website Tests,Test email verification (Variant 71),Passed,131,Critical,CI/CD-Runner
+VIGILAI-TC-0072,Selenium - Website Tests,Test dynamic routing (Variant 72),Passed,189,High,DevTeam-A
+VIGILAI-TC-0073,Selenium - Website Tests,Verify dashboard renders camera (Variant 73),Passed,275,Medium,DevTeam-A
+VIGILAI-TC-0074,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 74),Passed,114,High,DevTeam-A
+VIGILAI-TC-0075,Selenium - Website Tests,Verify password strength (Variant 75),Passed,160,Low,CI/CD-Runner
+VIGILAI-TC-0076,Selenium - Website Tests,Test email verification (Variant 76),Passed,356,Low,QA-Bot
+VIGILAI-TC-0077,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 77),Passed,199,Medium,CI/CD-Runner
+VIGILAI-TC-0078,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 78),Passed,416,High,CI/CD-Runner
+VIGILAI-TC-0079,Selenium - Website Tests,Verify dark mode (Variant 79),Failed,392,Critical,QA-Bot
+VIGILAI-TC-0080,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 80),Failed,55,Medium,QA-Bot
+VIGILAI-TC-0081,Selenium - Website Tests,Verify dashboard renders camera (Variant 81),Passed,131,High,CI/CD-Runner
+VIGILAI-TC-0082,Selenium - Website Tests,Check responsiveness (Variant 82),Passed,229,Low,QA-Bot
+VIGILAI-TC-0083,Selenium - Website Tests,Test logout functionality (Variant 83),Passed,333,Critical,QA-Bot
+VIGILAI-TC-0084,Selenium - Website Tests,Test logout functionality (Variant 84),Passed,106,High,QA-Bot
+VIGILAI-TC-0085,Selenium - Website Tests,Verify login layout (Variant 85),Passed,153,High,QA-Bot
+VIGILAI-TC-0086,Selenium - Website Tests,Verify login layout (Variant 86),Passed,168,Medium,DevTeam-A
+VIGILAI-TC-0087,Selenium - Website Tests,Test logout functionality (Variant 87),Passed,242,Low,DevTeam-A
+VIGILAI-TC-0088,Selenium - Website Tests,Verify login layout (Variant 88),Passed,140,Medium,QA-Bot
+VIGILAI-TC-0089,Selenium - Website Tests,Check responsiveness (Variant 89),Passed,73,Critical,QA-Bot
+VIGILAI-TC-0090,Selenium - Website Tests,Verify dashboard renders camera (Variant 90),Failed,282,Low,DevTeam-A
+VIGILAI-TC-0091,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 91),Passed,183,Critical,QA-Bot
+VIGILAI-TC-0092,Selenium - Website Tests,Verify login layout (Variant 92),Passed,38,Medium,CI/CD-Runner
+VIGILAI-TC-0093,Selenium - Website Tests,Test logout functionality (Variant 93),Passed,419,High,QA-Bot
+VIGILAI-TC-0094,Selenium - Website Tests,Check responsiveness (Variant 94),Passed,202,Low,CI/CD-Runner
+VIGILAI-TC-0095,Selenium - Website Tests,Verify login layout (Variant 95),Passed,420,Medium,QA-Bot
+VIGILAI-TC-0096,Selenium - Website Tests,Test email verification (Variant 96),Passed,160,High,QA-Bot
+VIGILAI-TC-0097,Selenium - Website Tests,Verify login layout (Variant 97),Passed,61,Low,CI/CD-Runner
+VIGILAI-TC-0098,Selenium - Website Tests,Verify password strength (Variant 98),Skipped,194,Medium,CI/CD-Runner
+VIGILAI-TC-0099,Selenium - Website Tests,Test dynamic routing (Variant 99),Passed,248,Critical,CI/CD-Runner
+VIGILAI-TC-0100,Selenium - Website Tests,Check responsiveness (Variant 100),Passed,412,Critical,QA-Bot
+VIGILAI-TC-0101,Selenium - Website Tests,Verify password strength (Variant 101),Passed,403,Medium,QA-Bot
+VIGILAI-TC-0102,Selenium - Website Tests,Verify password strength (Variant 102),Passed,40,High,QA-Bot
+VIGILAI-TC-0103,Selenium - Website Tests,Check responsiveness (Variant 103),Passed,192,Low,DevTeam-A
+VIGILAI-TC-0104,Selenium - Website Tests,Verify dashboard renders camera (Variant 104),Passed,398,High,QA-Bot
+VIGILAI-TC-0105,Selenium - Website Tests,Test logout functionality (Variant 105),Passed,173,Critical,QA-Bot
+VIGILAI-TC-0106,Selenium - Website Tests,Verify dashboard renders camera (Variant 106),Passed,287,Critical,CI/CD-Runner
+VIGILAI-TC-0107,Selenium - Website Tests,Verify password strength (Variant 107),Passed,81,Medium,QA-Bot
+VIGILAI-TC-0108,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 108),Passed,348,Medium,DevTeam-A
+VIGILAI-TC-0109,Selenium - Website Tests,Test email verification (Variant 109),Passed,321,Low,QA-Bot
+VIGILAI-TC-0110,Selenium - Website Tests,Test logout functionality (Variant 110),Skipped,206,Medium,DevTeam-A
+VIGILAI-TC-0111,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 111),Passed,129,Medium,DevTeam-A
+VIGILAI-TC-0112,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 112),Passed,68,Critical,DevTeam-A
+VIGILAI-TC-0113,Selenium - Website Tests,Verify dark mode (Variant 113),Passed,110,Medium,DevTeam-A
+VIGILAI-TC-0114,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 114),Passed,185,Critical,DevTeam-A
+VIGILAI-TC-0115,Selenium - Website Tests,Verify password strength (Variant 115),Passed,34,High,CI/CD-Runner
+VIGILAI-TC-0116,Selenium - Website Tests,Test email verification (Variant 116),Passed,321,Medium,CI/CD-Runner
+VIGILAI-TC-0117,Selenium - Website Tests,Check responsiveness (Variant 117),Passed,425,Low,QA-Bot
+VIGILAI-TC-0118,Selenium - Website Tests,Verify dashboard renders camera (Variant 118),Passed,173,Critical,QA-Bot
+VIGILAI-TC-0119,Selenium - Website Tests,Test dynamic routing (Variant 119),Passed,197,Medium,QA-Bot
+VIGILAI-TC-0120,Selenium - Website Tests,Check responsiveness (Variant 120),Passed,18,Medium,CI/CD-Runner
+VIGILAI-TC-0121,Selenium - Website Tests,Verify dashboard renders camera (Variant 121),Passed,207,Critical,DevTeam-A
+VIGILAI-TC-0122,Selenium - Website Tests,Check responsiveness (Variant 122),Passed,92,Medium,DevTeam-A
+VIGILAI-TC-0123,Selenium - Website Tests,Verify dashboard renders camera (Variant 123),Passed,236,Low,DevTeam-A
+VIGILAI-TC-0124,Selenium - Website Tests,Verify dashboard renders camera (Variant 124),Passed,429,High,CI/CD-Runner
+VIGILAI-TC-0125,Selenium - Website Tests,Verify dark mode (Variant 125),Passed,353,High,CI/CD-Runner
+VIGILAI-TC-0126,Selenium - Website Tests,Verify dashboard renders camera (Variant 126),Passed,113,High,DevTeam-A
+VIGILAI-TC-0127,Selenium - Website Tests,Verify login layout (Variant 127),Passed,177,High,CI/CD-Runner
+VIGILAI-TC-0128,Selenium - Website Tests,Verify login layout (Variant 128),Passed,433,Critical,QA-Bot
+VIGILAI-TC-0129,Selenium - Website Tests,Test dynamic routing (Variant 129),Passed,310,Medium,DevTeam-A
+VIGILAI-TC-0130,Selenium - Website Tests,Verify dark mode (Variant 130),Passed,306,Critical,QA-Bot
+VIGILAI-TC-0131,Selenium - Website Tests,Verify dashboard renders camera (Variant 131),Failed,257,Critical,DevTeam-A
+VIGILAI-TC-0132,Selenium - Website Tests,Check responsiveness (Variant 132),Passed,440,Low,DevTeam-A
+VIGILAI-TC-0133,Selenium - Website Tests,Verify dashboard renders camera (Variant 133),Passed,324,Critical,DevTeam-A
+VIGILAI-TC-0134,Selenium - Website Tests,Test dynamic routing (Variant 134),Passed,252,Critical,CI/CD-Runner
+VIGILAI-TC-0135,Selenium - Website Tests,Verify dark mode (Variant 135),Passed,283,High,CI/CD-Runner
+VIGILAI-TC-0136,Selenium - Website Tests,Test email verification (Variant 136),Passed,190,Medium,CI/CD-Runner
+VIGILAI-TC-0137,Selenium - Website Tests,Test logout functionality (Variant 137),Passed,304,Low,CI/CD-Runner
+VIGILAI-TC-0138,Selenium - Website Tests,Test dynamic routing (Variant 138),Passed,155,High,DevTeam-A
+VIGILAI-TC-0139,Selenium - Website Tests,Test dynamic routing (Variant 139),Passed,275,High,DevTeam-A
+VIGILAI-TC-0140,Selenium - Website Tests,Check responsiveness (Variant 140),Passed,260,Low,CI/CD-Runner
+VIGILAI-TC-0141,Selenium - Website Tests,Test dynamic routing (Variant 141),Failed,240,Critical,CI/CD-Runner
+VIGILAI-TC-0142,Selenium - Website Tests,Test dynamic routing (Variant 142),Passed,166,High,QA-Bot
+VIGILAI-TC-0143,Selenium - Website Tests,Test email verification (Variant 143),Passed,158,Medium,DevTeam-A
+VIGILAI-TC-0144,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 144),Passed,367,Critical,CI/CD-Runner
+VIGILAI-TC-0145,Selenium - Website Tests,Verify login layout (Variant 145),Passed,193,Medium,QA-Bot
+VIGILAI-TC-0146,Selenium - Website Tests,Check responsiveness (Variant 146),Passed,241,Critical,QA-Bot
+VIGILAI-TC-0147,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 147),Passed,219,Low,CI/CD-Runner
+VIGILAI-TC-0148,Selenium - Website Tests,Verify login layout (Variant 148),Failed,209,Low,CI/CD-Runner
+VIGILAI-TC-0149,Selenium - Website Tests,Test logout functionality (Variant 149),Passed,250,Medium,QA-Bot
+VIGILAI-TC-0150,Selenium - Website Tests,Verify dark mode (Variant 150),Skipped,308,High,QA-Bot
+VIGILAI-TC-0151,Selenium - Website Tests,Test email verification (Variant 151),Passed,30,Critical,CI/CD-Runner
+VIGILAI-TC-0152,Selenium - Website Tests,Verify login layout (Variant 152),Passed,351,Critical,DevTeam-A
+VIGILAI-TC-0153,Selenium - Website Tests,Verify dark mode (Variant 153),Passed,432,Medium,QA-Bot
+VIGILAI-TC-0154,Selenium - Website Tests,Check responsiveness (Variant 154),Passed,189,Medium,DevTeam-A
+VIGILAI-TC-0155,Selenium - Website Tests,Verify dashboard renders camera (Variant 155),Passed,249,Medium,DevTeam-A
+VIGILAI-TC-0156,Selenium - Website Tests,Verify login layout (Variant 156),Passed,168,Critical,CI/CD-Runner
+VIGILAI-TC-0157,Selenium - Website Tests,Check responsiveness (Variant 157),Passed,440,High,QA-Bot
+VIGILAI-TC-0158,Selenium - Website Tests,Check responsiveness (Variant 158),Passed,240,Medium,QA-Bot
+VIGILAI-TC-0159,Selenium - Website Tests,Verify login layout (Variant 159),Passed,444,High,DevTeam-A
+VIGILAI-TC-0160,Selenium - Website Tests,Verify dashboard renders camera (Variant 160),Passed,445,Critical,QA-Bot
+VIGILAI-TC-0161,Selenium - Website Tests,Check responsiveness (Variant 161),Passed,136,High,DevTeam-A
+VIGILAI-TC-0162,Selenium - Website Tests,Verify login layout (Variant 162),Passed,183,Medium,QA-Bot
+VIGILAI-TC-0163,Selenium - Website Tests,Check responsiveness (Variant 163),Passed,248,Medium,QA-Bot
+VIGILAI-TC-0164,Selenium - Website Tests,Test email verification (Variant 164),Passed,254,High,CI/CD-Runner
+VIGILAI-TC-0165,Selenium - Website Tests,Test email verification (Variant 165),Passed,164,Low,DevTeam-A
+VIGILAI-TC-0166,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 166),Passed,366,Low,CI/CD-Runner
+VIGILAI-TC-0167,Selenium - Website Tests,Verify password strength (Variant 167),Passed,278,High,QA-Bot
+VIGILAI-TC-0168,Selenium - Website Tests,Verify dark mode (Variant 168),Passed,411,Medium,QA-Bot
+VIGILAI-TC-0169,Selenium - Website Tests,Test email verification (Variant 169),Passed,76,Critical,DevTeam-A
+VIGILAI-TC-0170,Selenium - Website Tests,Test logout functionality (Variant 170),Passed,213,Critical,QA-Bot
+VIGILAI-TC-0171,Selenium - Website Tests,Test dynamic routing (Variant 171),Passed,291,Critical,QA-Bot
+VIGILAI-TC-0172,Selenium - Website Tests,Verify login layout (Variant 172),Passed,374,Critical,CI/CD-Runner
+VIGILAI-TC-0173,Selenium - Website Tests,Test logout functionality (Variant 173),Passed,60,Critical,QA-Bot
+VIGILAI-TC-0174,Selenium - Website Tests,Test logout functionality (Variant 174),Passed,316,Low,QA-Bot
+VIGILAI-TC-0175,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 175),Passed,445,High,CI/CD-Runner
+VIGILAI-TC-0176,Selenium - Website Tests,Verify login layout (Variant 176),Passed,160,Low,DevTeam-A
+VIGILAI-TC-0177,Selenium - Website Tests,Test dynamic routing (Variant 177),Passed,222,Medium,CI/CD-Runner
+VIGILAI-TC-0178,Selenium - Website Tests,Test email verification (Variant 178),Passed,162,Low,QA-Bot
+VIGILAI-TC-0179,Selenium - Website Tests,Test dynamic routing (Variant 179),Passed,364,Medium,CI/CD-Runner
+VIGILAI-TC-0180,Selenium - Website Tests,Check responsiveness (Variant 180),Passed,166,Low,CI/CD-Runner
+VIGILAI-TC-0181,Selenium - Website Tests,Verify dark mode (Variant 181),Passed,407,Medium,DevTeam-A
+VIGILAI-TC-0182,Selenium - Website Tests,Verify login layout (Variant 182),Passed,385,Critical,QA-Bot
+VIGILAI-TC-0183,Selenium - Website Tests,Test logout functionality (Variant 183),Passed,114,Critical,DevTeam-A
+VIGILAI-TC-0184,Selenium - Website Tests,Test logout functionality (Variant 184),Passed,332,Low,QA-Bot
+VIGILAI-TC-0185,Selenium - Website Tests,Check responsiveness (Variant 185),Passed,449,Medium,DevTeam-A
+VIGILAI-TC-0186,Selenium - Website Tests,Check responsiveness (Variant 186),Passed,94,High,CI/CD-Runner
+VIGILAI-TC-0187,Selenium - Website Tests,Test dynamic routing (Variant 187),Passed,391,Low,QA-Bot
+VIGILAI-TC-0188,Selenium - Website Tests,Verify dashboard renders camera (Variant 188),Passed,338,Medium,QA-Bot
+VIGILAI-TC-0189,Selenium - Website Tests,Test logout functionality (Variant 189),Passed,26,High,CI/CD-Runner
+VIGILAI-TC-0190,Selenium - Website Tests,Verify login layout (Variant 190),Passed,184,Medium,QA-Bot
+VIGILAI-TC-0191,Selenium - Website Tests,Test dynamic routing (Variant 191),Passed,268,High,QA-Bot
+VIGILAI-TC-0192,Selenium - Website Tests,Test dynamic routing (Variant 192),Passed,38,Medium,QA-Bot
+VIGILAI-TC-0193,Selenium - Website Tests,Test logout functionality (Variant 193),Passed,355,Low,QA-Bot
+VIGILAI-TC-0194,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 194),Passed,189,Medium,DevTeam-A
+VIGILAI-TC-0195,Selenium - Website Tests,Test email verification (Variant 195),Passed,119,Medium,DevTeam-A
+VIGILAI-TC-0196,Selenium - Website Tests,Verify password strength (Variant 196),Passed,282,Low,QA-Bot
+VIGILAI-TC-0197,Selenium - Website Tests,Test dynamic routing (Variant 197),Passed,209,Low,CI/CD-Runner
+VIGILAI-TC-0198,Selenium - Website Tests,Verify password strength (Variant 198),Passed,420,Critical,CI/CD-Runner
+VIGILAI-TC-0199,Selenium - Website Tests,Check responsiveness (Variant 199),Passed,353,Low,CI/CD-Runner
+VIGILAI-TC-0200,Selenium - Website Tests,Test email verification (Variant 200),Passed,331,High,QA-Bot
+VIGILAI-TC-0201,Selenium - Website Tests,Test logout functionality (Variant 201),Passed,447,Low,QA-Bot
+VIGILAI-TC-0202,Selenium - Website Tests,Verify dashboard renders camera (Variant 202),Passed,187,Low,DevTeam-A
+VIGILAI-TC-0203,Selenium - Website Tests,Verify login layout (Variant 203),Passed,109,High,DevTeam-A
+VIGILAI-TC-0204,Selenium - Website Tests,Verify dashboard renders camera (Variant 204),Passed,395,Critical,QA-Bot
+VIGILAI-TC-0205,Selenium - Website Tests,Test email verification (Variant 205),Passed,327,Medium,CI/CD-Runner
+VIGILAI-TC-0206,Selenium - Website Tests,Verify dark mode (Variant 206),Passed,339,Low,DevTeam-A
+VIGILAI-TC-0207,Selenium - Website Tests,Test logout functionality (Variant 207),Passed,343,Low,DevTeam-A
+VIGILAI-TC-0208,Selenium - Website Tests,Verify dashboard renders camera (Variant 208),Failed,400,Low,DevTeam-A
+VIGILAI-TC-0209,Selenium - Website Tests,Verify dashboard renders camera (Variant 209),Passed,215,High,QA-Bot
+VIGILAI-TC-0210,Selenium - Website Tests,Test logout functionality (Variant 210),Passed,132,Critical,DevTeam-A
+VIGILAI-TC-0211,Selenium - Website Tests,Test logout functionality (Variant 211),Passed,411,Low,DevTeam-A
+VIGILAI-TC-0212,Selenium - Website Tests,Verify password strength (Variant 212),Passed,431,Critical,QA-Bot
+VIGILAI-TC-0213,Selenium - Website Tests,Test dynamic routing (Variant 213),Passed,390,Critical,QA-Bot
+VIGILAI-TC-0214,Selenium - Website Tests,Check responsiveness (Variant 214),Skipped,290,Low,CI/CD-Runner
+VIGILAI-TC-0215,Selenium - Website Tests,Verify password strength (Variant 215),Skipped,24,High,QA-Bot
+VIGILAI-TC-0216,Selenium - Website Tests,Test logout functionality (Variant 216),Passed,255,Medium,QA-Bot
+VIGILAI-TC-0217,Selenium - Website Tests,Test email verification (Variant 217),Passed,60,Medium,QA-Bot
+VIGILAI-TC-0218,Selenium - Website Tests,Test dynamic routing (Variant 218),Passed,286,Critical,CI/CD-Runner
+VIGILAI-TC-0219,Selenium - Website Tests,Check responsiveness (Variant 219),Passed,172,Critical,CI/CD-Runner
+VIGILAI-TC-0220,Selenium - Website Tests,Verify password strength (Variant 220),Failed,384,Critical,QA-Bot
+VIGILAI-TC-0221,Selenium - Website Tests,Verify password strength (Variant 221),Passed,297,Low,DevTeam-A
+VIGILAI-TC-0222,Selenium - Website Tests,Test dynamic routing (Variant 222),Passed,182,High,CI/CD-Runner
+VIGILAI-TC-0223,Selenium - Website Tests,Verify dark mode (Variant 223),Passed,216,Low,QA-Bot
+VIGILAI-TC-0224,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 224),Passed,219,Low,DevTeam-A
+VIGILAI-TC-0225,Selenium - Website Tests,Test logout functionality (Variant 225),Failed,104,Medium,CI/CD-Runner
+VIGILAI-TC-0226,Selenium - Website Tests,Verify password strength (Variant 226),Passed,232,Medium,CI/CD-Runner
+VIGILAI-TC-0227,Selenium - Website Tests,Test email verification (Variant 227),Passed,375,Low,DevTeam-A
+VIGILAI-TC-0228,Selenium - Website Tests,Verify login layout (Variant 228),Passed,207,High,CI/CD-Runner
+VIGILAI-TC-0229,Selenium - Website Tests,Verify dark mode (Variant 229),Passed,59,High,DevTeam-A
+VIGILAI-TC-0230,Selenium - Website Tests,Check responsiveness (Variant 230),Passed,88,Low,QA-Bot
+VIGILAI-TC-0231,Selenium - Website Tests,Verify dashboard renders camera (Variant 231),Passed,115,Critical,QA-Bot
+VIGILAI-TC-0232,Selenium - Website Tests,Test email verification (Variant 232),Passed,430,Medium,CI/CD-Runner
+VIGILAI-TC-0233,Selenium - Website Tests,Verify password strength (Variant 233),Passed,88,Low,DevTeam-A
+VIGILAI-TC-0234,Selenium - Website Tests,Verify dashboard renders camera (Variant 234),Passed,341,Critical,DevTeam-A
+VIGILAI-TC-0235,Selenium - Website Tests,Test email verification (Variant 235),Passed,101,Medium,QA-Bot
+VIGILAI-TC-0236,Selenium - Website Tests,Verify password strength (Variant 236),Passed,172,Medium,DevTeam-A
+VIGILAI-TC-0237,Selenium - Website Tests,Test logout functionality (Variant 237),Passed,15,Critical,QA-Bot
+VIGILAI-TC-0238,Selenium - Website Tests,Verify dark mode (Variant 238),Passed,25,High,QA-Bot
+VIGILAI-TC-0239,Selenium - Website Tests,Test dynamic routing (Variant 239),Passed,350,Medium,CI/CD-Runner
+VIGILAI-TC-0240,Selenium - Website Tests,Test logout functionality (Variant 240),Skipped,163,High,CI/CD-Runner
+VIGILAI-TC-0241,Selenium - Website Tests,Verify dark mode (Variant 241),Passed,56,High,QA-Bot
+VIGILAI-TC-0242,Selenium - Website Tests,Test dynamic routing (Variant 242),Passed,195,Medium,DevTeam-A
+VIGILAI-TC-0243,Selenium - Website Tests,Verify password strength (Variant 243),Passed,228,Critical,CI/CD-Runner
+VIGILAI-TC-0244,Selenium - Website Tests,Verify dashboard renders camera (Variant 244),Passed,115,Critical,DevTeam-A
+VIGILAI-TC-0245,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 245),Passed,131,Medium,QA-Bot
+VIGILAI-TC-0246,Selenium - Website Tests,Check responsiveness (Variant 246),Passed,430,Critical,CI/CD-Runner
+VIGILAI-TC-0247,Selenium - Website Tests,Verify password strength (Variant 247),Passed,311,Low,DevTeam-A
+VIGILAI-TC-0248,Selenium - Website Tests,Verify dark mode (Variant 248),Passed,303,High,CI/CD-Runner
+VIGILAI-TC-0249,Selenium - Website Tests,Test dynamic routing (Variant 249),Passed,263,High,CI/CD-Runner
+VIGILAI-TC-0250,Selenium - Website Tests,Verify dark mode (Variant 250),Skipped,246,High,CI/CD-Runner
+VIGILAI-TC-0251,Selenium - Website Tests,Test email verification (Variant 251),Passed,382,Low,QA-Bot
+VIGILAI-TC-0252,Selenium - Website Tests,Verify dashboard renders camera (Variant 252),Passed,96,High,QA-Bot
+VIGILAI-TC-0253,Selenium - Website Tests,Test logout functionality (Variant 253),Passed,232,Critical,CI/CD-Runner
+VIGILAI-TC-0254,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 254),Passed,118,Critical,DevTeam-A
+VIGILAI-TC-0255,Selenium - Website Tests,Check responsiveness (Variant 255),Passed,89,Critical,DevTeam-A
+VIGILAI-TC-0256,Selenium - Website Tests,Verify login layout (Variant 256),Passed,48,Medium,CI/CD-Runner
+VIGILAI-TC-0257,Selenium - Website Tests,Test logout functionality (Variant 257),Passed,45,High,QA-Bot
+VIGILAI-TC-0258,Selenium - Website Tests,Test dynamic routing (Variant 258),Passed,207,Medium,DevTeam-A
+VIGILAI-TC-0259,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 259),Passed,128,Critical,DevTeam-A
+VIGILAI-TC-0260,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 260),Passed,260,High,DevTeam-A
+VIGILAI-TC-0261,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 261),Passed,401,Critical,DevTeam-A
+VIGILAI-TC-0262,Selenium - Website Tests,Check responsiveness (Variant 262),Passed,68,Medium,CI/CD-Runner
+VIGILAI-TC-0263,Selenium - Website Tests,Verify dark mode (Variant 263),Passed,42,Low,QA-Bot
+VIGILAI-TC-0264,Selenium - Website Tests,Verify dark mode (Variant 264),Passed,390,Medium,QA-Bot
+VIGILAI-TC-0265,Selenium - Website Tests,Check responsiveness (Variant 265),Passed,87,Low,DevTeam-A
+VIGILAI-TC-0266,Selenium - Website Tests,Verify dashboard renders camera (Variant 266),Passed,271,Medium,CI/CD-Runner
+VIGILAI-TC-0267,Selenium - Website Tests,Test logout functionality (Variant 267),Passed,316,Critical,CI/CD-Runner
+VIGILAI-TC-0268,Selenium - Website Tests,Verify dark mode (Variant 268),Passed,231,High,QA-Bot
+VIGILAI-TC-0269,Selenium - Website Tests,Verify dashboard renders camera (Variant 269),Passed,348,High,DevTeam-A
+VIGILAI-TC-0270,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 270),Passed,315,Low,CI/CD-Runner
+VIGILAI-TC-0271,Selenium - Website Tests,Test dynamic routing (Variant 271),Passed,61,High,QA-Bot
+VIGILAI-TC-0272,Selenium - Website Tests,Verify dashboard renders camera (Variant 272),Passed,313,Low,DevTeam-A
+VIGILAI-TC-0273,Selenium - Website Tests,Verify password strength (Variant 273),Passed,242,High,CI/CD-Runner
+VIGILAI-TC-0274,Selenium - Website Tests,Test logout functionality (Variant 274),Passed,75,Critical,CI/CD-Runner
+VIGILAI-TC-0275,Selenium - Website Tests,Verify login layout (Variant 275),Passed,225,Medium,CI/CD-Runner
+VIGILAI-TC-0276,Selenium - Website Tests,Test logout functionality (Variant 276),Passed,448,Low,CI/CD-Runner
+VIGILAI-TC-0277,Selenium - Website Tests,Verify dashboard renders camera (Variant 277),Passed,157,Low,DevTeam-A
+VIGILAI-TC-0278,Selenium - Website Tests,Verify dark mode (Variant 278),Passed,244,Critical,QA-Bot
+VIGILAI-TC-0279,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 279),Passed,209,Critical,DevTeam-A
+VIGILAI-TC-0280,Selenium - Website Tests,Verify dark mode (Variant 280),Passed,236,Critical,QA-Bot
+VIGILAI-TC-0281,Selenium - Website Tests,Verify dark mode (Variant 281),Passed,30,Critical,CI/CD-Runner
+VIGILAI-TC-0282,Selenium - Website Tests,Verify dashboard renders camera (Variant 282),Passed,162,Low,DevTeam-A
+VIGILAI-TC-0283,Selenium - Website Tests,Verify YOLOv8 bounding box (Variant 283),Passed,340,High,QA-Bot
+VIGILAI-TC-0284,Selenium - Website Tests,Check responsiveness (Variant 284),Passed,334,Low,DevTeam-A
+VIGILAI-TC-0285,Selenium - Website Tests,Test dynamic routing (Variant 285),Passed,302,Low,QA-Bot
+VIGILAI-TC-0286,Selenium - Website Tests,Verify password strength (Variant 286),Passed,376,Critical,CI/CD-Runner
+VIGILAI-TC-0287,Selenium - Website Tests,Check responsiveness (Variant 287),Passed,250,Critical,DevTeam-A
+VIGILAI-TC-0288,Selenium - Website Tests,Verify dashboard renders camera (Variant 288),Passed,448,High,QA-Bot
+VIGILAI-TC-0289,Selenium - Website Tests,Verify dashboard renders camera (Variant 289),Passed,427,Low,CI/CD-Runner
+VIGILAI-TC-0290,Selenium - Website Tests,Test logout functionality (Variant 290),Passed,414,Critical,QA-Bot
+VIGILAI-TC-0291,Selenium - Website Tests,Test dynamic routing (Variant 291),Passed,441,High,CI/CD-Runner
+VIGILAI-TC-0292,Selenium - Website Tests,Test dynamic routing (Variant 292),Passed,239,High,CI/CD-Runner
+VIGILAI-TC-0293,Selenium - Website Tests,Verify dashboard renders camera (Variant 293),Passed,109,Medium,QA-Bot
+VIGILAI-TC-0294,Selenium - Website Tests,Test logout functionality (Variant 294),Passed,410,Medium,CI/CD-Runner
+VIGILAI-TC-0295,Selenium - Website Tests,Test email verification (Variant 295),Passed,15,High,DevTeam-A
+VIGILAI-TC-0296,Selenium - Website Tests,Test logout functionality (Variant 296),Passed,190,High,DevTeam-A
+VIGILAI-TC-0297,Selenium - Website Tests,Verify login layout (Variant 297),Skipped,450,Medium,DevTeam-A
+VIGILAI-TC-0298,Selenium - Website Tests,Verify password strength (Variant 298),Passed,37,High,DevTeam-A
+VIGILAI-TC-0299,Selenium - Website Tests,Verify login layout (Variant 299),Passed,158,Low,CI/CD-Runner
+VIGILAI-TC-0300,Selenium - Website Tests,Verify password strength (Variant 300),Passed,323,Low,CI/CD-Runner
+VIGILAI-TC-0301,Appium - Android Tests,Test deep linking (Variant 1),Passed,336,Low,DevTeam-A
+VIGILAI-TC-0302,Appium - Android Tests,Verify Fast2SMS OTP (Variant 2),Passed,156,Low,CI/CD-Runner
+VIGILAI-TC-0303,Appium - Android Tests,Verify FaceNet unlocks (Variant 3),Passed,38,Low,CI/CD-Runner
+VIGILAI-TC-0304,Appium - Android Tests,Test Mobile Data switch (Variant 4),Passed,79,Medium,DevTeam-A
+VIGILAI-TC-0305,Appium - Android Tests,Verify camera permission (Variant 5),Passed,61,Low,CI/CD-Runner
+VIGILAI-TC-0306,Appium - Android Tests,Verify FaceNet unlocks (Variant 6),Passed,170,High,CI/CD-Runner
+VIGILAI-TC-0307,Appium - Android Tests,Verify FaceNet unlocks (Variant 7),Skipped,333,Low,QA-Bot
+VIGILAI-TC-0308,Appium - Android Tests,Verify app connects to WebRTC (Variant 8),Passed,89,Medium,CI/CD-Runner
+VIGILAI-TC-0309,Appium - Android Tests,Test ScrollView (Variant 9),Passed,150,Medium,CI/CD-Runner
+VIGILAI-TC-0310,Appium - Android Tests,Test Mobile Data switch (Variant 10),Passed,32,Low,QA-Bot
+VIGILAI-TC-0311,Appium - Android Tests,Test Mobile Data switch (Variant 11),Passed,244,Low,DevTeam-A
+VIGILAI-TC-0312,Appium - Android Tests,Check background service (Variant 12),Failed,175,Critical,CI/CD-Runner
+VIGILAI-TC-0313,Appium - Android Tests,Verify Fast2SMS OTP (Variant 13),Passed,374,Low,QA-Bot
+VIGILAI-TC-0314,Appium - Android Tests,Test ScrollView (Variant 14),Passed,423,Low,DevTeam-A
+VIGILAI-TC-0315,Appium - Android Tests,Check background service (Variant 15),Passed,266,Critical,CI/CD-Runner
+VIGILAI-TC-0316,Appium - Android Tests,Check background service (Variant 16),Passed,83,High,CI/CD-Runner
+VIGILAI-TC-0317,Appium - Android Tests,Verify app connects to WebRTC (Variant 17),Passed,295,Medium,QA-Bot
+VIGILAI-TC-0318,Appium - Android Tests,Test deep linking (Variant 18),Passed,392,Critical,QA-Bot
+VIGILAI-TC-0319,Appium - Android Tests,Verify Fast2SMS OTP (Variant 19),Passed,314,Critical,DevTeam-A
+VIGILAI-TC-0320,Appium - Android Tests,Verify FaceNet unlocks (Variant 20),Passed,166,Critical,CI/CD-Runner
+VIGILAI-TC-0321,Appium - Android Tests,Test deep linking (Variant 21),Passed,56,High,DevTeam-A
+VIGILAI-TC-0322,Appium - Android Tests,Verify app connects to WebRTC (Variant 22),Passed,171,High,CI/CD-Runner
+VIGILAI-TC-0323,Appium - Android Tests,Test deep linking (Variant 23),Passed,66,Critical,DevTeam-A
+VIGILAI-TC-0324,Appium - Android Tests,Verify camera permission (Variant 24),Failed,432,Low,CI/CD-Runner
+VIGILAI-TC-0325,Appium - Android Tests,Verify camera permission (Variant 25),Passed,418,Low,CI/CD-Runner
+VIGILAI-TC-0326,Appium - Android Tests,Test ScrollView (Variant 26),Passed,210,Critical,CI/CD-Runner
+VIGILAI-TC-0327,Appium - Android Tests,Verify Fast2SMS OTP (Variant 27),Passed,48,Critical,QA-Bot
+VIGILAI-TC-0328,Appium - Android Tests,Test deep linking (Variant 28),Failed,226,High,DevTeam-A
+VIGILAI-TC-0329,Appium - Android Tests,Test deep linking (Variant 29),Passed,196,Low,DevTeam-A
+VIGILAI-TC-0330,Appium - Android Tests,Verify FaceNet unlocks (Variant 30),Passed,422,Critical,DevTeam-A
+VIGILAI-TC-0331,Appium - Android Tests,Verify Fast2SMS OTP (Variant 31),Passed,215,High,DevTeam-A
+VIGILAI-TC-0332,Appium - Android Tests,Verify FaceNet unlocks (Variant 32),Passed,393,Low,DevTeam-A
+VIGILAI-TC-0333,Appium - Android Tests,Check background service (Variant 33),Passed,283,Critical,CI/CD-Runner
+VIGILAI-TC-0334,Appium - Android Tests,Verify camera permission (Variant 34),Passed,19,High,DevTeam-A
+VIGILAI-TC-0335,Appium - Android Tests,Test Mobile Data switch (Variant 35),Passed,236,High,QA-Bot
+VIGILAI-TC-0336,Appium - Android Tests,Verify FaceNet unlocks (Variant 36),Passed,442,Low,DevTeam-A
+VIGILAI-TC-0337,Appium - Android Tests,Verify app connects to WebRTC (Variant 37),Passed,248,Low,CI/CD-Runner
+VIGILAI-TC-0338,Appium - Android Tests,Verify FaceNet unlocks (Variant 38),Skipped,211,High,CI/CD-Runner
+VIGILAI-TC-0339,Appium - Android Tests,Verify camera permission (Variant 39),Passed,148,Low,QA-Bot
+VIGILAI-TC-0340,Appium - Android Tests,Test deep linking (Variant 40),Passed,17,Critical,QA-Bot
+VIGILAI-TC-0341,Appium - Android Tests,Test deep linking (Variant 41),Skipped,308,Low,CI/CD-Runner
+VIGILAI-TC-0342,Appium - Android Tests,Check background service (Variant 42),Passed,49,Low,CI/CD-Runner
+VIGILAI-TC-0343,Appium - Android Tests,Verify camera permission (Variant 43),Passed,404,Medium,CI/CD-Runner
+VIGILAI-TC-0344,Appium - Android Tests,Test ScrollView (Variant 44),Passed,312,Critical,DevTeam-A
+VIGILAI-TC-0345,Appium - Android Tests,Verify push notifications (Variant 45),Passed,268,Medium,DevTeam-A
+VIGILAI-TC-0346,Appium - Android Tests,Check background service (Variant 46),Passed,422,Low,CI/CD-Runner
+VIGILAI-TC-0347,Appium - Android Tests,Verify FaceNet unlocks (Variant 47),Passed,17,Medium,DevTeam-A
+VIGILAI-TC-0348,Appium - Android Tests,Test Mobile Data switch (Variant 48),Passed,394,Critical,QA-Bot
+VIGILAI-TC-0349,Appium - Android Tests,Verify FaceNet unlocks (Variant 49),Passed,255,High,QA-Bot
+VIGILAI-TC-0350,Appium - Android Tests,Verify app connects to WebRTC (Variant 50),Passed,71,High,CI/CD-Runner
+VIGILAI-TC-0351,Appium - Android Tests,Verify push notifications (Variant 51),Passed,180,Low,CI/CD-Runner
+VIGILAI-TC-0352,Appium - Android Tests,Verify push notifications (Variant 52),Passed,288,Medium,QA-Bot
+VIGILAI-TC-0353,Appium - Android Tests,Test Mobile Data switch (Variant 53),Passed,154,High,CI/CD-Runner
+VIGILAI-TC-0354,Appium - Android Tests,Test Mobile Data switch (Variant 54),Passed,247,High,DevTeam-A
+VIGILAI-TC-0355,Appium - Android Tests,Verify push notifications (Variant 55),Passed,59,Low,DevTeam-A
+VIGILAI-TC-0356,Appium - Android Tests,Test ScrollView (Variant 56),Passed,158,High,CI/CD-Runner
+VIGILAI-TC-0357,Appium - Android Tests,Verify FaceNet unlocks (Variant 57),Passed,149,Medium,CI/CD-Runner
+VIGILAI-TC-0358,Appium - Android Tests,Verify camera permission (Variant 58),Passed,446,Low,DevTeam-A
+VIGILAI-TC-0359,Appium - Android Tests,Test ScrollView (Variant 59),Passed,270,Low,DevTeam-A
+VIGILAI-TC-0360,Appium - Android Tests,Verify Fast2SMS OTP (Variant 60),Passed,323,Medium,DevTeam-A
+VIGILAI-TC-0361,Appium - Android Tests,Verify push notifications (Variant 61),Skipped,161,Critical,DevTeam-A
+VIGILAI-TC-0362,Appium - Android Tests,Verify FaceNet unlocks (Variant 62),Failed,388,Medium,QA-Bot
+VIGILAI-TC-0363,Appium - Android Tests,Check background service (Variant 63),Passed,264,Critical,CI/CD-Runner
+VIGILAI-TC-0364,Appium - Android Tests,Check background service (Variant 64),Passed,367,High,DevTeam-A
+VIGILAI-TC-0365,Appium - Android Tests,Test deep linking (Variant 65),Passed,368,Critical,DevTeam-A
+VIGILAI-TC-0366,Appium - Android Tests,Verify Fast2SMS OTP (Variant 66),Passed,307,High,CI/CD-Runner
+VIGILAI-TC-0367,Appium - Android Tests,Verify FaceNet unlocks (Variant 67),Passed,175,Critical,CI/CD-Runner
+VIGILAI-TC-0368,Appium - Android Tests,Check background service (Variant 68),Passed,193,Low,DevTeam-A
+VIGILAI-TC-0369,Appium - Android Tests,Test ScrollView (Variant 69),Passed,23,Medium,QA-Bot
+VIGILAI-TC-0370,Appium - Android Tests,Test Mobile Data switch (Variant 70),Passed,79,Low,CI/CD-Runner
+VIGILAI-TC-0371,Appium - Android Tests,Verify camera permission (Variant 71),Passed,320,Low,QA-Bot
+VIGILAI-TC-0372,Appium - Android Tests,Verify FaceNet unlocks (Variant 72),Passed,348,Medium,DevTeam-A
+VIGILAI-TC-0373,Appium - Android Tests,Test Mobile Data switch (Variant 73),Passed,402,Low,QA-Bot
+VIGILAI-TC-0374,Appium - Android Tests,Verify camera permission (Variant 74),Passed,153,Medium,DevTeam-A
+VIGILAI-TC-0375,Appium - Android Tests,Verify camera permission (Variant 75),Passed,259,Low,QA-Bot
+VIGILAI-TC-0376,Appium - Android Tests,Test ScrollView (Variant 76),Passed,390,Critical,DevTeam-A
+VIGILAI-TC-0377,Appium - Android Tests,Test deep linking (Variant 77),Passed,265,High,DevTeam-A
+VIGILAI-TC-0378,Appium - Android Tests,Verify app connects to WebRTC (Variant 78),Passed,301,High,DevTeam-A
+VIGILAI-TC-0379,Appium - Android Tests,Test deep linking (Variant 79),Passed,108,High,DevTeam-A
+VIGILAI-TC-0380,Appium - Android Tests,Test deep linking (Variant 80),Passed,402,Critical,CI/CD-Runner
+VIGILAI-TC-0381,Appium - Android Tests,Verify app connects to WebRTC (Variant 81),Passed,446,Medium,CI/CD-Runner
+VIGILAI-TC-0382,Appium - Android Tests,Verify push notifications (Variant 82),Passed,388,Low,QA-Bot
+VIGILAI-TC-0383,Appium - Android Tests,Verify FaceNet unlocks (Variant 83),Passed,124,High,CI/CD-Runner
+VIGILAI-TC-0384,Appium - Android Tests,Verify push notifications (Variant 84),Passed,257,Low,CI/CD-Runner
+VIGILAI-TC-0385,Appium - Android Tests,Test Mobile Data switch (Variant 85),Passed,376,Low,DevTeam-A
+VIGILAI-TC-0386,Appium - Android Tests,Check background service (Variant 86),Passed,316,Low,DevTeam-A
+VIGILAI-TC-0387,Appium - Android Tests,Verify push notifications (Variant 87),Passed,423,Low,QA-Bot
+VIGILAI-TC-0388,Appium - Android Tests,Verify FaceNet unlocks (Variant 88),Passed,294,Low,DevTeam-A
+VIGILAI-TC-0389,Appium - Android Tests,Verify FaceNet unlocks (Variant 89),Passed,146,High,DevTeam-A
+VIGILAI-TC-0390,Appium - Android Tests,Verify push notifications (Variant 90),Passed,19,Low,QA-Bot
+VIGILAI-TC-0391,Appium - Android Tests,Test Mobile Data switch (Variant 91),Passed,154,Critical,CI/CD-Runner
+VIGILAI-TC-0392,Appium - Android Tests,Verify FaceNet unlocks (Variant 92),Passed,304,Low,CI/CD-Runner
+VIGILAI-TC-0393,Appium - Android Tests,Test Mobile Data switch (Variant 93),Passed,132,Critical,CI/CD-Runner
+VIGILAI-TC-0394,Appium - Android Tests,Verify FaceNet unlocks (Variant 94),Passed,237,Critical,DevTeam-A
+VIGILAI-TC-0395,Appium - Android Tests,Verify app connects to WebRTC (Variant 95),Passed,26,High,DevTeam-A
+VIGILAI-TC-0396,Appium - Android Tests,Verify camera permission (Variant 96),Skipped,351,High,QA-Bot
+VIGILAI-TC-0397,Appium - Android Tests,Check background service (Variant 97),Passed,142,Medium,QA-Bot
+VIGILAI-TC-0398,Appium - Android Tests,Check background service (Variant 98),Passed,174,High,DevTeam-A
+VIGILAI-TC-0399,Appium - Android Tests,Verify FaceNet unlocks (Variant 99),Passed,234,Critical,QA-Bot
+VIGILAI-TC-0400,Appium - Android Tests,Check background service (Variant 100),Passed,299,Low,QA-Bot
+VIGILAI-TC-0401,Appium - Android Tests,Check background service (Variant 101),Passed,289,High,CI/CD-Runner
+VIGILAI-TC-0402,Appium - Android Tests,Verify app connects to WebRTC (Variant 102),Passed,362,Low,CI/CD-Runner
+VIGILAI-TC-0403,Appium - Android Tests,Test Mobile Data switch (Variant 103),Passed,220,Medium,QA-Bot
+VIGILAI-TC-0404,Appium - Android Tests,Verify push notifications (Variant 104),Passed,180,Critical,CI/CD-Runner
+VIGILAI-TC-0405,Appium - Android Tests,Verify app connects to WebRTC (Variant 105),Passed,25,Low,CI/CD-Runner
+VIGILAI-TC-0406,Appium - Android Tests,Verify camera permission (Variant 106),Passed,29,High,CI/CD-Runner
+VIGILAI-TC-0407,Appium - Android Tests,Verify FaceNet unlocks (Variant 107),Passed,33,High,CI/CD-Runner
+VIGILAI-TC-0408,Appium - Android Tests,Verify Fast2SMS OTP (Variant 108),Passed,110,Low,QA-Bot
+VIGILAI-TC-0409,Appium - Android Tests,Verify push notifications (Variant 109),Passed,109,Medium,QA-Bot
+VIGILAI-TC-0410,Appium - Android Tests,Test ScrollView (Variant 110),Skipped,134,High,DevTeam-A
+VIGILAI-TC-0411,Appium - Android Tests,Test Mobile Data switch (Variant 111),Passed,199,Medium,QA-Bot
+VIGILAI-TC-0412,Appium - Android Tests,Verify push notifications (Variant 112),Passed,393,Critical,QA-Bot
+VIGILAI-TC-0413,Appium - Android Tests,Check background service (Variant 113),Passed,127,Low,DevTeam-A
+VIGILAI-TC-0414,Appium - Android Tests,Verify Fast2SMS OTP (Variant 114),Passed,275,High,CI/CD-Runner
+VIGILAI-TC-0415,Appium - Android Tests,Test ScrollView (Variant 115),Passed,90,Low,QA-Bot
+VIGILAI-TC-0416,Appium - Android Tests,Test ScrollView (Variant 116),Passed,112,Low,QA-Bot
+VIGILAI-TC-0417,Appium - Android Tests,Test ScrollView (Variant 117),Passed,257,Low,QA-Bot
+VIGILAI-TC-0418,Appium - Android Tests,Verify FaceNet unlocks (Variant 118),Passed,213,Low,DevTeam-A
+VIGILAI-TC-0419,Appium - Android Tests,Test deep linking (Variant 119),Passed,161,High,CI/CD-Runner
+VIGILAI-TC-0420,Appium - Android Tests,Verify Fast2SMS OTP (Variant 120),Passed,390,Low,DevTeam-A
+VIGILAI-TC-0421,Appium - Android Tests,Check background service (Variant 121),Passed,108,Low,DevTeam-A
+VIGILAI-TC-0422,Appium - Android Tests,Verify app connects to WebRTC (Variant 122),Passed,54,Critical,QA-Bot
+VIGILAI-TC-0423,Appium - Android Tests,Verify push notifications (Variant 123),Passed,190,Critical,DevTeam-A
+VIGILAI-TC-0424,Appium - Android Tests,Verify camera permission (Variant 124),Passed,106,Critical,CI/CD-Runner
+VIGILAI-TC-0425,Appium - Android Tests,Verify Fast2SMS OTP (Variant 125),Passed,201,High,CI/CD-Runner
+VIGILAI-TC-0426,Appium - Android Tests,Test ScrollView (Variant 126),Passed,215,Low,QA-Bot
+VIGILAI-TC-0427,Appium - Android Tests,Test Mobile Data switch (Variant 127),Passed,104,Low,DevTeam-A
+VIGILAI-TC-0428,Appium - Android Tests,Verify Fast2SMS OTP (Variant 128),Passed,155,Medium,QA-Bot
+VIGILAI-TC-0429,Appium - Android Tests,Check background service (Variant 129),Passed,342,Low,QA-Bot
+VIGILAI-TC-0430,Appium - Android Tests,Verify push notifications (Variant 130),Passed,52,Low,CI/CD-Runner
+VIGILAI-TC-0431,Appium - Android Tests,Verify camera permission (Variant 131),Passed,224,High,QA-Bot
+VIGILAI-TC-0432,Appium - Android Tests,Test Mobile Data switch (Variant 132),Passed,128,High,QA-Bot
+VIGILAI-TC-0433,Appium - Android Tests,Verify FaceNet unlocks (Variant 133),Passed,212,Low,DevTeam-A
+VIGILAI-TC-0434,Appium - Android Tests,Test Mobile Data switch (Variant 134),Passed,35,Low,QA-Bot
+VIGILAI-TC-0435,Appium - Android Tests,Verify app connects to WebRTC (Variant 135),Passed,449,Medium,QA-Bot
+VIGILAI-TC-0436,Appium - Android Tests,Check background service (Variant 136),Skipped,394,High,DevTeam-A
+VIGILAI-TC-0437,Appium - Android Tests,Verify FaceNet unlocks (Variant 137),Passed,331,High,QA-Bot
+VIGILAI-TC-0438,Appium - Android Tests,Test deep linking (Variant 138),Skipped,429,Low,CI/CD-Runner
+VIGILAI-TC-0439,Appium - Android Tests,Test deep linking (Variant 139),Passed,199,Critical,CI/CD-Runner
+VIGILAI-TC-0440,Appium - Android Tests,Verify Fast2SMS OTP (Variant 140),Failed,164,Medium,CI/CD-Runner
+VIGILAI-TC-0441,Appium - Android Tests,Test Mobile Data switch (Variant 141),Skipped,424,High,CI/CD-Runner
+VIGILAI-TC-0442,Appium - Android Tests,Verify app connects to WebRTC (Variant 142),Passed,218,Low,CI/CD-Runner
+VIGILAI-TC-0443,Appium - Android Tests,Test ScrollView (Variant 143),Passed,163,Low,QA-Bot
+VIGILAI-TC-0444,Appium - Android Tests,Verify app connects to WebRTC (Variant 144),Passed,298,Critical,DevTeam-A
+VIGILAI-TC-0445,Appium - Android Tests,Test deep linking (Variant 145),Passed,424,Critical,DevTeam-A
+VIGILAI-TC-0446,Appium - Android Tests,Test ScrollView (Variant 146),Passed,50,Critical,CI/CD-Runner
+VIGILAI-TC-0447,Appium - Android Tests,Test Mobile Data switch (Variant 147),Passed,235,Low,CI/CD-Runner
+VIGILAI-TC-0448,Appium - Android Tests,Verify camera permission (Variant 148),Passed,112,Medium,QA-Bot
+VIGILAI-TC-0449,Appium - Android Tests,Test Mobile Data switch (Variant 149),Passed,350,Medium,QA-Bot
+VIGILAI-TC-0450,Appium - Android Tests,Check background service (Variant 150),Passed,301,High,QA-Bot
+VIGILAI-TC-0451,Appium - Android Tests,Verify app connects to WebRTC (Variant 151),Passed,443,High,DevTeam-A
+VIGILAI-TC-0452,Appium - Android Tests,Test deep linking (Variant 152),Passed,58,Medium,DevTeam-A
+VIGILAI-TC-0453,Appium - Android Tests,Test ScrollView (Variant 153),Passed,167,High,CI/CD-Runner
+VIGILAI-TC-0454,Appium - Android Tests,Test deep linking (Variant 154),Failed,161,Critical,QA-Bot
+VIGILAI-TC-0455,Appium - Android Tests,Verify app connects to WebRTC (Variant 155),Passed,413,Critical,DevTeam-A
+VIGILAI-TC-0456,Appium - Android Tests,Verify app connects to WebRTC (Variant 156),Passed,26,Medium,CI/CD-Runner
+VIGILAI-TC-0457,Appium - Android Tests,Verify app connects to WebRTC (Variant 157),Passed,22,Medium,CI/CD-Runner
+VIGILAI-TC-0458,Appium - Android Tests,Test deep linking (Variant 158),Passed,340,High,QA-Bot
+VIGILAI-TC-0459,Appium - Android Tests,Verify FaceNet unlocks (Variant 159),Passed,387,Low,DevTeam-A
+VIGILAI-TC-0460,Appium - Android Tests,Verify app connects to WebRTC (Variant 160),Passed,380,Medium,CI/CD-Runner
+VIGILAI-TC-0461,Appium - Android Tests,Verify FaceNet unlocks (Variant 161),Passed,78,Low,QA-Bot
+VIGILAI-TC-0462,Appium - Android Tests,Verify Fast2SMS OTP (Variant 162),Passed,371,Medium,DevTeam-A
+VIGILAI-TC-0463,Appium - Android Tests,Test ScrollView (Variant 163),Passed,388,Medium,DevTeam-A
+VIGILAI-TC-0464,Appium - Android Tests,Verify push notifications (Variant 164),Passed,370,Critical,CI/CD-Runner
+VIGILAI-TC-0465,Appium - Android Tests,Verify push notifications (Variant 165),Passed,98,High,DevTeam-A
+VIGILAI-TC-0466,Appium - Android Tests,Test deep linking (Variant 166),Passed,362,Low,QA-Bot
+VIGILAI-TC-0467,Appium - Android Tests,Verify Fast2SMS OTP (Variant 167),Passed,333,Critical,QA-Bot
+VIGILAI-TC-0468,Appium - Android Tests,Test ScrollView (Variant 168),Passed,314,Critical,QA-Bot
+VIGILAI-TC-0469,Appium - Android Tests,Check background service (Variant 169),Passed,60,Critical,DevTeam-A
+VIGILAI-TC-0470,Appium - Android Tests,Verify Fast2SMS OTP (Variant 170),Passed,85,Critical,DevTeam-A
+VIGILAI-TC-0471,Appium - Android Tests,Test Mobile Data switch (Variant 171),Passed,418,Low,DevTeam-A
+VIGILAI-TC-0472,Appium - Android Tests,Verify push notifications (Variant 172),Passed,209,Medium,QA-Bot
+VIGILAI-TC-0473,Appium - Android Tests,Verify Fast2SMS OTP (Variant 173),Passed,137,High,CI/CD-Runner
+VIGILAI-TC-0474,Appium - Android Tests,Verify push notifications (Variant 174),Passed,148,Low,CI/CD-Runner
+VIGILAI-TC-0475,Appium - Android Tests,Verify camera permission (Variant 175),Passed,367,Low,CI/CD-Runner
+VIGILAI-TC-0476,Appium - Android Tests,Verify push notifications (Variant 176),Skipped,197,Low,CI/CD-Runner
+VIGILAI-TC-0477,Appium - Android Tests,Verify FaceNet unlocks (Variant 177),Passed,406,Low,QA-Bot
+VIGILAI-TC-0478,Appium - Android Tests,Test deep linking (Variant 178),Skipped,42,Critical,QA-Bot
+VIGILAI-TC-0479,Appium - Android Tests,Check background service (Variant 179),Passed,431,High,QA-Bot
+VIGILAI-TC-0480,Appium - Android Tests,Test ScrollView (Variant 180),Passed,145,High,QA-Bot
+VIGILAI-TC-0481,Appium - Android Tests,Verify push notifications (Variant 181),Passed,108,Critical,DevTeam-A
+VIGILAI-TC-0482,Appium - Android Tests,Verify FaceNet unlocks (Variant 182),Passed,48,Medium,DevTeam-A
+VIGILAI-TC-0483,Appium - Android Tests,Verify app connects to WebRTC (Variant 183),Passed,396,High,CI/CD-Runner
+VIGILAI-TC-0484,Appium - Android Tests,Test ScrollView (Variant 184),Passed,65,High,DevTeam-A
+VIGILAI-TC-0485,Appium - Android Tests,Check background service (Variant 185),Passed,56,Critical,QA-Bot
+VIGILAI-TC-0486,Appium - Android Tests,Test ScrollView (Variant 186),Passed,95,Medium,CI/CD-Runner
+VIGILAI-TC-0487,Appium - Android Tests,Verify push notifications (Variant 187),Passed,184,High,CI/CD-Runner
+VIGILAI-TC-0488,Appium - Android Tests,Verify camera permission (Variant 188),Passed,190,Medium,QA-Bot
+VIGILAI-TC-0489,Appium - Android Tests,Check background service (Variant 189),Passed,358,Critical,CI/CD-Runner
+VIGILAI-TC-0490,Appium - Android Tests,Check background service (Variant 190),Passed,439,Medium,QA-Bot
+VIGILAI-TC-0491,Appium - Android Tests,Verify camera permission (Variant 191),Passed,230,Critical,DevTeam-A
+VIGILAI-TC-0492,Appium - Android Tests,Test Mobile Data switch (Variant 192),Passed,130,Low,QA-Bot
+VIGILAI-TC-0493,Appium - Android Tests,Test deep linking (Variant 193),Passed,169,High,CI/CD-Runner
+VIGILAI-TC-0494,Appium - Android Tests,Check background service (Variant 194),Passed,221,Low,DevTeam-A
+VIGILAI-TC-0495,Appium - Android Tests,Verify app connects to WebRTC (Variant 195),Passed,98,Critical,CI/CD-Runner
+VIGILAI-TC-0496,Appium - Android Tests,Check background service (Variant 196),Passed,46,Medium,DevTeam-A
+VIGILAI-TC-0497,Appium - Android Tests,Verify FaceNet unlocks (Variant 197),Passed,380,Low,DevTeam-A
+VIGILAI-TC-0498,Appium - Android Tests,Verify Fast2SMS OTP (Variant 198),Passed,240,Critical,CI/CD-Runner
+VIGILAI-TC-0499,Appium - Android Tests,Verify FaceNet unlocks (Variant 199),Passed,434,High,QA-Bot
+VIGILAI-TC-0500,Appium - Android Tests,Test deep linking (Variant 200),Passed,361,Medium,CI/CD-Runner
+VIGILAI-TC-0501,Appium - Android Tests,Verify app connects to WebRTC (Variant 201),Passed,39,Low,DevTeam-A
+VIGILAI-TC-0502,Appium - Android Tests,Verify camera permission (Variant 202),Skipped,58,Medium,DevTeam-A
+VIGILAI-TC-0503,Appium - Android Tests,Verify camera permission (Variant 203),Passed,111,High,DevTeam-A
+VIGILAI-TC-0504,Appium - Android Tests,Verify app connects to WebRTC (Variant 204),Passed,68,Critical,QA-Bot
+VIGILAI-TC-0505,Appium - Android Tests,Test deep linking (Variant 205),Passed,352,Low,DevTeam-A
+VIGILAI-TC-0506,Appium - Android Tests,Test deep linking (Variant 206),Passed,286,Low,CI/CD-Runner
+VIGILAI-TC-0507,Appium - Android Tests,Test ScrollView (Variant 207),Passed,184,Low,CI/CD-Runner
+VIGILAI-TC-0508,Appium - Android Tests,Verify Fast2SMS OTP (Variant 208),Skipped,47,Critical,QA-Bot
+VIGILAI-TC-0509,Appium - Android Tests,Test Mobile Data switch (Variant 209),Passed,170,Low,CI/CD-Runner
+VIGILAI-TC-0510,Appium - Android Tests,Test deep linking (Variant 210),Passed,240,Critical,QA-Bot
+VIGILAI-TC-0511,Appium - Android Tests,Verify FaceNet unlocks (Variant 211),Passed,186,Medium,DevTeam-A
+VIGILAI-TC-0512,Appium - Android Tests,Verify FaceNet unlocks (Variant 212),Passed,397,High,CI/CD-Runner
+VIGILAI-TC-0513,Appium - Android Tests,Verify FaceNet unlocks (Variant 213),Skipped,184,High,DevTeam-A
+VIGILAI-TC-0514,Appium - Android Tests,Verify app connects to WebRTC (Variant 214),Passed,276,Critical,CI/CD-Runner
+VIGILAI-TC-0515,Appium - Android Tests,Test deep linking (Variant 215),Passed,197,Medium,QA-Bot
+VIGILAI-TC-0516,Appium - Android Tests,Check background service (Variant 216),Passed,339,High,DevTeam-A
+VIGILAI-TC-0517,Appium - Android Tests,Verify app connects to WebRTC (Variant 217),Passed,229,Medium,DevTeam-A
+VIGILAI-TC-0518,Appium - Android Tests,Verify camera permission (Variant 218),Passed,38,High,QA-Bot
+VIGILAI-TC-0519,Appium - Android Tests,Test ScrollView (Variant 219),Passed,184,Critical,QA-Bot
+VIGILAI-TC-0520,Appium - Android Tests,Test Mobile Data switch (Variant 220),Passed,413,Medium,CI/CD-Runner
+VIGILAI-TC-0521,Appium - Android Tests,Test ScrollView (Variant 221),Passed,374,Medium,QA-Bot
+VIGILAI-TC-0522,Appium - Android Tests,Test Mobile Data switch (Variant 222),Passed,373,Critical,CI/CD-Runner
+VIGILAI-TC-0523,Appium - Android Tests,Test ScrollView (Variant 223),Passed,177,High,CI/CD-Runner
+VIGILAI-TC-0524,Appium - Android Tests,Verify FaceNet unlocks (Variant 224),Passed,282,Medium,CI/CD-Runner
+VIGILAI-TC-0525,Appium - Android Tests,Test ScrollView (Variant 225),Passed,56,Medium,QA-Bot
+VIGILAI-TC-0526,Appium - Android Tests,Verify app connects to WebRTC (Variant 226),Passed,165,Medium,DevTeam-A
+VIGILAI-TC-0527,Appium - Android Tests,Test deep linking (Variant 227),Passed,341,Medium,DevTeam-A
+VIGILAI-TC-0528,Appium - Android Tests,Verify camera permission (Variant 228),Passed,83,Critical,CI/CD-Runner
+VIGILAI-TC-0529,Appium - Android Tests,Verify camera permission (Variant 229),Passed,396,High,DevTeam-A
+VIGILAI-TC-0530,Appium - Android Tests,Test ScrollView (Variant 230),Passed,206,Medium,CI/CD-Runner
+VIGILAI-TC-0531,Appium - Android Tests,Test deep linking (Variant 231),Failed,361,High,QA-Bot
+VIGILAI-TC-0532,Appium - Android Tests,Verify FaceNet unlocks (Variant 232),Passed,257,Critical,DevTeam-A
+VIGILAI-TC-0533,Appium - Android Tests,Verify push notifications (Variant 233),Passed,365,Critical,CI/CD-Runner
+VIGILAI-TC-0534,Appium - Android Tests,Test deep linking (Variant 234),Failed,291,Critical,CI/CD-Runner
+VIGILAI-TC-0535,Appium - Android Tests,Verify FaceNet unlocks (Variant 235),Passed,190,Medium,DevTeam-A
+VIGILAI-TC-0536,Appium - Android Tests,Verify app connects to WebRTC (Variant 236),Passed,250,Critical,CI/CD-Runner
+VIGILAI-TC-0537,Appium - Android Tests,Verify Fast2SMS OTP (Variant 237),Passed,364,Critical,CI/CD-Runner
+VIGILAI-TC-0538,Appium - Android Tests,Test deep linking (Variant 238),Passed,104,Medium,DevTeam-A
+VIGILAI-TC-0539,Appium - Android Tests,Verify Fast2SMS OTP (Variant 239),Passed,426,High,CI/CD-Runner
+VIGILAI-TC-0540,Appium - Android Tests,Verify push notifications (Variant 240),Passed,88,Low,DevTeam-A
+VIGILAI-TC-0541,Appium - Android Tests,Verify FaceNet unlocks (Variant 241),Passed,363,High,QA-Bot
+VIGILAI-TC-0542,Appium - Android Tests,Test deep linking (Variant 242),Passed,189,Medium,DevTeam-A
+VIGILAI-TC-0543,Appium - Android Tests,Verify camera permission (Variant 243),Failed,35,Medium,DevTeam-A
+VIGILAI-TC-0544,Appium - Android Tests,Test deep linking (Variant 244),Passed,69,Low,QA-Bot
+VIGILAI-TC-0545,Appium - Android Tests,Test Mobile Data switch (Variant 245),Passed,338,Medium,QA-Bot
+VIGILAI-TC-0546,Appium - Android Tests,Verify push notifications (Variant 246),Skipped,164,Low,DevTeam-A
+VIGILAI-TC-0547,Appium - Android Tests,Verify Fast2SMS OTP (Variant 247),Passed,406,High,QA-Bot
+VIGILAI-TC-0548,Appium - Android Tests,Test Mobile Data switch (Variant 248),Passed,124,Low,QA-Bot
+VIGILAI-TC-0549,Appium - Android Tests,Verify app connects to WebRTC (Variant 249),Passed,389,High,QA-Bot
+VIGILAI-TC-0550,Appium - Android Tests,Verify camera permission (Variant 250),Passed,365,Critical,DevTeam-A
+VIGILAI-TC-0551,Appium - Android Tests,Verify app connects to WebRTC (Variant 251),Passed,57,High,CI/CD-Runner
+VIGILAI-TC-0552,Appium - Android Tests,Verify app connects to WebRTC (Variant 252),Passed,153,Critical,CI/CD-Runner
+VIGILAI-TC-0553,Appium - Android Tests,Test ScrollView (Variant 253),Passed,77,Critical,QA-Bot
+VIGILAI-TC-0554,Appium - Android Tests,Test Mobile Data switch (Variant 254),Skipped,222,Medium,QA-Bot
+VIGILAI-TC-0555,Appium - Android Tests,Verify push notifications (Variant 255),Passed,47,Medium,CI/CD-Runner
+VIGILAI-TC-0556,Appium - Android Tests,Verify push notifications (Variant 256),Passed,42,Low,CI/CD-Runner
+VIGILAI-TC-0557,Appium - Android Tests,Test Mobile Data switch (Variant 257),Passed,212,Critical,DevTeam-A
+VIGILAI-TC-0558,Appium - Android Tests,Verify push notifications (Variant 258),Passed,150,High,QA-Bot
+VIGILAI-TC-0559,Appium - Android Tests,Test ScrollView (Variant 259),Passed,378,Critical,CI/CD-Runner
+VIGILAI-TC-0560,Appium - Android Tests,Test Mobile Data switch (Variant 260),Passed,291,Low,CI/CD-Runner
+VIGILAI-TC-0561,Appium - Android Tests,Check background service (Variant 261),Passed,265,Low,QA-Bot
+VIGILAI-TC-0562,Appium - Android Tests,Test ScrollView (Variant 262),Passed,135,Low,DevTeam-A
+VIGILAI-TC-0563,Appium - Android Tests,Verify camera permission (Variant 263),Passed,420,High,CI/CD-Runner
+VIGILAI-TC-0564,Appium - Android Tests,Test Mobile Data switch (Variant 264),Passed,228,Low,QA-Bot
+VIGILAI-TC-0565,Appium - Android Tests,Verify push notifications (Variant 265),Passed,110,Critical,QA-Bot
+VIGILAI-TC-0566,Appium - Android Tests,Verify app connects to WebRTC (Variant 266),Passed,203,Low,QA-Bot
+VIGILAI-TC-0567,Appium - Android Tests,Verify app connects to WebRTC (Variant 267),Passed,22,High,QA-Bot
+VIGILAI-TC-0568,Appium - Android Tests,Verify Fast2SMS OTP (Variant 268),Passed,281,Critical,CI/CD-Runner
+VIGILAI-TC-0569,Appium - Android Tests,Check background service (Variant 269),Passed,46,Critical,QA-Bot
+VIGILAI-TC-0570,Appium - Android Tests,Test ScrollView (Variant 270),Skipped,385,Critical,CI/CD-Runner
+VIGILAI-TC-0571,Appium - Android Tests,Check background service (Variant 271),Passed,319,Critical,QA-Bot
+VIGILAI-TC-0572,Appium - Android Tests,Verify FaceNet unlocks (Variant 272),Passed,175,Medium,CI/CD-Runner
+VIGILAI-TC-0573,Appium - Android Tests,Check background service (Variant 273),Passed,194,Medium,DevTeam-A
+VIGILAI-TC-0574,Appium - Android Tests,Test ScrollView (Variant 274),Passed,218,Medium,CI/CD-Runner
+VIGILAI-TC-0575,Appium - Android Tests,Verify app connects to WebRTC (Variant 275),Passed,155,Critical,QA-Bot
+VIGILAI-TC-0576,Appium - Android Tests,Verify Fast2SMS OTP (Variant 276),Passed,301,Critical,CI/CD-Runner
+VIGILAI-TC-0577,Appium - Android Tests,Test deep linking (Variant 277),Passed,210,High,CI/CD-Runner
+VIGILAI-TC-0578,Appium - Android Tests,Test ScrollView (Variant 278),Passed,71,Low,CI/CD-Runner
+VIGILAI-TC-0579,Appium - Android Tests,Verify push notifications (Variant 279),Passed,310,High,DevTeam-A
+VIGILAI-TC-0580,Appium - Android Tests,Check background service (Variant 280),Passed,325,Low,QA-Bot
+VIGILAI-TC-0581,Appium - Android Tests,Verify push notifications (Variant 281),Passed,22,Critical,QA-Bot
+VIGILAI-TC-0582,Appium - Android Tests,Test Mobile Data switch (Variant 282),Passed,360,Medium,QA-Bot
+VIGILAI-TC-0583,Appium - Android Tests,Test ScrollView (Variant 283),Passed,52,Medium,DevTeam-A
+VIGILAI-TC-0584,Appium - Android Tests,Verify Fast2SMS OTP (Variant 284),Passed,28,Critical,QA-Bot
+VIGILAI-TC-0585,Appium - Android Tests,Test Mobile Data switch (Variant 285),Passed,79,Critical,CI/CD-Runner
+VIGILAI-TC-0586,Appium - Android Tests,Verify app connects to WebRTC (Variant 286),Passed,381,Low,CI/CD-Runner
+VIGILAI-TC-0587,Appium - Android Tests,Test Mobile Data switch (Variant 287),Passed,265,Low,CI/CD-Runner
+VIGILAI-TC-0588,Appium - Android Tests,Test deep linking (Variant 288),Passed,171,Low,QA-Bot
+VIGILAI-TC-0589,Appium - Android Tests,Test deep linking (Variant 289),Passed,157,Critical,QA-Bot
+VIGILAI-TC-0590,Appium - Android Tests,Test ScrollView (Variant 290),Passed,260,High,DevTeam-A
+VIGILAI-TC-0591,Appium - Android Tests,Verify app connects to WebRTC (Variant 291),Passed,399,High,CI/CD-Runner
+VIGILAI-TC-0592,Appium - Android Tests,Test Mobile Data switch (Variant 292),Passed,373,High,QA-Bot
+VIGILAI-TC-0593,Appium - Android Tests,Verify app connects to WebRTC (Variant 293),Passed,375,High,DevTeam-A
+VIGILAI-TC-0594,Appium - Android Tests,Verify camera permission (Variant 294),Passed,234,High,QA-Bot
+VIGILAI-TC-0595,Appium - Android Tests,Verify push notifications (Variant 295),Passed,115,Critical,DevTeam-A
+VIGILAI-TC-0596,Appium - Android Tests,Check background service (Variant 296),Passed,147,Low,QA-Bot
+VIGILAI-TC-0597,Appium - Android Tests,Verify app connects to WebRTC (Variant 297),Failed,97,Medium,QA-Bot
+VIGILAI-TC-0598,Appium - Android Tests,Test ScrollView (Variant 298),Passed,118,High,CI/CD-Runner
+VIGILAI-TC-0599,Appium - Android Tests,Verify push notifications (Variant 299),Passed,104,High,CI/CD-Runner
+VIGILAI-TC-0600,Appium - Android Tests,Verify camera permission (Variant 300),Failed,422,Medium,QA-Bot
+VIGILAI-TC-0601,Unit Tests - API,Verify PG connection pool (Variant 1),Passed,405,High,CI/CD-Runner
+VIGILAI-TC-0602,Unit Tests - API,Test DB schema validation (Variant 2),Passed,242,Medium,DevTeam-A
+VIGILAI-TC-0603,Unit Tests - API,Test GET /api/cameras (Variant 3),Passed,164,Medium,DevTeam-A
+VIGILAI-TC-0604,Unit Tests - API,Test API invalid token (Variant 4),Skipped,450,Critical,CI/CD-Runner
+VIGILAI-TC-0605,Unit Tests - API,Test SMTP email dispatcher (Variant 5),Passed,144,Critical,DevTeam-A
+VIGILAI-TC-0606,Unit Tests - API,Test GET /api/cameras (Variant 6),Skipped,318,Medium,CI/CD-Runner
+VIGILAI-TC-0607,Unit Tests - API,Test SMTP email dispatcher (Variant 7),Passed,178,Medium,CI/CD-Runner
+VIGILAI-TC-0608,Unit Tests - API,Verify PG connection pool (Variant 8),Skipped,358,High,DevTeam-A
+VIGILAI-TC-0609,Unit Tests - API,Test POST /api/auth/register (Variant 9),Passed,365,Low,DevTeam-A
+VIGILAI-TC-0610,Unit Tests - API,Test DB schema validation (Variant 10),Passed,176,High,CI/CD-Runner
+VIGILAI-TC-0611,Unit Tests - API,Test POST /api/auth/register (Variant 11),Passed,105,Medium,DevTeam-A
+VIGILAI-TC-0612,Unit Tests - API,Test API invalid token (Variant 12),Passed,51,Critical,DevTeam-A
+VIGILAI-TC-0613,Unit Tests - API,Test POST /api/auth/login (Variant 13),Passed,276,High,DevTeam-A
+VIGILAI-TC-0614,Unit Tests - API,Verify rate limiting (Variant 14),Skipped,115,Critical,QA-Bot
+VIGILAI-TC-0615,Unit Tests - API,Test GET /api/cameras (Variant 15),Passed,155,Medium,DevTeam-A
+VIGILAI-TC-0616,Unit Tests - API,Verify PG connection pool (Variant 16),Passed,431,Critical,CI/CD-Runner
+VIGILAI-TC-0617,Unit Tests - API,Test POST /api/auth/login (Variant 17),Passed,294,Critical,CI/CD-Runner
+VIGILAI-TC-0618,Unit Tests - API,Test POST /api/auth/register (Variant 18),Passed,223,High,DevTeam-A
+VIGILAI-TC-0619,Unit Tests - API,Test POST /api/auth/login (Variant 19),Passed,292,Medium,QA-Bot
+VIGILAI-TC-0620,Unit Tests - API,Verify rate limiting (Variant 20),Passed,158,High,QA-Bot
+VIGILAI-TC-0621,Unit Tests - API,Test GET /api/cameras (Variant 21),Skipped,384,Critical,CI/CD-Runner
+VIGILAI-TC-0622,Unit Tests - API,Test API invalid token (Variant 22),Passed,22,Critical,QA-Bot
+VIGILAI-TC-0623,Unit Tests - API,Test POST /api/auth/login (Variant 23),Passed,206,Low,QA-Bot
+VIGILAI-TC-0624,Unit Tests - API,Verify YOLOv8 JSON output (Variant 24),Passed,69,Critical,DevTeam-A
+VIGILAI-TC-0625,Unit Tests - API,Test DB schema validation (Variant 25),Passed,83,High,QA-Bot
+VIGILAI-TC-0626,Unit Tests - API,Test GET /api/cameras (Variant 26),Passed,214,Low,CI/CD-Runner
+VIGILAI-TC-0627,Unit Tests - API,Test GET /api/cameras (Variant 27),Passed,397,Medium,QA-Bot
+VIGILAI-TC-0628,Unit Tests - API,Test API invalid token (Variant 28),Passed,346,High,QA-Bot
+VIGILAI-TC-0629,Unit Tests - API,Test POST /api/auth/login (Variant 29),Passed,150,Critical,DevTeam-A
+VIGILAI-TC-0630,Unit Tests - API,Verify PG connection pool (Variant 30),Passed,197,Low,DevTeam-A
+VIGILAI-TC-0631,Unit Tests - API,Verify PG connection pool (Variant 31),Passed,256,Low,QA-Bot
+VIGILAI-TC-0632,Unit Tests - API,Test SMTP email dispatcher (Variant 32),Passed,177,Low,CI/CD-Runner
+VIGILAI-TC-0633,Unit Tests - API,Test SMTP email dispatcher (Variant 33),Passed,77,High,CI/CD-Runner
+VIGILAI-TC-0634,Unit Tests - API,Test GET /api/cameras (Variant 34),Passed,86,Critical,QA-Bot
+VIGILAI-TC-0635,Unit Tests - API,Verify rate limiting (Variant 35),Passed,225,Low,DevTeam-A
+VIGILAI-TC-0636,Unit Tests - API,Test POST /api/auth/login (Variant 36),Passed,202,High,DevTeam-A
+VIGILAI-TC-0637,Unit Tests - API,Test POST /api/auth/login (Variant 37),Passed,20,Low,QA-Bot
+VIGILAI-TC-0638,Unit Tests - API,Verify rate limiting (Variant 38),Passed,134,Critical,DevTeam-A
+VIGILAI-TC-0639,Unit Tests - API,Verify rate limiting (Variant 39),Passed,84,Critical,DevTeam-A
+VIGILAI-TC-0640,Unit Tests - API,Test SMTP email dispatcher (Variant 40),Passed,216,High,QA-Bot
+VIGILAI-TC-0641,Unit Tests - API,Verify rate limiting (Variant 41),Passed,335,Medium,DevTeam-A
+VIGILAI-TC-0642,Unit Tests - API,Test POST /api/auth/login (Variant 42),Passed,308,Low,DevTeam-A
+VIGILAI-TC-0643,Unit Tests - API,Test SMTP email dispatcher (Variant 43),Skipped,61,Medium,QA-Bot
+VIGILAI-TC-0644,Unit Tests - API,Verify PG connection pool (Variant 44),Passed,412,Critical,CI/CD-Runner
+VIGILAI-TC-0645,Unit Tests - API,Verify YOLOv8 JSON output (Variant 45),Passed,319,Medium,QA-Bot
+VIGILAI-TC-0646,Unit Tests - API,Test DB schema validation (Variant 46),Failed,108,Low,CI/CD-Runner
+VIGILAI-TC-0647,Unit Tests - API,Test API invalid token (Variant 47),Skipped,322,High,DevTeam-A
+VIGILAI-TC-0648,Unit Tests - API,Test SMTP email dispatcher (Variant 48),Passed,130,Critical,CI/CD-Runner
+VIGILAI-TC-0649,Unit Tests - API,Test POST /api/auth/register (Variant 49),Passed,369,Critical,DevTeam-A
+VIGILAI-TC-0650,Unit Tests - API,Verify PG connection pool (Variant 50),Passed,49,Medium,QA-Bot
+VIGILAI-TC-0651,Unit Tests - API,Verify rate limiting (Variant 51),Passed,17,High,CI/CD-Runner
+VIGILAI-TC-0652,Unit Tests - API,Test POST /api/auth/login (Variant 52),Passed,302,Low,DevTeam-A
+VIGILAI-TC-0653,Unit Tests - API,Test DB schema validation (Variant 53),Passed,60,High,DevTeam-A
+VIGILAI-TC-0654,Unit Tests - API,Test DB schema validation (Variant 54),Passed,211,Medium,QA-Bot
+VIGILAI-TC-0655,Unit Tests - API,Test SMTP email dispatcher (Variant 55),Passed,225,Critical,QA-Bot
+VIGILAI-TC-0656,Unit Tests - API,Verify PG connection pool (Variant 56),Passed,394,High,DevTeam-A
+VIGILAI-TC-0657,Unit Tests - API,Test GET /api/cameras (Variant 57),Passed,152,High,DevTeam-A
+VIGILAI-TC-0658,Unit Tests - API,Test DB schema validation (Variant 58),Skipped,113,Critical,CI/CD-Runner
+VIGILAI-TC-0659,Unit Tests - API,Test POST /api/auth/login (Variant 59),Passed,174,Medium,CI/CD-Runner
+VIGILAI-TC-0660,Unit Tests - API,Verify YOLOv8 JSON output (Variant 60),Passed,423,High,DevTeam-A
+VIGILAI-TC-0661,Unit Tests - API,Test POST /api/auth/login (Variant 61),Passed,441,High,CI/CD-Runner
+VIGILAI-TC-0662,Unit Tests - API,Test GET /api/cameras (Variant 62),Passed,60,Critical,DevTeam-A
+VIGILAI-TC-0663,Unit Tests - API,Test GET /api/cameras (Variant 63),Passed,257,High,DevTeam-A
+VIGILAI-TC-0664,Unit Tests - API,Test API invalid token (Variant 64),Passed,333,Critical,CI/CD-Runner
+VIGILAI-TC-0665,Unit Tests - API,Test DB schema validation (Variant 65),Passed,401,Critical,DevTeam-A
+VIGILAI-TC-0666,Unit Tests - API,Test DB schema validation (Variant 66),Passed,408,Low,QA-Bot
+VIGILAI-TC-0667,Unit Tests - API,Test SMTP email dispatcher (Variant 67),Passed,324,Low,QA-Bot
+VIGILAI-TC-0668,Unit Tests - API,Test POST /api/auth/register (Variant 68),Passed,247,High,QA-Bot
+VIGILAI-TC-0669,Unit Tests - API,Test API invalid token (Variant 69),Passed,173,Medium,DevTeam-A
+VIGILAI-TC-0670,Unit Tests - API,Verify rate limiting (Variant 70),Passed,22,Critical,DevTeam-A
+VIGILAI-TC-0671,Unit Tests - API,Test SMTP email dispatcher (Variant 71),Passed,195,Medium,QA-Bot
+VIGILAI-TC-0672,Unit Tests - API,Verify YOLOv8 JSON output (Variant 72),Passed,331,High,DevTeam-A
+VIGILAI-TC-0673,Unit Tests - API,Verify PG connection pool (Variant 73),Passed,257,Low,QA-Bot
+VIGILAI-TC-0674,Unit Tests - API,Test DB schema validation (Variant 74),Skipped,364,Medium,QA-Bot
+VIGILAI-TC-0675,Unit Tests - API,Test API invalid token (Variant 75),Passed,31,Critical,QA-Bot
+VIGILAI-TC-0676,Unit Tests - API,Test API invalid token (Variant 76),Passed,328,Low,DevTeam-A
+VIGILAI-TC-0677,Unit Tests - API,Verify YOLOv8 JSON output (Variant 77),Failed,39,Low,DevTeam-A
+VIGILAI-TC-0678,Unit Tests - API,Verify YOLOv8 JSON output (Variant 78),Passed,404,Critical,DevTeam-A
+VIGILAI-TC-0679,Unit Tests - API,Test API invalid token (Variant 79),Passed,384,Critical,DevTeam-A
+VIGILAI-TC-0680,Unit Tests - API,Test API invalid token (Variant 80),Passed,51,Medium,CI/CD-Runner
+VIGILAI-TC-0681,Unit Tests - API,Test POST /api/auth/login (Variant 81),Passed,323,High,DevTeam-A
+VIGILAI-TC-0682,Unit Tests - API,Verify rate limiting (Variant 82),Passed,178,Low,DevTeam-A
+VIGILAI-TC-0683,Unit Tests - API,Test SMTP email dispatcher (Variant 83),Passed,79,Critical,DevTeam-A
+VIGILAI-TC-0684,Unit Tests - API,Verify PG connection pool (Variant 84),Passed,176,Critical,DevTeam-A
+VIGILAI-TC-0685,Unit Tests - API,Test DB schema validation (Variant 85),Passed,450,High,QA-Bot
+VIGILAI-TC-0686,Unit Tests - API,Verify rate limiting (Variant 86),Passed,136,High,DevTeam-A
+VIGILAI-TC-0687,Unit Tests - API,Verify rate limiting (Variant 87),Passed,88,Low,CI/CD-Runner
+VIGILAI-TC-0688,Unit Tests - API,Verify PG connection pool (Variant 88),Failed,150,Medium,CI/CD-Runner
+VIGILAI-TC-0689,Unit Tests - API,Test DB schema validation (Variant 89),Passed,309,High,DevTeam-A
+VIGILAI-TC-0690,Unit Tests - API,Test GET /api/cameras (Variant 90),Skipped,274,Low,CI/CD-Runner
+VIGILAI-TC-0691,Unit Tests - API,Test GET /api/cameras (Variant 91),Failed,306,Critical,QA-Bot
+VIGILAI-TC-0692,Unit Tests - API,Test DB schema validation (Variant 92),Passed,99,Medium,DevTeam-A
+VIGILAI-TC-0693,Unit Tests - API,Verify PG connection pool (Variant 93),Passed,188,Low,DevTeam-A
+VIGILAI-TC-0694,Unit Tests - API,Test DB schema validation (Variant 94),Passed,372,Medium,DevTeam-A
+VIGILAI-TC-0695,Unit Tests - API,Test SMTP email dispatcher (Variant 95),Passed,331,Low,DevTeam-A
+VIGILAI-TC-0696,Unit Tests - API,Test API invalid token (Variant 96),Failed,378,High,CI/CD-Runner
+VIGILAI-TC-0697,Unit Tests - API,Test POST /api/auth/login (Variant 97),Passed,276,High,QA-Bot
+VIGILAI-TC-0698,Unit Tests - API,Test API invalid token (Variant 98),Passed,50,Critical,QA-Bot
+VIGILAI-TC-0699,Unit Tests - API,Test POST /api/auth/login (Variant 99),Passed,139,Medium,CI/CD-Runner
+VIGILAI-TC-0700,Unit Tests - API,Test SMTP email dispatcher (Variant 100),Passed,57,Critical,DevTeam-A
+VIGILAI-TC-0701,Unit Tests - API,Test DB schema validation (Variant 101),Passed,305,Low,CI/CD-Runner
+VIGILAI-TC-0702,Unit Tests - API,Test POST /api/auth/register (Variant 102),Skipped,448,Low,CI/CD-Runner
+VIGILAI-TC-0703,Unit Tests - API,Test SMTP email dispatcher (Variant 103),Passed,302,Critical,CI/CD-Runner
+VIGILAI-TC-0704,Unit Tests - API,Test DB schema validation (Variant 104),Passed,349,Critical,QA-Bot
+VIGILAI-TC-0705,Unit Tests - API,Verify YOLOv8 JSON output (Variant 105),Passed,353,Low,CI/CD-Runner
+VIGILAI-TC-0706,Unit Tests - API,Test DB schema validation (Variant 106),Passed,49,Critical,DevTeam-A
+VIGILAI-TC-0707,Unit Tests - API,Verify YOLOv8 JSON output (Variant 107),Skipped,183,Low,CI/CD-Runner
+VIGILAI-TC-0708,Unit Tests - API,Verify YOLOv8 JSON output (Variant 108),Passed,296,High,DevTeam-A
+VIGILAI-TC-0709,Unit Tests - API,Test SMTP email dispatcher (Variant 109),Passed,22,Critical,CI/CD-Runner
+VIGILAI-TC-0710,Unit Tests - API,Verify PG connection pool (Variant 110),Passed,260,High,QA-Bot
+VIGILAI-TC-0711,Unit Tests - API,Test POST /api/auth/register (Variant 111),Passed,259,Critical,QA-Bot
+VIGILAI-TC-0712,Unit Tests - API,Test API invalid token (Variant 112),Passed,388,High,CI/CD-Runner
+VIGILAI-TC-0713,Unit Tests - API,Test POST /api/auth/login (Variant 113),Passed,142,Medium,DevTeam-A
+VIGILAI-TC-0714,Unit Tests - API,Test GET /api/cameras (Variant 114),Passed,103,Medium,QA-Bot
+VIGILAI-TC-0715,Unit Tests - API,Test POST /api/auth/register (Variant 115),Passed,34,High,DevTeam-A
+VIGILAI-TC-0716,Unit Tests - API,Test API invalid token (Variant 116),Passed,334,Critical,QA-Bot
+VIGILAI-TC-0717,Unit Tests - API,Test API invalid token (Variant 117),Passed,263,Critical,DevTeam-A
+VIGILAI-TC-0718,Unit Tests - API,Test SMTP email dispatcher (Variant 118),Passed,212,Medium,CI/CD-Runner
+VIGILAI-TC-0719,Unit Tests - API,Test SMTP email dispatcher (Variant 119),Passed,398,Low,CI/CD-Runner
+VIGILAI-TC-0720,Unit Tests - API,Verify PG connection pool (Variant 120),Skipped,135,Critical,CI/CD-Runner
+VIGILAI-TC-0721,Unit Tests - API,Test DB schema validation (Variant 121),Passed,143,Low,QA-Bot
+VIGILAI-TC-0722,Unit Tests - API,Test POST /api/auth/register (Variant 122),Passed,300,Critical,QA-Bot
+VIGILAI-TC-0723,Unit Tests - API,Verify PG connection pool (Variant 123),Passed,106,Low,QA-Bot
+VIGILAI-TC-0724,Unit Tests - API,Test DB schema validation (Variant 124),Passed,298,Critical,CI/CD-Runner
+VIGILAI-TC-0725,Unit Tests - API,Test API invalid token (Variant 125),Failed,180,Low,CI/CD-Runner
+VIGILAI-TC-0726,Unit Tests - API,Test GET /api/cameras (Variant 126),Passed,34,Critical,DevTeam-A
+VIGILAI-TC-0727,Unit Tests - API,Test DB schema validation (Variant 127),Passed,397,Medium,CI/CD-Runner
+VIGILAI-TC-0728,Unit Tests - API,Verify rate limiting (Variant 128),Passed,130,Critical,CI/CD-Runner
+VIGILAI-TC-0729,Unit Tests - API,Test POST /api/auth/login (Variant 129),Passed,131,Critical,CI/CD-Runner
+VIGILAI-TC-0730,Unit Tests - API,Verify PG connection pool (Variant 130),Passed,179,Medium,CI/CD-Runner
+VIGILAI-TC-0731,Unit Tests - API,Test API invalid token (Variant 131),Passed,320,Critical,QA-Bot
+VIGILAI-TC-0732,Unit Tests - API,Test DB schema validation (Variant 132),Passed,42,High,DevTeam-A
+VIGILAI-TC-0733,Unit Tests - API,Test POST /api/auth/register (Variant 133),Passed,209,High,DevTeam-A
+VIGILAI-TC-0734,Unit Tests - API,Test GET /api/cameras (Variant 134),Passed,309,Medium,DevTeam-A
+VIGILAI-TC-0735,Unit Tests - API,Verify rate limiting (Variant 135),Passed,145,Critical,CI/CD-Runner
+VIGILAI-TC-0736,Unit Tests - API,Test POST /api/auth/register (Variant 136),Passed,329,Critical,CI/CD-Runner
+VIGILAI-TC-0737,Unit Tests - API,Verify YOLOv8 JSON output (Variant 137),Passed,244,Low,CI/CD-Runner
+VIGILAI-TC-0738,Unit Tests - API,Test API invalid token (Variant 138),Passed,124,High,QA-Bot
+VIGILAI-TC-0739,Unit Tests - API,Verify rate limiting (Variant 139),Passed,244,Low,CI/CD-Runner
+VIGILAI-TC-0740,Unit Tests - API,Test GET /api/cameras (Variant 140),Passed,93,High,DevTeam-A
+VIGILAI-TC-0741,Unit Tests - API,Verify PG connection pool (Variant 141),Failed,265,High,CI/CD-Runner
+VIGILAI-TC-0742,Unit Tests - API,Test POST /api/auth/login (Variant 142),Passed,72,Medium,DevTeam-A
+VIGILAI-TC-0743,Unit Tests - API,Verify PG connection pool (Variant 143),Passed,168,High,DevTeam-A
+VIGILAI-TC-0744,Unit Tests - API,Test API invalid token (Variant 144),Passed,240,High,QA-Bot
+VIGILAI-TC-0745,Unit Tests - API,Test SMTP email dispatcher (Variant 145),Skipped,353,Low,CI/CD-Runner
+VIGILAI-TC-0746,Unit Tests - API,Test SMTP email dispatcher (Variant 146),Passed,332,Low,CI/CD-Runner
+VIGILAI-TC-0747,Unit Tests - API,Test API invalid token (Variant 147),Passed,130,Low,QA-Bot
+VIGILAI-TC-0748,Unit Tests - API,Test POST /api/auth/register (Variant 148),Passed,398,Medium,DevTeam-A
+VIGILAI-TC-0749,Unit Tests - API,Test API invalid token (Variant 149),Passed,330,Low,CI/CD-Runner
+VIGILAI-TC-0750,Unit Tests - API,Verify rate limiting (Variant 150),Passed,250,High,DevTeam-A
+VIGILAI-TC-0751,Unit Tests - API,Verify PG connection pool (Variant 151),Passed,223,Medium,QA-Bot
+VIGILAI-TC-0752,Unit Tests - API,Test API invalid token (Variant 152),Passed,331,Critical,CI/CD-Runner
+VIGILAI-TC-0753,Unit Tests - API,Test GET /api/cameras (Variant 153),Passed,318,Low,CI/CD-Runner
+VIGILAI-TC-0754,Unit Tests - API,Verify rate limiting (Variant 154),Passed,266,Critical,DevTeam-A
+VIGILAI-TC-0755,Unit Tests - API,Test DB schema validation (Variant 155),Passed,406,Medium,QA-Bot
+VIGILAI-TC-0756,Unit Tests - API,Verify rate limiting (Variant 156),Passed,266,High,QA-Bot
+VIGILAI-TC-0757,Unit Tests - API,Test SMTP email dispatcher (Variant 157),Passed,398,High,DevTeam-A
+VIGILAI-TC-0758,Unit Tests - API,Verify rate limiting (Variant 158),Skipped,420,Medium,DevTeam-A
+VIGILAI-TC-0759,Unit Tests - API,Test GET /api/cameras (Variant 159),Passed,74,Low,CI/CD-Runner
+VIGILAI-TC-0760,Unit Tests - API,Verify YOLOv8 JSON output (Variant 160),Passed,227,Critical,CI/CD-Runner
+VIGILAI-TC-0761,Unit Tests - API,Test SMTP email dispatcher (Variant 161),Passed,355,High,CI/CD-Runner
+VIGILAI-TC-0762,Unit Tests - API,Verify YOLOv8 JSON output (Variant 162),Passed,222,High,CI/CD-Runner
+VIGILAI-TC-0763,Unit Tests - API,Test GET /api/cameras (Variant 163),Passed,209,High,DevTeam-A
+VIGILAI-TC-0764,Unit Tests - API,Verify YOLOv8 JSON output (Variant 164),Skipped,95,Medium,CI/CD-Runner
+VIGILAI-TC-0765,Unit Tests - API,Test GET /api/cameras (Variant 165),Passed,358,High,DevTeam-A
+VIGILAI-TC-0766,Unit Tests - API,Verify rate limiting (Variant 166),Passed,423,Low,CI/CD-Runner
+VIGILAI-TC-0767,Unit Tests - API,Test GET /api/cameras (Variant 167),Passed,178,Low,QA-Bot
+VIGILAI-TC-0768,Unit Tests - API,Test POST /api/auth/register (Variant 168),Passed,382,Low,CI/CD-Runner
+VIGILAI-TC-0769,Unit Tests - API,Verify YOLOv8 JSON output (Variant 169),Failed,92,High,CI/CD-Runner
+VIGILAI-TC-0770,Unit Tests - API,Test POST /api/auth/register (Variant 170),Passed,368,Critical,DevTeam-A
+VIGILAI-TC-0771,Unit Tests - API,Test POST /api/auth/login (Variant 171),Passed,396,High,DevTeam-A
+VIGILAI-TC-0772,Unit Tests - API,Test DB schema validation (Variant 172),Passed,100,Low,QA-Bot
+VIGILAI-TC-0773,Unit Tests - API,Verify YOLOv8 JSON output (Variant 173),Passed,71,High,DevTeam-A
+VIGILAI-TC-0774,Unit Tests - API,Verify rate limiting (Variant 174),Passed,428,Critical,CI/CD-Runner
+VIGILAI-TC-0775,Unit Tests - API,Test SMTP email dispatcher (Variant 175),Passed,170,Critical,QA-Bot
+VIGILAI-TC-0776,Unit Tests - API,Verify rate limiting (Variant 176),Passed,306,Critical,CI/CD-Runner
+VIGILAI-TC-0777,Unit Tests - API,Verify YOLOv8 JSON output (Variant 177),Passed,276,Medium,QA-Bot
+VIGILAI-TC-0778,Unit Tests - API,Test POST /api/auth/register (Variant 178),Passed,225,Medium,CI/CD-Runner
+VIGILAI-TC-0779,Unit Tests - API,Test POST /api/auth/register (Variant 179),Passed,307,Low,CI/CD-Runner
+VIGILAI-TC-0780,Unit Tests - API,Test API invalid token (Variant 180),Skipped,319,Critical,DevTeam-A
+VIGILAI-TC-0781,Unit Tests - API,Test API invalid token (Variant 181),Passed,379,Medium,DevTeam-A
+VIGILAI-TC-0782,Unit Tests - API,Test SMTP email dispatcher (Variant 182),Passed,449,Critical,QA-Bot
+VIGILAI-TC-0783,Unit Tests - API,Verify YOLOv8 JSON output (Variant 183),Passed,185,Low,DevTeam-A
+VIGILAI-TC-0784,Unit Tests - API,Verify YOLOv8 JSON output (Variant 184),Passed,188,High,QA-Bot
+VIGILAI-TC-0785,Unit Tests - API,Test GET /api/cameras (Variant 185),Passed,443,High,CI/CD-Runner
+VIGILAI-TC-0786,Unit Tests - API,Test API invalid token (Variant 186),Passed,347,Critical,DevTeam-A
+VIGILAI-TC-0787,Unit Tests - API,Test POST /api/auth/register (Variant 187),Passed,450,Critical,QA-Bot
+VIGILAI-TC-0788,Unit Tests - API,Verify YOLOv8 JSON output (Variant 188),Passed,257,Low,DevTeam-A
+VIGILAI-TC-0789,Unit Tests - API,Test POST /api/auth/register (Variant 189),Passed,68,High,DevTeam-A
+VIGILAI-TC-0790,Unit Tests - API,Test GET /api/cameras (Variant 190),Passed,44,Critical,QA-Bot
+VIGILAI-TC-0791,Unit Tests - API,Test DB schema validation (Variant 191),Passed,134,Critical,DevTeam-A
+VIGILAI-TC-0792,Unit Tests - API,Test DB schema validation (Variant 192),Passed,388,Low,QA-Bot
+VIGILAI-TC-0793,Unit Tests - API,Test SMTP email dispatcher (Variant 193),Passed,188,Critical,CI/CD-Runner
+VIGILAI-TC-0794,Unit Tests - API,Verify YOLOv8 JSON output (Variant 194),Passed,88,Low,QA-Bot
+VIGILAI-TC-0795,Unit Tests - API,Verify YOLOv8 JSON output (Variant 195),Failed,169,Medium,CI/CD-Runner
+VIGILAI-TC-0796,Unit Tests - API,Test DB schema validation (Variant 196),Passed,36,High,DevTeam-A
+VIGILAI-TC-0797,Unit Tests - API,Test POST /api/auth/login (Variant 197),Passed,441,High,QA-Bot
+VIGILAI-TC-0798,Unit Tests - API,Test POST /api/auth/register (Variant 198),Passed,65,Critical,CI/CD-Runner
+VIGILAI-TC-0799,Unit Tests - API,Test GET /api/cameras (Variant 199),Passed,103,High,QA-Bot
+VIGILAI-TC-0800,Unit Tests - API,Verify YOLOv8 JSON output (Variant 200),Passed,309,High,DevTeam-A
+VIGILAI-TC-0801,Unit Tests - API,Test DB schema validation (Variant 201),Passed,209,Medium,DevTeam-A
+VIGILAI-TC-0802,Unit Tests - API,Test POST /api/auth/login (Variant 202),Passed,19,Medium,DevTeam-A
+VIGILAI-TC-0803,Unit Tests - API,Test POST /api/auth/register (Variant 203),Passed,61,High,QA-Bot
+VIGILAI-TC-0804,Unit Tests - API,Verify PG connection pool (Variant 204),Passed,322,Medium,DevTeam-A
+VIGILAI-TC-0805,Unit Tests - API,Test SMTP email dispatcher (Variant 205),Passed,349,Critical,QA-Bot
+VIGILAI-TC-0806,Unit Tests - API,Verify PG connection pool (Variant 206),Passed,146,High,DevTeam-A
+VIGILAI-TC-0807,Unit Tests - API,Verify PG connection pool (Variant 207),Skipped,222,Medium,QA-Bot
+VIGILAI-TC-0808,Unit Tests - API,Test GET /api/cameras (Variant 208),Passed,350,High,DevTeam-A
+VIGILAI-TC-0809,Unit Tests - API,Test GET /api/cameras (Variant 209),Passed,198,High,CI/CD-Runner
+VIGILAI-TC-0810,Unit Tests - API,Test API invalid token (Variant 210),Passed,77,Low,CI/CD-Runner
+VIGILAI-TC-0811,Unit Tests - API,Verify rate limiting (Variant 211),Passed,411,Medium,DevTeam-A
+VIGILAI-TC-0812,Unit Tests - API,Test DB schema validation (Variant 212),Skipped,426,Critical,QA-Bot
+VIGILAI-TC-0813,Unit Tests - API,Test API invalid token (Variant 213),Passed,407,High,CI/CD-Runner
+VIGILAI-TC-0814,Unit Tests - API,Test DB schema validation (Variant 214),Passed,362,Medium,QA-Bot
+VIGILAI-TC-0815,Unit Tests - API,Test POST /api/auth/login (Variant 215),Passed,89,High,QA-Bot
+VIGILAI-TC-0816,Unit Tests - API,Test API invalid token (Variant 216),Passed,410,Medium,QA-Bot
+VIGILAI-TC-0817,Unit Tests - API,Verify YOLOv8 JSON output (Variant 217),Passed,450,High,CI/CD-Runner
+VIGILAI-TC-0818,Unit Tests - API,Test DB schema validation (Variant 218),Passed,260,High,DevTeam-A
+VIGILAI-TC-0819,Unit Tests - API,Test SMTP email dispatcher (Variant 219),Passed,106,Low,CI/CD-Runner
+VIGILAI-TC-0820,Unit Tests - API,Verify rate limiting (Variant 220),Passed,43,Critical,QA-Bot
+VIGILAI-TC-0821,Unit Tests - API,Verify PG connection pool (Variant 221),Passed,46,Medium,DevTeam-A
+VIGILAI-TC-0822,Unit Tests - API,Verify YOLOv8 JSON output (Variant 222),Passed,126,Low,DevTeam-A
+VIGILAI-TC-0823,Unit Tests - API,Test POST /api/auth/login (Variant 223),Passed,248,Low,CI/CD-Runner
+VIGILAI-TC-0824,Unit Tests - API,Test GET /api/cameras (Variant 224),Passed,399,Low,DevTeam-A
+VIGILAI-TC-0825,Unit Tests - API,Verify rate limiting (Variant 225),Passed,152,Critical,DevTeam-A
+VIGILAI-TC-0826,Unit Tests - API,Verify YOLOv8 JSON output (Variant 226),Skipped,449,Critical,DevTeam-A
+VIGILAI-TC-0827,Unit Tests - API,Verify rate limiting (Variant 227),Passed,312,High,DevTeam-A
+VIGILAI-TC-0828,Unit Tests - API,Verify PG connection pool (Variant 228),Passed,213,Medium,DevTeam-A
+VIGILAI-TC-0829,Unit Tests - API,Test DB schema validation (Variant 229),Skipped,68,High,CI/CD-Runner
+VIGILAI-TC-0830,Unit Tests - API,Verify PG connection pool (Variant 230),Passed,277,Critical,DevTeam-A
+VIGILAI-TC-0831,Unit Tests - API,Test DB schema validation (Variant 231),Skipped,379,High,QA-Bot
+VIGILAI-TC-0832,Unit Tests - API,Test DB schema validation (Variant 232),Passed,247,High,QA-Bot
+VIGILAI-TC-0833,Unit Tests - API,Test POST /api/auth/login (Variant 233),Failed,429,Critical,CI/CD-Runner
+VIGILAI-TC-0834,Unit Tests - API,Test GET /api/cameras (Variant 234),Passed,260,Critical,DevTeam-A
+VIGILAI-TC-0835,Unit Tests - API,Verify YOLOv8 JSON output (Variant 235),Passed,278,High,CI/CD-Runner
+VIGILAI-TC-0836,Unit Tests - API,Verify PG connection pool (Variant 236),Passed,146,High,CI/CD-Runner
+VIGILAI-TC-0837,Unit Tests - API,Test DB schema validation (Variant 237),Passed,48,Medium,QA-Bot
+VIGILAI-TC-0838,Unit Tests - API,Test DB schema validation (Variant 238),Passed,223,High,CI/CD-Runner
+VIGILAI-TC-0839,Unit Tests - API,Test POST /api/auth/login (Variant 239),Passed,153,Medium,CI/CD-Runner
+VIGILAI-TC-0840,Unit Tests - API,Test POST /api/auth/register (Variant 240),Passed,16,High,CI/CD-Runner
+VIGILAI-TC-0841,Unit Tests - API,Verify YOLOv8 JSON output (Variant 241),Passed,123,Low,DevTeam-A
+VIGILAI-TC-0842,Unit Tests - API,Test GET /api/cameras (Variant 242),Skipped,376,Low,CI/CD-Runner
+VIGILAI-TC-0843,Unit Tests - API,Test SMTP email dispatcher (Variant 243),Passed,163,Medium,CI/CD-Runner
+VIGILAI-TC-0844,Unit Tests - API,Test SMTP email dispatcher (Variant 244),Passed,225,Critical,QA-Bot
+VIGILAI-TC-0845,Unit Tests - API,Verify YOLOv8 JSON output (Variant 245),Passed,96,Low,QA-Bot
+VIGILAI-TC-0846,Unit Tests - API,Verify rate limiting (Variant 246),Passed,337,High,QA-Bot
+VIGILAI-TC-0847,Unit Tests - API,Verify YOLOv8 JSON output (Variant 247),Passed,205,High,QA-Bot
+VIGILAI-TC-0848,Unit Tests - API,Verify YOLOv8 JSON output (Variant 248),Passed,338,Critical,DevTeam-A
+VIGILAI-TC-0849,Unit Tests - API,Test DB schema validation (Variant 249),Passed,47,Medium,CI/CD-Runner
+VIGILAI-TC-0850,Unit Tests - API,Test GET /api/cameras (Variant 250),Passed,17,Low,DevTeam-A
+VIGILAI-TC-0851,Unit Tests - API,Test POST /api/auth/register (Variant 251),Passed,294,Critical,DevTeam-A
+VIGILAI-TC-0852,Unit Tests - API,Test POST /api/auth/login (Variant 252),Passed,34,Medium,DevTeam-A
+VIGILAI-TC-0853,Unit Tests - API,Test GET /api/cameras (Variant 253),Passed,392,Critical,CI/CD-Runner
+VIGILAI-TC-0854,Unit Tests - API,Test POST /api/auth/register (Variant 254),Passed,411,High,QA-Bot
+VIGILAI-TC-0855,Unit Tests - API,Verify YOLOv8 JSON output (Variant 255),Passed,247,Medium,DevTeam-A
+VIGILAI-TC-0856,Unit Tests - API,Verify rate limiting (Variant 256),Passed,118,Low,QA-Bot
+VIGILAI-TC-0857,Unit Tests - API,Test DB schema validation (Variant 257),Passed,84,High,QA-Bot
+VIGILAI-TC-0858,Unit Tests - API,Test GET /api/cameras (Variant 258),Passed,222,Critical,CI/CD-Runner
+VIGILAI-TC-0859,Unit Tests - API,Test POST /api/auth/login (Variant 259),Passed,138,Critical,DevTeam-A
+VIGILAI-TC-0860,Unit Tests - API,Test POST /api/auth/register (Variant 260),Passed,99,High,CI/CD-Runner
+VIGILAI-TC-0861,Unit Tests - API,Verify PG connection pool (Variant 261),Passed,48,Medium,QA-Bot
+VIGILAI-TC-0862,Unit Tests - API,Test DB schema validation (Variant 262),Passed,217,Low,DevTeam-A
+VIGILAI-TC-0863,Unit Tests - API,Verify YOLOv8 JSON output (Variant 263),Passed,41,High,QA-Bot
+VIGILAI-TC-0864,Unit Tests - API,Test GET /api/cameras (Variant 264),Passed,256,High,DevTeam-A
+VIGILAI-TC-0865,Unit Tests - API,Test SMTP email dispatcher (Variant 265),Failed,343,High,DevTeam-A
+VIGILAI-TC-0866,Unit Tests - API,Test DB schema validation (Variant 266),Passed,201,High,QA-Bot
+VIGILAI-TC-0867,Unit Tests - API,Test API invalid token (Variant 267),Passed,93,Medium,QA-Bot
+VIGILAI-TC-0868,Unit Tests - API,Test GET /api/cameras (Variant 268),Passed,257,Critical,DevTeam-A
+VIGILAI-TC-0869,Unit Tests - API,Verify YOLOv8 JSON output (Variant 269),Failed,121,Medium,CI/CD-Runner
+VIGILAI-TC-0870,Unit Tests - API,Verify YOLOv8 JSON output (Variant 270),Passed,210,Low,QA-Bot
+VIGILAI-TC-0871,Unit Tests - API,Test DB schema validation (Variant 271),Passed,122,High,QA-Bot
+VIGILAI-TC-0872,Unit Tests - API,Verify rate limiting (Variant 272),Passed,270,Critical,CI/CD-Runner
+VIGILAI-TC-0873,Unit Tests - API,Test POST /api/auth/login (Variant 273),Passed,431,Low,QA-Bot
+VIGILAI-TC-0874,Unit Tests - API,Test GET /api/cameras (Variant 274),Passed,240,High,QA-Bot
+VIGILAI-TC-0875,Unit Tests - API,Test DB schema validation (Variant 275),Passed,98,High,DevTeam-A
+VIGILAI-TC-0876,Unit Tests - API,Test POST /api/auth/register (Variant 276),Skipped,182,High,DevTeam-A
+VIGILAI-TC-0877,Unit Tests - API,Test POST /api/auth/register (Variant 277),Passed,325,High,DevTeam-A
+VIGILAI-TC-0878,Unit Tests - API,Verify PG connection pool (Variant 278),Passed,39,Low,QA-Bot
+VIGILAI-TC-0879,Unit Tests - API,Test API invalid token (Variant 279),Passed,218,Low,DevTeam-A
+VIGILAI-TC-0880,Unit Tests - API,Verify PG connection pool (Variant 280),Passed,73,Medium,CI/CD-Runner
+VIGILAI-TC-0881,Unit Tests - API,Test POST /api/auth/login (Variant 281),Passed,150,Medium,CI/CD-Runner
+VIGILAI-TC-0882,Unit Tests - API,Verify YOLOv8 JSON output (Variant 282),Passed,163,Medium,QA-Bot
+VIGILAI-TC-0883,Unit Tests - API,Test API invalid token (Variant 283),Passed,399,Low,QA-Bot
+VIGILAI-TC-0884,Unit Tests - API,Test POST /api/auth/login (Variant 284),Passed,443,High,DevTeam-A
+VIGILAI-TC-0885,Unit Tests - API,Verify PG connection pool (Variant 285),Passed,193,Low,CI/CD-Runner
+VIGILAI-TC-0886,Unit Tests - API,Verify rate limiting (Variant 286),Passed,202,High,QA-Bot
+VIGILAI-TC-0887,Unit Tests - API,Test GET /api/cameras (Variant 287),Passed,15,Low,DevTeam-A
+VIGILAI-TC-0888,Unit Tests - API,Verify YOLOv8 JSON output (Variant 288),Passed,250,High,CI/CD-Runner
+VIGILAI-TC-0889,Unit Tests - API,Verify PG connection pool (Variant 289),Passed,430,High,QA-Bot
+VIGILAI-TC-0890,Unit Tests - API,Test POST /api/auth/login (Variant 290),Passed,57,Medium,DevTeam-A
+VIGILAI-TC-0891,Unit Tests - API,Test DB schema validation (Variant 291),Passed,274,Medium,DevTeam-A
+VIGILAI-TC-0892,Unit Tests - API,Test DB schema validation (Variant 292),Passed,366,Medium,DevTeam-A
+VIGILAI-TC-0893,Unit Tests - API,Test API invalid token (Variant 293),Passed,326,High,QA-Bot
+VIGILAI-TC-0894,Unit Tests - API,Test DB schema validation (Variant 294),Passed,231,High,QA-Bot
+VIGILAI-TC-0895,Unit Tests - API,Verify PG connection pool (Variant 295),Passed,34,Medium,DevTeam-A
+VIGILAI-TC-0896,Unit Tests - API,Test DB schema validation (Variant 296),Passed,428,Low,QA-Bot
+VIGILAI-TC-0897,Unit Tests - API,Test SMTP email dispatcher (Variant 297),Failed,264,Medium,QA-Bot
+VIGILAI-TC-0898,Unit Tests - API,Verify PG connection pool (Variant 298),Failed,323,Low,DevTeam-A
+VIGILAI-TC-0899,Unit Tests - API,Test GET /api/cameras (Variant 299),Skipped,54,Critical,DevTeam-A
+VIGILAI-TC-0900,Unit Tests - API,Verify YOLOv8 JSON output (Variant 300),Passed,221,Medium,CI/CD-Runner
+VIGILAI-TC-0901,Validation Tests,Validate FaceNet unknown user (Variant 1),Passed,207,Critical,DevTeam-A
+VIGILAI-TC-0902,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 2),Passed,376,Low,DevTeam-A
+VIGILAI-TC-0903,Validation Tests,Validate MediaPipe 33 landmarks (Variant 3),Passed,385,Medium,QA-Bot
+VIGILAI-TC-0904,Validation Tests,Validate JWT payload (Variant 4),Passed,284,Low,QA-Bot
+VIGILAI-TC-0905,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 5),Passed,201,Low,DevTeam-A
+VIGILAI-TC-0906,Validation Tests,Validate JWT payload (Variant 6),Passed,99,Medium,QA-Bot
+VIGILAI-TC-0907,Validation Tests,Validate MediaPipe 33 landmarks (Variant 7),Skipped,86,High,CI/CD-Runner
+VIGILAI-TC-0908,Validation Tests,Validate MediaPipe 33 landmarks (Variant 8),Passed,350,High,DevTeam-A
+VIGILAI-TC-0909,Validation Tests,Validate FaceNet known user (Variant 9),Passed,336,Medium,DevTeam-A
+VIGILAI-TC-0910,Validation Tests,Validate FaceNet unknown user (Variant 10),Passed,368,Low,CI/CD-Runner
+VIGILAI-TC-0911,Validation Tests,Validate YOLOv8 false positives (Variant 11),Passed,374,Critical,QA-Bot
+VIGILAI-TC-0912,Validation Tests,Validate MediaPipe 33 landmarks (Variant 12),Passed,155,Medium,CI/CD-Runner
+VIGILAI-TC-0913,Validation Tests,Validate MediaPipe 33 landmarks (Variant 13),Skipped,90,Low,QA-Bot
+VIGILAI-TC-0914,Validation Tests,Validate email regex (Variant 14),Failed,327,Critical,CI/CD-Runner
+VIGILAI-TC-0915,Validation Tests,Validate YOLOv8 false positives (Variant 15),Passed,430,Critical,CI/CD-Runner
+VIGILAI-TC-0916,Validation Tests,Validate FaceNet known user (Variant 16),Passed,57,High,QA-Bot
+VIGILAI-TC-0917,Validation Tests,Validate YOLOv8 false positives (Variant 17),Passed,126,Medium,CI/CD-Runner
+VIGILAI-TC-0918,Validation Tests,Validate phone number regex (Variant 18),Passed,314,Low,DevTeam-A
+VIGILAI-TC-0919,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 19),Passed,381,Critical,CI/CD-Runner
+VIGILAI-TC-0920,Validation Tests,Validate JWT payload (Variant 20),Passed,105,Low,CI/CD-Runner
+VIGILAI-TC-0921,Validation Tests,Validate MediaPipe 33 landmarks (Variant 21),Passed,88,Critical,QA-Bot
+VIGILAI-TC-0922,Validation Tests,Validate phone number regex (Variant 22),Passed,289,Low,CI/CD-Runner
+VIGILAI-TC-0923,Validation Tests,Validate email regex (Variant 23),Passed,419,Low,QA-Bot
+VIGILAI-TC-0924,Validation Tests,Validate FaceNet known user (Variant 24),Passed,369,Critical,QA-Bot
+VIGILAI-TC-0925,Validation Tests,Validate FaceNet known user (Variant 25),Passed,352,Critical,DevTeam-A
+VIGILAI-TC-0926,Validation Tests,Validate YOLOv8 false positives (Variant 26),Passed,242,Critical,CI/CD-Runner
+VIGILAI-TC-0927,Validation Tests,Validate FaceNet known user (Variant 27),Passed,442,Low,DevTeam-A
+VIGILAI-TC-0928,Validation Tests,Validate MediaPipe 33 landmarks (Variant 28),Passed,405,Critical,DevTeam-A
+VIGILAI-TC-0929,Validation Tests,Validate email regex (Variant 29),Passed,36,Medium,DevTeam-A
+VIGILAI-TC-0930,Validation Tests,Validate phone number regex (Variant 30),Passed,293,Medium,QA-Bot
+VIGILAI-TC-0931,Validation Tests,Validate phone number regex (Variant 31),Passed,50,High,DevTeam-A
+VIGILAI-TC-0932,Validation Tests,Validate FaceNet known user (Variant 32),Passed,393,High,CI/CD-Runner
+VIGILAI-TC-0933,Validation Tests,Validate MediaPipe 33 landmarks (Variant 33),Passed,321,Medium,DevTeam-A
+VIGILAI-TC-0934,Validation Tests,Validate FaceNet unknown user (Variant 34),Failed,350,Low,CI/CD-Runner
+VIGILAI-TC-0935,Validation Tests,Validate MediaPipe 33 landmarks (Variant 35),Passed,420,Medium,DevTeam-A
+VIGILAI-TC-0936,Validation Tests,Validate FaceNet unknown user (Variant 36),Passed,220,Medium,DevTeam-A
+VIGILAI-TC-0937,Validation Tests,Validate FaceNet unknown user (Variant 37),Passed,350,Low,QA-Bot
+VIGILAI-TC-0938,Validation Tests,Validate FaceNet unknown user (Variant 38),Skipped,345,High,CI/CD-Runner
+VIGILAI-TC-0939,Validation Tests,Validate MediaPipe 33 landmarks (Variant 39),Passed,222,Critical,QA-Bot
+VIGILAI-TC-0940,Validation Tests,Validate FaceNet known user (Variant 40),Passed,261,Low,DevTeam-A
+VIGILAI-TC-0941,Validation Tests,Validate MediaPipe 33 landmarks (Variant 41),Passed,417,Low,DevTeam-A
+VIGILAI-TC-0942,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 42),Passed,117,High,CI/CD-Runner
+VIGILAI-TC-0943,Validation Tests,Validate YOLOv8 false positives (Variant 43),Passed,79,Low,DevTeam-A
+VIGILAI-TC-0944,Validation Tests,Validate MediaPipe 33 landmarks (Variant 44),Passed,81,High,DevTeam-A
+VIGILAI-TC-0945,Validation Tests,Validate FaceNet known user (Variant 45),Passed,357,Medium,CI/CD-Runner
+VIGILAI-TC-0946,Validation Tests,Validate email regex (Variant 46),Passed,130,Medium,QA-Bot
+VIGILAI-TC-0947,Validation Tests,Validate phone number regex (Variant 47),Passed,250,Critical,QA-Bot
+VIGILAI-TC-0948,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 48),Passed,20,Low,DevTeam-A
+VIGILAI-TC-0949,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 49),Passed,427,High,QA-Bot
+VIGILAI-TC-0950,Validation Tests,Validate JWT payload (Variant 50),Passed,202,Low,CI/CD-Runner
+VIGILAI-TC-0951,Validation Tests,Validate YOLOv8 false positives (Variant 51),Passed,18,Critical,QA-Bot
+VIGILAI-TC-0952,Validation Tests,Validate YOLOv8 false positives (Variant 52),Passed,345,High,CI/CD-Runner
+VIGILAI-TC-0953,Validation Tests,Validate MediaPipe 33 landmarks (Variant 53),Passed,139,Critical,CI/CD-Runner
+VIGILAI-TC-0954,Validation Tests,Validate phone number regex (Variant 54),Passed,23,Low,CI/CD-Runner
+VIGILAI-TC-0955,Validation Tests,Validate email regex (Variant 55),Passed,353,High,DevTeam-A
+VIGILAI-TC-0956,Validation Tests,Validate phone number regex (Variant 56),Passed,119,Critical,CI/CD-Runner
+VIGILAI-TC-0957,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 57),Failed,360,Medium,DevTeam-A
+VIGILAI-TC-0958,Validation Tests,Validate phone number regex (Variant 58),Passed,376,Medium,QA-Bot
+VIGILAI-TC-0959,Validation Tests,Validate FaceNet known user (Variant 59),Failed,273,Critical,QA-Bot
+VIGILAI-TC-0960,Validation Tests,Validate JWT payload (Variant 60),Skipped,114,Medium,QA-Bot
+VIGILAI-TC-0961,Validation Tests,Validate FaceNet unknown user (Variant 61),Passed,291,Low,DevTeam-A
+VIGILAI-TC-0962,Validation Tests,Validate FaceNet unknown user (Variant 62),Failed,46,Low,DevTeam-A
+VIGILAI-TC-0963,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 63),Passed,248,Low,DevTeam-A
+VIGILAI-TC-0964,Validation Tests,Validate email regex (Variant 64),Passed,78,Medium,QA-Bot
+VIGILAI-TC-0965,Validation Tests,Validate FaceNet known user (Variant 65),Skipped,314,Critical,CI/CD-Runner
+VIGILAI-TC-0966,Validation Tests,Validate email regex (Variant 66),Passed,59,Medium,CI/CD-Runner
+VIGILAI-TC-0967,Validation Tests,Validate YOLOv8 false positives (Variant 67),Passed,221,Medium,DevTeam-A
+VIGILAI-TC-0968,Validation Tests,Validate YOLOv8 false positives (Variant 68),Passed,440,Low,CI/CD-Runner
+VIGILAI-TC-0969,Validation Tests,Validate phone number regex (Variant 69),Passed,238,Medium,DevTeam-A
+VIGILAI-TC-0970,Validation Tests,Validate email regex (Variant 70),Passed,303,Low,QA-Bot
+VIGILAI-TC-0971,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 71),Passed,168,Medium,DevTeam-A
+VIGILAI-TC-0972,Validation Tests,Validate FaceNet known user (Variant 72),Passed,95,High,QA-Bot
+VIGILAI-TC-0973,Validation Tests,Validate phone number regex (Variant 73),Passed,142,Low,DevTeam-A
+VIGILAI-TC-0974,Validation Tests,Validate FaceNet known user (Variant 74),Passed,291,Medium,DevTeam-A
+VIGILAI-TC-0975,Validation Tests,Validate JWT payload (Variant 75),Passed,315,High,QA-Bot
+VIGILAI-TC-0976,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 76),Passed,172,Medium,QA-Bot
+VIGILAI-TC-0977,Validation Tests,Validate email regex (Variant 77),Passed,424,High,CI/CD-Runner
+VIGILAI-TC-0978,Validation Tests,Validate email regex (Variant 78),Passed,78,Critical,DevTeam-A
+VIGILAI-TC-0979,Validation Tests,Validate FaceNet known user (Variant 79),Passed,196,Critical,QA-Bot
+VIGILAI-TC-0980,Validation Tests,Validate YOLOv8 false positives (Variant 80),Passed,66,Critical,QA-Bot
+VIGILAI-TC-0981,Validation Tests,Validate MediaPipe 33 landmarks (Variant 81),Passed,326,Low,QA-Bot
+VIGILAI-TC-0982,Validation Tests,Validate YOLOv8 false positives (Variant 82),Passed,239,Medium,DevTeam-A
+VIGILAI-TC-0983,Validation Tests,Validate JWT payload (Variant 83),Passed,164,Low,QA-Bot
+VIGILAI-TC-0984,Validation Tests,Validate YOLOv8 false positives (Variant 84),Passed,117,Low,QA-Bot
+VIGILAI-TC-0985,Validation Tests,Validate YOLOv8 false positives (Variant 85),Passed,343,Critical,DevTeam-A
+VIGILAI-TC-0986,Validation Tests,Validate email regex (Variant 86),Passed,344,High,CI/CD-Runner
+VIGILAI-TC-0987,Validation Tests,Validate FaceNet known user (Variant 87),Passed,429,Critical,QA-Bot
+VIGILAI-TC-0988,Validation Tests,Validate FaceNet known user (Variant 88),Passed,345,Low,CI/CD-Runner
+VIGILAI-TC-0989,Validation Tests,Validate YOLOv8 false positives (Variant 89),Passed,121,Medium,CI/CD-Runner
+VIGILAI-TC-0990,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 90),Passed,425,Medium,DevTeam-A
+VIGILAI-TC-0991,Validation Tests,Validate JWT payload (Variant 91),Failed,176,Medium,QA-Bot
+VIGILAI-TC-0992,Validation Tests,Validate FaceNet known user (Variant 92),Passed,52,Critical,CI/CD-Runner
+VIGILAI-TC-0993,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 93),Failed,405,Medium,CI/CD-Runner
+VIGILAI-TC-0994,Validation Tests,Validate YOLOv8 false positives (Variant 94),Passed,130,Low,CI/CD-Runner
+VIGILAI-TC-0995,Validation Tests,Validate MediaPipe 33 landmarks (Variant 95),Passed,169,Medium,CI/CD-Runner
+VIGILAI-TC-0996,Validation Tests,Validate FaceNet unknown user (Variant 96),Passed,102,Medium,QA-Bot
+VIGILAI-TC-0997,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 97),Passed,125,Medium,CI/CD-Runner
+VIGILAI-TC-0998,Validation Tests,Validate YOLOv8 false positives (Variant 98),Passed,116,Medium,CI/CD-Runner
+VIGILAI-TC-0999,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 99),Passed,393,Medium,CI/CD-Runner
+VIGILAI-TC-1000,Validation Tests,Validate MediaPipe 33 landmarks (Variant 100),Passed,417,Critical,CI/CD-Runner
+VIGILAI-TC-1001,Validation Tests,Validate FaceNet known user (Variant 101),Passed,121,Medium,QA-Bot
+VIGILAI-TC-1002,Validation Tests,Validate phone number regex (Variant 102),Passed,310,Critical,CI/CD-Runner
+VIGILAI-TC-1003,Validation Tests,Validate YOLOv8 false positives (Variant 103),Passed,446,Low,DevTeam-A
+VIGILAI-TC-1004,Validation Tests,Validate email regex (Variant 104),Passed,82,Medium,QA-Bot
+VIGILAI-TC-1005,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 105),Passed,373,High,DevTeam-A
+VIGILAI-TC-1006,Validation Tests,Validate email regex (Variant 106),Passed,71,Critical,DevTeam-A
+VIGILAI-TC-1007,Validation Tests,Validate YOLOv8 false positives (Variant 107),Passed,23,High,DevTeam-A
+VIGILAI-TC-1008,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 108),Passed,94,Low,CI/CD-Runner
+VIGILAI-TC-1009,Validation Tests,Validate YOLOv8 false positives (Variant 109),Passed,312,High,QA-Bot
+VIGILAI-TC-1010,Validation Tests,Validate FaceNet known user (Variant 110),Passed,180,Critical,CI/CD-Runner
+VIGILAI-TC-1011,Validation Tests,Validate YOLOv8 false positives (Variant 111),Passed,46,Critical,QA-Bot
+VIGILAI-TC-1012,Validation Tests,Validate email regex (Variant 112),Passed,189,Medium,CI/CD-Runner
+VIGILAI-TC-1013,Validation Tests,Validate email regex (Variant 113),Passed,177,Low,CI/CD-Runner
+VIGILAI-TC-1014,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 114),Passed,414,High,QA-Bot
+VIGILAI-TC-1015,Validation Tests,Validate FaceNet unknown user (Variant 115),Passed,398,Critical,CI/CD-Runner
+VIGILAI-TC-1016,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 116),Passed,401,Low,DevTeam-A
+VIGILAI-TC-1017,Validation Tests,Validate FaceNet unknown user (Variant 117),Passed,304,Critical,CI/CD-Runner
+VIGILAI-TC-1018,Validation Tests,Validate email regex (Variant 118),Passed,32,High,DevTeam-A
+VIGILAI-TC-1019,Validation Tests,Validate FaceNet known user (Variant 119),Passed,78,Critical,QA-Bot
+VIGILAI-TC-1020,Validation Tests,Validate email regex (Variant 120),Passed,242,Low,CI/CD-Runner
+VIGILAI-TC-1021,Validation Tests,Validate phone number regex (Variant 121),Passed,346,High,DevTeam-A
+VIGILAI-TC-1022,Validation Tests,Validate phone number regex (Variant 122),Passed,405,Critical,DevTeam-A
+VIGILAI-TC-1023,Validation Tests,Validate email regex (Variant 123),Passed,223,Low,QA-Bot
+VIGILAI-TC-1024,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 124),Passed,126,High,DevTeam-A
+VIGILAI-TC-1025,Validation Tests,Validate MediaPipe 33 landmarks (Variant 125),Passed,156,Medium,QA-Bot
+VIGILAI-TC-1026,Validation Tests,Validate YOLOv8 false positives (Variant 126),Passed,27,Critical,QA-Bot
+VIGILAI-TC-1027,Validation Tests,Validate FaceNet unknown user (Variant 127),Passed,201,High,QA-Bot
+VIGILAI-TC-1028,Validation Tests,Validate MediaPipe 33 landmarks (Variant 128),Passed,35,Medium,CI/CD-Runner
+VIGILAI-TC-1029,Validation Tests,Validate FaceNet unknown user (Variant 129),Passed,273,Critical,CI/CD-Runner
+VIGILAI-TC-1030,Validation Tests,Validate phone number regex (Variant 130),Passed,271,Critical,CI/CD-Runner
+VIGILAI-TC-1031,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 131),Passed,78,Critical,QA-Bot
+VIGILAI-TC-1032,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 132),Passed,226,High,QA-Bot
+VIGILAI-TC-1033,Validation Tests,Validate phone number regex (Variant 133),Passed,194,Low,CI/CD-Runner
+VIGILAI-TC-1034,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 134),Passed,222,High,CI/CD-Runner
+VIGILAI-TC-1035,Validation Tests,Validate MediaPipe 33 landmarks (Variant 135),Passed,97,High,QA-Bot
+VIGILAI-TC-1036,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 136),Passed,64,Medium,QA-Bot
+VIGILAI-TC-1037,Validation Tests,Validate YOLOv8 false positives (Variant 137),Passed,302,Critical,QA-Bot
+VIGILAI-TC-1038,Validation Tests,Validate JWT payload (Variant 138),Skipped,156,Low,DevTeam-A
+VIGILAI-TC-1039,Validation Tests,Validate JWT payload (Variant 139),Passed,109,Critical,QA-Bot
+VIGILAI-TC-1040,Validation Tests,Validate YOLOv8 false positives (Variant 140),Passed,434,Critical,DevTeam-A
+VIGILAI-TC-1041,Validation Tests,Validate phone number regex (Variant 141),Passed,406,High,DevTeam-A
+VIGILAI-TC-1042,Validation Tests,Validate email regex (Variant 142),Passed,227,Medium,CI/CD-Runner
+VIGILAI-TC-1043,Validation Tests,Validate phone number regex (Variant 143),Passed,179,Low,QA-Bot
+VIGILAI-TC-1044,Validation Tests,Validate email regex (Variant 144),Passed,349,Low,CI/CD-Runner
+VIGILAI-TC-1045,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 145),Passed,322,Medium,DevTeam-A
+VIGILAI-TC-1046,Validation Tests,Validate phone number regex (Variant 146),Passed,327,Critical,QA-Bot
+VIGILAI-TC-1047,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 147),Passed,73,Low,QA-Bot
+VIGILAI-TC-1048,Validation Tests,Validate phone number regex (Variant 148),Passed,257,High,DevTeam-A
+VIGILAI-TC-1049,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 149),Passed,100,Medium,CI/CD-Runner
+VIGILAI-TC-1050,Validation Tests,Validate MediaPipe 33 landmarks (Variant 150),Passed,245,Medium,CI/CD-Runner
+VIGILAI-TC-1051,Validation Tests,Validate email regex (Variant 151),Passed,73,Medium,QA-Bot
+VIGILAI-TC-1052,Validation Tests,Validate MediaPipe 33 landmarks (Variant 152),Passed,367,High,DevTeam-A
+VIGILAI-TC-1053,Validation Tests,Validate email regex (Variant 153),Passed,30,Critical,QA-Bot
+VIGILAI-TC-1054,Validation Tests,Validate MediaPipe 33 landmarks (Variant 154),Passed,78,High,CI/CD-Runner
+VIGILAI-TC-1055,Validation Tests,Validate MediaPipe 33 landmarks (Variant 155),Passed,334,Medium,DevTeam-A
+VIGILAI-TC-1056,Validation Tests,Validate email regex (Variant 156),Passed,335,Critical,DevTeam-A
+VIGILAI-TC-1057,Validation Tests,Validate email regex (Variant 157),Passed,431,Low,CI/CD-Runner
+VIGILAI-TC-1058,Validation Tests,Validate FaceNet known user (Variant 158),Passed,109,Low,DevTeam-A
+VIGILAI-TC-1059,Validation Tests,Validate email regex (Variant 159),Passed,395,High,QA-Bot
+VIGILAI-TC-1060,Validation Tests,Validate YOLOv8 false positives (Variant 160),Passed,320,Critical,CI/CD-Runner
+VIGILAI-TC-1061,Validation Tests,Validate YOLOv8 false positives (Variant 161),Passed,150,Low,CI/CD-Runner
+VIGILAI-TC-1062,Validation Tests,Validate MediaPipe 33 landmarks (Variant 162),Passed,263,High,DevTeam-A
+VIGILAI-TC-1063,Validation Tests,Validate MediaPipe 33 landmarks (Variant 163),Skipped,410,Medium,CI/CD-Runner
+VIGILAI-TC-1064,Validation Tests,Validate FaceNet known user (Variant 164),Passed,224,Medium,CI/CD-Runner
+VIGILAI-TC-1065,Validation Tests,Validate YOLOv8 false positives (Variant 165),Passed,74,Low,QA-Bot
+VIGILAI-TC-1066,Validation Tests,Validate phone number regex (Variant 166),Passed,190,High,DevTeam-A
+VIGILAI-TC-1067,Validation Tests,Validate email regex (Variant 167),Passed,207,Medium,CI/CD-Runner
+VIGILAI-TC-1068,Validation Tests,Validate YOLOv8 false positives (Variant 168),Passed,234,Medium,CI/CD-Runner
+VIGILAI-TC-1069,Validation Tests,Validate FaceNet unknown user (Variant 169),Passed,369,Critical,QA-Bot
+VIGILAI-TC-1070,Validation Tests,Validate email regex (Variant 170),Passed,445,High,DevTeam-A
+VIGILAI-TC-1071,Validation Tests,Validate phone number regex (Variant 171),Passed,219,High,DevTeam-A
+VIGILAI-TC-1072,Validation Tests,Validate phone number regex (Variant 172),Passed,53,High,CI/CD-Runner
+VIGILAI-TC-1073,Validation Tests,Validate JWT payload (Variant 173),Passed,258,Low,DevTeam-A
+VIGILAI-TC-1074,Validation Tests,Validate YOLOv8 false positives (Variant 174),Passed,101,Medium,DevTeam-A
+VIGILAI-TC-1075,Validation Tests,Validate JWT payload (Variant 175),Failed,166,High,DevTeam-A
+VIGILAI-TC-1076,Validation Tests,Validate phone number regex (Variant 176),Passed,417,Medium,QA-Bot
+VIGILAI-TC-1077,Validation Tests,Validate MediaPipe 33 landmarks (Variant 177),Passed,227,High,CI/CD-Runner
+VIGILAI-TC-1078,Validation Tests,Validate FaceNet known user (Variant 178),Passed,65,Medium,DevTeam-A
+VIGILAI-TC-1079,Validation Tests,Validate JWT payload (Variant 179),Passed,232,Critical,QA-Bot
+VIGILAI-TC-1080,Validation Tests,Validate email regex (Variant 180),Passed,248,Critical,QA-Bot
+VIGILAI-TC-1081,Validation Tests,Validate JWT payload (Variant 181),Passed,121,Low,QA-Bot
+VIGILAI-TC-1082,Validation Tests,Validate email regex (Variant 182),Passed,55,Low,DevTeam-A
+VIGILAI-TC-1083,Validation Tests,Validate MediaPipe 33 landmarks (Variant 183),Failed,154,Critical,QA-Bot
+VIGILAI-TC-1084,Validation Tests,Validate MediaPipe 33 landmarks (Variant 184),Passed,95,Medium,DevTeam-A
+VIGILAI-TC-1085,Validation Tests,Validate JWT payload (Variant 185),Passed,114,Low,DevTeam-A
+VIGILAI-TC-1086,Validation Tests,Validate MediaPipe 33 landmarks (Variant 186),Failed,346,Medium,QA-Bot
+VIGILAI-TC-1087,Validation Tests,Validate JWT payload (Variant 187),Passed,211,Medium,DevTeam-A
+VIGILAI-TC-1088,Validation Tests,Validate FaceNet known user (Variant 188),Passed,24,Low,CI/CD-Runner
+VIGILAI-TC-1089,Validation Tests,Validate JWT payload (Variant 189),Failed,156,High,CI/CD-Runner
+VIGILAI-TC-1090,Validation Tests,Validate FaceNet unknown user (Variant 190),Passed,123,Low,CI/CD-Runner
+VIGILAI-TC-1091,Validation Tests,Validate YOLOv8 false positives (Variant 191),Passed,149,Low,DevTeam-A
+VIGILAI-TC-1092,Validation Tests,Validate FaceNet unknown user (Variant 192),Passed,394,Critical,DevTeam-A
+VIGILAI-TC-1093,Validation Tests,Validate phone number regex (Variant 193),Passed,408,High,DevTeam-A
+VIGILAI-TC-1094,Validation Tests,Validate email regex (Variant 194),Passed,20,Low,QA-Bot
+VIGILAI-TC-1095,Validation Tests,Validate phone number regex (Variant 195),Passed,338,Low,DevTeam-A
+VIGILAI-TC-1096,Validation Tests,Validate JWT payload (Variant 196),Passed,190,Critical,CI/CD-Runner
+VIGILAI-TC-1097,Validation Tests,Validate phone number regex (Variant 197),Skipped,39,High,CI/CD-Runner
+VIGILAI-TC-1098,Validation Tests,Validate MediaPipe 33 landmarks (Variant 198),Passed,45,Critical,CI/CD-Runner
+VIGILAI-TC-1099,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 199),Passed,433,Critical,DevTeam-A
+VIGILAI-TC-1100,Validation Tests,Validate email regex (Variant 200),Passed,352,High,CI/CD-Runner
+VIGILAI-TC-1101,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 201),Passed,88,High,DevTeam-A
+VIGILAI-TC-1102,Validation Tests,Validate FaceNet known user (Variant 202),Passed,60,Medium,CI/CD-Runner
+VIGILAI-TC-1103,Validation Tests,Validate MediaPipe 33 landmarks (Variant 203),Passed,128,Low,CI/CD-Runner
+VIGILAI-TC-1104,Validation Tests,Validate phone number regex (Variant 204),Passed,363,Critical,DevTeam-A
+VIGILAI-TC-1105,Validation Tests,Validate email regex (Variant 205),Passed,324,Low,CI/CD-Runner
+VIGILAI-TC-1106,Validation Tests,Validate FaceNet unknown user (Variant 206),Passed,27,Critical,DevTeam-A
+VIGILAI-TC-1107,Validation Tests,Validate YOLOv8 false positives (Variant 207),Passed,245,Critical,CI/CD-Runner
+VIGILAI-TC-1108,Validation Tests,Validate YOLOv8 false positives (Variant 208),Passed,205,Medium,CI/CD-Runner
+VIGILAI-TC-1109,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 209),Passed,366,Medium,DevTeam-A
+VIGILAI-TC-1110,Validation Tests,Validate FaceNet known user (Variant 210),Passed,134,High,DevTeam-A
+VIGILAI-TC-1111,Validation Tests,Validate email regex (Variant 211),Passed,405,Low,DevTeam-A
+VIGILAI-TC-1112,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 212),Passed,376,Low,CI/CD-Runner
+VIGILAI-TC-1113,Validation Tests,Validate phone number regex (Variant 213),Passed,46,Low,QA-Bot
+VIGILAI-TC-1114,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 214),Passed,221,High,CI/CD-Runner
+VIGILAI-TC-1115,Validation Tests,Validate JWT payload (Variant 215),Passed,408,Critical,CI/CD-Runner
+VIGILAI-TC-1116,Validation Tests,Validate FaceNet known user (Variant 216),Passed,383,Critical,QA-Bot
+VIGILAI-TC-1117,Validation Tests,Validate FaceNet known user (Variant 217),Skipped,50,Critical,CI/CD-Runner
+VIGILAI-TC-1118,Validation Tests,Validate email regex (Variant 218),Passed,165,Critical,CI/CD-Runner
+VIGILAI-TC-1119,Validation Tests,Validate FaceNet unknown user (Variant 219),Skipped,307,High,DevTeam-A
+VIGILAI-TC-1120,Validation Tests,Validate JWT payload (Variant 220),Passed,114,Critical,DevTeam-A
+VIGILAI-TC-1121,Validation Tests,Validate email regex (Variant 221),Passed,82,Critical,CI/CD-Runner
+VIGILAI-TC-1122,Validation Tests,Validate FaceNet unknown user (Variant 222),Skipped,18,Critical,QA-Bot
+VIGILAI-TC-1123,Validation Tests,Validate YOLOv8 false positives (Variant 223),Passed,411,Medium,CI/CD-Runner
+VIGILAI-TC-1124,Validation Tests,Validate YOLOv8 false positives (Variant 224),Passed,273,Medium,DevTeam-A
+VIGILAI-TC-1125,Validation Tests,Validate MediaPipe 33 landmarks (Variant 225),Passed,279,High,CI/CD-Runner
+VIGILAI-TC-1126,Validation Tests,Validate JWT payload (Variant 226),Passed,111,Medium,QA-Bot
+VIGILAI-TC-1127,Validation Tests,Validate FaceNet known user (Variant 227),Skipped,100,Medium,CI/CD-Runner
+VIGILAI-TC-1128,Validation Tests,Validate YOLOv8 false positives (Variant 228),Passed,275,Medium,CI/CD-Runner
+VIGILAI-TC-1129,Validation Tests,Validate FaceNet known user (Variant 229),Passed,74,Low,CI/CD-Runner
+VIGILAI-TC-1130,Validation Tests,Validate MediaPipe 33 landmarks (Variant 230),Passed,171,Medium,DevTeam-A
+VIGILAI-TC-1131,Validation Tests,Validate FaceNet unknown user (Variant 231),Passed,165,Medium,QA-Bot
+VIGILAI-TC-1132,Validation Tests,Validate FaceNet known user (Variant 232),Passed,412,Low,DevTeam-A
+VIGILAI-TC-1133,Validation Tests,Validate phone number regex (Variant 233),Passed,97,Medium,QA-Bot
+VIGILAI-TC-1134,Validation Tests,Validate FaceNet unknown user (Variant 234),Passed,104,Low,DevTeam-A
+VIGILAI-TC-1135,Validation Tests,Validate FaceNet known user (Variant 235),Passed,45,Medium,CI/CD-Runner
+VIGILAI-TC-1136,Validation Tests,Validate FaceNet known user (Variant 236),Passed,258,Critical,QA-Bot
+VIGILAI-TC-1137,Validation Tests,Validate YOLOv8 false positives (Variant 237),Passed,294,Critical,QA-Bot
+VIGILAI-TC-1138,Validation Tests,Validate YOLOv8 false positives (Variant 238),Passed,206,Medium,QA-Bot
+VIGILAI-TC-1139,Validation Tests,Validate email regex (Variant 239),Passed,189,Low,QA-Bot
+VIGILAI-TC-1140,Validation Tests,Validate YOLOv8 false positives (Variant 240),Passed,248,Critical,DevTeam-A
+VIGILAI-TC-1141,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 241),Passed,411,Critical,QA-Bot
+VIGILAI-TC-1142,Validation Tests,Validate FaceNet known user (Variant 242),Passed,165,Low,QA-Bot
+VIGILAI-TC-1143,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 243),Failed,382,Medium,DevTeam-A
+VIGILAI-TC-1144,Validation Tests,Validate MediaPipe 33 landmarks (Variant 244),Passed,234,Low,CI/CD-Runner
+VIGILAI-TC-1145,Validation Tests,Validate YOLOv8 false positives (Variant 245),Passed,15,Critical,QA-Bot
+VIGILAI-TC-1146,Validation Tests,Validate email regex (Variant 246),Passed,53,Low,CI/CD-Runner
+VIGILAI-TC-1147,Validation Tests,Validate phone number regex (Variant 247),Passed,428,Low,DevTeam-A
+VIGILAI-TC-1148,Validation Tests,Validate JWT payload (Variant 248),Passed,29,Low,CI/CD-Runner
+VIGILAI-TC-1149,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 249),Failed,81,Medium,DevTeam-A
+VIGILAI-TC-1150,Validation Tests,Validate FaceNet unknown user (Variant 250),Passed,312,High,QA-Bot
+VIGILAI-TC-1151,Validation Tests,Validate FaceNet unknown user (Variant 251),Passed,219,High,CI/CD-Runner
+VIGILAI-TC-1152,Validation Tests,Validate JWT payload (Variant 252),Passed,149,Low,CI/CD-Runner
+VIGILAI-TC-1153,Validation Tests,Validate FaceNet unknown user (Variant 253),Passed,109,Low,CI/CD-Runner
+VIGILAI-TC-1154,Validation Tests,Validate YOLOv8 false positives (Variant 254),Skipped,325,Critical,QA-Bot
+VIGILAI-TC-1155,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 255),Passed,102,High,CI/CD-Runner
+VIGILAI-TC-1156,Validation Tests,Validate email regex (Variant 256),Passed,318,Low,QA-Bot
+VIGILAI-TC-1157,Validation Tests,Validate MediaPipe 33 landmarks (Variant 257),Passed,77,Critical,CI/CD-Runner
+VIGILAI-TC-1158,Validation Tests,Validate FaceNet unknown user (Variant 258),Passed,79,Low,DevTeam-A
+VIGILAI-TC-1159,Validation Tests,Validate MediaPipe 33 landmarks (Variant 259),Passed,177,High,DevTeam-A
+VIGILAI-TC-1160,Validation Tests,Validate FaceNet unknown user (Variant 260),Passed,206,High,DevTeam-A
+VIGILAI-TC-1161,Validation Tests,Validate FaceNet unknown user (Variant 261),Passed,154,High,QA-Bot
+VIGILAI-TC-1162,Validation Tests,Validate phone number regex (Variant 262),Passed,370,Medium,QA-Bot
+VIGILAI-TC-1163,Validation Tests,Validate MediaPipe 33 landmarks (Variant 263),Passed,63,High,DevTeam-A
+VIGILAI-TC-1164,Validation Tests,Validate FaceNet known user (Variant 264),Passed,179,Low,QA-Bot
+VIGILAI-TC-1165,Validation Tests,Validate JWT payload (Variant 265),Passed,377,Low,QA-Bot
+VIGILAI-TC-1166,Validation Tests,Validate MediaPipe 33 landmarks (Variant 266),Skipped,30,Medium,DevTeam-A
+VIGILAI-TC-1167,Validation Tests,Validate MediaPipe 33 landmarks (Variant 267),Passed,77,High,QA-Bot
+VIGILAI-TC-1168,Validation Tests,Validate YOLOv8 false positives (Variant 268),Passed,192,Medium,DevTeam-A
+VIGILAI-TC-1169,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 269),Passed,97,Medium,QA-Bot
+VIGILAI-TC-1170,Validation Tests,Validate phone number regex (Variant 270),Passed,331,Low,QA-Bot
+VIGILAI-TC-1171,Validation Tests,Validate FaceNet unknown user (Variant 271),Failed,122,Critical,DevTeam-A
+VIGILAI-TC-1172,Validation Tests,Validate FaceNet unknown user (Variant 272),Passed,130,Critical,QA-Bot
+VIGILAI-TC-1173,Validation Tests,Validate email regex (Variant 273),Passed,244,Low,QA-Bot
+VIGILAI-TC-1174,Validation Tests,Validate JWT payload (Variant 274),Passed,126,Critical,CI/CD-Runner
+VIGILAI-TC-1175,Validation Tests,Validate FaceNet known user (Variant 275),Passed,338,High,CI/CD-Runner
+VIGILAI-TC-1176,Validation Tests,Validate YOLOv8 false positives (Variant 276),Passed,423,Critical,CI/CD-Runner
+VIGILAI-TC-1177,Validation Tests,Validate phone number regex (Variant 277),Passed,369,High,CI/CD-Runner
+VIGILAI-TC-1178,Validation Tests,Validate MediaPipe 33 landmarks (Variant 278),Passed,57,Low,QA-Bot
+VIGILAI-TC-1179,Validation Tests,Validate YOLOv8 false positives (Variant 279),Passed,195,High,QA-Bot
+VIGILAI-TC-1180,Validation Tests,Validate email regex (Variant 280),Passed,375,Low,DevTeam-A
+VIGILAI-TC-1181,Validation Tests,Validate JWT payload (Variant 281),Passed,221,High,CI/CD-Runner
+VIGILAI-TC-1182,Validation Tests,Validate YOLOv8 false positives (Variant 282),Passed,68,Critical,CI/CD-Runner
+VIGILAI-TC-1183,Validation Tests,Validate YOLOv8 false positives (Variant 283),Passed,21,High,DevTeam-A
+VIGILAI-TC-1184,Validation Tests,Validate YOLOv8 false positives (Variant 284),Passed,348,Low,QA-Bot
+VIGILAI-TC-1185,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 285),Skipped,325,Medium,CI/CD-Runner
+VIGILAI-TC-1186,Validation Tests,Validate JWT payload (Variant 286),Passed,307,Low,CI/CD-Runner
+VIGILAI-TC-1187,Validation Tests,Validate email regex (Variant 287),Passed,272,Critical,QA-Bot
+VIGILAI-TC-1188,Validation Tests,Validate YOLOv8 false positives (Variant 288),Passed,24,Low,QA-Bot
+VIGILAI-TC-1189,Validation Tests,Validate FaceNet unknown user (Variant 289),Passed,340,Critical,DevTeam-A
+VIGILAI-TC-1190,Validation Tests,Validate FaceNet unknown user (Variant 290),Passed,198,Medium,QA-Bot
+VIGILAI-TC-1191,Validation Tests,Validate FaceNet known user (Variant 291),Passed,278,High,QA-Bot
+VIGILAI-TC-1192,Validation Tests,Validate JWT payload (Variant 292),Passed,25,Medium,QA-Bot
+VIGILAI-TC-1193,Validation Tests,Validate FaceNet known user (Variant 293),Passed,91,Critical,QA-Bot
+VIGILAI-TC-1194,Validation Tests,Validate FaceNet known user (Variant 294),Passed,240,Critical,CI/CD-Runner
+VIGILAI-TC-1195,Validation Tests,Validate MediaPipe 33 landmarks (Variant 295),Passed,397,Critical,QA-Bot
+VIGILAI-TC-1196,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 296),Passed,259,Critical,QA-Bot
+VIGILAI-TC-1197,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 297),Passed,314,Critical,DevTeam-A
+VIGILAI-TC-1198,Validation Tests,Validate FaceNet known user (Variant 298),Passed,385,Low,QA-Bot
+VIGILAI-TC-1199,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 299),Passed,37,Critical,CI/CD-Runner
+VIGILAI-TC-1200,Validation Tests,Validate YOLOv8 Person >0.80 (Variant 300),Passed,366,Critical,QA-Bot
+VIGILAI-TC-1201,Deployment Status,Check Render deployment HTTP 200 (Variant 1),Passed,427,Critical,CI/CD-Runner
+VIGILAI-TC-1202,Deployment Status,Verify static assets cached (Variant 2),Passed,233,High,DevTeam-A
+VIGILAI-TC-1203,Deployment Status,Check env variables injected (Variant 3),Passed,136,Low,QA-Bot
+VIGILAI-TC-1204,Deployment Status,Verify static assets cached (Variant 4),Passed,259,Critical,CI/CD-Runner
+VIGILAI-TC-1205,Deployment Status,Test CI pipeline triggers (Variant 5),Passed,38,Low,CI/CD-Runner
+VIGILAI-TC-1206,Deployment Status,Check env variables injected (Variant 6),Passed,118,Medium,DevTeam-A
+VIGILAI-TC-1207,Deployment Status,Verify PG DB accessible (Variant 7),Passed,227,High,DevTeam-A
+VIGILAI-TC-1208,Deployment Status,Verify Docker image builds (Variant 8),Passed,434,Medium,QA-Bot
+VIGILAI-TC-1209,Deployment Status,Verify Docker image builds (Variant 9),Passed,445,High,QA-Bot
+VIGILAI-TC-1210,Deployment Status,Verify static assets cached (Variant 10),Passed,436,Medium,QA-Bot
+VIGILAI-TC-1211,Deployment Status,Verify PG DB accessible (Variant 11),Passed,82,Low,QA-Bot
+VIGILAI-TC-1212,Deployment Status,Check zero-downtime deploy (Variant 12),Passed,222,Low,CI/CD-Runner
+VIGILAI-TC-1213,Deployment Status,Check Render deployment HTTP 200 (Variant 13),Passed,429,Low,QA-Bot
+VIGILAI-TC-1214,Deployment Status,Check Render deployment HTTP 200 (Variant 14),Passed,327,Critical,DevTeam-A
+VIGILAI-TC-1215,Deployment Status,Verify Vercel frontend routes (Variant 15),Passed,424,Critical,CI/CD-Runner
+VIGILAI-TC-1216,Deployment Status,Verify static assets cached (Variant 16),Passed,72,High,DevTeam-A
+VIGILAI-TC-1217,Deployment Status,Test CI pipeline triggers (Variant 17),Passed,212,Critical,CI/CD-Runner
+VIGILAI-TC-1218,Deployment Status,Test CI pipeline triggers (Variant 18),Failed,328,Low,DevTeam-A
+VIGILAI-TC-1219,Deployment Status,Verify PG DB accessible (Variant 19),Passed,299,High,CI/CD-Runner
+VIGILAI-TC-1220,Deployment Status,Verify Vercel frontend routes (Variant 20),Passed,203,Medium,CI/CD-Runner
+VIGILAI-TC-1221,Deployment Status,Verify Docker image builds (Variant 21),Passed,104,Low,CI/CD-Runner
+VIGILAI-TC-1222,Deployment Status,Verify static assets cached (Variant 22),Passed,79,Medium,CI/CD-Runner
+VIGILAI-TC-1223,Deployment Status,Check zero-downtime deploy (Variant 23),Passed,384,Low,DevTeam-A
+VIGILAI-TC-1224,Deployment Status,Verify Vercel frontend routes (Variant 24),Passed,236,Low,QA-Bot
+VIGILAI-TC-1225,Deployment Status,Verify PG DB accessible (Variant 25),Passed,283,Medium,CI/CD-Runner
+VIGILAI-TC-1226,Deployment Status,Check env variables injected (Variant 26),Passed,367,Critical,QA-Bot
+VIGILAI-TC-1227,Deployment Status,Verify Vercel frontend routes (Variant 27),Passed,299,Medium,DevTeam-A
+VIGILAI-TC-1228,Deployment Status,Verify PG DB accessible (Variant 28),Failed,443,Low,CI/CD-Runner
+VIGILAI-TC-1229,Deployment Status,Check env variables injected (Variant 29),Passed,205,High,QA-Bot
+VIGILAI-TC-1230,Deployment Status,Verify PG DB accessible (Variant 30),Passed,147,Medium,CI/CD-Runner
+VIGILAI-TC-1231,Deployment Status,Verify PG DB accessible (Variant 31),Passed,353,Medium,QA-Bot
+VIGILAI-TC-1232,Deployment Status,Test CI pipeline triggers (Variant 32),Passed,76,Critical,QA-Bot
+VIGILAI-TC-1233,Deployment Status,Test CI pipeline triggers (Variant 33),Passed,18,Low,CI/CD-Runner
+VIGILAI-TC-1234,Deployment Status,Check Render deployment HTTP 200 (Variant 34),Passed,105,Medium,DevTeam-A
+VIGILAI-TC-1235,Deployment Status,Verify Vercel frontend routes (Variant 35),Passed,30,Medium,QA-Bot
+VIGILAI-TC-1236,Deployment Status,Check zero-downtime deploy (Variant 36),Passed,214,High,DevTeam-A
+VIGILAI-TC-1237,Deployment Status,Check zero-downtime deploy (Variant 37),Passed,232,Low,CI/CD-Runner
+VIGILAI-TC-1238,Deployment Status,Check env variables injected (Variant 38),Passed,98,High,CI/CD-Runner
+VIGILAI-TC-1239,Deployment Status,Verify Docker image builds (Variant 39),Passed,388,Critical,QA-Bot
+VIGILAI-TC-1240,Deployment Status,Verify static assets cached (Variant 40),Passed,368,High,DevTeam-A
+VIGILAI-TC-1241,Deployment Status,Check zero-downtime deploy (Variant 41),Passed,163,Medium,DevTeam-A
+VIGILAI-TC-1242,Deployment Status,Check env variables injected (Variant 42),Passed,178,High,QA-Bot
+VIGILAI-TC-1243,Deployment Status,Check env variables injected (Variant 43),Passed,338,Critical,DevTeam-A
+VIGILAI-TC-1244,Deployment Status,Test CI pipeline triggers (Variant 44),Passed,448,Low,QA-Bot
+VIGILAI-TC-1245,Deployment Status,Check zero-downtime deploy (Variant 45),Passed,332,Critical,QA-Bot
+VIGILAI-TC-1246,Deployment Status,Verify PG DB accessible (Variant 46),Passed,197,Low,QA-Bot
+VIGILAI-TC-1247,Deployment Status,Verify Vercel frontend routes (Variant 47),Passed,407,Low,CI/CD-Runner
+VIGILAI-TC-1248,Deployment Status,Check env variables injected (Variant 48),Passed,27,Medium,QA-Bot
+VIGILAI-TC-1249,Deployment Status,Verify PG DB accessible (Variant 49),Passed,232,Medium,QA-Bot
+VIGILAI-TC-1250,Deployment Status,Check Render deployment HTTP 200 (Variant 50),Passed,415,High,QA-Bot
+VIGILAI-TC-1251,Deployment Status,Verify Vercel frontend routes (Variant 51),Passed,196,Critical,CI/CD-Runner
+VIGILAI-TC-1252,Deployment Status,Verify Docker image builds (Variant 52),Passed,344,High,QA-Bot
+VIGILAI-TC-1253,Deployment Status,Verify static assets cached (Variant 53),Passed,290,Critical,QA-Bot
+VIGILAI-TC-1254,Deployment Status,Verify PG DB accessible (Variant 54),Passed,55,Critical,CI/CD-Runner
+VIGILAI-TC-1255,Deployment Status,Verify Vercel frontend routes (Variant 55),Passed,236,Low,DevTeam-A
+VIGILAI-TC-1256,Deployment Status,Check zero-downtime deploy (Variant 56),Passed,315,Low,DevTeam-A
+VIGILAI-TC-1257,Deployment Status,Check env variables injected (Variant 57),Passed,189,Medium,CI/CD-Runner
+VIGILAI-TC-1258,Deployment Status,Verify Vercel frontend routes (Variant 58),Passed,414,Low,DevTeam-A
+VIGILAI-TC-1259,Deployment Status,Verify static assets cached (Variant 59),Failed,42,Low,DevTeam-A
+VIGILAI-TC-1260,Deployment Status,Verify static assets cached (Variant 60),Passed,91,Low,DevTeam-A
+VIGILAI-TC-1261,Deployment Status,Check Render deployment HTTP 200 (Variant 61),Passed,180,Low,QA-Bot
+VIGILAI-TC-1262,Deployment Status,Verify Docker image builds (Variant 62),Passed,159,Critical,DevTeam-A
+VIGILAI-TC-1263,Deployment Status,Check env variables injected (Variant 63),Passed,297,Critical,CI/CD-Runner
+VIGILAI-TC-1264,Deployment Status,Verify static assets cached (Variant 64),Passed,304,Low,DevTeam-A
+VIGILAI-TC-1265,Deployment Status,Check zero-downtime deploy (Variant 65),Failed,408,Critical,DevTeam-A
+VIGILAI-TC-1266,Deployment Status,Verify static assets cached (Variant 66),Passed,419,Critical,DevTeam-A
+VIGILAI-TC-1267,Deployment Status,Check Render deployment HTTP 200 (Variant 67),Passed,296,Critical,DevTeam-A
+VIGILAI-TC-1268,Deployment Status,Check zero-downtime deploy (Variant 68),Skipped,341,Critical,CI/CD-Runner
+VIGILAI-TC-1269,Deployment Status,Verify PG DB accessible (Variant 69),Passed,202,Medium,CI/CD-Runner
+VIGILAI-TC-1270,Deployment Status,Check env variables injected (Variant 70),Passed,195,Medium,DevTeam-A
+VIGILAI-TC-1271,Deployment Status,Verify PG DB accessible (Variant 71),Passed,124,Critical,QA-Bot
+VIGILAI-TC-1272,Deployment Status,Test CI pipeline triggers (Variant 72),Passed,316,Medium,QA-Bot
+VIGILAI-TC-1273,Deployment Status,Check env variables injected (Variant 73),Passed,292,Medium,DevTeam-A
+VIGILAI-TC-1274,Deployment Status,Verify static assets cached (Variant 74),Passed,260,High,QA-Bot
+VIGILAI-TC-1275,Deployment Status,Check Render deployment HTTP 200 (Variant 75),Passed,129,High,DevTeam-A
+VIGILAI-TC-1276,Deployment Status,Verify Vercel frontend routes (Variant 76),Passed,21,High,CI/CD-Runner
+VIGILAI-TC-1277,Deployment Status,Verify Vercel frontend routes (Variant 77),Passed,236,Critical,QA-Bot
+VIGILAI-TC-1278,Deployment Status,Verify PG DB accessible (Variant 78),Passed,267,Critical,DevTeam-A
+VIGILAI-TC-1279,Deployment Status,Check Render deployment HTTP 200 (Variant 79),Passed,132,High,CI/CD-Runner
+VIGILAI-TC-1280,Deployment Status,Verify Vercel frontend routes (Variant 80),Passed,121,Medium,CI/CD-Runner
+VIGILAI-TC-1281,Deployment Status,Verify PG DB accessible (Variant 81),Passed,61,Low,CI/CD-Runner
+VIGILAI-TC-1282,Deployment Status,Verify static assets cached (Variant 82),Passed,178,Critical,CI/CD-Runner
+VIGILAI-TC-1283,Deployment Status,Test CI pipeline triggers (Variant 83),Passed,25,Low,CI/CD-Runner
+VIGILAI-TC-1284,Deployment Status,Verify static assets cached (Variant 84),Passed,334,Critical,QA-Bot
+VIGILAI-TC-1285,Deployment Status,Verify PG DB accessible (Variant 85),Passed,72,High,CI/CD-Runner
+VIGILAI-TC-1286,Deployment Status,Verify Vercel frontend routes (Variant 86),Passed,21,High,CI/CD-Runner
+VIGILAI-TC-1287,Deployment Status,Verify PG DB accessible (Variant 87),Passed,259,Critical,DevTeam-A
+VIGILAI-TC-1288,Deployment Status,Check env variables injected (Variant 88),Passed,199,High,DevTeam-A
+VIGILAI-TC-1289,Deployment Status,Verify static assets cached (Variant 89),Passed,334,High,CI/CD-Runner
+VIGILAI-TC-1290,Deployment Status,Verify PG DB accessible (Variant 90),Passed,247,Low,DevTeam-A
+VIGILAI-TC-1291,Deployment Status,Verify Docker image builds (Variant 91),Passed,423,Critical,DevTeam-A
+VIGILAI-TC-1292,Deployment Status,Verify static assets cached (Variant 92),Passed,74,Medium,CI/CD-Runner
+VIGILAI-TC-1293,Deployment Status,Check zero-downtime deploy (Variant 93),Passed,281,Critical,QA-Bot
+VIGILAI-TC-1294,Deployment Status,Verify static assets cached (Variant 94),Passed,97,High,DevTeam-A
+VIGILAI-TC-1295,Deployment Status,Verify PG DB accessible (Variant 95),Skipped,234,Critical,CI/CD-Runner
+VIGILAI-TC-1296,Deployment Status,Verify Docker image builds (Variant 96),Passed,321,Low,DevTeam-A
+VIGILAI-TC-1297,Deployment Status,Verify PG DB accessible (Variant 97),Passed,398,Low,CI/CD-Runner
+VIGILAI-TC-1298,Deployment Status,Check env variables injected (Variant 98),Passed,76,Critical,QA-Bot
+VIGILAI-TC-1299,Deployment Status,Check env variables injected (Variant 99),Passed,367,High,CI/CD-Runner
+VIGILAI-TC-1300,Deployment Status,Verify Vercel frontend routes (Variant 100),Passed,266,Low,DevTeam-A
+VIGILAI-TC-1301,Deployment Status,Check zero-downtime deploy (Variant 101),Passed,315,Medium,QA-Bot
+VIGILAI-TC-1302,Deployment Status,Test CI pipeline triggers (Variant 102),Passed,77,High,QA-Bot
+VIGILAI-TC-1303,Deployment Status,Check Render deployment HTTP 200 (Variant 103),Passed,114,Critical,CI/CD-Runner
+VIGILAI-TC-1304,Deployment Status,Verify static assets cached (Variant 104),Passed,116,High,CI/CD-Runner
+VIGILAI-TC-1305,Deployment Status,Verify PG DB accessible (Variant 105),Passed,17,High,CI/CD-Runner
+VIGILAI-TC-1306,Deployment Status,Verify static assets cached (Variant 106),Passed,112,Critical,CI/CD-Runner
+VIGILAI-TC-1307,Deployment Status,Test CI pipeline triggers (Variant 107),Passed,203,Critical,DevTeam-A
+VIGILAI-TC-1308,Deployment Status,Check Render deployment HTTP 200 (Variant 108),Passed,437,High,DevTeam-A
+VIGILAI-TC-1309,Deployment Status,Check env variables injected (Variant 109),Passed,15,Low,CI/CD-Runner
+VIGILAI-TC-1310,Deployment Status,Verify Vercel frontend routes (Variant 110),Passed,205,Critical,CI/CD-Runner
+VIGILAI-TC-1311,Deployment Status,Verify PG DB accessible (Variant 111),Failed,384,High,DevTeam-A
+VIGILAI-TC-1312,Deployment Status,Verify Vercel frontend routes (Variant 112),Passed,304,Medium,CI/CD-Runner
+VIGILAI-TC-1313,Deployment Status,Verify Vercel frontend routes (Variant 113),Skipped,345,Critical,QA-Bot
+VIGILAI-TC-1314,Deployment Status,Verify Vercel frontend routes (Variant 114),Passed,101,High,DevTeam-A
+VIGILAI-TC-1315,Deployment Status,Verify static assets cached (Variant 115),Passed,61,Medium,QA-Bot
+VIGILAI-TC-1316,Deployment Status,Verify static assets cached (Variant 116),Passed,184,Medium,CI/CD-Runner
+VIGILAI-TC-1317,Deployment Status,Check env variables injected (Variant 117),Passed,281,High,CI/CD-Runner
+VIGILAI-TC-1318,Deployment Status,Verify Docker image builds (Variant 118),Passed,277,High,QA-Bot
+VIGILAI-TC-1319,Deployment Status,Verify Vercel frontend routes (Variant 119),Passed,342,High,DevTeam-A
+VIGILAI-TC-1320,Deployment Status,Check zero-downtime deploy (Variant 120),Passed,431,Critical,CI/CD-Runner
+VIGILAI-TC-1321,Deployment Status,Check env variables injected (Variant 121),Passed,190,High,DevTeam-A
+VIGILAI-TC-1322,Deployment Status,Check env variables injected (Variant 122),Passed,416,High,CI/CD-Runner
+VIGILAI-TC-1323,Deployment Status,Verify PG DB accessible (Variant 123),Passed,339,Medium,DevTeam-A
+VIGILAI-TC-1324,Deployment Status,Check env variables injected (Variant 124),Failed,439,High,DevTeam-A
+VIGILAI-TC-1325,Deployment Status,Test CI pipeline triggers (Variant 125),Passed,360,High,QA-Bot
+VIGILAI-TC-1326,Deployment Status,Verify PG DB accessible (Variant 126),Passed,172,High,QA-Bot
+VIGILAI-TC-1327,Deployment Status,Check Render deployment HTTP 200 (Variant 127),Passed,392,Medium,CI/CD-Runner
+VIGILAI-TC-1328,Deployment Status,Check env variables injected (Variant 128),Passed,166,Low,CI/CD-Runner
+VIGILAI-TC-1329,Deployment Status,Verify static assets cached (Variant 129),Failed,402,Critical,DevTeam-A
+VIGILAI-TC-1330,Deployment Status,Check zero-downtime deploy (Variant 130),Failed,197,Critical,QA-Bot
+VIGILAI-TC-1331,Deployment Status,Verify Docker image builds (Variant 131),Passed,208,Medium,CI/CD-Runner
+VIGILAI-TC-1332,Deployment Status,Check zero-downtime deploy (Variant 132),Passed,186,Medium,CI/CD-Runner
+VIGILAI-TC-1333,Deployment Status,Verify static assets cached (Variant 133),Passed,404,High,QA-Bot
+VIGILAI-TC-1334,Deployment Status,Verify static assets cached (Variant 134),Passed,147,Medium,DevTeam-A
+VIGILAI-TC-1335,Deployment Status,Check Render deployment HTTP 200 (Variant 135),Failed,447,High,CI/CD-Runner
+VIGILAI-TC-1336,Deployment Status,Verify Vercel frontend routes (Variant 136),Failed,285,Medium,DevTeam-A
+VIGILAI-TC-1337,Deployment Status,Verify Docker image builds (Variant 137),Passed,95,High,CI/CD-Runner
+VIGILAI-TC-1338,Deployment Status,Verify Docker image builds (Variant 138),Passed,32,High,QA-Bot
+VIGILAI-TC-1339,Deployment Status,Check Render deployment HTTP 200 (Variant 139),Passed,280,Critical,CI/CD-Runner
+VIGILAI-TC-1340,Deployment Status,Check zero-downtime deploy (Variant 140),Passed,142,Medium,DevTeam-A
+VIGILAI-TC-1341,Deployment Status,Verify Docker image builds (Variant 141),Passed,234,High,QA-Bot
+VIGILAI-TC-1342,Deployment Status,Verify static assets cached (Variant 142),Passed,113,High,CI/CD-Runner
+VIGILAI-TC-1343,Deployment Status,Check zero-downtime deploy (Variant 143),Passed,300,Low,QA-Bot
+VIGILAI-TC-1344,Deployment Status,Verify Docker image builds (Variant 144),Passed,342,Medium,QA-Bot
+VIGILAI-TC-1345,Deployment Status,Verify static assets cached (Variant 145),Passed,200,Medium,QA-Bot
+VIGILAI-TC-1346,Deployment Status,Check zero-downtime deploy (Variant 146),Passed,266,Medium,CI/CD-Runner
+VIGILAI-TC-1347,Deployment Status,Check zero-downtime deploy (Variant 147),Failed,436,Critical,QA-Bot
+VIGILAI-TC-1348,Deployment Status,Test CI pipeline triggers (Variant 148),Passed,227,High,QA-Bot
+VIGILAI-TC-1349,Deployment Status,Check env variables injected (Variant 149),Passed,447,Critical,DevTeam-A
+VIGILAI-TC-1350,Deployment Status,Verify PG DB accessible (Variant 150),Passed,17,High,DevTeam-A
+VIGILAI-TC-1351,Deployment Status,Verify Vercel frontend routes (Variant 151),Passed,331,High,DevTeam-A
+VIGILAI-TC-1352,Deployment Status,Verify static assets cached (Variant 152),Passed,144,Medium,QA-Bot
+VIGILAI-TC-1353,Deployment Status,Verify static assets cached (Variant 153),Passed,281,Critical,DevTeam-A
+VIGILAI-TC-1354,Deployment Status,Verify static assets cached (Variant 154),Passed,445,Low,CI/CD-Runner
+VIGILAI-TC-1355,Deployment Status,Test CI pipeline triggers (Variant 155),Passed,300,Medium,DevTeam-A
+VIGILAI-TC-1356,Deployment Status,Check Render deployment HTTP 200 (Variant 156),Passed,442,Medium,CI/CD-Runner
+VIGILAI-TC-1357,Deployment Status,Verify Docker image builds (Variant 157),Passed,357,Critical,DevTeam-A
+VIGILAI-TC-1358,Deployment Status,Verify Vercel frontend routes (Variant 158),Passed,333,Low,CI/CD-Runner
+VIGILAI-TC-1359,Deployment Status,Check env variables injected (Variant 159),Passed,368,Medium,QA-Bot
+VIGILAI-TC-1360,Deployment Status,Check zero-downtime deploy (Variant 160),Skipped,439,Medium,QA-Bot
+VIGILAI-TC-1361,Deployment Status,Check Render deployment HTTP 200 (Variant 161),Passed,344,Medium,DevTeam-A
+VIGILAI-TC-1362,Deployment Status,Test CI pipeline triggers (Variant 162),Passed,202,Critical,QA-Bot
+VIGILAI-TC-1363,Deployment Status,Verify Vercel frontend routes (Variant 163),Passed,16,High,QA-Bot
+VIGILAI-TC-1364,Deployment Status,Verify static assets cached (Variant 164),Passed,272,Low,DevTeam-A
+VIGILAI-TC-1365,Deployment Status,Verify static assets cached (Variant 165),Passed,344,Critical,DevTeam-A
+VIGILAI-TC-1366,Deployment Status,Verify static assets cached (Variant 166),Passed,101,High,CI/CD-Runner
+VIGILAI-TC-1367,Deployment Status,Verify static assets cached (Variant 167),Passed,168,Low,QA-Bot
+VIGILAI-TC-1368,Deployment Status,Check zero-downtime deploy (Variant 168),Failed,170,Medium,CI/CD-Runner
+VIGILAI-TC-1369,Deployment Status,Verify Docker image builds (Variant 169),Passed,354,Medium,DevTeam-A
+VIGILAI-TC-1370,Deployment Status,Check zero-downtime deploy (Variant 170),Passed,439,Critical,DevTeam-A
+VIGILAI-TC-1371,Deployment Status,Verify Docker image builds (Variant 171),Passed,328,High,CI/CD-Runner
+VIGILAI-TC-1372,Deployment Status,Check Render deployment HTTP 200 (Variant 172),Passed,299,High,QA-Bot
+VIGILAI-TC-1373,Deployment Status,Verify Vercel frontend routes (Variant 173),Passed,172,Critical,QA-Bot
+VIGILAI-TC-1374,Deployment Status,Check env variables injected (Variant 174),Passed,390,Critical,CI/CD-Runner
+VIGILAI-TC-1375,Deployment Status,Verify static assets cached (Variant 175),Skipped,200,Low,DevTeam-A
+VIGILAI-TC-1376,Deployment Status,Check Render deployment HTTP 200 (Variant 176),Passed,124,Medium,CI/CD-Runner
+VIGILAI-TC-1377,Deployment Status,Check Render deployment HTTP 200 (Variant 177),Passed,408,Low,CI/CD-Runner
+VIGILAI-TC-1378,Deployment Status,Verify static assets cached (Variant 178),Failed,337,Low,CI/CD-Runner
+VIGILAI-TC-1379,Deployment Status,Check Render deployment HTTP 200 (Variant 179),Passed,110,Critical,QA-Bot
+VIGILAI-TC-1380,Deployment Status,Check env variables injected (Variant 180),Passed,325,Medium,DevTeam-A
+VIGILAI-TC-1381,Deployment Status,Check env variables injected (Variant 181),Passed,246,Medium,CI/CD-Runner
+VIGILAI-TC-1382,Deployment Status,Verify PG DB accessible (Variant 182),Passed,139,Medium,CI/CD-Runner
+VIGILAI-TC-1383,Deployment Status,Check Render deployment HTTP 200 (Variant 183),Passed,17,Medium,DevTeam-A
+VIGILAI-TC-1384,Deployment Status,Check zero-downtime deploy (Variant 184),Passed,43,Medium,CI/CD-Runner
+VIGILAI-TC-1385,Deployment Status,Test CI pipeline triggers (Variant 185),Failed,140,Low,QA-Bot
+VIGILAI-TC-1386,Deployment Status,Verify PG DB accessible (Variant 186),Passed,339,Low,DevTeam-A
+VIGILAI-TC-1387,Deployment Status,Check zero-downtime deploy (Variant 187),Passed,197,Low,CI/CD-Runner
+VIGILAI-TC-1388,Deployment Status,Verify Vercel frontend routes (Variant 188),Failed,185,High,DevTeam-A
+VIGILAI-TC-1389,Deployment Status,Verify Vercel frontend routes (Variant 189),Passed,360,Medium,QA-Bot
+VIGILAI-TC-1390,Deployment Status,Verify static assets cached (Variant 190),Skipped,369,Medium,QA-Bot
+VIGILAI-TC-1391,Deployment Status,Verify Vercel frontend routes (Variant 191),Passed,20,High,DevTeam-A
+VIGILAI-TC-1392,Deployment Status,Verify Docker image builds (Variant 192),Passed,178,High,QA-Bot
+VIGILAI-TC-1393,Deployment Status,Test CI pipeline triggers (Variant 193),Passed,383,Low,CI/CD-Runner
+VIGILAI-TC-1394,Deployment Status,Verify Vercel frontend routes (Variant 194),Passed,426,Low,QA-Bot
+VIGILAI-TC-1395,Deployment Status,Verify Docker image builds (Variant 195),Passed,150,Low,QA-Bot
+VIGILAI-TC-1396,Deployment Status,Verify Docker image builds (Variant 196),Passed,368,Low,QA-Bot
+VIGILAI-TC-1397,Deployment Status,Verify static assets cached (Variant 197),Passed,353,Medium,QA-Bot
+VIGILAI-TC-1398,Deployment Status,Check env variables injected (Variant 198),Passed,262,High,CI/CD-Runner
+VIGILAI-TC-1399,Deployment Status,Check Render deployment HTTP 200 (Variant 199),Skipped,252,Critical,CI/CD-Runner
+VIGILAI-TC-1400,Deployment Status,Test CI pipeline triggers (Variant 200),Passed,96,Medium,DevTeam-A
+VIGILAI-TC-1401,Deployment Status,Check env variables injected (Variant 201),Passed,187,Low,QA-Bot
+VIGILAI-TC-1402,Deployment Status,Test CI pipeline triggers (Variant 202),Passed,180,Medium,QA-Bot
+VIGILAI-TC-1403,Deployment Status,Test CI pipeline triggers (Variant 203),Passed,102,Medium,DevTeam-A
+VIGILAI-TC-1404,Deployment Status,Check Render deployment HTTP 200 (Variant 204),Passed,374,Critical,CI/CD-Runner
+VIGILAI-TC-1405,Deployment Status,Verify PG DB accessible (Variant 205),Passed,68,Critical,CI/CD-Runner
+VIGILAI-TC-1406,Deployment Status,Test CI pipeline triggers (Variant 206),Passed,274,Medium,CI/CD-Runner
+VIGILAI-TC-1407,Deployment Status,Test CI pipeline triggers (Variant 207),Passed,125,High,DevTeam-A
+VIGILAI-TC-1408,Deployment Status,Test CI pipeline triggers (Variant 208),Passed,173,High,CI/CD-Runner
+VIGILAI-TC-1409,Deployment Status,Test CI pipeline triggers (Variant 209),Passed,363,Critical,QA-Bot
+VIGILAI-TC-1410,Deployment Status,Verify static assets cached (Variant 210),Passed,422,Low,CI/CD-Runner
+VIGILAI-TC-1411,Deployment Status,Verify static assets cached (Variant 211),Passed,295,Low,QA-Bot
+VIGILAI-TC-1412,Deployment Status,Check Render deployment HTTP 200 (Variant 212),Passed,125,High,QA-Bot
+VIGILAI-TC-1413,Deployment Status,Verify Vercel frontend routes (Variant 213),Passed,374,Low,DevTeam-A
+VIGILAI-TC-1414,Deployment Status,Check Render deployment HTTP 200 (Variant 214),Failed,394,Medium,DevTeam-A
+VIGILAI-TC-1415,Deployment Status,Check Render deployment HTTP 200 (Variant 215),Passed,264,Low,DevTeam-A
+VIGILAI-TC-1416,Deployment Status,Check zero-downtime deploy (Variant 216),Passed,50,Medium,DevTeam-A
+VIGILAI-TC-1417,Deployment Status,Verify static assets cached (Variant 217),Skipped,436,High,CI/CD-Runner
+VIGILAI-TC-1418,Deployment Status,Verify Vercel frontend routes (Variant 218),Passed,313,Medium,QA-Bot
+VIGILAI-TC-1419,Deployment Status,Test CI pipeline triggers (Variant 219),Passed,225,Low,DevTeam-A
+VIGILAI-TC-1420,Deployment Status,Verify Vercel frontend routes (Variant 220),Skipped,245,Medium,CI/CD-Runner
+VIGILAI-TC-1421,Deployment Status,Verify Vercel frontend routes (Variant 221),Passed,85,High,DevTeam-A
+VIGILAI-TC-1422,Deployment Status,Verify PG DB accessible (Variant 222),Passed,44,High,QA-Bot
+VIGILAI-TC-1423,Deployment Status,Check zero-downtime deploy (Variant 223),Passed,142,Medium,DevTeam-A
+VIGILAI-TC-1424,Deployment Status,Verify static assets cached (Variant 224),Passed,389,High,QA-Bot
+VIGILAI-TC-1425,Deployment Status,Verify Docker image builds (Variant 225),Passed,438,Medium,QA-Bot
+VIGILAI-TC-1426,Deployment Status,Check zero-downtime deploy (Variant 226),Passed,126,Medium,CI/CD-Runner
+VIGILAI-TC-1427,Deployment Status,Verify Docker image builds (Variant 227),Passed,69,Low,CI/CD-Runner
+VIGILAI-TC-1428,Deployment Status,Test CI pipeline triggers (Variant 228),Passed,297,High,QA-Bot
+VIGILAI-TC-1429,Deployment Status,Verify static assets cached (Variant 229),Passed,328,Critical,QA-Bot
+VIGILAI-TC-1430,Deployment Status,Check zero-downtime deploy (Variant 230),Passed,387,High,QA-Bot
+VIGILAI-TC-1431,Deployment Status,Check env variables injected (Variant 231),Failed,392,High,QA-Bot
+VIGILAI-TC-1432,Deployment Status,Check Render deployment HTTP 200 (Variant 232),Passed,68,Medium,DevTeam-A
+VIGILAI-TC-1433,Deployment Status,Verify static assets cached (Variant 233),Passed,431,Medium,CI/CD-Runner
+VIGILAI-TC-1434,Deployment Status,Check zero-downtime deploy (Variant 234),Passed,109,Medium,DevTeam-A
+VIGILAI-TC-1435,Deployment Status,Verify Docker image builds (Variant 235),Skipped,200,Medium,DevTeam-A
+VIGILAI-TC-1436,Deployment Status,Check env variables injected (Variant 236),Passed,256,High,QA-Bot
+VIGILAI-TC-1437,Deployment Status,Check Render deployment HTTP 200 (Variant 237),Passed,129,Medium,CI/CD-Runner
+VIGILAI-TC-1438,Deployment Status,Verify static assets cached (Variant 238),Passed,270,Low,QA-Bot
+VIGILAI-TC-1439,Deployment Status,Verify Docker image builds (Variant 239),Failed,100,Critical,CI/CD-Runner
+VIGILAI-TC-1440,Deployment Status,Verify static assets cached (Variant 240),Passed,42,Critical,CI/CD-Runner
+VIGILAI-TC-1441,Deployment Status,Check env variables injected (Variant 241),Passed,41,High,CI/CD-Runner
+VIGILAI-TC-1442,Deployment Status,Check Render deployment HTTP 200 (Variant 242),Passed,406,Medium,QA-Bot
+VIGILAI-TC-1443,Deployment Status,Verify static assets cached (Variant 243),Skipped,348,High,CI/CD-Runner
+VIGILAI-TC-1444,Deployment Status,Test CI pipeline triggers (Variant 244),Passed,428,High,QA-Bot
+VIGILAI-TC-1445,Deployment Status,Verify PG DB accessible (Variant 245),Passed,282,Critical,CI/CD-Runner
+VIGILAI-TC-1446,Deployment Status,Verify static assets cached (Variant 246),Passed,365,Critical,CI/CD-Runner
+VIGILAI-TC-1447,Deployment Status,Test CI pipeline triggers (Variant 247),Passed,19,Medium,CI/CD-Runner
+VIGILAI-TC-1448,Deployment Status,Check Render deployment HTTP 200 (Variant 248),Passed,430,High,QA-Bot
+VIGILAI-TC-1449,Deployment Status,Check zero-downtime deploy (Variant 249),Passed,428,Low,QA-Bot
+VIGILAI-TC-1450,Deployment Status,Check env variables injected (Variant 250),Skipped,37,Low,CI/CD-Runner
+VIGILAI-TC-1451,Deployment Status,Check env variables injected (Variant 251),Skipped,109,Critical,QA-Bot
+VIGILAI-TC-1452,Deployment Status,Verify Docker image builds (Variant 252),Passed,224,Low,QA-Bot
+VIGILAI-TC-1453,Deployment Status,Verify static assets cached (Variant 253),Passed,68,Critical,DevTeam-A
+VIGILAI-TC-1454,Deployment Status,Check Render deployment HTTP 200 (Variant 254),Passed,191,Low,DevTeam-A
+VIGILAI-TC-1455,Deployment Status,Check env variables injected (Variant 255),Passed,52,Medium,CI/CD-Runner
+VIGILAI-TC-1456,Deployment Status,Test CI pipeline triggers (Variant 256),Passed,222,Medium,CI/CD-Runner
+VIGILAI-TC-1457,Deployment Status,Verify PG DB accessible (Variant 257),Skipped,391,High,CI/CD-Runner
+VIGILAI-TC-1458,Deployment Status,Test CI pipeline triggers (Variant 258),Passed,333,Medium,CI/CD-Runner
+VIGILAI-TC-1459,Deployment Status,Verify static assets cached (Variant 259),Passed,251,Medium,CI/CD-Runner
+VIGILAI-TC-1460,Deployment Status,Test CI pipeline triggers (Variant 260),Passed,407,Critical,QA-Bot
+VIGILAI-TC-1461,Deployment Status,Verify static assets cached (Variant 261),Skipped,406,Medium,QA-Bot
+VIGILAI-TC-1462,Deployment Status,Verify Vercel frontend routes (Variant 262),Failed,156,Low,CI/CD-Runner
+VIGILAI-TC-1463,Deployment Status,Test CI pipeline triggers (Variant 263),Passed,279,High,QA-Bot
+VIGILAI-TC-1464,Deployment Status,Verify Docker image builds (Variant 264),Passed,28,Low,QA-Bot
+VIGILAI-TC-1465,Deployment Status,Check Render deployment HTTP 200 (Variant 265),Passed,397,Low,CI/CD-Runner
+VIGILAI-TC-1466,Deployment Status,Check Render deployment HTTP 200 (Variant 266),Passed,193,High,DevTeam-A
+VIGILAI-TC-1467,Deployment Status,Test CI pipeline triggers (Variant 267),Passed,250,Medium,QA-Bot
+VIGILAI-TC-1468,Deployment Status,Verify static assets cached (Variant 268),Passed,163,Low,QA-Bot
+VIGILAI-TC-1469,Deployment Status,Test CI pipeline triggers (Variant 269),Passed,148,Medium,DevTeam-A
+VIGILAI-TC-1470,Deployment Status,Check env variables injected (Variant 270),Passed,176,Low,QA-Bot
+VIGILAI-TC-1471,Deployment Status,Verify Vercel frontend routes (Variant 271),Passed,314,Medium,QA-Bot
+VIGILAI-TC-1472,Deployment Status,Verify static assets cached (Variant 272),Passed,390,Medium,DevTeam-A
+VIGILAI-TC-1473,Deployment Status,Verify static assets cached (Variant 273),Passed,78,Low,DevTeam-A
+VIGILAI-TC-1474,Deployment Status,Test CI pipeline triggers (Variant 274),Passed,298,High,CI/CD-Runner
+VIGILAI-TC-1475,Deployment Status,Check env variables injected (Variant 275),Passed,441,High,DevTeam-A
+VIGILAI-TC-1476,Deployment Status,Verify Vercel frontend routes (Variant 276),Passed,400,Medium,QA-Bot
+VIGILAI-TC-1477,Deployment Status,Check zero-downtime deploy (Variant 277),Skipped,53,High,QA-Bot
+VIGILAI-TC-1478,Deployment Status,Verify static assets cached (Variant 278),Passed,88,Critical,QA-Bot
+VIGILAI-TC-1479,Deployment Status,Check zero-downtime deploy (Variant 279),Passed,409,Medium,QA-Bot
+VIGILAI-TC-1480,Deployment Status,Verify static assets cached (Variant 280),Passed,83,Critical,DevTeam-A
+VIGILAI-TC-1481,Deployment Status,Verify static assets cached (Variant 281),Passed,125,Critical,QA-Bot
+VIGILAI-TC-1482,Deployment Status,Verify PG DB accessible (Variant 282),Passed,84,Low,DevTeam-A
+VIGILAI-TC-1483,Deployment Status,Check Render deployment HTTP 200 (Variant 283),Passed,447,Low,DevTeam-A
+VIGILAI-TC-1484,Deployment Status,Verify static assets cached (Variant 284),Passed,224,Low,QA-Bot
+VIGILAI-TC-1485,Deployment Status,Verify Docker image builds (Variant 285),Passed,265,Critical,DevTeam-A
+VIGILAI-TC-1486,Deployment Status,Verify static assets cached (Variant 286),Passed,283,Critical,CI/CD-Runner
+VIGILAI-TC-1487,Deployment Status,Verify static assets cached (Variant 287),Passed,369,High,DevTeam-A
+VIGILAI-TC-1488,Deployment Status,Test CI pipeline triggers (Variant 288),Passed,296,Low,QA-Bot
+VIGILAI-TC-1489,Deployment Status,Verify Docker image builds (Variant 289),Passed,188,High,DevTeam-A
+VIGILAI-TC-1490,Deployment Status,Verify PG DB accessible (Variant 290),Passed,374,Medium,QA-Bot
+VIGILAI-TC-1491,Deployment Status,Test CI pipeline triggers (Variant 291),Passed,111,High,DevTeam-A
+VIGILAI-TC-1492,Deployment Status,Check env variables injected (Variant 292),Passed,128,High,CI/CD-Runner
+VIGILAI-TC-1493,Deployment Status,Verify PG DB accessible (Variant 293),Passed,217,Medium,CI/CD-Runner
+VIGILAI-TC-1494,Deployment Status,Verify static assets cached (Variant 294),Failed,98,Medium,QA-Bot
+VIGILAI-TC-1495,Deployment Status,Check env variables injected (Variant 295),Passed,387,Medium,CI/CD-Runner
+VIGILAI-TC-1496,Deployment Status,Verify PG DB accessible (Variant 296),Passed,251,Critical,CI/CD-Runner
+VIGILAI-TC-1497,Deployment Status,Check Render deployment HTTP 200 (Variant 297),Failed,28,High,CI/CD-Runner
+VIGILAI-TC-1498,Deployment Status,Check Render deployment HTTP 200 (Variant 298),Passed,354,Medium,DevTeam-A
+VIGILAI-TC-1499,Deployment Status,Verify static assets cached (Variant 299),Passed,95,Critical,QA-Bot
+VIGILAI-TC-1500,Deployment Status,Check zero-downtime deploy (Variant 300),Passed,287,Medium,QA-Bot
+VIGILAI-TC-1501,Load Testing - Performance,Simulate 100 video streams (Variant 1),Passed,420,High,QA-Bot
+VIGILAI-TC-1502,Load Testing - Performance,Simulate 100 video streams (Variant 2),Passed,143,Low,CI/CD-Runner
+VIGILAI-TC-1503,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 3),Passed,295,Critical,CI/CD-Runner
+VIGILAI-TC-1504,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 4),Passed,61,Critical,QA-Bot
+VIGILAI-TC-1505,Load Testing - Performance,Measure API response < 200ms (Variant 5),Passed,228,Medium,DevTeam-A
+VIGILAI-TC-1506,Load Testing - Performance,Check OOM recovery time (Variant 6),Skipped,260,High,DevTeam-A
+VIGILAI-TC-1507,Load Testing - Performance,Simulate 100 video streams (Variant 7),Passed,316,Low,QA-Bot
+VIGILAI-TC-1508,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 8),Passed,328,Critical,CI/CD-Runner
+VIGILAI-TC-1509,Load Testing - Performance,Measure API response < 200ms (Variant 9),Passed,306,Low,DevTeam-A
+VIGILAI-TC-1510,Load Testing - Performance,Check OOM recovery time (Variant 10),Passed,34,Medium,DevTeam-A
+VIGILAI-TC-1511,Load Testing - Performance,Measure WebSocket latency (Variant 11),Passed,179,High,CI/CD-Runner
+VIGILAI-TC-1512,Load Testing - Performance,Measure WebSocket latency (Variant 12),Passed,358,Low,DevTeam-A
+VIGILAI-TC-1513,Load Testing - Performance,Simulate 500 concurrent logins (Variant 13),Passed,212,Medium,QA-Bot
+VIGILAI-TC-1514,Load Testing - Performance,Check OOM recovery time (Variant 14),Passed,432,High,QA-Bot
+VIGILAI-TC-1515,Load Testing - Performance,Simulate 500 concurrent logins (Variant 15),Passed,186,Medium,QA-Bot
+VIGILAI-TC-1516,Load Testing - Performance,Simulate 100 video streams (Variant 16),Failed,315,High,CI/CD-Runner
+VIGILAI-TC-1517,Load Testing - Performance,Check OOM recovery time (Variant 17),Passed,251,Low,DevTeam-A
+VIGILAI-TC-1518,Load Testing - Performance,Measure Initial Page Load (Variant 18),Passed,301,High,DevTeam-A
+VIGILAI-TC-1519,Load Testing - Performance,Test DB heavy read/write (Variant 19),Passed,108,High,CI/CD-Runner
+VIGILAI-TC-1520,Load Testing - Performance,Measure Initial Page Load (Variant 20),Passed,202,Low,QA-Bot
+VIGILAI-TC-1521,Load Testing - Performance,Simulate 100 video streams (Variant 21),Passed,245,Low,DevTeam-A
+VIGILAI-TC-1522,Load Testing - Performance,Measure Initial Page Load (Variant 22),Passed,366,High,QA-Bot
+VIGILAI-TC-1523,Load Testing - Performance,Measure WebSocket latency (Variant 23),Passed,355,Low,CI/CD-Runner
+VIGILAI-TC-1524,Load Testing - Performance,Test DB heavy read/write (Variant 24),Passed,219,Critical,DevTeam-A
+VIGILAI-TC-1525,Load Testing - Performance,Measure WebSocket latency (Variant 25),Passed,304,Low,CI/CD-Runner
+VIGILAI-TC-1526,Load Testing - Performance,Simulate 500 concurrent logins (Variant 26),Passed,278,Critical,CI/CD-Runner
+VIGILAI-TC-1527,Load Testing - Performance,Simulate 500 concurrent logins (Variant 27),Failed,63,Low,CI/CD-Runner
+VIGILAI-TC-1528,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 28),Passed,191,Critical,CI/CD-Runner
+VIGILAI-TC-1529,Load Testing - Performance,Measure Initial Page Load (Variant 29),Failed,357,Critical,CI/CD-Runner
+VIGILAI-TC-1530,Load Testing - Performance,Measure WebSocket latency (Variant 30),Passed,128,Medium,DevTeam-A
+VIGILAI-TC-1531,Load Testing - Performance,Measure Initial Page Load (Variant 31),Passed,440,Critical,CI/CD-Runner
+VIGILAI-TC-1532,Load Testing - Performance,Check OOM recovery time (Variant 32),Passed,450,Low,QA-Bot
+VIGILAI-TC-1533,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 33),Passed,53,High,CI/CD-Runner
+VIGILAI-TC-1534,Load Testing - Performance,Test DB heavy read/write (Variant 34),Passed,347,Low,QA-Bot
+VIGILAI-TC-1535,Load Testing - Performance,Measure Initial Page Load (Variant 35),Passed,243,Medium,CI/CD-Runner
+VIGILAI-TC-1536,Load Testing - Performance,Measure API response < 200ms (Variant 36),Passed,427,High,QA-Bot
+VIGILAI-TC-1537,Load Testing - Performance,Measure API response < 200ms (Variant 37),Passed,245,Critical,DevTeam-A
+VIGILAI-TC-1538,Load Testing - Performance,Test DB heavy read/write (Variant 38),Passed,164,High,DevTeam-A
+VIGILAI-TC-1539,Load Testing - Performance,Measure WebSocket latency (Variant 39),Passed,193,Medium,CI/CD-Runner
+VIGILAI-TC-1540,Load Testing - Performance,Measure API response < 200ms (Variant 40),Passed,276,High,QA-Bot
+VIGILAI-TC-1541,Load Testing - Performance,Test DB heavy read/write (Variant 41),Passed,386,Medium,DevTeam-A
+VIGILAI-TC-1542,Load Testing - Performance,Test DB heavy read/write (Variant 42),Passed,134,Low,QA-Bot
+VIGILAI-TC-1543,Load Testing - Performance,Check OOM recovery time (Variant 43),Passed,73,Low,CI/CD-Runner
+VIGILAI-TC-1544,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 44),Passed,420,Critical,QA-Bot
+VIGILAI-TC-1545,Load Testing - Performance,Measure WebSocket latency (Variant 45),Passed,422,Medium,DevTeam-A
+VIGILAI-TC-1546,Load Testing - Performance,Simulate 100 video streams (Variant 46),Passed,203,Critical,QA-Bot
+VIGILAI-TC-1547,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 47),Passed,81,Medium,QA-Bot
+VIGILAI-TC-1548,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 48),Passed,348,Low,CI/CD-Runner
+VIGILAI-TC-1549,Load Testing - Performance,Measure WebSocket latency (Variant 49),Skipped,263,Medium,DevTeam-A
+VIGILAI-TC-1550,Load Testing - Performance,Simulate 500 concurrent logins (Variant 50),Passed,211,Medium,QA-Bot
+VIGILAI-TC-1551,Load Testing - Performance,Measure API response < 200ms (Variant 51),Failed,406,Low,CI/CD-Runner
+VIGILAI-TC-1552,Load Testing - Performance,Simulate 500 concurrent logins (Variant 52),Passed,242,Medium,QA-Bot
+VIGILAI-TC-1553,Load Testing - Performance,Measure WebSocket latency (Variant 53),Passed,317,Medium,DevTeam-A
+VIGILAI-TC-1554,Load Testing - Performance,Measure API response < 200ms (Variant 54),Passed,63,Low,DevTeam-A
+VIGILAI-TC-1555,Load Testing - Performance,Simulate 100 video streams (Variant 55),Passed,106,Low,CI/CD-Runner
+VIGILAI-TC-1556,Load Testing - Performance,Measure Initial Page Load (Variant 56),Passed,15,Low,CI/CD-Runner
+VIGILAI-TC-1557,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 57),Passed,87,Critical,DevTeam-A
+VIGILAI-TC-1558,Load Testing - Performance,Measure WebSocket latency (Variant 58),Passed,263,Low,CI/CD-Runner
+VIGILAI-TC-1559,Load Testing - Performance,Measure WebSocket latency (Variant 59),Passed,253,Critical,QA-Bot
+VIGILAI-TC-1560,Load Testing - Performance,Simulate 100 video streams (Variant 60),Passed,199,Critical,CI/CD-Runner
+VIGILAI-TC-1561,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 61),Passed,314,Medium,DevTeam-A
+VIGILAI-TC-1562,Load Testing - Performance,Measure Initial Page Load (Variant 62),Passed,321,Critical,DevTeam-A
+VIGILAI-TC-1563,Load Testing - Performance,Simulate 100 video streams (Variant 63),Passed,171,Medium,DevTeam-A
+VIGILAI-TC-1564,Load Testing - Performance,Test DB heavy read/write (Variant 64),Passed,118,Medium,QA-Bot
+VIGILAI-TC-1565,Load Testing - Performance,Measure WebSocket latency (Variant 65),Passed,155,Low,CI/CD-Runner
+VIGILAI-TC-1566,Load Testing - Performance,Check OOM recovery time (Variant 66),Passed,410,Medium,DevTeam-A
+VIGILAI-TC-1567,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 67),Skipped,88,High,CI/CD-Runner
+VIGILAI-TC-1568,Load Testing - Performance,Test DB heavy read/write (Variant 68),Passed,23,Low,QA-Bot
+VIGILAI-TC-1569,Load Testing - Performance,Check OOM recovery time (Variant 69),Passed,229,Low,CI/CD-Runner
+VIGILAI-TC-1570,Load Testing - Performance,Simulate 100 video streams (Variant 70),Passed,415,Medium,DevTeam-A
+VIGILAI-TC-1571,Load Testing - Performance,Check OOM recovery time (Variant 71),Passed,202,Medium,QA-Bot
+VIGILAI-TC-1572,Load Testing - Performance,Measure Initial Page Load (Variant 72),Passed,68,High,QA-Bot
+VIGILAI-TC-1573,Load Testing - Performance,Check OOM recovery time (Variant 73),Passed,172,Medium,CI/CD-Runner
+VIGILAI-TC-1574,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 74),Passed,279,Medium,QA-Bot
+VIGILAI-TC-1575,Load Testing - Performance,Measure Initial Page Load (Variant 75),Failed,183,Critical,QA-Bot
+VIGILAI-TC-1576,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 76),Passed,449,Medium,CI/CD-Runner
+VIGILAI-TC-1577,Load Testing - Performance,Measure Initial Page Load (Variant 77),Passed,215,High,CI/CD-Runner
+VIGILAI-TC-1578,Load Testing - Performance,Simulate 500 concurrent logins (Variant 78),Passed,133,High,CI/CD-Runner
+VIGILAI-TC-1579,Load Testing - Performance,Measure API response < 200ms (Variant 79),Passed,411,Critical,CI/CD-Runner
+VIGILAI-TC-1580,Load Testing - Performance,Test DB heavy read/write (Variant 80),Passed,324,Medium,QA-Bot
+VIGILAI-TC-1581,Load Testing - Performance,Measure WebSocket latency (Variant 81),Passed,147,High,CI/CD-Runner
+VIGILAI-TC-1582,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 82),Passed,127,Medium,QA-Bot
+VIGILAI-TC-1583,Load Testing - Performance,Measure WebSocket latency (Variant 83),Passed,390,Medium,QA-Bot
+VIGILAI-TC-1584,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 84),Failed,332,Critical,QA-Bot
+VIGILAI-TC-1585,Load Testing - Performance,Simulate 100 video streams (Variant 85),Passed,367,Critical,DevTeam-A
+VIGILAI-TC-1586,Load Testing - Performance,Measure API response < 200ms (Variant 86),Passed,111,Low,QA-Bot
+VIGILAI-TC-1587,Load Testing - Performance,Simulate 100 video streams (Variant 87),Passed,212,Low,CI/CD-Runner
+VIGILAI-TC-1588,Load Testing - Performance,Measure API response < 200ms (Variant 88),Passed,219,High,DevTeam-A
+VIGILAI-TC-1589,Load Testing - Performance,Measure Initial Page Load (Variant 89),Passed,356,High,QA-Bot
+VIGILAI-TC-1590,Load Testing - Performance,Test DB heavy read/write (Variant 90),Passed,271,High,CI/CD-Runner
+VIGILAI-TC-1591,Load Testing - Performance,Simulate 100 video streams (Variant 91),Passed,292,Critical,QA-Bot
+VIGILAI-TC-1592,Load Testing - Performance,Simulate 100 video streams (Variant 92),Failed,395,High,DevTeam-A
+VIGILAI-TC-1593,Load Testing - Performance,Simulate 100 video streams (Variant 93),Passed,319,High,DevTeam-A
+VIGILAI-TC-1594,Load Testing - Performance,Test DB heavy read/write (Variant 94),Passed,296,Low,QA-Bot
+VIGILAI-TC-1595,Load Testing - Performance,Measure API response < 200ms (Variant 95),Passed,436,Low,QA-Bot
+VIGILAI-TC-1596,Load Testing - Performance,Simulate 100 video streams (Variant 96),Skipped,19,Medium,CI/CD-Runner
+VIGILAI-TC-1597,Load Testing - Performance,Check OOM recovery time (Variant 97),Passed,285,Low,DevTeam-A
+VIGILAI-TC-1598,Load Testing - Performance,Measure Initial Page Load (Variant 98),Passed,126,Low,DevTeam-A
+VIGILAI-TC-1599,Load Testing - Performance,Simulate 500 concurrent logins (Variant 99),Passed,218,Medium,QA-Bot
+VIGILAI-TC-1600,Load Testing - Performance,Test DB heavy read/write (Variant 100),Passed,433,Medium,CI/CD-Runner
+VIGILAI-TC-1601,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 101),Passed,154,Critical,CI/CD-Runner
+VIGILAI-TC-1602,Load Testing - Performance,Simulate 500 concurrent logins (Variant 102),Passed,293,Medium,QA-Bot
+VIGILAI-TC-1603,Load Testing - Performance,Simulate 100 video streams (Variant 103),Failed,352,Critical,CI/CD-Runner
+VIGILAI-TC-1604,Load Testing - Performance,Simulate 500 concurrent logins (Variant 104),Skipped,445,Medium,DevTeam-A
+VIGILAI-TC-1605,Load Testing - Performance,Measure Initial Page Load (Variant 105),Passed,128,Medium,CI/CD-Runner
+VIGILAI-TC-1606,Load Testing - Performance,Simulate 100 video streams (Variant 106),Passed,287,Medium,CI/CD-Runner
+VIGILAI-TC-1607,Load Testing - Performance,Measure API response < 200ms (Variant 107),Passed,396,Critical,QA-Bot
+VIGILAI-TC-1608,Load Testing - Performance,Simulate 500 concurrent logins (Variant 108),Passed,313,High,CI/CD-Runner
+VIGILAI-TC-1609,Load Testing - Performance,Measure Initial Page Load (Variant 109),Passed,88,Critical,DevTeam-A
+VIGILAI-TC-1610,Load Testing - Performance,Check OOM recovery time (Variant 110),Passed,286,High,DevTeam-A
+VIGILAI-TC-1611,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 111),Passed,339,Critical,CI/CD-Runner
+VIGILAI-TC-1612,Load Testing - Performance,Simulate 500 concurrent logins (Variant 112),Passed,93,Medium,DevTeam-A
+VIGILAI-TC-1613,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 113),Passed,253,Low,CI/CD-Runner
+VIGILAI-TC-1614,Load Testing - Performance,Measure Initial Page Load (Variant 114),Skipped,400,Medium,CI/CD-Runner
+VIGILAI-TC-1615,Load Testing - Performance,Check OOM recovery time (Variant 115),Passed,199,Critical,CI/CD-Runner
+VIGILAI-TC-1616,Load Testing - Performance,Simulate 100 video streams (Variant 116),Passed,105,Critical,CI/CD-Runner
+VIGILAI-TC-1617,Load Testing - Performance,Measure WebSocket latency (Variant 117),Passed,114,Critical,DevTeam-A
+VIGILAI-TC-1618,Load Testing - Performance,Measure API response < 200ms (Variant 118),Passed,144,Critical,DevTeam-A
+VIGILAI-TC-1619,Load Testing - Performance,Measure Initial Page Load (Variant 119),Passed,102,High,QA-Bot
+VIGILAI-TC-1620,Load Testing - Performance,Simulate 500 concurrent logins (Variant 120),Passed,212,Critical,QA-Bot
+VIGILAI-TC-1621,Load Testing - Performance,Measure Initial Page Load (Variant 121),Passed,187,Critical,DevTeam-A
+VIGILAI-TC-1622,Load Testing - Performance,Simulate 500 concurrent logins (Variant 122),Passed,391,Medium,DevTeam-A
+VIGILAI-TC-1623,Load Testing - Performance,Measure WebSocket latency (Variant 123),Passed,285,Low,CI/CD-Runner
+VIGILAI-TC-1624,Load Testing - Performance,Check OOM recovery time (Variant 124),Passed,446,High,DevTeam-A
+VIGILAI-TC-1625,Load Testing - Performance,Simulate 500 concurrent logins (Variant 125),Passed,232,Critical,DevTeam-A
+VIGILAI-TC-1626,Load Testing - Performance,Measure API response < 200ms (Variant 126),Passed,225,Medium,QA-Bot
+VIGILAI-TC-1627,Load Testing - Performance,Test DB heavy read/write (Variant 127),Passed,370,Critical,CI/CD-Runner
+VIGILAI-TC-1628,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 128),Failed,181,Medium,QA-Bot
+VIGILAI-TC-1629,Load Testing - Performance,Check OOM recovery time (Variant 129),Passed,172,Low,CI/CD-Runner
+VIGILAI-TC-1630,Load Testing - Performance,Measure WebSocket latency (Variant 130),Passed,83,Low,CI/CD-Runner
+VIGILAI-TC-1631,Load Testing - Performance,Simulate 100 video streams (Variant 131),Passed,282,Critical,CI/CD-Runner
+VIGILAI-TC-1632,Load Testing - Performance,Measure WebSocket latency (Variant 132),Passed,156,Critical,DevTeam-A
+VIGILAI-TC-1633,Load Testing - Performance,Test DB heavy read/write (Variant 133),Passed,405,Critical,DevTeam-A
+VIGILAI-TC-1634,Load Testing - Performance,Measure WebSocket latency (Variant 134),Passed,236,Low,CI/CD-Runner
+VIGILAI-TC-1635,Load Testing - Performance,Measure Initial Page Load (Variant 135),Failed,46,Medium,DevTeam-A
+VIGILAI-TC-1636,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 136),Passed,424,Critical,DevTeam-A
+VIGILAI-TC-1637,Load Testing - Performance,Measure Initial Page Load (Variant 137),Passed,426,Low,CI/CD-Runner
+VIGILAI-TC-1638,Load Testing - Performance,Test DB heavy read/write (Variant 138),Passed,364,Low,DevTeam-A
+VIGILAI-TC-1639,Load Testing - Performance,Measure API response < 200ms (Variant 139),Passed,348,Critical,QA-Bot
+VIGILAI-TC-1640,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 140),Passed,69,High,DevTeam-A
+VIGILAI-TC-1641,Load Testing - Performance,Measure API response < 200ms (Variant 141),Passed,341,Medium,DevTeam-A
+VIGILAI-TC-1642,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 142),Passed,428,Critical,DevTeam-A
+VIGILAI-TC-1643,Load Testing - Performance,Measure API response < 200ms (Variant 143),Passed,235,Medium,DevTeam-A
+VIGILAI-TC-1644,Load Testing - Performance,Simulate 100 video streams (Variant 144),Passed,162,High,CI/CD-Runner
+VIGILAI-TC-1645,Load Testing - Performance,Simulate 500 concurrent logins (Variant 145),Passed,268,Critical,CI/CD-Runner
+VIGILAI-TC-1646,Load Testing - Performance,Check OOM recovery time (Variant 146),Passed,450,Medium,DevTeam-A
+VIGILAI-TC-1647,Load Testing - Performance,Simulate 500 concurrent logins (Variant 147),Passed,106,Medium,DevTeam-A
+VIGILAI-TC-1648,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 148),Passed,33,Critical,QA-Bot
+VIGILAI-TC-1649,Load Testing - Performance,Measure Initial Page Load (Variant 149),Passed,246,High,CI/CD-Runner
+VIGILAI-TC-1650,Load Testing - Performance,Check OOM recovery time (Variant 150),Passed,162,High,DevTeam-A
+VIGILAI-TC-1651,Load Testing - Performance,Check OOM recovery time (Variant 151),Passed,19,Low,DevTeam-A
+VIGILAI-TC-1652,Load Testing - Performance,Simulate 500 concurrent logins (Variant 152),Passed,316,Low,DevTeam-A
+VIGILAI-TC-1653,Load Testing - Performance,Measure API response < 200ms (Variant 153),Passed,335,Medium,DevTeam-A
+VIGILAI-TC-1654,Load Testing - Performance,Simulate 500 concurrent logins (Variant 154),Passed,200,Low,CI/CD-Runner
+VIGILAI-TC-1655,Load Testing - Performance,Measure API response < 200ms (Variant 155),Passed,81,Low,DevTeam-A
+VIGILAI-TC-1656,Load Testing - Performance,Measure Initial Page Load (Variant 156),Passed,354,Low,DevTeam-A
+VIGILAI-TC-1657,Load Testing - Performance,Simulate 100 video streams (Variant 157),Passed,57,Low,QA-Bot
+VIGILAI-TC-1658,Load Testing - Performance,Simulate 100 video streams (Variant 158),Passed,200,Critical,CI/CD-Runner
+VIGILAI-TC-1659,Load Testing - Performance,Simulate 100 video streams (Variant 159),Skipped,59,High,CI/CD-Runner
+VIGILAI-TC-1660,Load Testing - Performance,Measure WebSocket latency (Variant 160),Skipped,156,High,DevTeam-A
+VIGILAI-TC-1661,Load Testing - Performance,Check OOM recovery time (Variant 161),Passed,228,Medium,QA-Bot
+VIGILAI-TC-1662,Load Testing - Performance,Check OOM recovery time (Variant 162),Passed,209,Low,QA-Bot
+VIGILAI-TC-1663,Load Testing - Performance,Simulate 100 video streams (Variant 163),Passed,180,Low,QA-Bot
+VIGILAI-TC-1664,Load Testing - Performance,Test DB heavy read/write (Variant 164),Passed,399,High,CI/CD-Runner
+VIGILAI-TC-1665,Load Testing - Performance,Measure WebSocket latency (Variant 165),Passed,192,High,DevTeam-A
+VIGILAI-TC-1666,Load Testing - Performance,Test DB heavy read/write (Variant 166),Passed,408,Low,QA-Bot
+VIGILAI-TC-1667,Load Testing - Performance,Check OOM recovery time (Variant 167),Passed,260,Medium,CI/CD-Runner
+VIGILAI-TC-1668,Load Testing - Performance,Measure Initial Page Load (Variant 168),Passed,181,Medium,CI/CD-Runner
+VIGILAI-TC-1669,Load Testing - Performance,Measure WebSocket latency (Variant 169),Passed,330,Critical,QA-Bot
+VIGILAI-TC-1670,Load Testing - Performance,Measure Initial Page Load (Variant 170),Passed,320,Medium,DevTeam-A
+VIGILAI-TC-1671,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 171),Passed,18,Low,QA-Bot
+VIGILAI-TC-1672,Load Testing - Performance,Measure Initial Page Load (Variant 172),Passed,309,Low,DevTeam-A
+VIGILAI-TC-1673,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 173),Passed,113,Critical,QA-Bot
+VIGILAI-TC-1674,Load Testing - Performance,Measure WebSocket latency (Variant 174),Passed,370,Critical,CI/CD-Runner
+VIGILAI-TC-1675,Load Testing - Performance,Simulate 100 video streams (Variant 175),Skipped,182,Medium,DevTeam-A
+VIGILAI-TC-1676,Load Testing - Performance,Measure API response < 200ms (Variant 176),Passed,405,Medium,QA-Bot
+VIGILAI-TC-1677,Load Testing - Performance,Check OOM recovery time (Variant 177),Skipped,248,Critical,DevTeam-A
+VIGILAI-TC-1678,Load Testing - Performance,Measure WebSocket latency (Variant 178),Passed,384,Critical,DevTeam-A
+VIGILAI-TC-1679,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 179),Failed,42,High,DevTeam-A
+VIGILAI-TC-1680,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 180),Passed,114,Critical,QA-Bot
+VIGILAI-TC-1681,Load Testing - Performance,Simulate 100 video streams (Variant 181),Passed,369,Low,QA-Bot
+VIGILAI-TC-1682,Load Testing - Performance,Test DB heavy read/write (Variant 182),Passed,87,Critical,QA-Bot
+VIGILAI-TC-1683,Load Testing - Performance,Simulate 500 concurrent logins (Variant 183),Passed,27,High,QA-Bot
+VIGILAI-TC-1684,Load Testing - Performance,Test DB heavy read/write (Variant 184),Passed,108,Low,QA-Bot
+VIGILAI-TC-1685,Load Testing - Performance,Measure WebSocket latency (Variant 185),Passed,183,Critical,QA-Bot
+VIGILAI-TC-1686,Load Testing - Performance,Measure Initial Page Load (Variant 186),Passed,71,High,QA-Bot
+VIGILAI-TC-1687,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 187),Passed,410,Medium,DevTeam-A
+VIGILAI-TC-1688,Load Testing - Performance,Simulate 500 concurrent logins (Variant 188),Failed,172,Critical,CI/CD-Runner
+VIGILAI-TC-1689,Load Testing - Performance,Test DB heavy read/write (Variant 189),Skipped,201,Low,CI/CD-Runner
+VIGILAI-TC-1690,Load Testing - Performance,Measure Initial Page Load (Variant 190),Passed,72,Medium,DevTeam-A
+VIGILAI-TC-1691,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 191),Passed,194,Critical,DevTeam-A
+VIGILAI-TC-1692,Load Testing - Performance,Simulate 500 concurrent logins (Variant 192),Skipped,124,Low,QA-Bot
+VIGILAI-TC-1693,Load Testing - Performance,Simulate 500 concurrent logins (Variant 193),Passed,364,Critical,DevTeam-A
+VIGILAI-TC-1694,Load Testing - Performance,Measure Initial Page Load (Variant 194),Passed,254,Low,DevTeam-A
+VIGILAI-TC-1695,Load Testing - Performance,Measure WebSocket latency (Variant 195),Failed,408,Medium,CI/CD-Runner
+VIGILAI-TC-1696,Load Testing - Performance,Check OOM recovery time (Variant 196),Skipped,156,Low,DevTeam-A
+VIGILAI-TC-1697,Load Testing - Performance,Simulate 500 concurrent logins (Variant 197),Passed,36,Low,DevTeam-A
+VIGILAI-TC-1698,Load Testing - Performance,Simulate 500 concurrent logins (Variant 198),Passed,212,Medium,QA-Bot
+VIGILAI-TC-1699,Load Testing - Performance,Measure WebSocket latency (Variant 199),Passed,357,Low,QA-Bot
+VIGILAI-TC-1700,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 200),Passed,337,Medium,CI/CD-Runner
+VIGILAI-TC-1701,Load Testing - Performance,Measure WebSocket latency (Variant 201),Passed,171,Low,DevTeam-A
+VIGILAI-TC-1702,Load Testing - Performance,Test DB heavy read/write (Variant 202),Passed,164,Low,DevTeam-A
+VIGILAI-TC-1703,Load Testing - Performance,Check OOM recovery time (Variant 203),Passed,42,Low,DevTeam-A
+VIGILAI-TC-1704,Load Testing - Performance,Simulate 100 video streams (Variant 204),Failed,290,Critical,DevTeam-A
+VIGILAI-TC-1705,Load Testing - Performance,Check OOM recovery time (Variant 205),Passed,402,Low,DevTeam-A
+VIGILAI-TC-1706,Load Testing - Performance,Test DB heavy read/write (Variant 206),Passed,421,Medium,DevTeam-A
+VIGILAI-TC-1707,Load Testing - Performance,Simulate 500 concurrent logins (Variant 207),Passed,140,Low,CI/CD-Runner
+VIGILAI-TC-1708,Load Testing - Performance,Simulate 100 video streams (Variant 208),Passed,34,High,DevTeam-A
+VIGILAI-TC-1709,Load Testing - Performance,Measure WebSocket latency (Variant 209),Passed,439,Critical,DevTeam-A
+VIGILAI-TC-1710,Load Testing - Performance,Test DB heavy read/write (Variant 210),Passed,225,Critical,QA-Bot
+VIGILAI-TC-1711,Load Testing - Performance,Simulate 500 concurrent logins (Variant 211),Failed,113,Low,CI/CD-Runner
+VIGILAI-TC-1712,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 212),Passed,320,Critical,DevTeam-A
+VIGILAI-TC-1713,Load Testing - Performance,Simulate 500 concurrent logins (Variant 213),Passed,78,High,DevTeam-A
+VIGILAI-TC-1714,Load Testing - Performance,Test DB heavy read/write (Variant 214),Passed,30,Critical,CI/CD-Runner
+VIGILAI-TC-1715,Load Testing - Performance,Measure WebSocket latency (Variant 215),Passed,237,Critical,QA-Bot
+VIGILAI-TC-1716,Load Testing - Performance,Measure WebSocket latency (Variant 216),Passed,87,Low,QA-Bot
+VIGILAI-TC-1717,Load Testing - Performance,Measure WebSocket latency (Variant 217),Passed,147,Low,CI/CD-Runner
+VIGILAI-TC-1718,Load Testing - Performance,Measure API response < 200ms (Variant 218),Passed,30,High,DevTeam-A
+VIGILAI-TC-1719,Load Testing - Performance,Test DB heavy read/write (Variant 219),Passed,267,Low,QA-Bot
+VIGILAI-TC-1720,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 220),Passed,205,Critical,CI/CD-Runner
+VIGILAI-TC-1721,Load Testing - Performance,Simulate 100 video streams (Variant 221),Skipped,127,Medium,QA-Bot
+VIGILAI-TC-1722,Load Testing - Performance,Simulate 500 concurrent logins (Variant 222),Passed,227,Critical,CI/CD-Runner
+VIGILAI-TC-1723,Load Testing - Performance,Measure WebSocket latency (Variant 223),Passed,53,Critical,QA-Bot
+VIGILAI-TC-1724,Load Testing - Performance,Simulate 500 concurrent logins (Variant 224),Passed,236,High,CI/CD-Runner
+VIGILAI-TC-1725,Load Testing - Performance,Check OOM recovery time (Variant 225),Passed,191,High,QA-Bot
+VIGILAI-TC-1726,Load Testing - Performance,Simulate 100 video streams (Variant 226),Passed,140,Critical,CI/CD-Runner
+VIGILAI-TC-1727,Load Testing - Performance,Measure Initial Page Load (Variant 227),Passed,427,Medium,CI/CD-Runner
+VIGILAI-TC-1728,Load Testing - Performance,Check OOM recovery time (Variant 228),Passed,213,Medium,DevTeam-A
+VIGILAI-TC-1729,Load Testing - Performance,Measure API response < 200ms (Variant 229),Skipped,334,High,QA-Bot
+VIGILAI-TC-1730,Load Testing - Performance,Check OOM recovery time (Variant 230),Passed,281,Critical,DevTeam-A
+VIGILAI-TC-1731,Load Testing - Performance,Simulate 100 video streams (Variant 231),Passed,22,Medium,DevTeam-A
+VIGILAI-TC-1732,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 232),Passed,202,Medium,QA-Bot
+VIGILAI-TC-1733,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 233),Passed,249,Critical,DevTeam-A
+VIGILAI-TC-1734,Load Testing - Performance,Check OOM recovery time (Variant 234),Passed,151,Medium,QA-Bot
+VIGILAI-TC-1735,Load Testing - Performance,Simulate 500 concurrent logins (Variant 235),Passed,327,Low,QA-Bot
+VIGILAI-TC-1736,Load Testing - Performance,Test DB heavy read/write (Variant 236),Passed,20,Low,CI/CD-Runner
+VIGILAI-TC-1737,Load Testing - Performance,Measure WebSocket latency (Variant 237),Passed,42,Critical,CI/CD-Runner
+VIGILAI-TC-1738,Load Testing - Performance,Check OOM recovery time (Variant 238),Passed,234,Low,CI/CD-Runner
+VIGILAI-TC-1739,Load Testing - Performance,Simulate 100 video streams (Variant 239),Passed,104,High,DevTeam-A
+VIGILAI-TC-1740,Load Testing - Performance,Measure API response < 200ms (Variant 240),Passed,254,High,DevTeam-A
+VIGILAI-TC-1741,Load Testing - Performance,Simulate 100 video streams (Variant 241),Passed,106,Low,CI/CD-Runner
+VIGILAI-TC-1742,Load Testing - Performance,Simulate 500 concurrent logins (Variant 242),Passed,187,High,DevTeam-A
+VIGILAI-TC-1743,Load Testing - Performance,Simulate 500 concurrent logins (Variant 243),Passed,413,High,QA-Bot
+VIGILAI-TC-1744,Load Testing - Performance,Test DB heavy read/write (Variant 244),Passed,89,Critical,DevTeam-A
+VIGILAI-TC-1745,Load Testing - Performance,Check OOM recovery time (Variant 245),Passed,397,Low,CI/CD-Runner
+VIGILAI-TC-1746,Load Testing - Performance,Check OOM recovery time (Variant 246),Passed,426,Critical,CI/CD-Runner
+VIGILAI-TC-1747,Load Testing - Performance,Check OOM recovery time (Variant 247),Passed,94,Low,QA-Bot
+VIGILAI-TC-1748,Load Testing - Performance,Measure Initial Page Load (Variant 248),Passed,331,Low,CI/CD-Runner
+VIGILAI-TC-1749,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 249),Passed,99,High,CI/CD-Runner
+VIGILAI-TC-1750,Load Testing - Performance,Check OOM recovery time (Variant 250),Passed,172,Medium,QA-Bot
+VIGILAI-TC-1751,Load Testing - Performance,Test DB heavy read/write (Variant 251),Passed,383,Medium,QA-Bot
+VIGILAI-TC-1752,Load Testing - Performance,Check OOM recovery time (Variant 252),Passed,323,Medium,QA-Bot
+VIGILAI-TC-1753,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 253),Passed,408,Critical,CI/CD-Runner
+VIGILAI-TC-1754,Load Testing - Performance,Measure WebSocket latency (Variant 254),Passed,223,High,CI/CD-Runner
+VIGILAI-TC-1755,Load Testing - Performance,Test DB heavy read/write (Variant 255),Failed,371,High,CI/CD-Runner
+VIGILAI-TC-1756,Load Testing - Performance,Measure WebSocket latency (Variant 256),Passed,314,High,QA-Bot
+VIGILAI-TC-1757,Load Testing - Performance,Simulate 100 video streams (Variant 257),Passed,341,Critical,DevTeam-A
+VIGILAI-TC-1758,Load Testing - Performance,Simulate 100 video streams (Variant 258),Passed,76,Critical,DevTeam-A
+VIGILAI-TC-1759,Load Testing - Performance,Measure WebSocket latency (Variant 259),Passed,319,Medium,CI/CD-Runner
+VIGILAI-TC-1760,Load Testing - Performance,Measure Initial Page Load (Variant 260),Passed,207,High,DevTeam-A
+VIGILAI-TC-1761,Load Testing - Performance,Simulate 100 video streams (Variant 261),Passed,155,Medium,CI/CD-Runner
+VIGILAI-TC-1762,Load Testing - Performance,Measure Initial Page Load (Variant 262),Passed,302,Medium,CI/CD-Runner
+VIGILAI-TC-1763,Load Testing - Performance,Test DB heavy read/write (Variant 263),Passed,177,High,CI/CD-Runner
+VIGILAI-TC-1764,Load Testing - Performance,Check OOM recovery time (Variant 264),Passed,274,Critical,DevTeam-A
+VIGILAI-TC-1765,Load Testing - Performance,Test DB heavy read/write (Variant 265),Passed,326,Low,DevTeam-A
+VIGILAI-TC-1766,Load Testing - Performance,Check OOM recovery time (Variant 266),Passed,246,High,CI/CD-Runner
+VIGILAI-TC-1767,Load Testing - Performance,Measure Initial Page Load (Variant 267),Passed,217,Critical,DevTeam-A
+VIGILAI-TC-1768,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 268),Passed,243,Medium,QA-Bot
+VIGILAI-TC-1769,Load Testing - Performance,Simulate 500 concurrent logins (Variant 269),Passed,193,Low,CI/CD-Runner
+VIGILAI-TC-1770,Load Testing - Performance,Measure API response < 200ms (Variant 270),Passed,377,Critical,CI/CD-Runner
+VIGILAI-TC-1771,Load Testing - Performance,Measure API response < 200ms (Variant 271),Passed,274,Low,QA-Bot
+VIGILAI-TC-1772,Load Testing - Performance,Check OOM recovery time (Variant 272),Passed,225,High,CI/CD-Runner
+VIGILAI-TC-1773,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 273),Passed,403,Critical,CI/CD-Runner
+VIGILAI-TC-1774,Load Testing - Performance,Check OOM recovery time (Variant 274),Passed,310,Critical,CI/CD-Runner
+VIGILAI-TC-1775,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 275),Skipped,335,Low,DevTeam-A
+VIGILAI-TC-1776,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 276),Passed,411,Medium,QA-Bot
+VIGILAI-TC-1777,Load Testing - Performance,Simulate 100 video streams (Variant 277),Passed,27,High,CI/CD-Runner
+VIGILAI-TC-1778,Load Testing - Performance,Simulate 100 video streams (Variant 278),Passed,306,Medium,DevTeam-A
+VIGILAI-TC-1779,Load Testing - Performance,Measure API response < 200ms (Variant 279),Passed,249,High,QA-Bot
+VIGILAI-TC-1780,Load Testing - Performance,Measure WebSocket latency (Variant 280),Passed,344,High,CI/CD-Runner
+VIGILAI-TC-1781,Load Testing - Performance,Test DB heavy read/write (Variant 281),Passed,49,Medium,QA-Bot
+VIGILAI-TC-1782,Load Testing - Performance,Test DB heavy read/write (Variant 282),Passed,234,High,CI/CD-Runner
+VIGILAI-TC-1783,Load Testing - Performance,Measure Initial Page Load (Variant 283),Passed,99,High,CI/CD-Runner
+VIGILAI-TC-1784,Load Testing - Performance,Test DB heavy read/write (Variant 284),Passed,391,Critical,QA-Bot
+VIGILAI-TC-1785,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 285),Passed,34,Critical,QA-Bot
+VIGILAI-TC-1786,Load Testing - Performance,Check OOM recovery time (Variant 286),Failed,370,Low,DevTeam-A
+VIGILAI-TC-1787,Load Testing - Performance,Test DB heavy read/write (Variant 287),Passed,238,High,QA-Bot
+VIGILAI-TC-1788,Load Testing - Performance,Simulate 500 concurrent logins (Variant 288),Passed,125,Medium,QA-Bot
+VIGILAI-TC-1789,Load Testing - Performance,Check OOM recovery time (Variant 289),Passed,239,High,DevTeam-A
+VIGILAI-TC-1790,Load Testing - Performance,Test DB heavy read/write (Variant 290),Passed,381,Critical,CI/CD-Runner
+VIGILAI-TC-1791,Load Testing - Performance,Measure Initial Page Load (Variant 291),Passed,68,Critical,DevTeam-A
+VIGILAI-TC-1792,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 292),Passed,196,Critical,QA-Bot
+VIGILAI-TC-1793,Load Testing - Performance,Measure WebSocket latency (Variant 293),Passed,222,High,DevTeam-A
+VIGILAI-TC-1794,Load Testing - Performance,Measure API response < 200ms (Variant 294),Passed,249,Critical,DevTeam-A
+VIGILAI-TC-1795,Load Testing - Performance,Measure YOLOv8 inference < 100ms (Variant 295),Passed,440,Medium,QA-Bot
+VIGILAI-TC-1796,Load Testing - Performance,Measure API response < 200ms (Variant 296),Passed,230,Low,DevTeam-A
+VIGILAI-TC-1797,Load Testing - Performance,Measure WebSocket latency (Variant 297),Passed,343,Critical,DevTeam-A
+VIGILAI-TC-1798,Load Testing - Performance,Check OOM recovery time (Variant 298),Failed,447,Critical,DevTeam-A
+VIGILAI-TC-1799,Load Testing - Performance,Simulate 500 concurrent logins (Variant 299),Passed,129,High,CI/CD-Runner
+VIGILAI-TC-1800,Load Testing - Performance,Simulate 100 video streams (Variant 300),Passed,318,Medium,DevTeam-A

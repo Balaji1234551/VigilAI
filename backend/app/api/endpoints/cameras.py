@@ -41,9 +41,6 @@ async def register_camera(
         camera_manager.start_camera(db_camera.id, db_camera.camera_name, db_camera.stream_url)
         recording_manager.start_recording(db_camera.id)
         
-        # Mark as online
-        db_camera.status = "online"
-        db.commit()
         db.refresh(db_camera)
 
         AuditLogRepository.log(
@@ -257,6 +254,16 @@ async def test_camera_connection(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Failed to open connection. Ensure correct stream URL, credentials, or webcam permissions."
         )
+
+
+@router.get("/test-stream")
+async def get_test_stream(url: str):
+    """Provides a smooth, optimized live stream purely for testing connections without saving to the DB."""
+    from app.video.streamer import generate_test_stream
+    return StreamingResponse(
+        generate_test_stream(url),
+        media_type="multipart/x-mixed-replace; boundary=frame"
+    )
 
 
 @router.post("/start")
