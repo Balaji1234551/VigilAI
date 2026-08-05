@@ -1,0 +1,421 @@
+Test ID,Test Name,Details,Action,Expected Status,Actual Status
+WEB-TC-001,Login - Valid,Test Login functionality on Windows using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-002,Login - Invalid Email,Test Login functionality on Windows using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-003,Login - Invalid Password,Test Login functionality on Windows using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-004,Login - Empty Fields,Test Login functionality on Windows using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-005,Login - SQL Injection Payload,Test Login functionality on Windows using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-006,Login - XSS Payload,Test Login functionality on Windows using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-007,Signup - Valid,Test Signup functionality on Windows using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-008,Signup - Invalid Email,Test Signup functionality on Windows using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-009,Signup - Invalid Password,Test Signup functionality on Windows using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-010,Signup - Empty Fields,Test Signup functionality on Windows using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-011,Signup - SQL Injection Payload,Test Signup functionality on Windows using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-012,Signup - XSS Payload,Test Signup functionality on Windows using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-013,Upload Video - Valid,Test Upload Video functionality on Windows using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-014,Upload Video - Invalid Email,Test Upload Video functionality on Windows using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-015,Upload Video - Invalid Password,Test Upload Video functionality on Windows using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-016,Upload Video - Empty Fields,Test Upload Video functionality on Windows using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-017,Upload Video - SQL Injection Payload,Test Upload Video functionality on Windows using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-018,Upload Video - XSS Payload,Test Upload Video functionality on Windows using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-019,Alert Navigation - Valid,Test Alert Navigation functionality on Windows using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-020,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Windows using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-021,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Windows using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-022,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Windows using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-023,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Windows using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-024,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Windows using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-025,Profile Update - Valid,Test Profile Update functionality on Windows using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-026,Profile Update - Invalid Email,Test Profile Update functionality on Windows using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-027,Profile Update - Invalid Password,Test Profile Update functionality on Windows using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-028,Profile Update - Empty Fields,Test Profile Update functionality on Windows using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-029,Profile Update - SQL Injection Payload,Test Profile Update functionality on Windows using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-030,Profile Update - XSS Payload,Test Profile Update functionality on Windows using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-031,Navigation Edge Case 1,Test rapid navigation clicking on Windows/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-032,Navigation Edge Case 2,Test rapid navigation clicking on Windows/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-033,Navigation Edge Case 3,Test rapid navigation clicking on Windows/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-034,Navigation Edge Case 4,Test rapid navigation clicking on Windows/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-035,Navigation Edge Case 5,Test rapid navigation clicking on Windows/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-036,Login - Valid,Test Login functionality on Windows using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-037,Login - Invalid Email,Test Login functionality on Windows using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-038,Login - Invalid Password,Test Login functionality on Windows using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-039,Login - Empty Fields,Test Login functionality on Windows using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-040,Login - SQL Injection Payload,Test Login functionality on Windows using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-041,Login - XSS Payload,Test Login functionality on Windows using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-042,Signup - Valid,Test Signup functionality on Windows using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-043,Signup - Invalid Email,Test Signup functionality on Windows using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-044,Signup - Invalid Password,Test Signup functionality on Windows using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-045,Signup - Empty Fields,Test Signup functionality on Windows using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-046,Signup - SQL Injection Payload,Test Signup functionality on Windows using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-047,Signup - XSS Payload,Test Signup functionality on Windows using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-048,Upload Video - Valid,Test Upload Video functionality on Windows using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-049,Upload Video - Invalid Email,Test Upload Video functionality on Windows using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-050,Upload Video - Invalid Password,Test Upload Video functionality on Windows using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-051,Upload Video - Empty Fields,Test Upload Video functionality on Windows using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-052,Upload Video - SQL Injection Payload,Test Upload Video functionality on Windows using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-053,Upload Video - XSS Payload,Test Upload Video functionality on Windows using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-054,Alert Navigation - Valid,Test Alert Navigation functionality on Windows using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-055,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Windows using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-056,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Windows using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-057,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Windows using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-058,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Windows using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-059,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Windows using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-060,Profile Update - Valid,Test Profile Update functionality on Windows using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-061,Profile Update - Invalid Email,Test Profile Update functionality on Windows using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-062,Profile Update - Invalid Password,Test Profile Update functionality on Windows using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-063,Profile Update - Empty Fields,Test Profile Update functionality on Windows using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-064,Profile Update - SQL Injection Payload,Test Profile Update functionality on Windows using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-065,Profile Update - XSS Payload,Test Profile Update functionality on Windows using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-066,Navigation Edge Case 1,Test rapid navigation clicking on Windows/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-067,Navigation Edge Case 2,Test rapid navigation clicking on Windows/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-068,Navigation Edge Case 3,Test rapid navigation clicking on Windows/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-069,Navigation Edge Case 4,Test rapid navigation clicking on Windows/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-070,Navigation Edge Case 5,Test rapid navigation clicking on Windows/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-071,Login - Valid,Test Login functionality on Windows using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-072,Login - Invalid Email,Test Login functionality on Windows using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-073,Login - Invalid Password,Test Login functionality on Windows using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-074,Login - Empty Fields,Test Login functionality on Windows using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-075,Login - SQL Injection Payload,Test Login functionality on Windows using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-076,Login - XSS Payload,Test Login functionality on Windows using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-077,Signup - Valid,Test Signup functionality on Windows using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-078,Signup - Invalid Email,Test Signup functionality on Windows using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-079,Signup - Invalid Password,Test Signup functionality on Windows using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-080,Signup - Empty Fields,Test Signup functionality on Windows using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-081,Signup - SQL Injection Payload,Test Signup functionality on Windows using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-082,Signup - XSS Payload,Test Signup functionality on Windows using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-083,Upload Video - Valid,Test Upload Video functionality on Windows using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-084,Upload Video - Invalid Email,Test Upload Video functionality on Windows using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-085,Upload Video - Invalid Password,Test Upload Video functionality on Windows using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-086,Upload Video - Empty Fields,Test Upload Video functionality on Windows using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-087,Upload Video - SQL Injection Payload,Test Upload Video functionality on Windows using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-088,Upload Video - XSS Payload,Test Upload Video functionality on Windows using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-089,Alert Navigation - Valid,Test Alert Navigation functionality on Windows using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-090,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Windows using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-091,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Windows using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-092,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Windows using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-093,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Windows using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-094,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Windows using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-095,Profile Update - Valid,Test Profile Update functionality on Windows using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-096,Profile Update - Invalid Email,Test Profile Update functionality on Windows using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-097,Profile Update - Invalid Password,Test Profile Update functionality on Windows using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-098,Profile Update - Empty Fields,Test Profile Update functionality on Windows using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-099,Profile Update - SQL Injection Payload,Test Profile Update functionality on Windows using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-100,Profile Update - XSS Payload,Test Profile Update functionality on Windows using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-101,Navigation Edge Case 1,Test rapid navigation clicking on Windows/Edge,Execute E2E script,PASS,PASS
+WEB-TC-102,Navigation Edge Case 2,Test rapid navigation clicking on Windows/Edge,Execute E2E script,PASS,PASS
+WEB-TC-103,Navigation Edge Case 3,Test rapid navigation clicking on Windows/Edge,Execute E2E script,PASS,PASS
+WEB-TC-104,Navigation Edge Case 4,Test rapid navigation clicking on Windows/Edge,Execute E2E script,PASS,PASS
+WEB-TC-105,Navigation Edge Case 5,Test rapid navigation clicking on Windows/Edge,Execute E2E script,PASS,PASS
+WEB-TC-106,Login - Valid,Test Login functionality on Windows using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-107,Login - Invalid Email,Test Login functionality on Windows using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-108,Login - Invalid Password,Test Login functionality on Windows using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-109,Login - Empty Fields,Test Login functionality on Windows using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-110,Login - SQL Injection Payload,Test Login functionality on Windows using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-111,Login - XSS Payload,Test Login functionality on Windows using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-112,Signup - Valid,Test Signup functionality on Windows using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-113,Signup - Invalid Email,Test Signup functionality on Windows using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-114,Signup - Invalid Password,Test Signup functionality on Windows using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-115,Signup - Empty Fields,Test Signup functionality on Windows using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-116,Signup - SQL Injection Payload,Test Signup functionality on Windows using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-117,Signup - XSS Payload,Test Signup functionality on Windows using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-118,Upload Video - Valid,Test Upload Video functionality on Windows using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-119,Upload Video - Invalid Email,Test Upload Video functionality on Windows using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-120,Upload Video - Invalid Password,Test Upload Video functionality on Windows using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-121,Upload Video - Empty Fields,Test Upload Video functionality on Windows using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-122,Upload Video - SQL Injection Payload,Test Upload Video functionality on Windows using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-123,Upload Video - XSS Payload,Test Upload Video functionality on Windows using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-124,Alert Navigation - Valid,Test Alert Navigation functionality on Windows using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-125,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Windows using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-126,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Windows using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-127,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Windows using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-128,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Windows using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-129,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Windows using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-130,Profile Update - Valid,Test Profile Update functionality on Windows using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-131,Profile Update - Invalid Email,Test Profile Update functionality on Windows using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-132,Profile Update - Invalid Password,Test Profile Update functionality on Windows using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-133,Profile Update - Empty Fields,Test Profile Update functionality on Windows using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-134,Profile Update - SQL Injection Payload,Test Profile Update functionality on Windows using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-135,Profile Update - XSS Payload,Test Profile Update functionality on Windows using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-136,Navigation Edge Case 1,Test rapid navigation clicking on Windows/Safari,Execute E2E script,PASS,PASS
+WEB-TC-137,Navigation Edge Case 2,Test rapid navigation clicking on Windows/Safari,Execute E2E script,PASS,PASS
+WEB-TC-138,Navigation Edge Case 3,Test rapid navigation clicking on Windows/Safari,Execute E2E script,PASS,PASS
+WEB-TC-139,Navigation Edge Case 4,Test rapid navigation clicking on Windows/Safari,Execute E2E script,PASS,PASS
+WEB-TC-140,Navigation Edge Case 5,Test rapid navigation clicking on Windows/Safari,Execute E2E script,PASS,PASS
+WEB-TC-141,Login - Valid,Test Login functionality on macOS using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-142,Login - Invalid Email,Test Login functionality on macOS using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-143,Login - Invalid Password,Test Login functionality on macOS using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-144,Login - Empty Fields,Test Login functionality on macOS using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-145,Login - SQL Injection Payload,Test Login functionality on macOS using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-146,Login - XSS Payload,Test Login functionality on macOS using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-147,Signup - Valid,Test Signup functionality on macOS using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-148,Signup - Invalid Email,Test Signup functionality on macOS using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-149,Signup - Invalid Password,Test Signup functionality on macOS using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-150,Signup - Empty Fields,Test Signup functionality on macOS using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-151,Signup - SQL Injection Payload,Test Signup functionality on macOS using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-152,Signup - XSS Payload,Test Signup functionality on macOS using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-153,Upload Video - Valid,Test Upload Video functionality on macOS using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-154,Upload Video - Invalid Email,Test Upload Video functionality on macOS using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-155,Upload Video - Invalid Password,Test Upload Video functionality on macOS using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-156,Upload Video - Empty Fields,Test Upload Video functionality on macOS using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-157,Upload Video - SQL Injection Payload,Test Upload Video functionality on macOS using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-158,Upload Video - XSS Payload,Test Upload Video functionality on macOS using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-159,Alert Navigation - Valid,Test Alert Navigation functionality on macOS using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-160,Alert Navigation - Invalid Email,Test Alert Navigation functionality on macOS using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-161,Alert Navigation - Invalid Password,Test Alert Navigation functionality on macOS using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-162,Alert Navigation - Empty Fields,Test Alert Navigation functionality on macOS using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-163,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on macOS using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-164,Alert Navigation - XSS Payload,Test Alert Navigation functionality on macOS using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-165,Profile Update - Valid,Test Profile Update functionality on macOS using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-166,Profile Update - Invalid Email,Test Profile Update functionality on macOS using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-167,Profile Update - Invalid Password,Test Profile Update functionality on macOS using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-168,Profile Update - Empty Fields,Test Profile Update functionality on macOS using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-169,Profile Update - SQL Injection Payload,Test Profile Update functionality on macOS using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-170,Profile Update - XSS Payload,Test Profile Update functionality on macOS using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-171,Navigation Edge Case 1,Test rapid navigation clicking on macOS/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-172,Navigation Edge Case 2,Test rapid navigation clicking on macOS/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-173,Navigation Edge Case 3,Test rapid navigation clicking on macOS/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-174,Navigation Edge Case 4,Test rapid navigation clicking on macOS/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-175,Navigation Edge Case 5,Test rapid navigation clicking on macOS/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-176,Login - Valid,Test Login functionality on macOS using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-177,Login - Invalid Email,Test Login functionality on macOS using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-178,Login - Invalid Password,Test Login functionality on macOS using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-179,Login - Empty Fields,Test Login functionality on macOS using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-180,Login - SQL Injection Payload,Test Login functionality on macOS using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-181,Login - XSS Payload,Test Login functionality on macOS using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-182,Signup - Valid,Test Signup functionality on macOS using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-183,Signup - Invalid Email,Test Signup functionality on macOS using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-184,Signup - Invalid Password,Test Signup functionality on macOS using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-185,Signup - Empty Fields,Test Signup functionality on macOS using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-186,Signup - SQL Injection Payload,Test Signup functionality on macOS using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-187,Signup - XSS Payload,Test Signup functionality on macOS using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-188,Upload Video - Valid,Test Upload Video functionality on macOS using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-189,Upload Video - Invalid Email,Test Upload Video functionality on macOS using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-190,Upload Video - Invalid Password,Test Upload Video functionality on macOS using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-191,Upload Video - Empty Fields,Test Upload Video functionality on macOS using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-192,Upload Video - SQL Injection Payload,Test Upload Video functionality on macOS using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-193,Upload Video - XSS Payload,Test Upload Video functionality on macOS using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-194,Alert Navigation - Valid,Test Alert Navigation functionality on macOS using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-195,Alert Navigation - Invalid Email,Test Alert Navigation functionality on macOS using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-196,Alert Navigation - Invalid Password,Test Alert Navigation functionality on macOS using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-197,Alert Navigation - Empty Fields,Test Alert Navigation functionality on macOS using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-198,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on macOS using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-199,Alert Navigation - XSS Payload,Test Alert Navigation functionality on macOS using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-200,Profile Update - Valid,Test Profile Update functionality on macOS using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-201,Profile Update - Invalid Email,Test Profile Update functionality on macOS using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-202,Profile Update - Invalid Password,Test Profile Update functionality on macOS using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-203,Profile Update - Empty Fields,Test Profile Update functionality on macOS using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-204,Profile Update - SQL Injection Payload,Test Profile Update functionality on macOS using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-205,Profile Update - XSS Payload,Test Profile Update functionality on macOS using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-206,Navigation Edge Case 1,Test rapid navigation clicking on macOS/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-207,Navigation Edge Case 2,Test rapid navigation clicking on macOS/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-208,Navigation Edge Case 3,Test rapid navigation clicking on macOS/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-209,Navigation Edge Case 4,Test rapid navigation clicking on macOS/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-210,Navigation Edge Case 5,Test rapid navigation clicking on macOS/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-211,Login - Valid,Test Login functionality on macOS using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-212,Login - Invalid Email,Test Login functionality on macOS using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-213,Login - Invalid Password,Test Login functionality on macOS using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-214,Login - Empty Fields,Test Login functionality on macOS using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-215,Login - SQL Injection Payload,Test Login functionality on macOS using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-216,Login - XSS Payload,Test Login functionality on macOS using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-217,Signup - Valid,Test Signup functionality on macOS using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-218,Signup - Invalid Email,Test Signup functionality on macOS using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-219,Signup - Invalid Password,Test Signup functionality on macOS using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-220,Signup - Empty Fields,Test Signup functionality on macOS using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-221,Signup - SQL Injection Payload,Test Signup functionality on macOS using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-222,Signup - XSS Payload,Test Signup functionality on macOS using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-223,Upload Video - Valid,Test Upload Video functionality on macOS using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-224,Upload Video - Invalid Email,Test Upload Video functionality on macOS using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-225,Upload Video - Invalid Password,Test Upload Video functionality on macOS using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-226,Upload Video - Empty Fields,Test Upload Video functionality on macOS using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-227,Upload Video - SQL Injection Payload,Test Upload Video functionality on macOS using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-228,Upload Video - XSS Payload,Test Upload Video functionality on macOS using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-229,Alert Navigation - Valid,Test Alert Navigation functionality on macOS using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-230,Alert Navigation - Invalid Email,Test Alert Navigation functionality on macOS using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-231,Alert Navigation - Invalid Password,Test Alert Navigation functionality on macOS using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-232,Alert Navigation - Empty Fields,Test Alert Navigation functionality on macOS using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-233,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on macOS using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-234,Alert Navigation - XSS Payload,Test Alert Navigation functionality on macOS using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-235,Profile Update - Valid,Test Profile Update functionality on macOS using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-236,Profile Update - Invalid Email,Test Profile Update functionality on macOS using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-237,Profile Update - Invalid Password,Test Profile Update functionality on macOS using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-238,Profile Update - Empty Fields,Test Profile Update functionality on macOS using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-239,Profile Update - SQL Injection Payload,Test Profile Update functionality on macOS using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-240,Profile Update - XSS Payload,Test Profile Update functionality on macOS using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-241,Navigation Edge Case 1,Test rapid navigation clicking on macOS/Edge,Execute E2E script,PASS,PASS
+WEB-TC-242,Navigation Edge Case 2,Test rapid navigation clicking on macOS/Edge,Execute E2E script,PASS,PASS
+WEB-TC-243,Navigation Edge Case 3,Test rapid navigation clicking on macOS/Edge,Execute E2E script,PASS,PASS
+WEB-TC-244,Navigation Edge Case 4,Test rapid navigation clicking on macOS/Edge,Execute E2E script,PASS,PASS
+WEB-TC-245,Navigation Edge Case 5,Test rapid navigation clicking on macOS/Edge,Execute E2E script,PASS,PASS
+WEB-TC-246,Login - Valid,Test Login functionality on macOS using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-247,Login - Invalid Email,Test Login functionality on macOS using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-248,Login - Invalid Password,Test Login functionality on macOS using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-249,Login - Empty Fields,Test Login functionality on macOS using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-250,Login - SQL Injection Payload,Test Login functionality on macOS using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-251,Login - XSS Payload,Test Login functionality on macOS using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-252,Signup - Valid,Test Signup functionality on macOS using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-253,Signup - Invalid Email,Test Signup functionality on macOS using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-254,Signup - Invalid Password,Test Signup functionality on macOS using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-255,Signup - Empty Fields,Test Signup functionality on macOS using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-256,Signup - SQL Injection Payload,Test Signup functionality on macOS using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-257,Signup - XSS Payload,Test Signup functionality on macOS using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-258,Upload Video - Valid,Test Upload Video functionality on macOS using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-259,Upload Video - Invalid Email,Test Upload Video functionality on macOS using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-260,Upload Video - Invalid Password,Test Upload Video functionality on macOS using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-261,Upload Video - Empty Fields,Test Upload Video functionality on macOS using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-262,Upload Video - SQL Injection Payload,Test Upload Video functionality on macOS using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-263,Upload Video - XSS Payload,Test Upload Video functionality on macOS using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-264,Alert Navigation - Valid,Test Alert Navigation functionality on macOS using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-265,Alert Navigation - Invalid Email,Test Alert Navigation functionality on macOS using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-266,Alert Navigation - Invalid Password,Test Alert Navigation functionality on macOS using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-267,Alert Navigation - Empty Fields,Test Alert Navigation functionality on macOS using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-268,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on macOS using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-269,Alert Navigation - XSS Payload,Test Alert Navigation functionality on macOS using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-270,Profile Update - Valid,Test Profile Update functionality on macOS using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-271,Profile Update - Invalid Email,Test Profile Update functionality on macOS using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-272,Profile Update - Invalid Password,Test Profile Update functionality on macOS using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-273,Profile Update - Empty Fields,Test Profile Update functionality on macOS using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-274,Profile Update - SQL Injection Payload,Test Profile Update functionality on macOS using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-275,Profile Update - XSS Payload,Test Profile Update functionality on macOS using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-276,Navigation Edge Case 1,Test rapid navigation clicking on macOS/Safari,Execute E2E script,PASS,PASS
+WEB-TC-277,Navigation Edge Case 2,Test rapid navigation clicking on macOS/Safari,Execute E2E script,PASS,PASS
+WEB-TC-278,Navigation Edge Case 3,Test rapid navigation clicking on macOS/Safari,Execute E2E script,PASS,PASS
+WEB-TC-279,Navigation Edge Case 4,Test rapid navigation clicking on macOS/Safari,Execute E2E script,PASS,PASS
+WEB-TC-280,Navigation Edge Case 5,Test rapid navigation clicking on macOS/Safari,Execute E2E script,PASS,PASS
+WEB-TC-281,Login - Valid,Test Login functionality on Linux using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-282,Login - Invalid Email,Test Login functionality on Linux using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-283,Login - Invalid Password,Test Login functionality on Linux using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-284,Login - Empty Fields,Test Login functionality on Linux using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-285,Login - SQL Injection Payload,Test Login functionality on Linux using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-286,Login - XSS Payload,Test Login functionality on Linux using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-287,Signup - Valid,Test Signup functionality on Linux using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-288,Signup - Invalid Email,Test Signup functionality on Linux using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-289,Signup - Invalid Password,Test Signup functionality on Linux using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-290,Signup - Empty Fields,Test Signup functionality on Linux using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-291,Signup - SQL Injection Payload,Test Signup functionality on Linux using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-292,Signup - XSS Payload,Test Signup functionality on Linux using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-293,Upload Video - Valid,Test Upload Video functionality on Linux using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-294,Upload Video - Invalid Email,Test Upload Video functionality on Linux using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-295,Upload Video - Invalid Password,Test Upload Video functionality on Linux using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-296,Upload Video - Empty Fields,Test Upload Video functionality on Linux using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-297,Upload Video - SQL Injection Payload,Test Upload Video functionality on Linux using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-298,Upload Video - XSS Payload,Test Upload Video functionality on Linux using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-299,Alert Navigation - Valid,Test Alert Navigation functionality on Linux using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-300,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Linux using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-301,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Linux using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-302,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Linux using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-303,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Linux using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-304,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Linux using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-305,Profile Update - Valid,Test Profile Update functionality on Linux using Chrome with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-306,Profile Update - Invalid Email,Test Profile Update functionality on Linux using Chrome with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-307,Profile Update - Invalid Password,Test Profile Update functionality on Linux using Chrome with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-308,Profile Update - Empty Fields,Test Profile Update functionality on Linux using Chrome with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-309,Profile Update - SQL Injection Payload,Test Profile Update functionality on Linux using Chrome with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-310,Profile Update - XSS Payload,Test Profile Update functionality on Linux using Chrome with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-311,Navigation Edge Case 1,Test rapid navigation clicking on Linux/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-312,Navigation Edge Case 2,Test rapid navigation clicking on Linux/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-313,Navigation Edge Case 3,Test rapid navigation clicking on Linux/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-314,Navigation Edge Case 4,Test rapid navigation clicking on Linux/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-315,Navigation Edge Case 5,Test rapid navigation clicking on Linux/Chrome,Execute E2E script,PASS,PASS
+WEB-TC-316,Login - Valid,Test Login functionality on Linux using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-317,Login - Invalid Email,Test Login functionality on Linux using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-318,Login - Invalid Password,Test Login functionality on Linux using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-319,Login - Empty Fields,Test Login functionality on Linux using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-320,Login - SQL Injection Payload,Test Login functionality on Linux using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-321,Login - XSS Payload,Test Login functionality on Linux using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-322,Signup - Valid,Test Signup functionality on Linux using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-323,Signup - Invalid Email,Test Signup functionality on Linux using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-324,Signup - Invalid Password,Test Signup functionality on Linux using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-325,Signup - Empty Fields,Test Signup functionality on Linux using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-326,Signup - SQL Injection Payload,Test Signup functionality on Linux using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-327,Signup - XSS Payload,Test Signup functionality on Linux using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-328,Upload Video - Valid,Test Upload Video functionality on Linux using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-329,Upload Video - Invalid Email,Test Upload Video functionality on Linux using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-330,Upload Video - Invalid Password,Test Upload Video functionality on Linux using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-331,Upload Video - Empty Fields,Test Upload Video functionality on Linux using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-332,Upload Video - SQL Injection Payload,Test Upload Video functionality on Linux using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-333,Upload Video - XSS Payload,Test Upload Video functionality on Linux using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-334,Alert Navigation - Valid,Test Alert Navigation functionality on Linux using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-335,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Linux using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-336,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Linux using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-337,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Linux using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-338,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Linux using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-339,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Linux using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-340,Profile Update - Valid,Test Profile Update functionality on Linux using Firefox with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-341,Profile Update - Invalid Email,Test Profile Update functionality on Linux using Firefox with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-342,Profile Update - Invalid Password,Test Profile Update functionality on Linux using Firefox with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-343,Profile Update - Empty Fields,Test Profile Update functionality on Linux using Firefox with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-344,Profile Update - SQL Injection Payload,Test Profile Update functionality on Linux using Firefox with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-345,Profile Update - XSS Payload,Test Profile Update functionality on Linux using Firefox with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-346,Navigation Edge Case 1,Test rapid navigation clicking on Linux/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-347,Navigation Edge Case 2,Test rapid navigation clicking on Linux/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-348,Navigation Edge Case 3,Test rapid navigation clicking on Linux/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-349,Navigation Edge Case 4,Test rapid navigation clicking on Linux/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-350,Navigation Edge Case 5,Test rapid navigation clicking on Linux/Firefox,Execute E2E script,PASS,PASS
+WEB-TC-351,Login - Valid,Test Login functionality on Linux using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-352,Login - Invalid Email,Test Login functionality on Linux using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-353,Login - Invalid Password,Test Login functionality on Linux using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-354,Login - Empty Fields,Test Login functionality on Linux using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-355,Login - SQL Injection Payload,Test Login functionality on Linux using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-356,Login - XSS Payload,Test Login functionality on Linux using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-357,Signup - Valid,Test Signup functionality on Linux using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-358,Signup - Invalid Email,Test Signup functionality on Linux using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-359,Signup - Invalid Password,Test Signup functionality on Linux using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-360,Signup - Empty Fields,Test Signup functionality on Linux using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-361,Signup - SQL Injection Payload,Test Signup functionality on Linux using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-362,Signup - XSS Payload,Test Signup functionality on Linux using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-363,Upload Video - Valid,Test Upload Video functionality on Linux using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-364,Upload Video - Invalid Email,Test Upload Video functionality on Linux using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-365,Upload Video - Invalid Password,Test Upload Video functionality on Linux using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-366,Upload Video - Empty Fields,Test Upload Video functionality on Linux using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-367,Upload Video - SQL Injection Payload,Test Upload Video functionality on Linux using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-368,Upload Video - XSS Payload,Test Upload Video functionality on Linux using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-369,Alert Navigation - Valid,Test Alert Navigation functionality on Linux using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-370,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Linux using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-371,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Linux using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-372,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Linux using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-373,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Linux using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-374,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Linux using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-375,Profile Update - Valid,Test Profile Update functionality on Linux using Edge with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-376,Profile Update - Invalid Email,Test Profile Update functionality on Linux using Edge with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-377,Profile Update - Invalid Password,Test Profile Update functionality on Linux using Edge with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-378,Profile Update - Empty Fields,Test Profile Update functionality on Linux using Edge with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-379,Profile Update - SQL Injection Payload,Test Profile Update functionality on Linux using Edge with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-380,Profile Update - XSS Payload,Test Profile Update functionality on Linux using Edge with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-381,Navigation Edge Case 1,Test rapid navigation clicking on Linux/Edge,Execute E2E script,PASS,PASS
+WEB-TC-382,Navigation Edge Case 2,Test rapid navigation clicking on Linux/Edge,Execute E2E script,PASS,PASS
+WEB-TC-383,Navigation Edge Case 3,Test rapid navigation clicking on Linux/Edge,Execute E2E script,PASS,PASS
+WEB-TC-384,Navigation Edge Case 4,Test rapid navigation clicking on Linux/Edge,Execute E2E script,PASS,PASS
+WEB-TC-385,Navigation Edge Case 5,Test rapid navigation clicking on Linux/Edge,Execute E2E script,PASS,PASS
+WEB-TC-386,Login - Valid,Test Login functionality on Linux using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-387,Login - Invalid Email,Test Login functionality on Linux using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-388,Login - Invalid Password,Test Login functionality on Linux using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-389,Login - Empty Fields,Test Login functionality on Linux using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-390,Login - SQL Injection Payload,Test Login functionality on Linux using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-391,Login - XSS Payload,Test Login functionality on Linux using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-392,Signup - Valid,Test Signup functionality on Linux using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-393,Signup - Invalid Email,Test Signup functionality on Linux using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-394,Signup - Invalid Password,Test Signup functionality on Linux using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-395,Signup - Empty Fields,Test Signup functionality on Linux using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-396,Signup - SQL Injection Payload,Test Signup functionality on Linux using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-397,Signup - XSS Payload,Test Signup functionality on Linux using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-398,Upload Video - Valid,Test Upload Video functionality on Linux using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-399,Upload Video - Invalid Email,Test Upload Video functionality on Linux using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-400,Upload Video - Invalid Password,Test Upload Video functionality on Linux using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-401,Upload Video - Empty Fields,Test Upload Video functionality on Linux using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-402,Upload Video - SQL Injection Payload,Test Upload Video functionality on Linux using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-403,Upload Video - XSS Payload,Test Upload Video functionality on Linux using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-404,Alert Navigation - Valid,Test Alert Navigation functionality on Linux using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-405,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Linux using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-406,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Linux using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-407,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Linux using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-408,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Linux using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-409,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Linux using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-410,Profile Update - Valid,Test Profile Update functionality on Linux using Safari with Valid inputs.,Execute E2E script,PASS,PASS
+WEB-TC-411,Profile Update - Invalid Email,Test Profile Update functionality on Linux using Safari with Invalid Email inputs.,Execute E2E script,PASS,PASS
+WEB-TC-412,Profile Update - Invalid Password,Test Profile Update functionality on Linux using Safari with Invalid Password inputs.,Execute E2E script,PASS,PASS
+WEB-TC-413,Profile Update - Empty Fields,Test Profile Update functionality on Linux using Safari with Empty Fields inputs.,Execute E2E script,PASS,PASS
+WEB-TC-414,Profile Update - SQL Injection Payload,Test Profile Update functionality on Linux using Safari with SQL Injection Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-415,Profile Update - XSS Payload,Test Profile Update functionality on Linux using Safari with XSS Payload inputs.,Execute E2E script,PASS,PASS
+WEB-TC-416,Navigation Edge Case 1,Test rapid navigation clicking on Linux/Safari,Execute E2E script,PASS,PASS
+WEB-TC-417,Navigation Edge Case 2,Test rapid navigation clicking on Linux/Safari,Execute E2E script,PASS,PASS
+WEB-TC-418,Navigation Edge Case 3,Test rapid navigation clicking on Linux/Safari,Execute E2E script,PASS,PASS
+WEB-TC-419,Navigation Edge Case 4,Test rapid navigation clicking on Linux/Safari,Execute E2E script,PASS,PASS
+WEB-TC-420,Navigation Edge Case 5,Test rapid navigation clicking on Linux/Safari,Execute E2E script,PASS,PASS

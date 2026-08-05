@@ -1,0 +1,481 @@
+Test ID,Test Name,Details,Action,Expected Status,Actual Status
+MOB-TC-001,Login - Valid,Test Login functionality on Pixel 6 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-002,Login - Invalid Email,Test Login functionality on Pixel 6 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-003,Login - Invalid Password,Test Login functionality on Pixel 6 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-004,Login - Empty Fields,Test Login functionality on Pixel 6 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-005,Login - SQL Injection Payload,Test Login functionality on Pixel 6 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-006,Login - XSS Payload,Test Login functionality on Pixel 6 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-007,Signup - Valid,Test Signup functionality on Pixel 6 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-008,Signup - Invalid Email,Test Signup functionality on Pixel 6 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-009,Signup - Invalid Password,Test Signup functionality on Pixel 6 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-010,Signup - Empty Fields,Test Signup functionality on Pixel 6 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-011,Signup - SQL Injection Payload,Test Signup functionality on Pixel 6 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-012,Signup - XSS Payload,Test Signup functionality on Pixel 6 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-013,Upload Video - Valid,Test Upload Video functionality on Pixel 6 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-014,Upload Video - Invalid Email,Test Upload Video functionality on Pixel 6 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-015,Upload Video - Invalid Password,Test Upload Video functionality on Pixel 6 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-016,Upload Video - Empty Fields,Test Upload Video functionality on Pixel 6 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-017,Upload Video - SQL Injection Payload,Test Upload Video functionality on Pixel 6 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-018,Upload Video - XSS Payload,Test Upload Video functionality on Pixel 6 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-019,Alert Navigation - Valid,Test Alert Navigation functionality on Pixel 6 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-020,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Pixel 6 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-021,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Pixel 6 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-022,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Pixel 6 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-023,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Pixel 6 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-024,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Pixel 6 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-025,Profile Update - Valid,Test Profile Update functionality on Pixel 6 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-026,Profile Update - Invalid Email,Test Profile Update functionality on Pixel 6 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-027,Profile Update - Invalid Password,Test Profile Update functionality on Pixel 6 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-028,Profile Update - Empty Fields,Test Profile Update functionality on Pixel 6 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-029,Profile Update - SQL Injection Payload,Test Profile Update functionality on Pixel 6 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-030,Profile Update - XSS Payload,Test Profile Update functionality on Pixel 6 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-031,Login - Valid,Test Login functionality on Pixel 6 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-032,Login - Invalid Email,Test Login functionality on Pixel 6 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-033,Login - Invalid Password,Test Login functionality on Pixel 6 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-034,Login - Empty Fields,Test Login functionality on Pixel 6 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-035,Login - SQL Injection Payload,Test Login functionality on Pixel 6 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-036,Login - XSS Payload,Test Login functionality on Pixel 6 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-037,Signup - Valid,Test Signup functionality on Pixel 6 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-038,Signup - Invalid Email,Test Signup functionality on Pixel 6 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-039,Signup - Invalid Password,Test Signup functionality on Pixel 6 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-040,Signup - Empty Fields,Test Signup functionality on Pixel 6 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-041,Signup - SQL Injection Payload,Test Signup functionality on Pixel 6 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-042,Signup - XSS Payload,Test Signup functionality on Pixel 6 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-043,Upload Video - Valid,Test Upload Video functionality on Pixel 6 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-044,Upload Video - Invalid Email,Test Upload Video functionality on Pixel 6 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-045,Upload Video - Invalid Password,Test Upload Video functionality on Pixel 6 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-046,Upload Video - Empty Fields,Test Upload Video functionality on Pixel 6 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-047,Upload Video - SQL Injection Payload,Test Upload Video functionality on Pixel 6 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-048,Upload Video - XSS Payload,Test Upload Video functionality on Pixel 6 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-049,Alert Navigation - Valid,Test Alert Navigation functionality on Pixel 6 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-050,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Pixel 6 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-051,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Pixel 6 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-052,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Pixel 6 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-053,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Pixel 6 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-054,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Pixel 6 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-055,Profile Update - Valid,Test Profile Update functionality on Pixel 6 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-056,Profile Update - Invalid Email,Test Profile Update functionality on Pixel 6 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-057,Profile Update - Invalid Password,Test Profile Update functionality on Pixel 6 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-058,Profile Update - Empty Fields,Test Profile Update functionality on Pixel 6 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-059,Profile Update - SQL Injection Payload,Test Profile Update functionality on Pixel 6 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-060,Profile Update - XSS Payload,Test Profile Update functionality on Pixel 6 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-061,Login - Valid,Test Login functionality on Pixel 6 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-062,Login - Invalid Email,Test Login functionality on Pixel 6 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-063,Login - Invalid Password,Test Login functionality on Pixel 6 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-064,Login - Empty Fields,Test Login functionality on Pixel 6 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-065,Login - SQL Injection Payload,Test Login functionality on Pixel 6 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-066,Login - XSS Payload,Test Login functionality on Pixel 6 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-067,Signup - Valid,Test Signup functionality on Pixel 6 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-068,Signup - Invalid Email,Test Signup functionality on Pixel 6 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-069,Signup - Invalid Password,Test Signup functionality on Pixel 6 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-070,Signup - Empty Fields,Test Signup functionality on Pixel 6 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-071,Signup - SQL Injection Payload,Test Signup functionality on Pixel 6 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-072,Signup - XSS Payload,Test Signup functionality on Pixel 6 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-073,Upload Video - Valid,Test Upload Video functionality on Pixel 6 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-074,Upload Video - Invalid Email,Test Upload Video functionality on Pixel 6 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-075,Upload Video - Invalid Password,Test Upload Video functionality on Pixel 6 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-076,Upload Video - Empty Fields,Test Upload Video functionality on Pixel 6 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-077,Upload Video - SQL Injection Payload,Test Upload Video functionality on Pixel 6 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-078,Upload Video - XSS Payload,Test Upload Video functionality on Pixel 6 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-079,Alert Navigation - Valid,Test Alert Navigation functionality on Pixel 6 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-080,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Pixel 6 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-081,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Pixel 6 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-082,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Pixel 6 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-083,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Pixel 6 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-084,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Pixel 6 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-085,Profile Update - Valid,Test Profile Update functionality on Pixel 6 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-086,Profile Update - Invalid Email,Test Profile Update functionality on Pixel 6 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-087,Profile Update - Invalid Password,Test Profile Update functionality on Pixel 6 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-088,Profile Update - Empty Fields,Test Profile Update functionality on Pixel 6 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-089,Profile Update - SQL Injection Payload,Test Profile Update functionality on Pixel 6 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-090,Profile Update - XSS Payload,Test Profile Update functionality on Pixel 6 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-091,Login - Valid,Test Login functionality on Pixel 6 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-092,Login - Invalid Email,Test Login functionality on Pixel 6 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-093,Login - Invalid Password,Test Login functionality on Pixel 6 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-094,Login - Empty Fields,Test Login functionality on Pixel 6 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-095,Login - SQL Injection Payload,Test Login functionality on Pixel 6 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-096,Login - XSS Payload,Test Login functionality on Pixel 6 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-097,Signup - Valid,Test Signup functionality on Pixel 6 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-098,Signup - Invalid Email,Test Signup functionality on Pixel 6 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-099,Signup - Invalid Password,Test Signup functionality on Pixel 6 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-100,Signup - Empty Fields,Test Signup functionality on Pixel 6 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-101,Signup - SQL Injection Payload,Test Signup functionality on Pixel 6 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-102,Signup - XSS Payload,Test Signup functionality on Pixel 6 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-103,Upload Video - Valid,Test Upload Video functionality on Pixel 6 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-104,Upload Video - Invalid Email,Test Upload Video functionality on Pixel 6 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-105,Upload Video - Invalid Password,Test Upload Video functionality on Pixel 6 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-106,Upload Video - Empty Fields,Test Upload Video functionality on Pixel 6 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-107,Upload Video - SQL Injection Payload,Test Upload Video functionality on Pixel 6 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-108,Upload Video - XSS Payload,Test Upload Video functionality on Pixel 6 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-109,Alert Navigation - Valid,Test Alert Navigation functionality on Pixel 6 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-110,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Pixel 6 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-111,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Pixel 6 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-112,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Pixel 6 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-113,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Pixel 6 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-114,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Pixel 6 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-115,Profile Update - Valid,Test Profile Update functionality on Pixel 6 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-116,Profile Update - Invalid Email,Test Profile Update functionality on Pixel 6 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-117,Profile Update - Invalid Password,Test Profile Update functionality on Pixel 6 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-118,Profile Update - Empty Fields,Test Profile Update functionality on Pixel 6 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-119,Profile Update - SQL Injection Payload,Test Profile Update functionality on Pixel 6 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-120,Profile Update - XSS Payload,Test Profile Update functionality on Pixel 6 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-121,Login - Valid,Test Login functionality on Galaxy S21 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-122,Login - Invalid Email,Test Login functionality on Galaxy S21 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-123,Login - Invalid Password,Test Login functionality on Galaxy S21 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-124,Login - Empty Fields,Test Login functionality on Galaxy S21 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-125,Login - SQL Injection Payload,Test Login functionality on Galaxy S21 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-126,Login - XSS Payload,Test Login functionality on Galaxy S21 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-127,Signup - Valid,Test Signup functionality on Galaxy S21 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-128,Signup - Invalid Email,Test Signup functionality on Galaxy S21 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-129,Signup - Invalid Password,Test Signup functionality on Galaxy S21 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-130,Signup - Empty Fields,Test Signup functionality on Galaxy S21 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-131,Signup - SQL Injection Payload,Test Signup functionality on Galaxy S21 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-132,Signup - XSS Payload,Test Signup functionality on Galaxy S21 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-133,Upload Video - Valid,Test Upload Video functionality on Galaxy S21 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-134,Upload Video - Invalid Email,Test Upload Video functionality on Galaxy S21 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-135,Upload Video - Invalid Password,Test Upload Video functionality on Galaxy S21 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-136,Upload Video - Empty Fields,Test Upload Video functionality on Galaxy S21 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-137,Upload Video - SQL Injection Payload,Test Upload Video functionality on Galaxy S21 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-138,Upload Video - XSS Payload,Test Upload Video functionality on Galaxy S21 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-139,Alert Navigation - Valid,Test Alert Navigation functionality on Galaxy S21 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-140,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Galaxy S21 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-141,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Galaxy S21 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-142,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Galaxy S21 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-143,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Galaxy S21 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-144,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Galaxy S21 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-145,Profile Update - Valid,Test Profile Update functionality on Galaxy S21 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-146,Profile Update - Invalid Email,Test Profile Update functionality on Galaxy S21 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-147,Profile Update - Invalid Password,Test Profile Update functionality on Galaxy S21 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-148,Profile Update - Empty Fields,Test Profile Update functionality on Galaxy S21 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-149,Profile Update - SQL Injection Payload,Test Profile Update functionality on Galaxy S21 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-150,Profile Update - XSS Payload,Test Profile Update functionality on Galaxy S21 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-151,Login - Valid,Test Login functionality on Galaxy S21 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-152,Login - Invalid Email,Test Login functionality on Galaxy S21 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-153,Login - Invalid Password,Test Login functionality on Galaxy S21 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-154,Login - Empty Fields,Test Login functionality on Galaxy S21 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-155,Login - SQL Injection Payload,Test Login functionality on Galaxy S21 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-156,Login - XSS Payload,Test Login functionality on Galaxy S21 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-157,Signup - Valid,Test Signup functionality on Galaxy S21 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-158,Signup - Invalid Email,Test Signup functionality on Galaxy S21 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-159,Signup - Invalid Password,Test Signup functionality on Galaxy S21 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-160,Signup - Empty Fields,Test Signup functionality on Galaxy S21 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-161,Signup - SQL Injection Payload,Test Signup functionality on Galaxy S21 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-162,Signup - XSS Payload,Test Signup functionality on Galaxy S21 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-163,Upload Video - Valid,Test Upload Video functionality on Galaxy S21 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-164,Upload Video - Invalid Email,Test Upload Video functionality on Galaxy S21 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-165,Upload Video - Invalid Password,Test Upload Video functionality on Galaxy S21 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-166,Upload Video - Empty Fields,Test Upload Video functionality on Galaxy S21 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-167,Upload Video - SQL Injection Payload,Test Upload Video functionality on Galaxy S21 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-168,Upload Video - XSS Payload,Test Upload Video functionality on Galaxy S21 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-169,Alert Navigation - Valid,Test Alert Navigation functionality on Galaxy S21 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-170,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Galaxy S21 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-171,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Galaxy S21 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-172,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Galaxy S21 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-173,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Galaxy S21 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-174,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Galaxy S21 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-175,Profile Update - Valid,Test Profile Update functionality on Galaxy S21 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-176,Profile Update - Invalid Email,Test Profile Update functionality on Galaxy S21 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-177,Profile Update - Invalid Password,Test Profile Update functionality on Galaxy S21 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-178,Profile Update - Empty Fields,Test Profile Update functionality on Galaxy S21 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-179,Profile Update - SQL Injection Payload,Test Profile Update functionality on Galaxy S21 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-180,Profile Update - XSS Payload,Test Profile Update functionality on Galaxy S21 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-181,Login - Valid,Test Login functionality on Galaxy S21 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-182,Login - Invalid Email,Test Login functionality on Galaxy S21 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-183,Login - Invalid Password,Test Login functionality on Galaxy S21 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-184,Login - Empty Fields,Test Login functionality on Galaxy S21 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-185,Login - SQL Injection Payload,Test Login functionality on Galaxy S21 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-186,Login - XSS Payload,Test Login functionality on Galaxy S21 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-187,Signup - Valid,Test Signup functionality on Galaxy S21 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-188,Signup - Invalid Email,Test Signup functionality on Galaxy S21 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-189,Signup - Invalid Password,Test Signup functionality on Galaxy S21 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-190,Signup - Empty Fields,Test Signup functionality on Galaxy S21 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-191,Signup - SQL Injection Payload,Test Signup functionality on Galaxy S21 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-192,Signup - XSS Payload,Test Signup functionality on Galaxy S21 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-193,Upload Video - Valid,Test Upload Video functionality on Galaxy S21 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-194,Upload Video - Invalid Email,Test Upload Video functionality on Galaxy S21 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-195,Upload Video - Invalid Password,Test Upload Video functionality on Galaxy S21 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-196,Upload Video - Empty Fields,Test Upload Video functionality on Galaxy S21 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-197,Upload Video - SQL Injection Payload,Test Upload Video functionality on Galaxy S21 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-198,Upload Video - XSS Payload,Test Upload Video functionality on Galaxy S21 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-199,Alert Navigation - Valid,Test Alert Navigation functionality on Galaxy S21 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-200,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Galaxy S21 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-201,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Galaxy S21 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-202,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Galaxy S21 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-203,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Galaxy S21 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-204,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Galaxy S21 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-205,Profile Update - Valid,Test Profile Update functionality on Galaxy S21 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-206,Profile Update - Invalid Email,Test Profile Update functionality on Galaxy S21 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-207,Profile Update - Invalid Password,Test Profile Update functionality on Galaxy S21 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-208,Profile Update - Empty Fields,Test Profile Update functionality on Galaxy S21 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-209,Profile Update - SQL Injection Payload,Test Profile Update functionality on Galaxy S21 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-210,Profile Update - XSS Payload,Test Profile Update functionality on Galaxy S21 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-211,Login - Valid,Test Login functionality on Galaxy S21 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-212,Login - Invalid Email,Test Login functionality on Galaxy S21 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-213,Login - Invalid Password,Test Login functionality on Galaxy S21 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-214,Login - Empty Fields,Test Login functionality on Galaxy S21 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-215,Login - SQL Injection Payload,Test Login functionality on Galaxy S21 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-216,Login - XSS Payload,Test Login functionality on Galaxy S21 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-217,Signup - Valid,Test Signup functionality on Galaxy S21 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-218,Signup - Invalid Email,Test Signup functionality on Galaxy S21 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-219,Signup - Invalid Password,Test Signup functionality on Galaxy S21 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-220,Signup - Empty Fields,Test Signup functionality on Galaxy S21 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-221,Signup - SQL Injection Payload,Test Signup functionality on Galaxy S21 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-222,Signup - XSS Payload,Test Signup functionality on Galaxy S21 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-223,Upload Video - Valid,Test Upload Video functionality on Galaxy S21 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-224,Upload Video - Invalid Email,Test Upload Video functionality on Galaxy S21 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-225,Upload Video - Invalid Password,Test Upload Video functionality on Galaxy S21 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-226,Upload Video - Empty Fields,Test Upload Video functionality on Galaxy S21 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-227,Upload Video - SQL Injection Payload,Test Upload Video functionality on Galaxy S21 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-228,Upload Video - XSS Payload,Test Upload Video functionality on Galaxy S21 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-229,Alert Navigation - Valid,Test Alert Navigation functionality on Galaxy S21 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-230,Alert Navigation - Invalid Email,Test Alert Navigation functionality on Galaxy S21 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-231,Alert Navigation - Invalid Password,Test Alert Navigation functionality on Galaxy S21 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-232,Alert Navigation - Empty Fields,Test Alert Navigation functionality on Galaxy S21 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-233,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on Galaxy S21 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-234,Alert Navigation - XSS Payload,Test Alert Navigation functionality on Galaxy S21 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-235,Profile Update - Valid,Test Profile Update functionality on Galaxy S21 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-236,Profile Update - Invalid Email,Test Profile Update functionality on Galaxy S21 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-237,Profile Update - Invalid Password,Test Profile Update functionality on Galaxy S21 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-238,Profile Update - Empty Fields,Test Profile Update functionality on Galaxy S21 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-239,Profile Update - SQL Injection Payload,Test Profile Update functionality on Galaxy S21 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-240,Profile Update - XSS Payload,Test Profile Update functionality on Galaxy S21 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-241,Login - Valid,Test Login functionality on iPhone 13 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-242,Login - Invalid Email,Test Login functionality on iPhone 13 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-243,Login - Invalid Password,Test Login functionality on iPhone 13 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-244,Login - Empty Fields,Test Login functionality on iPhone 13 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-245,Login - SQL Injection Payload,Test Login functionality on iPhone 13 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-246,Login - XSS Payload,Test Login functionality on iPhone 13 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-247,Signup - Valid,Test Signup functionality on iPhone 13 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-248,Signup - Invalid Email,Test Signup functionality on iPhone 13 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-249,Signup - Invalid Password,Test Signup functionality on iPhone 13 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-250,Signup - Empty Fields,Test Signup functionality on iPhone 13 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-251,Signup - SQL Injection Payload,Test Signup functionality on iPhone 13 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-252,Signup - XSS Payload,Test Signup functionality on iPhone 13 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-253,Upload Video - Valid,Test Upload Video functionality on iPhone 13 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-254,Upload Video - Invalid Email,Test Upload Video functionality on iPhone 13 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-255,Upload Video - Invalid Password,Test Upload Video functionality on iPhone 13 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-256,Upload Video - Empty Fields,Test Upload Video functionality on iPhone 13 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-257,Upload Video - SQL Injection Payload,Test Upload Video functionality on iPhone 13 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-258,Upload Video - XSS Payload,Test Upload Video functionality on iPhone 13 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-259,Alert Navigation - Valid,Test Alert Navigation functionality on iPhone 13 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-260,Alert Navigation - Invalid Email,Test Alert Navigation functionality on iPhone 13 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-261,Alert Navigation - Invalid Password,Test Alert Navigation functionality on iPhone 13 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-262,Alert Navigation - Empty Fields,Test Alert Navigation functionality on iPhone 13 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-263,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on iPhone 13 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-264,Alert Navigation - XSS Payload,Test Alert Navigation functionality on iPhone 13 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-265,Profile Update - Valid,Test Profile Update functionality on iPhone 13 (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-266,Profile Update - Invalid Email,Test Profile Update functionality on iPhone 13 (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-267,Profile Update - Invalid Password,Test Profile Update functionality on iPhone 13 (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-268,Profile Update - Empty Fields,Test Profile Update functionality on iPhone 13 (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-269,Profile Update - SQL Injection Payload,Test Profile Update functionality on iPhone 13 (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-270,Profile Update - XSS Payload,Test Profile Update functionality on iPhone 13 (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-271,Login - Valid,Test Login functionality on iPhone 13 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-272,Login - Invalid Email,Test Login functionality on iPhone 13 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-273,Login - Invalid Password,Test Login functionality on iPhone 13 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-274,Login - Empty Fields,Test Login functionality on iPhone 13 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-275,Login - SQL Injection Payload,Test Login functionality on iPhone 13 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-276,Login - XSS Payload,Test Login functionality on iPhone 13 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-277,Signup - Valid,Test Signup functionality on iPhone 13 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-278,Signup - Invalid Email,Test Signup functionality on iPhone 13 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-279,Signup - Invalid Password,Test Signup functionality on iPhone 13 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-280,Signup - Empty Fields,Test Signup functionality on iPhone 13 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-281,Signup - SQL Injection Payload,Test Signup functionality on iPhone 13 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-282,Signup - XSS Payload,Test Signup functionality on iPhone 13 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-283,Upload Video - Valid,Test Upload Video functionality on iPhone 13 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-284,Upload Video - Invalid Email,Test Upload Video functionality on iPhone 13 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-285,Upload Video - Invalid Password,Test Upload Video functionality on iPhone 13 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-286,Upload Video - Empty Fields,Test Upload Video functionality on iPhone 13 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-287,Upload Video - SQL Injection Payload,Test Upload Video functionality on iPhone 13 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-288,Upload Video - XSS Payload,Test Upload Video functionality on iPhone 13 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-289,Alert Navigation - Valid,Test Alert Navigation functionality on iPhone 13 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-290,Alert Navigation - Invalid Email,Test Alert Navigation functionality on iPhone 13 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-291,Alert Navigation - Invalid Password,Test Alert Navigation functionality on iPhone 13 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-292,Alert Navigation - Empty Fields,Test Alert Navigation functionality on iPhone 13 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-293,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on iPhone 13 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-294,Alert Navigation - XSS Payload,Test Alert Navigation functionality on iPhone 13 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-295,Profile Update - Valid,Test Profile Update functionality on iPhone 13 (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-296,Profile Update - Invalid Email,Test Profile Update functionality on iPhone 13 (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-297,Profile Update - Invalid Password,Test Profile Update functionality on iPhone 13 (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-298,Profile Update - Empty Fields,Test Profile Update functionality on iPhone 13 (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-299,Profile Update - SQL Injection Payload,Test Profile Update functionality on iPhone 13 (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-300,Profile Update - XSS Payload,Test Profile Update functionality on iPhone 13 (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-301,Login - Valid,Test Login functionality on iPhone 13 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-302,Login - Invalid Email,Test Login functionality on iPhone 13 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-303,Login - Invalid Password,Test Login functionality on iPhone 13 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-304,Login - Empty Fields,Test Login functionality on iPhone 13 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-305,Login - SQL Injection Payload,Test Login functionality on iPhone 13 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-306,Login - XSS Payload,Test Login functionality on iPhone 13 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-307,Signup - Valid,Test Signup functionality on iPhone 13 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-308,Signup - Invalid Email,Test Signup functionality on iPhone 13 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-309,Signup - Invalid Password,Test Signup functionality on iPhone 13 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-310,Signup - Empty Fields,Test Signup functionality on iPhone 13 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-311,Signup - SQL Injection Payload,Test Signup functionality on iPhone 13 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-312,Signup - XSS Payload,Test Signup functionality on iPhone 13 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-313,Upload Video - Valid,Test Upload Video functionality on iPhone 13 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-314,Upload Video - Invalid Email,Test Upload Video functionality on iPhone 13 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-315,Upload Video - Invalid Password,Test Upload Video functionality on iPhone 13 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-316,Upload Video - Empty Fields,Test Upload Video functionality on iPhone 13 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-317,Upload Video - SQL Injection Payload,Test Upload Video functionality on iPhone 13 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-318,Upload Video - XSS Payload,Test Upload Video functionality on iPhone 13 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-319,Alert Navigation - Valid,Test Alert Navigation functionality on iPhone 13 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-320,Alert Navigation - Invalid Email,Test Alert Navigation functionality on iPhone 13 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-321,Alert Navigation - Invalid Password,Test Alert Navigation functionality on iPhone 13 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-322,Alert Navigation - Empty Fields,Test Alert Navigation functionality on iPhone 13 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-323,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on iPhone 13 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-324,Alert Navigation - XSS Payload,Test Alert Navigation functionality on iPhone 13 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-325,Profile Update - Valid,Test Profile Update functionality on iPhone 13 (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-326,Profile Update - Invalid Email,Test Profile Update functionality on iPhone 13 (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-327,Profile Update - Invalid Password,Test Profile Update functionality on iPhone 13 (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-328,Profile Update - Empty Fields,Test Profile Update functionality on iPhone 13 (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-329,Profile Update - SQL Injection Payload,Test Profile Update functionality on iPhone 13 (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-330,Profile Update - XSS Payload,Test Profile Update functionality on iPhone 13 (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-331,Login - Valid,Test Login functionality on iPhone 13 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-332,Login - Invalid Email,Test Login functionality on iPhone 13 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-333,Login - Invalid Password,Test Login functionality on iPhone 13 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-334,Login - Empty Fields,Test Login functionality on iPhone 13 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-335,Login - SQL Injection Payload,Test Login functionality on iPhone 13 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-336,Login - XSS Payload,Test Login functionality on iPhone 13 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-337,Signup - Valid,Test Signup functionality on iPhone 13 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-338,Signup - Invalid Email,Test Signup functionality on iPhone 13 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-339,Signup - Invalid Password,Test Signup functionality on iPhone 13 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-340,Signup - Empty Fields,Test Signup functionality on iPhone 13 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-341,Signup - SQL Injection Payload,Test Signup functionality on iPhone 13 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-342,Signup - XSS Payload,Test Signup functionality on iPhone 13 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-343,Upload Video - Valid,Test Upload Video functionality on iPhone 13 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-344,Upload Video - Invalid Email,Test Upload Video functionality on iPhone 13 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-345,Upload Video - Invalid Password,Test Upload Video functionality on iPhone 13 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-346,Upload Video - Empty Fields,Test Upload Video functionality on iPhone 13 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-347,Upload Video - SQL Injection Payload,Test Upload Video functionality on iPhone 13 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-348,Upload Video - XSS Payload,Test Upload Video functionality on iPhone 13 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-349,Alert Navigation - Valid,Test Alert Navigation functionality on iPhone 13 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-350,Alert Navigation - Invalid Email,Test Alert Navigation functionality on iPhone 13 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-351,Alert Navigation - Invalid Password,Test Alert Navigation functionality on iPhone 13 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-352,Alert Navigation - Empty Fields,Test Alert Navigation functionality on iPhone 13 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-353,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on iPhone 13 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-354,Alert Navigation - XSS Payload,Test Alert Navigation functionality on iPhone 13 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-355,Profile Update - Valid,Test Profile Update functionality on iPhone 13 (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-356,Profile Update - Invalid Email,Test Profile Update functionality on iPhone 13 (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-357,Profile Update - Invalid Password,Test Profile Update functionality on iPhone 13 (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-358,Profile Update - Empty Fields,Test Profile Update functionality on iPhone 13 (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-359,Profile Update - SQL Injection Payload,Test Profile Update functionality on iPhone 13 (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-360,Profile Update - XSS Payload,Test Profile Update functionality on iPhone 13 (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-361,Login - Valid,Test Login functionality on iPhone 14 Pro (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-362,Login - Invalid Email,Test Login functionality on iPhone 14 Pro (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-363,Login - Invalid Password,Test Login functionality on iPhone 14 Pro (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-364,Login - Empty Fields,Test Login functionality on iPhone 14 Pro (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-365,Login - SQL Injection Payload,Test Login functionality on iPhone 14 Pro (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-366,Login - XSS Payload,Test Login functionality on iPhone 14 Pro (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-367,Signup - Valid,Test Signup functionality on iPhone 14 Pro (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-368,Signup - Invalid Email,Test Signup functionality on iPhone 14 Pro (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-369,Signup - Invalid Password,Test Signup functionality on iPhone 14 Pro (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-370,Signup - Empty Fields,Test Signup functionality on iPhone 14 Pro (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-371,Signup - SQL Injection Payload,Test Signup functionality on iPhone 14 Pro (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-372,Signup - XSS Payload,Test Signup functionality on iPhone 14 Pro (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-373,Upload Video - Valid,Test Upload Video functionality on iPhone 14 Pro (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-374,Upload Video - Invalid Email,Test Upload Video functionality on iPhone 14 Pro (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-375,Upload Video - Invalid Password,Test Upload Video functionality on iPhone 14 Pro (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-376,Upload Video - Empty Fields,Test Upload Video functionality on iPhone 14 Pro (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-377,Upload Video - SQL Injection Payload,Test Upload Video functionality on iPhone 14 Pro (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-378,Upload Video - XSS Payload,Test Upload Video functionality on iPhone 14 Pro (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-379,Alert Navigation - Valid,Test Alert Navigation functionality on iPhone 14 Pro (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-380,Alert Navigation - Invalid Email,Test Alert Navigation functionality on iPhone 14 Pro (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-381,Alert Navigation - Invalid Password,Test Alert Navigation functionality on iPhone 14 Pro (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-382,Alert Navigation - Empty Fields,Test Alert Navigation functionality on iPhone 14 Pro (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-383,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on iPhone 14 Pro (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-384,Alert Navigation - XSS Payload,Test Alert Navigation functionality on iPhone 14 Pro (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-385,Profile Update - Valid,Test Profile Update functionality on iPhone 14 Pro (Android 12) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-386,Profile Update - Invalid Email,Test Profile Update functionality on iPhone 14 Pro (Android 12) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-387,Profile Update - Invalid Password,Test Profile Update functionality on iPhone 14 Pro (Android 12) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-388,Profile Update - Empty Fields,Test Profile Update functionality on iPhone 14 Pro (Android 12) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-389,Profile Update - SQL Injection Payload,Test Profile Update functionality on iPhone 14 Pro (Android 12) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-390,Profile Update - XSS Payload,Test Profile Update functionality on iPhone 14 Pro (Android 12) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-391,Login - Valid,Test Login functionality on iPhone 14 Pro (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-392,Login - Invalid Email,Test Login functionality on iPhone 14 Pro (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-393,Login - Invalid Password,Test Login functionality on iPhone 14 Pro (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-394,Login - Empty Fields,Test Login functionality on iPhone 14 Pro (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-395,Login - SQL Injection Payload,Test Login functionality on iPhone 14 Pro (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-396,Login - XSS Payload,Test Login functionality on iPhone 14 Pro (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-397,Signup - Valid,Test Signup functionality on iPhone 14 Pro (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-398,Signup - Invalid Email,Test Signup functionality on iPhone 14 Pro (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-399,Signup - Invalid Password,Test Signup functionality on iPhone 14 Pro (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-400,Signup - Empty Fields,Test Signup functionality on iPhone 14 Pro (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-401,Signup - SQL Injection Payload,Test Signup functionality on iPhone 14 Pro (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-402,Signup - XSS Payload,Test Signup functionality on iPhone 14 Pro (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-403,Upload Video - Valid,Test Upload Video functionality on iPhone 14 Pro (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-404,Upload Video - Invalid Email,Test Upload Video functionality on iPhone 14 Pro (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-405,Upload Video - Invalid Password,Test Upload Video functionality on iPhone 14 Pro (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-406,Upload Video - Empty Fields,Test Upload Video functionality on iPhone 14 Pro (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-407,Upload Video - SQL Injection Payload,Test Upload Video functionality on iPhone 14 Pro (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-408,Upload Video - XSS Payload,Test Upload Video functionality on iPhone 14 Pro (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-409,Alert Navigation - Valid,Test Alert Navigation functionality on iPhone 14 Pro (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-410,Alert Navigation - Invalid Email,Test Alert Navigation functionality on iPhone 14 Pro (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-411,Alert Navigation - Invalid Password,Test Alert Navigation functionality on iPhone 14 Pro (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-412,Alert Navigation - Empty Fields,Test Alert Navigation functionality on iPhone 14 Pro (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-413,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on iPhone 14 Pro (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-414,Alert Navigation - XSS Payload,Test Alert Navigation functionality on iPhone 14 Pro (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-415,Profile Update - Valid,Test Profile Update functionality on iPhone 14 Pro (Android 13) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-416,Profile Update - Invalid Email,Test Profile Update functionality on iPhone 14 Pro (Android 13) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-417,Profile Update - Invalid Password,Test Profile Update functionality on iPhone 14 Pro (Android 13) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-418,Profile Update - Empty Fields,Test Profile Update functionality on iPhone 14 Pro (Android 13) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-419,Profile Update - SQL Injection Payload,Test Profile Update functionality on iPhone 14 Pro (Android 13) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-420,Profile Update - XSS Payload,Test Profile Update functionality on iPhone 14 Pro (Android 13) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-421,Login - Valid,Test Login functionality on iPhone 14 Pro (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-422,Login - Invalid Email,Test Login functionality on iPhone 14 Pro (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-423,Login - Invalid Password,Test Login functionality on iPhone 14 Pro (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-424,Login - Empty Fields,Test Login functionality on iPhone 14 Pro (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-425,Login - SQL Injection Payload,Test Login functionality on iPhone 14 Pro (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-426,Login - XSS Payload,Test Login functionality on iPhone 14 Pro (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-427,Signup - Valid,Test Signup functionality on iPhone 14 Pro (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-428,Signup - Invalid Email,Test Signup functionality on iPhone 14 Pro (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-429,Signup - Invalid Password,Test Signup functionality on iPhone 14 Pro (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-430,Signup - Empty Fields,Test Signup functionality on iPhone 14 Pro (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-431,Signup - SQL Injection Payload,Test Signup functionality on iPhone 14 Pro (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-432,Signup - XSS Payload,Test Signup functionality on iPhone 14 Pro (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-433,Upload Video - Valid,Test Upload Video functionality on iPhone 14 Pro (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-434,Upload Video - Invalid Email,Test Upload Video functionality on iPhone 14 Pro (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-435,Upload Video - Invalid Password,Test Upload Video functionality on iPhone 14 Pro (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-436,Upload Video - Empty Fields,Test Upload Video functionality on iPhone 14 Pro (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-437,Upload Video - SQL Injection Payload,Test Upload Video functionality on iPhone 14 Pro (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-438,Upload Video - XSS Payload,Test Upload Video functionality on iPhone 14 Pro (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-439,Alert Navigation - Valid,Test Alert Navigation functionality on iPhone 14 Pro (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-440,Alert Navigation - Invalid Email,Test Alert Navigation functionality on iPhone 14 Pro (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-441,Alert Navigation - Invalid Password,Test Alert Navigation functionality on iPhone 14 Pro (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-442,Alert Navigation - Empty Fields,Test Alert Navigation functionality on iPhone 14 Pro (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-443,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on iPhone 14 Pro (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-444,Alert Navigation - XSS Payload,Test Alert Navigation functionality on iPhone 14 Pro (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-445,Profile Update - Valid,Test Profile Update functionality on iPhone 14 Pro (iOS 15) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-446,Profile Update - Invalid Email,Test Profile Update functionality on iPhone 14 Pro (iOS 15) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-447,Profile Update - Invalid Password,Test Profile Update functionality on iPhone 14 Pro (iOS 15) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-448,Profile Update - Empty Fields,Test Profile Update functionality on iPhone 14 Pro (iOS 15) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-449,Profile Update - SQL Injection Payload,Test Profile Update functionality on iPhone 14 Pro (iOS 15) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-450,Profile Update - XSS Payload,Test Profile Update functionality on iPhone 14 Pro (iOS 15) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-451,Login - Valid,Test Login functionality on iPhone 14 Pro (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-452,Login - Invalid Email,Test Login functionality on iPhone 14 Pro (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-453,Login - Invalid Password,Test Login functionality on iPhone 14 Pro (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-454,Login - Empty Fields,Test Login functionality on iPhone 14 Pro (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-455,Login - SQL Injection Payload,Test Login functionality on iPhone 14 Pro (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-456,Login - XSS Payload,Test Login functionality on iPhone 14 Pro (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-457,Signup - Valid,Test Signup functionality on iPhone 14 Pro (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-458,Signup - Invalid Email,Test Signup functionality on iPhone 14 Pro (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-459,Signup - Invalid Password,Test Signup functionality on iPhone 14 Pro (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-460,Signup - Empty Fields,Test Signup functionality on iPhone 14 Pro (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-461,Signup - SQL Injection Payload,Test Signup functionality on iPhone 14 Pro (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-462,Signup - XSS Payload,Test Signup functionality on iPhone 14 Pro (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-463,Upload Video - Valid,Test Upload Video functionality on iPhone 14 Pro (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-464,Upload Video - Invalid Email,Test Upload Video functionality on iPhone 14 Pro (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-465,Upload Video - Invalid Password,Test Upload Video functionality on iPhone 14 Pro (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-466,Upload Video - Empty Fields,Test Upload Video functionality on iPhone 14 Pro (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-467,Upload Video - SQL Injection Payload,Test Upload Video functionality on iPhone 14 Pro (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-468,Upload Video - XSS Payload,Test Upload Video functionality on iPhone 14 Pro (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-469,Alert Navigation - Valid,Test Alert Navigation functionality on iPhone 14 Pro (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-470,Alert Navigation - Invalid Email,Test Alert Navigation functionality on iPhone 14 Pro (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-471,Alert Navigation - Invalid Password,Test Alert Navigation functionality on iPhone 14 Pro (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-472,Alert Navigation - Empty Fields,Test Alert Navigation functionality on iPhone 14 Pro (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-473,Alert Navigation - SQL Injection Payload,Test Alert Navigation functionality on iPhone 14 Pro (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-474,Alert Navigation - XSS Payload,Test Alert Navigation functionality on iPhone 14 Pro (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-475,Profile Update - Valid,Test Profile Update functionality on iPhone 14 Pro (iOS 16) with Valid inputs.,Execute Appium script,PASS,PASS
+MOB-TC-476,Profile Update - Invalid Email,Test Profile Update functionality on iPhone 14 Pro (iOS 16) with Invalid Email inputs.,Execute Appium script,PASS,PASS
+MOB-TC-477,Profile Update - Invalid Password,Test Profile Update functionality on iPhone 14 Pro (iOS 16) with Invalid Password inputs.,Execute Appium script,PASS,PASS
+MOB-TC-478,Profile Update - Empty Fields,Test Profile Update functionality on iPhone 14 Pro (iOS 16) with Empty Fields inputs.,Execute Appium script,PASS,PASS
+MOB-TC-479,Profile Update - SQL Injection Payload,Test Profile Update functionality on iPhone 14 Pro (iOS 16) with SQL Injection Payload inputs.,Execute Appium script,PASS,PASS
+MOB-TC-480,Profile Update - XSS Payload,Test Profile Update functionality on iPhone 14 Pro (iOS 16) with XSS Payload inputs.,Execute Appium script,PASS,PASS

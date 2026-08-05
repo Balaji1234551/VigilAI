@@ -1,0 +1,78 @@
+Endpoint,HTTP Method,Authentication Required,Expected Roles,File
+/,GET,No,None,main.py
+/health,GET,No,None,main.py
+/test-notification,POST,Yes (User),None,alerts.py
+/test-email,POST,Yes (User),None,alerts.py
+/sos,POST,Yes (User),None,alerts.py
+/,POST,No,None,alerts.py
+/list,GET,No,None,alerts.py
+/,GET,No,None,alerts.py
+/active/list,GET,No,None,alerts.py
+/{alert_id},GET,No,None,alerts.py
+/{alert_id}/resolve,PATCH,No,None,alerts.py
+/{alert_id}/resolve,PUT,No,None,alerts.py
+/{alert_id}/delivery-status,PUT,No,None,alerts.py
+/{alert_id},DELETE,No,None,alerts.py
+/{alert_id}/snapshot,GET,No,None,alerts.py
+/{alert_id}/clip,GET,No,None,alerts.py
+/camera/{camera_id},GET,No,None,alerts.py
+/trends/{camera_id},GET,No,None,alerts.py
+/dashboard,GET,Yes (User),None,analytics.py
+/,GET,No,None,audit_logs.py
+/check-email,GET,No,None,auth.py
+/send-verification-code,POST,No,None,auth.py
+/verify-code,POST,No,None,auth.py
+/signup,POST,No,None,auth.py
+/register,POST,No,None,auth.py
+/login,POST,No,None,auth.py
+/logout,POST,Yes (User),None,auth.py
+/profile,GET,Yes (User),None,auth.py
+/profile/{email},PUT,No,None,auth.py
+/settings,PUT,Yes (User),None,auth.py
+/fcm-token,POST,Yes (User),None,auth.py
+/reset-password,POST,No,None,auth.py
+/change-password,POST,Yes (User),None,auth.py
+/upload,POST,No,None,cameras.py
+/{camera_id}/process,POST,No,None,cameras.py
+/{camera_id}/progress,GET,No,None,cameras.py
+/{camera_id}/retry,POST,No,None,cameras.py
+/list,GET,No,None,cameras.py
+/,GET,No,None,cameras.py
+/{camera_id},GET,No,None,cameras.py
+/{camera_id},DELETE,No,None,cameras.py
+/{camera_id}/report,GET,No,None,cameras.py
+/,GET,Yes (User),None,contacts.py
+/,POST,No,None,contacts.py
+/{contact_id},DELETE,No,None,contacts.py
+/stats,GET,Yes (User),None,dashboard.py
+/,POST,No,None,detections.py
+/,GET,No,None,detections.py
+/{detection_id},GET,No,None,detections.py
+/mobile-frame,POST,No,None,detections.py
+/mobile-video,POST,No,None,detections.py
+/,POST,No,None,devices.py
+/,GET,No,None,devices.py
+/{device_id}/heartbeat,PUT,No,None,devices.py
+/{device_id},DELETE,No,None,devices.py
+/,POST,No,None,live_streams.py
+/active,GET,No,None,live_streams.py
+/{stream_id}/end,PUT,No,None,live_streams.py
+/zones,POST,No,None,privacy.py
+/zones/{camera_id},GET,No,None,privacy.py
+/zones/{zone_id}/detail,GET,No,None,privacy.py
+/zones/{zone_id},PATCH,No,None,privacy.py
+/zones/{zone_id},DELETE,No,None,privacy.py
+/apply-zones,POST,No,None,privacy.py
+/apply-to-image,POST,No,None,privacy.py
+/user/{user_id},GET,No,None,privacy_settings.py
+/user/{user_id},PUT,No,None,privacy_settings.py
+/,POST,No,None,snapshots.py
+/detection/{detection_id},GET,No,None,snapshots.py
+/{snapshot_id},GET,No,None,snapshots.py
+/add-person,POST,No,None,trusted.py
+/list,GET,No,None,trusted.py
+/{person_id},GET,No,None,trusted.py
+/check-face,POST,No,None,trusted.py
+/{person_id},DELETE,No,None,trusted.py
+/search/{name},GET,No,None,trusted.py
+/stream,GET,No,None,video.py

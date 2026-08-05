@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: selenium-web-report
-          path: VigilAI_Master_Test_Report.csv
+          path: selenium-tests/Web_Test_Summary.csv
 
   appium_tests:
     name: Appium — Android Tests (300)
@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: appium-android-report
-          path: VigilAI_Master_Test_Report.csv
+          path: appium-tests/Mobile_Test_Summary.csv
 
   api_unit_tests:
     name: Unit Tests — API (300)
@@ -56,7 +56,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: unit-test-report
-          path: VigilAI_Master_Test_Report.csv
+          path: security_reports/API_Inventory.csv
 
   validation_tests:
     name: Validation Tests (300)
@@ -73,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: validation-test-report
-          path: VigilAI_Master_Test_Report.csv
+          path: security_reports/SAST_Vulnerabilities.csv
 
   deployment_tests:
     name: Deployment Status (300)
@@ -90,7 +90,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: deployment-test-report
-          path: VigilAI_Master_Test_Report.csv
+          path: security_reports/
 
   load_tests:
     name: Load Testing — Performance (300)
@@ -107,7 +107,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: load-test-report
-          path: VigilAI_Master_Test_Report.csv
+          path: security_reports/
 
   compile_master:
     name: Compile Master Report & Deploy
@@ -125,4 +125,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: full-e2e-report
-          path: VigilAI_Master_Test_Report.csv
+          path: |
+            selenium-tests/
+            appium-tests/
+            security_reports/
