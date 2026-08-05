@@ -1,0 +1,48 @@
+name: E2E Tests & Security Scans
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  run-tests-and-upload:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Generate 300+ Test Cases
+        run: |
+          mkdir -p selenium-tests
+          mkdir -p appium-tests
+          python generate_test_cases.py
+          
+      - name: Run 300 Selenium Web Tests & Mobile Tests
+        run: python run_all_tests.py
+        
+      - name: Upload Web Test Summary Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Web-Test-Summary
+          path: selenium-tests/Web_Test_Summary.csv
+          
+      - name: Upload Mobile Test Summary Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mobile-Test-Summary
+          path: appium-tests/Mobile_Test_Summary.csv
+          
+      - name: Upload Security Assessment Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Security-Assessment-Report
+          path: security_reports/
