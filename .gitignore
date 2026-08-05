@@ -49,3 +49,7 @@ MANIFEST
 *.mp4
 *.avi
 recordings/
+backend/models/
+backend/*.pt
+backend/uploads/
+payload.json

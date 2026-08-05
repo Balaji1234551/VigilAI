@@ -29,11 +29,10 @@ from app.database import get_db, init_db, SessionLocal
 from app.models.schemas import Camera
 
 # Import background processing engines
-from app.video.camera_manager import CameraManager
-from app.video.recorder import RecordingManager
-from app.video.clip_extractor import ClipExtractor
 from app.detection.detection_manager import DetectionManager
 from app.alerts.alert_coordinator import AlertCoordinator
+
+from fastapi.staticfiles import StaticFiles
 
 # Import existing and new API endpoint routers
 from app.api.endpoints import (
@@ -42,7 +41,6 @@ from app.api.endpoints import (
     live_streams,
     detections,
     alerts,
-    recordings,
     snapshots,
     analytics,
     devices,
@@ -52,7 +50,6 @@ from app.api.endpoints import (
     trusted,
     video,
     contacts,
-    websockets,
     dashboard
 )
 
@@ -74,44 +71,9 @@ async def lifespan(app: FastAPI):
         # Initialize thread-safe event queue
         alert_queue = queue.Queue()
 
-        # Initialize the Camera, Recording, and Clip Managers
-        camera_manager = CameraManager()
-        recorder_manager = RecordingManager(camera_manager)
-        clip_extractor = ClipExtractor(camera_manager)
-
         # Initialize background processing pipelines
-        alert_coordinator = AlertCoordinator(alert_queue=alert_queue, clip_extractor=clip_extractor)
+        alert_coordinator = AlertCoordinator(alert_queue=alert_queue)
         detection_manager = DetectionManager(alert_queue=alert_queue)
-
-        # Start cleanup schedulers
-        recorder_manager.start_cleanup_scheduler()
-        clip_extractor.start_cleanup_scheduler()
-
-        # Query and load active cameras from database to start background recording/capturing
-        db = SessionLocal()
-        try:
-            cameras_list = db.query(Camera).all()
-            print(f"Booting camera streams... Found {len(cameras_list)} registered cameras.")
-            for cam in cameras_list:
-                if cam.stream_url == "0" or cam.camera_type == "webcam":
-                    print(f"Auto-booting webcam ID {cam.id} for testing!")
-                    pass
-                
-                # Skip the mock cameras so they stop timing out in the console
-                if "pendelcam" in cam.stream_url:
-                    print(f"Skipping auto-boot for mock camera: {cam.camera_name}")
-                    continue
-
-                camera_manager.start_camera(cam.id, cam.camera_name, cam.stream_url)
-                recorder_manager.start_recording(cam.id)
-            db.commit()
-        except Exception as db_err:
-            print(f"Database error during camera startup boot: {db_err}")
-            db.rollback()
-        finally:
-            db.close()
-
-
 
         # Start active worker loops
         alert_coordinator.start()
@@ -139,16 +101,6 @@ async def lifespan(app: FastAPI):
         alert_coord.stop_coordinator()
         alert_coord.join(timeout=2.0)
 
-        # Shutdown all camera recorders and connections
-        camera_manager = CameraManager()
-        recorder_manager = RecordingManager(camera_manager)
-        recorder_manager.shutdown_all()
-        camera_manager.shutdown_all()
-
-        # Shutdown clip scheduler
-        clip_extractor = ClipExtractor(camera_manager)
-        clip_extractor.stop_scheduler()
-
         print("VigilAI background services shutdown complete.")
     except Exception as shutdown_err:
         print(f"Error during backend shutdown sequence: {shutdown_err}")
@@ -161,6 +113,12 @@ app = FastAPI(
     version="2.0.0",
     lifespan=lifespan
 )
+
+# Ensure uploads directories exist and mount them as static files
+os.makedirs("uploads/processed", exist_ok=True)
+os.makedirs("uploads/snapshots", exist_ok=True)
+app.mount("/static/processed", StaticFiles(directory="uploads/processed"), name="processed")
+app.mount("/static/snapshots", StaticFiles(directory="uploads/snapshots"), name="snapshots")
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
@@ -186,14 +144,12 @@ for prefix in ["/api", "/api/v1"]:
     app.include_router(live_streams.router, prefix=f"{prefix}/live-streams", tags=["Live Stream Management"])
     app.include_router(detections.router, prefix=f"{prefix}/detections", tags=["AI Anomaly Detections"])
     app.include_router(alerts.router, prefix=f"{prefix}/alerts", tags=["Alert Notifications"])
-    app.include_router(recordings.router, prefix=f"{prefix}/recordings", tags=["Video Recordings"])
     app.include_router(snapshots.router, prefix=f"{prefix}/snapshots", tags=["Event Snapshots"])
     app.include_router(analytics.router, prefix=f"{prefix}/analytics", tags=["Analytics Dashboard"])
     app.include_router(devices.router, prefix=f"{prefix}/devices", tags=["Device Management"])
     app.include_router(privacy_settings.router, prefix=f"{prefix}/privacy-settings", tags=["Privacy Settings"])
     app.include_router(audit_logs.router, prefix=f"{prefix}/audit-logs", tags=["Audit Trails"])
     app.include_router(contacts.router, prefix=f"{prefix}/contacts", tags=["Emergency Contacts"])
-    app.include_router(websockets.router, prefix=f"{prefix}/ws", tags=["WebSockets"])
     app.include_router(dashboard.router, prefix=f"{prefix}/dashboard", tags=["Home Dashboard Stats"])
 
     # Legacy / Backward compatibility routers

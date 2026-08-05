@@ -7,7 +7,7 @@ import cv2
 import time
 import logging
 import numpy as np
-import mediapipe as mp
+# import mediapipe as mp
 from typing import Dict, List, Tuple, Optional, Any
 
 logger = logging.getLogger("VigilAI.PostureDetector")

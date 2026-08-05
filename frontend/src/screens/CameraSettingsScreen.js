@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Switch, StatusBar, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://172.23.50.173:8000');
+const API_URL = 'http://192.168.137.1:8000';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Trash2 } from 'lucide-react-native';
 
@@ -125,7 +125,7 @@ export default function CameraSettingsScreen({ route, navigation }) {
         <View style={styles.backBtn} /> {/* Placeholder for balance */}
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent}>
         
         {/* Camera Information */}
         <View style={styles.card}>

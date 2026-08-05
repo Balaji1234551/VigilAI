@@ -90,7 +90,7 @@ export default function HelpSupportScreen({ navigation }) {
         <Text style={styles.headerTitle}>Help & Support</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent}>
         
         {/* Search Bar */}
         <View style={styles.searchContainer}>

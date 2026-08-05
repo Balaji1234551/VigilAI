@@ -12,7 +12,7 @@ export default function AlertsScreen({ navigation }) {
   const [selectedLang, setSelectedLang] = useState('English');
   const { t } = useTranslation(selectedLang);
   
-  const filters = ['All', 'Unread', 'Critical', 'Theft', 'Intrusion', 'Fire', 'Medical', 'Falls', 'Weapons'];
+  const filters = ['All', 'Unread', 'Critical', 'Weapon', 'Fight', 'Fire', 'Smoke', 'Fall', 'Crowd'];
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -43,15 +43,23 @@ export default function AlertsScreen({ navigation }) {
 
   // Dynamic filter and search query processing
   const mappedAlerts = React.useMemo(() => {
-    return (alerts || []).map(a => ({
-        id: a.id,
-        title: a.anomaly_type || a.title,
-        loc: `${a.camera_name || 'Camera'} • ${new Date(a.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
-        conf: `${Math.round((a.confidence || 0) * 100)}%`,
-        color: a.color || (a.confidence > 0.8 ? '#FF5252' : '#FFD600'),
-        isUnread: !readAlerts.has(a.id),
-        category: a.anomaly_type ? a.anomaly_type.charAt(0).toUpperCase() + a.anomaly_type.slice(1) : 'Unknown'
-    }));
+    return (alerts || []).map(a => {
+        let rawType = a.anomaly_type || a.title || 'Anomaly';
+        let primaryType = rawType.split(',').pop().trim();
+        let formattedType = primaryType.charAt(0).toUpperCase() + primaryType.slice(1).toLowerCase();
+        
+        return {
+            id: a.id,
+            title: formattedType + ' Detected',
+            loc: `${a.camera_name || 'Camera'} • ${new Date(a.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
+            conf: `${Math.round((a.confidence || 0) * 100)}%`,
+            color: a.color || (a.confidence > 0.8 ? '#FF5252' : '#FFD600'),
+            isUnread: !readAlerts.has(a.id),
+            category: formattedType,
+            snapshot_path: a.snapshot_path || a.snapshot_url,
+            rawAlertData: a
+        };
+    });
   }, [alerts, readAlerts]);
 
   const filteredAlerts = mappedAlerts.filter(alert => {
@@ -81,7 +89,7 @@ export default function AlertsScreen({ navigation }) {
         <TouchableOpacity><Filter size={24} color="#FFF" /></TouchableOpacity>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent}>
         <View style={styles.searchContainer}>
           <Search size={20} color="#94A3B8" style={styles.searchIcon} />
           <TextInput 
@@ -119,7 +127,7 @@ export default function AlertsScreen({ navigation }) {
             </View>
           ) : (
             filteredAlerts.map((alert) => {
-              const displayTitle = alert.titleKey ? t(alert.titleKey) : alert.defaultTitle;
+              const displayTitle = alert.title || 'Unknown Alert';
               return (
                 <AlertCard 
                   key={alert.id} 
@@ -139,7 +147,7 @@ export default function AlertsScreen({ navigation }) {
   );
 }
 
-const AlertCard = ({ color, title, loc, conf, isUnread, navigation, onPress }) => (
+const AlertCard = ({ color, title, loc, conf, isUnread, snapshot_path, navigation, onPress }) => (
   <TouchableOpacity
     style={styles.alertCard}
     onPress={() => {
@@ -154,6 +162,7 @@ const AlertCard = ({ color, title, loc, conf, isUnread, navigation, onPress }) =
           severity: color === '#FF1744' ? 'Critical' : color === '#FFC400' ? 'Warning' : 'Info',
           status: 'Under Review',
           color,
+          snapshot_path,
         },
       });
     }}

@@ -29,7 +29,7 @@ export default function EmergencySOSScreen({ navigation }) {
     try {
       const token = await AsyncStorage.getItem('userToken');
       // Call the real backend SOS endpoint
-      const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://172.23.50.173:8000');
+      const API_URL = 'http://192.168.137.1:8000';
       const response = await fetch(`${API_URL}/api/alerts/sos`, {
         method: 'POST',
         headers: {
@@ -65,7 +65,7 @@ export default function EmergencySOSScreen({ navigation }) {
         <Text style={styles.headerTitle}>Emergency SOS</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent}>
         
         {/* Instruction Card */}
         <LinearGradient colors={['#FF17441A', '#FF174400']} style={styles.instructionCard}>

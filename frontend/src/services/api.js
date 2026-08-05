@@ -5,7 +5,7 @@
 
 // Backend API configuration
 import { Platform } from 'react-native';
-const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://172.23.50.173:8000');
+const API_BASE_URL = 'http://192.168.137.1:8000';
 const API_VERSION = 'v1';
 const API_ENDPOINT = `${API_BASE_URL}/api`;
 
@@ -40,6 +40,7 @@ const fetchWithTimeout = async (url, options = {}, timeout = REQUEST_TIMEOUT) =>
       ...options,
       signal: controller.signal,
       headers,
+      cache: 'no-store', // Prevent browser from caching polling GET requests
     });
     clearTimeout(timeoutId);
     return response;
@@ -123,7 +124,10 @@ export const alertsAPI = {
     const response = await fetchWithTimeout(`${API_ENDPOINT}/alerts/${alertId}`, {
       method: 'DELETE',
     });
-    if (!response.ok) throw new Error(`Failed to delete alert: ${response.statusText}`);
+    if (!response.ok) {
+      const errorText = await response.text().catch(() => 'No response body');
+      throw new Error(`Status ${response.status}: ${errorText}`);
+    }
     return response.json();
   },
 };

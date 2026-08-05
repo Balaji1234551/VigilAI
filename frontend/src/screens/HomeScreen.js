@@ -1,596 +1,288 @@
-import React, { useState, useEffect } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Platform, StatusBar, Animated } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, RefreshControl, StatusBar, Image, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Camera, Bell, TrendingUp, Shield, ChevronRight, Home, BarChart2, User, Plus, AlertTriangle } from 'lucide-react-native';
-import { useTranslation } from '../utils/translations';
 import { useGlobalContext } from '../context/GlobalContext';
+import { useTranslation } from '../utils/translations';
+import { Film, Upload, Bell, Activity, User, Shield, Target, AlertTriangle, Flame, Trash2 } from 'lucide-react-native';
+import { useNavigation } from '@react-navigation/native';
+import api from '../services/api';
 
-import { WebView } from 'react-native-webview';
-import { CameraView, useCameraPermissions, useMicrophonePermissions } from 'expo-camera';
-import { camerasAPI } from '../services/api';
-
-export default function HomeScreen({ navigation }) {
-  const [cameraPermission, requestCameraPermission] = useCameraPermissions();
-  const [micPermission, requestMicPermission] = useMicrophonePermissions();
-  const [userName, setUserName] = useState('User');
-  const [greetingKey, setGreetingKey] = useState('goodMorning');
-  const [dateTimeStr, setDateTimeStr] = useState('');
-  const [selectedLang, setSelectedLang] = useState('English');
-  const { dashStats, alerts, cameras, latestAlert } = useGlobalContext();
-  const [selectedCameraId, setSelectedCameraId] = useState(null);
+export default function HomeScreen() {
+  const { t } = useTranslation();
+  const navigation = useNavigation();
+  const { videos, alerts, dashStats, isLoading, refreshGlobalData } = useGlobalContext();
+  const [refreshing, setRefreshing] = useState(false);
   
-  const onlineCameras = (cameras || []).filter(c => c.status === 'online');
-  const activeCount = onlineCameras.length;
-  
-  const primaryCamera = cameras 
-    ? (cameras.find(c => c.id === selectedCameraId) || onlineCameras[0] || cameras[0] || null)
-    : null;
+  const API_URL = 'http://192.168.137.1:8000';
 
-  const homeAlerts = React.useMemo(() => {
-    return (alerts || []).slice(0, 3).map(alert => ({
-      id: alert.id,
-      title: alert.anomaly_type || alert.title,
-      loc: `${alert.camera_name || 'Camera'} • ${new Date(alert.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
-      conf: `${Math.round((alert.confidence || 0) * 100)}%`,
-      color: alert.color || (alert.confidence > 0.8 ? '#FF5252' : '#FFD600'),
-    }));
-  }, [alerts]);
-  
-  // Real-time Popup State
-  const [popupAlert, setPopupAlert] = useState(null);
-  const popupAnim = React.useRef(new Animated.Value(-100)).current;
-
-  const { t } = useTranslation(selectedLang);
-
-  const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://172.23.50.173:8000');
-
-  const [cameraMode, setCameraMode] = useState('ip'); // 'ip' or 'quick'
-  const [quickTestCameraId, setQuickTestCameraId] = useState(null);
-  const [cameraActive, setCameraActive] = useState(false);
-  const cameraRef = React.useRef(null);
-
-  const startCamera = async () => {
-    try {
-      const token = await AsyncStorage.getItem('userToken');
-      
-      if (cameraMode === 'quick') {
-        // Start Quick Test Mode (Backend Default Webcam 0)
-        const response = await fetch(`${API_URL}/api/cameras/start`, {
-          method: 'POST',
-          headers: { 'Authorization': `Bearer ${token}` }
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setQuickTestCameraId(data.camera_id);
-          setCameraActive(true);
-        } else {
-          alert('Failed to start Quick Test camera.');
-        }
-      } else {
-        // Start IP Camera Mode
-        if (!primaryCamera) {
-          alert('No IP Camera selected. Add one in the Cameras page or switch to Quick Test mode.');
-          return;
-        }
-        await camerasAPI.startCamera(primaryCamera.id);
-        setCameraActive(true);
-      }
-    } catch (e) {
-      console.error("Failed to start camera:", e);
-      alert('Network error while starting camera.');
-    }
+  const onRefresh = async () => {
+    setRefreshing(true);
+    await refreshGlobalData();
+    setRefreshing(false);
   };
 
-  const stopCamera = async () => {
-    try {
-      if (cameraMode === 'quick' && quickTestCameraId) {
-        await camerasAPI.stopCamera(quickTestCameraId);
-      } else if (primaryCamera) {
-        await camerasAPI.stopCamera(primaryCamera.id);
-      }
-    } catch (e) {
-      console.error("Failed to stop backend camera:", e);
-    }
-    setCameraActive(false);
-  };
-
-  useEffect(() => {
-    // 1. Fetch User Name and Language Preference whenever the screen gains focus
-    const unsubscribe = navigation.addListener('focus', () => {
-      const loadLocalData = async () => {
-        try {
-          const storedLang = await AsyncStorage.getItem('userLanguage');
-          if (storedLang) {
-            setSelectedLang(storedLang);
-          }
-          
-          const userDataStr = await AsyncStorage.getItem('userData');
-          if (userDataStr) {
-            const userData = JSON.parse(userDataStr);
-            if (userData.displayName) {
-              setUserName(userData.displayName.split(' ')[0]);
-            } else if (userData.email) {
-              setUserName(userData.email.split('@')[0]);
-            }
-          }
-        } catch (e) {
-          console.error('Failed to load local settings', e);
-        }
-      };
-      loadLocalData();
-    });
-
-    return unsubscribe;
-  }, [navigation]);
-
-  useEffect(() => {
-    // 2. Update Greeting Key and Date/Time
-    const updateTime = () => {
-      const now = new Date();
-      
-      const hour = now.getHours();
-      if (hour < 12) setGreetingKey('goodMorning');
-      else if (hour < 17) setGreetingKey('goodAfternoon');
-      else if (hour < 20) setGreetingKey('goodEvening');
-      else setGreetingKey('goodNight');
-
-      const options = { weekday: 'long', month: 'long', day: 'numeric' };
-      const dateStr = now.toLocaleDateString(undefined, options);
-      
-      let hours = now.getHours();
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12;
-      hours = hours ? hours : 12; 
-      const minutes = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
-      const timeStr = `${hours}:${minutes} ${ampm}`;
-
-      setDateTimeStr(`${dateStr} • ${timeStr}`);
-    };
-
-    updateTime();
-    const timer = setInterval(updateTime, 60000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    if (latestAlert) {
-      // Determine Category & Color
-      let categoryColor = '#FFD600'; // Suspicious Activity
-      if (['weapon', 'fight'].includes(latestAlert.anomaly_type?.toLowerCase() || '')) categoryColor = '#FF5252'; // Critical
-      else if (['fall', 'fire'].includes(latestAlert.anomaly_type?.toLowerCase() || '')) categoryColor = '#FF3D00'; // Emergency
-      
-      // Display Popup Notification
-      setPopupAlert({
-          title: (latestAlert.anomaly_type || 'Alert').toUpperCase(),
-          desc: `${latestAlert.camera_name || 'Camera'} • Conf: ${Math.round((latestAlert.confidence || 0) * 100)}%`,
-          color: categoryColor
-      });
-      
-      // Slide down
-      Animated.timing(popupAnim, {
-          toValue: 20,
-          duration: 300,
-          useNativeDriver: true
-      }).start();
-      
-      // Hide after 4 seconds
-      setTimeout(() => {
-          Animated.timing(popupAnim, {
-              toValue: -150,
-              duration: 300,
-              useNativeDriver: true
-          }).start(() => setPopupAlert(null));
-      }, 4000);
-    }
-  }, [latestAlert, popupAnim]);
+  const processedCount = dashStats.processed_videos || 0;
+  const totalAlerts = dashStats.total_alerts || 0;
+  const avgConf = dashStats.avg_confidence || 0;
+  
+  const todaySummary = dashStats.today_summary || { WEAPON: 0, FIRE: 0, SMOKE: 0, PERSON: 0 };
+  const recentVideos = videos.slice(0, 3);
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Real-time Popup Overlay */}
-      {popupAlert && (
-          <Animated.View style={[styles.popupContainer, { transform: [{ translateY: popupAnim }], borderLeftColor: popupAlert.color }]}>
-              <View style={[styles.popupIconContainer, { backgroundColor: popupAlert.color + '20' }]}>
-                  <AlertTriangle size={24} color={popupAlert.color} />
-              </View>
-              <View style={styles.popupText}>
-                  <Text style={[styles.popupTitle, { color: popupAlert.color }]}>VigilAI ALERT: {popupAlert.title}</Text>
-                  <Text style={styles.popupDesc}>{popupAlert.desc}</Text>
-              </View>
-          </Animated.View>
-      )}
-    
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={true}>
-        
-        {/* Header Section */}
-        <View style={styles.header}>
-          <View>
-            <Text style={styles.greeting}>{t(greetingKey)}, {userName}</Text>
-            <Text style={styles.date}>{dateTimeStr}</Text>
-          </View>
-          <TouchableOpacity style={styles.avatar} onPress={() => navigation.navigate('ProfileTab')}>
-            <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
-          </TouchableOpacity>
+      <StatusBar barStyle="light-content" backgroundColor="#0A0E17" />
+      
+      {/* Header */}
+      <View style={styles.header}>
+        <View>
+          <Text style={styles.greeting}>{t('greeting')}</Text>
+          <Text style={styles.subtitle}>Video Detection Dashboard</Text>
         </View>
+        <TouchableOpacity style={styles.profileBtn} onPress={() => navigation.navigate('ProfileTab')}>
+          <User size={20} color="#00E5FF" />
+        </TouchableOpacity>
+      </View>
 
-        {/* System Status Card */}
-        {(() => {
-          let statusText = 'Offline';
-          let statusColor = '#FF5252';
-          
-          if (activeCount > 0) {
-            statusText = 'Waiting for Camera';
-            statusColor = '#FFD600';
-            
-            if (cameraActive) {
-              statusText = 'Monitoring';
-              statusColor = '#00C853';
-            }
-            if (popupAlert) {
-              statusText = 'Threat Detected';
-              statusColor = '#FF5252';
-            }
-          }
-          
-          return (
-            <View style={styles.statusCard}>
-              <View style={styles.statusRow}>
-                <View style={[styles.dot, { backgroundColor: statusColor }]} />
-                <Text style={styles.statusText}>{statusText}</Text>
-              </View>
-              <Text style={styles.uptime}>{activeCount > 0 ? 'uptime: 99.8%' : 'All cameras are offline'}</Text>
-              <View style={styles.checkIcon}>
-                <Shield size={20} color={statusColor} />
-              </View>
-            </View>
-          );
-        })()}
+      <ScrollView 
+        contentContainerStyle={styles.scrollContent}
+        refreshControl={<RefreshControl refreshing={refreshing || isLoading} onRefresh={onRefresh} tintColor="#00E5FF" />}
+      >
+        {/* Main Upload CTA */}
+        <TouchableOpacity 
+          style={styles.uploadCard}
+          onPress={() => navigation.navigate('AddCamera')}
+        >
+          <View style={styles.uploadIconContainer}>
+            <Upload size={32} color="#000" />
+          </View>
+          <View style={styles.uploadTextContainer}>
+            <Text style={styles.uploadTitle}>Upload New Video</Text>
+            <Text style={styles.uploadSubtitle}>Run AI detection on a pre-recorded video</Text>
+          </View>
+        </TouchableOpacity>
 
         {/* Stats Grid */}
         <View style={styles.statsGrid}>
-          <StatBox 
-            icon={<Camera size={20} color={activeCount > 0 ? "#00E5FF" : "#94A3B8"} />} 
-            value={activeCount.toString()} 
-            label="Active Cameras" 
-          />
-          <StatBox 
-            icon={<Bell size={20} color={dashStats.alerts_today > 0 ? "#FF5252" : "#94A3B8"} />} 
-            value={dashStats.alerts_today?.toString() || "0"} 
-            label="Detection Count" 
-          />
-          <StatBox 
-            icon={<TrendingUp size={20} color={latestAlert ? "#00C853" : "#94A3B8"} />} 
-            value={latestAlert ? `${Math.round((latestAlert.confidence || 0) * 100)}%` : "No Detection Yet"} 
-            label={latestAlert ? (latestAlert.anomaly_type || 'Alert').toUpperCase() : "Confidence"} 
-          />
+          <StatBox icon={<Film size={20} color="#00E5FF" />} value={videos.length.toString()} label="Uploaded Videos" />
+          <StatBox icon={<Activity size={20} color="#00C853" />} value={processedCount.toString()} label="Processed" />
+          <StatBox icon={<Bell size={20} color="#FF5252" />} value={totalAlerts.toString()} label="Total Alerts" />
+          <StatBox icon={<Target size={20} color="#F59E0B" />} value={`${avgConf}%`} label="Avg Confidence" />
         </View>
 
-        {/* Recent Alerts Section */}
-        <SectionHeader title={t('recentAlerts')} action={t('viewAlerts')} onPress={() => navigation.navigate('AlertsTab')} />
-        {homeAlerts.length === 0 ? (
-          <Text style={{ color: '#94A3B8', textAlign: 'center', marginVertical: 15 }}>No active alerts.</Text>
+        {/* Today's Detection Summary */}
+        <SectionHeader title="Today's Detection Summary" />
+        <View style={styles.summaryCard}>
+          <SummaryItem icon={<AlertTriangle size={24} color="#FF5252" />} label="Weapon" count={todaySummary.WEAPON} />
+          <SummaryItem icon={<Flame size={24} color="#FF9100" />} label="Fire" count={todaySummary.FIRE} />
+          <SummaryItem icon={<Target size={24} color="#94A3B8" />} label="Smoke" count={todaySummary.SMOKE} />
+          <SummaryItem icon={<User size={24} color="#00E5FF" />} label="Person" count={todaySummary.PERSON} />
+        </View>
+
+        {/* Recent Uploaded Videos Section */}
+        <SectionHeader title="Uploaded Videos" action="View All" onPress={() => navigation.navigate('CamerasTab')} />
+        {recentVideos.length === 0 ? (
+          <Text style={styles.emptyText}>No videos uploaded yet.</Text>
         ) : (
-          homeAlerts.map(alert => (
+          recentVideos.map(video => {
+            const videoAlerts = alerts.filter(a => a.camera_id === video.id);
+            const detectedTypes = [...new Set(videoAlerts.map(a => a.anomaly_type))];
+            return (
+            <VideoItem 
+              key={video.id}
+              title={video.camera_name}
+              status={video.status}
+              detections={detectedTypes}
+              onPress={() => navigation.navigate('CameraDetails', { cameraId: video.id })}
+            />
+          )})
+        )}
+
+        {/* Recent Alerts Section */}
+        <SectionHeader title="Recent Alerts" action="View All Alerts" onPress={() => navigation.navigate('AlertsTab')} />
+        {alerts.length === 0 ? (
+          <Text style={styles.emptyText}>No active alerts.</Text>
+        ) : (
+          alerts.slice(0, 5).map(alert => (
             <AlertItem 
               key={alert.id}
-              color={alert.color} 
-              title={alert.title} 
-              loc={alert.loc} 
-              onPress={() => navigation.navigate('AlertDetails', { alert: { title: alert.title, camera: `Camera ${alert.camera_id}`, time: alert.loc, conf: alert.conf, color: alert.color }})} 
+              alert={alert}
+              baseUrl={API_URL}
+              onPress={() => navigation.navigate('AlertDetails', { alert })}
+              onDelete={async (id) => {
+                try {
+                  await api.alertsAPI.deleteAlert(id);
+                  refreshGlobalData();
+                } catch (e) {
+                  // If it's already deleted (404), just refresh the UI
+                  if (e.message && (e.message.includes('404') || e.message.includes('Status 404'))) {
+                    refreshGlobalData();
+                  } else {
+                    console.error('Failed to delete alert', e);
+                  }
+                }
+              }}
             />
           ))
         )}
-
-        {/* Camera Mode Toggle */}
-        <View style={styles.toggleContainer}>
-          <TouchableOpacity 
-            style={[styles.toggleBtn, cameraMode === 'quick' && styles.toggleBtnActive]}
-            onPress={() => setCameraMode('quick')}
-          >
-            <Text style={[styles.toggleText, cameraMode === 'quick' && styles.toggleTextActive]}>Device Camera (Quick Test)</Text>
-          </TouchableOpacity>
-          <TouchableOpacity 
-            style={[styles.toggleBtn, cameraMode === 'ip' && styles.toggleBtnActive]}
-            onPress={() => setCameraMode('ip')}
-          >
-            <Text style={[styles.toggleText, cameraMode === 'ip' && styles.toggleTextActive]}>IP Camera</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Live Feed Preview */}
-        <SectionHeader 
-          title={t('liveFeedPreview')} 
-          action={cameraActive ? "Stop Camera" : "Start Camera"}
-          onPress={cameraActive ? stopCamera : startCamera}
-        />
         
-        {/* Camera Selector UI - Only show in IP mode */}
-        {(cameraMode === 'ip' && cameras && cameras.length > 0) && (
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 15 }}>
-            {cameras.map(cam => {
-              const isSelected = primaryCamera && primaryCamera.id === cam.id;
-              const isOnline = cam.status === 'online';
-              return (
-                <TouchableOpacity 
-                  key={cam.id}
-                  style={{
-                    paddingHorizontal: 16,
-                    paddingVertical: 8,
-                    borderRadius: 20,
-                    marginRight: 10,
-                    backgroundColor: isSelected ? '#00E5FF' : '#1E293B',
-                    borderWidth: 1,
-                    borderColor: isSelected ? '#00E5FF' : '#334155',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    opacity: isOnline ? 1 : 0.6
-                  }}
-                  onPress={() => setSelectedCameraId(cam.id)}
-                >
-                  <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: isOnline ? '#00C853' : '#FF5252', marginRight: 8 }} />
-                  <Text style={{ color: isSelected ? '#000' : '#FFF', fontWeight: 'bold' }}>{cam.camera_name}</Text>
-                </TouchableOpacity>
-              )
-            })}
-          </ScrollView>
-        )}
-        
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15, gap: 10 }}>
-          <TouchableOpacity style={{ flex: 1, backgroundColor: '#00E5FF', padding: 12, borderRadius: 8, alignItems: 'center' }} onPress={startCamera}>
-            <Text style={{ fontWeight: 'bold', color: '#000' }}>Start Camera</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={{ flex: 1, backgroundColor: '#FF5252', padding: 12, borderRadius: 8, alignItems: 'center' }} onPress={stopCamera}>
-            <Text style={{ fontWeight: 'bold', color: '#FFF' }}>Stop Camera</Text>
-          </TouchableOpacity>
-        </View>
-
-        <LiveCameraFeed 
-          cameraActive={cameraActive}
-          primaryCamera={primaryCamera}
-          cameraRef={cameraRef}
-          API_URL={API_URL}
-        />
-
-
-        {/* Quick Actions */}
-        <View style={styles.actionGrid}>
-          <ActionButton onPress={() => navigation.navigate('EmergencySOS')} color="#FF5252" icon={<Shield size={20} color="#FF5252" />} label={t('emergencySos')} />
-          <ActionButton onPress={() => navigation.navigate('AddCamera')} color="#00BFA5" icon={<Plus size={20} color="#00BFA5" />} label={t('addCamera')} />
-          <ActionButton onPress={() => navigation.navigate('AlertsTab')} color="#94A3B8" icon={<Bell size={20} color="#FFF" />} label={t('viewAlerts')} />
-        </View>
-
+        <View style={{height: 100}} />
       </ScrollView>
-
-
     </SafeAreaView>
   );
 }
 
-// Sub-components to keep code clean
-
-const LiveCameraFeed = React.memo(({ cameraActive, primaryCamera, cameraMode, quickTestCameraId, API_URL }) => {
-  if (!cameraActive) {
-    return (
-      <View style={[styles.liveCard, { justifyContent: 'center', alignItems: 'center', height: 400 }]}>
-        <Camera size={40} color="#94A3B8" style={{ marginBottom: 15 }} />
-        <Text style={{ color: '#FFF', fontSize: 18, fontWeight: 'bold' }}>Camera Off</Text>
-        <Text style={{ color: '#94A3B8', fontSize: 14, marginTop: 5 }}>Click Start Camera</Text>
-      </View>
-    );
-  }
-  
-  if (cameraMode === 'quick') {
-    if (!quickTestCameraId) return null;
-    return (
-      <View style={styles.liveCard}>
-        <View style={styles.liveBadge}><View style={styles.liveDot} /><Text style={styles.liveText}>TEST LIVE</Text></View>
-        <View style={{ height: 400, overflow: 'hidden' }}>
-          {Platform.OS === 'web' ? (
-            <img
-              src={`${API_URL}/api/cameras/${quickTestCameraId}/stream`}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
-              alt="Live Feed"
-            />
-          ) : (
-            <WebView 
-              source={{ uri: `${API_URL}/api/cameras/${quickTestCameraId}/stream` }} 
-              style={{ width: '100%', height: '100%', backgroundColor: '#0F172A' }}
-              javaScriptEnabled={true}
-              domStorageEnabled={true}
-              scrollEnabled={false}
-            />
-          )}
-        </View>
-        <View style={styles.liveFooter}>
-          <Text style={styles.cameraName}>Device Camera (Quick Test)</Text>
-          <Text style={styles.cameraStatus}>Active</Text>
-        </View>
-      </View>
-    );
-  }
-  
-  if (primaryCamera) {
-    if (primaryCamera.status === 'offline') {
-      return (
-        <View style={[styles.liveCard, { justifyContent: 'center', alignItems: 'center', height: 400 }]}>
-          <AlertTriangle size={40} color="#FF5252" style={{ marginBottom: 15 }} />
-          <Text style={{ color: '#FF5252', fontSize: 16, fontWeight: 'bold', textAlign: 'center', paddingHorizontal: 20 }}>
-            {primaryCamera.camera_name ? primaryCamera.camera_name.toUpperCase() : 'CAMERA'} IS OFFLINE
-          </Text>
-          <Text style={{ color: '#94A3B8', fontSize: 14, marginTop: 10, textAlign: 'center' }}>
-            Please check your IP Webcam app and ensure it is running.
-          </Text>
-        </View>
-      );
-    }
-    
-    return (
-      <View style={styles.liveCard}>
-        <View style={styles.liveBadge}><View style={styles.liveDot} /><Text style={styles.liveText}>LIVE</Text></View>
-        
-        <View style={{ height: 400, overflow: 'hidden' }}>
-          {Platform.OS === 'web' ? (
-            <img
-              src={`${API_URL}/api/cameras/${primaryCamera.id}/stream`}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
-              alt="Live Feed"
-            />
-          ) : (
-            <WebView 
-              source={{ uri: `${API_URL}/api/cameras/${primaryCamera.id}/stream` }} 
-              style={{ width: '100%', height: '100%', backgroundColor: '#0F172A' }}
-              javaScriptEnabled={true}
-              domStorageEnabled={true}
-              scrollEnabled={false}
-            />
-          )}
-        </View>
-
-        <View style={styles.liveFooter}>
-          <Text style={styles.cameraName}>{primaryCamera.camera_name}</Text>
-          <Text style={styles.cameraStatus}>Active</Text>
-        </View>
-      </View>
-    );
-  }
-  
-  return (
-    <View style={[styles.liveCard, { justifyContent: 'center', alignItems: 'center', height: 400 }]}>
-      <Camera size={40} color="#94A3B8" style={{ marginBottom: 15 }} />
-      <Text style={{ color: '#FFF', fontSize: 16, fontWeight: 'bold' }}>No Camera Configured</Text>
-      <Text style={{ color: '#94A3B8', fontSize: 14, marginTop: 5, textAlign: 'center', paddingHorizontal: 20 }}>
-        Please select a camera mode above and add an IP camera if needed.
-      </Text>
-    </View>
-  );
-}, (prevProps, nextProps) => {
-  return (
-    prevProps.cameraActive === nextProps.cameraActive &&
-    prevProps.primaryCamera?.id === nextProps.primaryCamera?.id &&
-    prevProps.primaryCamera?.status === nextProps.primaryCamera?.status
-  );
-});
-
-const StatBox = ({ icon, value, label }) => (
-  <View style={styles.statBox}>
-    {icon}
-    <Text style={styles.statValue}>{value}</Text>
-    <Text style={styles.statLabel}>{label}</Text>
-  </View>
-);
-
+// Sub-components
 const SectionHeader = ({ title, action, onPress }) => (
   <View style={styles.sectionHeader}>
     <Text style={styles.sectionTitle}>{title}</Text>
     {action && (
-      <TouchableOpacity onPress={onPress} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-        <Text style={styles.sectionAction}>{action}</Text>
+      <TouchableOpacity onPress={onPress}>
+        <Text style={styles.seeAll}>{action}</Text>
       </TouchableOpacity>
     )}
   </View>
 );
 
-const AlertItem = ({ color, title, loc, onPress }) => (
-  <TouchableOpacity style={styles.alertItem} onPress={onPress}>
-    <View style={[styles.alertDot, { backgroundColor: color }]} />
-    <View style={{ flex: 1 }}>
-      <Text style={styles.alertTitle}>{title}</Text>
-      <Text style={styles.alertLoc}>{loc}</Text>
-    </View>
-    <ChevronRight size={18} color="#94A3B8" />
-  </TouchableOpacity>
+const StatBox = ({ icon, value, label }) => (
+  <View style={styles.statBox}>
+    <View style={styles.statIcon}>{icon}</View>
+    <Text style={styles.statValue}>{value}</Text>
+    <Text style={styles.statLabel}>{label}</Text>
+  </View>
 );
 
-const ActionButton = ({ onPress, color, icon, label }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.actionBtn, { borderColor: color + '40' }]}> 
+const SummaryItem = ({ icon, label, count }) => (
+  <View style={styles.summaryItem}>
     {icon}
-    <Text style={[styles.actionLabel, { color }]}>{label}</Text>
-  </TouchableOpacity>
+    <Text style={styles.summaryCount}>{count}</Text>
+    <Text style={styles.summaryLabel}>{label}</Text>
+  </View>
 );
 
-const TabItem = ({ icon, label, active, onPress }) => (
-  <TouchableOpacity style={styles.tabItem} onPress={onPress}>
-    {icon}
-    <Text style={[styles.tabLabel, active && { color: '#00E5FF' }]}>{label}</Text>
-  </TouchableOpacity>
-);
+const VideoItem = ({ title, status, detections, onPress }) => {
+  let statusColor = '#94A3B8';
+  if (status === 'completed') statusColor = '#00C853';
+  if (status === 'processing') statusColor = '#F59E0B';
+  if (status === 'failed') statusColor = '#FF5252';
+
+  let detectionsText = '';
+  if (detections && detections.length > 0) {
+      let primary = detections.map(d => {
+          if (!d) return 'Anomaly';
+          let main = d.split(',').pop().trim();
+          return main.charAt(0).toUpperCase() + main.slice(1).toLowerCase();
+      });
+      primary = [...new Set(primary)];
+      detectionsText = primary.join(', ') + ' Detected';
+  }
+
+  return (
+    <TouchableOpacity style={styles.videoItem} onPress={onPress}>
+      <View style={styles.videoIconContainer}>
+        <Film size={20} color="#00E5FF" />
+      </View>
+      <View style={styles.videoInfo}>
+        <Text style={styles.videoTitle}>{title}</Text>
+        {detectionsText ? <Text style={{color: '#FF5252', fontSize: 12, fontWeight: 'bold', marginBottom: 4}}>{detectionsText}</Text> : null}
+        <Text style={[styles.videoStatus, { color: statusColor }]}>{status.toUpperCase()}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+const AlertItem = ({ alert, baseUrl, onPress, onDelete }) => {
+  const rawType = alert.anomaly_type || 'UNKNOWN';
+  // If multiple detections like "PERSON,WEAPON", grab the most critical one
+  const mainType = rawType.split(',').pop().trim();
+  const formattedTitle = mainType.charAt(0).toUpperCase() + mainType.slice(1).toLowerCase() + ' Detection';
+  
+  const isDangerous = ['WEAPON', 'FIRE', 'SMOKE'].includes(mainType.toUpperCase());
+  const color = isDangerous ? '#FF5252' : '#F59E0B';
+  const confidence = Math.round((alert.confidence || 0) * 100);
+  const timeStr = new Date(alert.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const imageUrl = alert.snapshot_path ? (alert.snapshot_path.startsWith('http') ? alert.snapshot_path : `${baseUrl}${alert.snapshot_path}`) : null;
+
+  return (
+    <TouchableOpacity style={styles.alertItem} onPress={onPress}>
+      <View style={[styles.severityIndicator, { backgroundColor: color }]} />
+      
+      {imageUrl ? (
+        <Image source={{ uri: imageUrl }} style={styles.alertThumb} resizeMode="cover" />
+      ) : (
+        <View style={styles.alertThumbPlaceholder}>
+          <Shield size={24} color="#94A3B8" />
+        </View>
+      )}
+
+      <View style={styles.alertContent}>
+        <View style={styles.alertHeaderRow}>
+          <Text style={styles.alertTitle}>{formattedTitle}</Text>
+          <Text style={styles.alertTime}>{timeStr}</Text>
+        </View>
+        <Text style={styles.alertVideoName} numberOfLines={1}>Video: {alert.camera_name || 'N/A'}</Text>
+        <View style={styles.alertFooterRow}>
+          <Text style={[styles.alertSeverity, { color }]}>{isDangerous ? 'CRITICAL' : 'WARNING'}</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+            <Text style={styles.alertConf}>Conf: {confidence}%</Text>
+            {onDelete && (
+              <TouchableOpacity onPress={() => onDelete(alert.id)} style={{ padding: 4 }}>
+                <Trash2 size={16} color="#EF4444" />
+              </TouchableOpacity>
+            )}
+          </View>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#0A0E17' },
-  scrollContent: { padding: 20, paddingBottom: 100, flexGrow: 1, width: '100%' },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 25 },
-  greeting: { color: '#FFF', fontSize: 24, fontWeight: 'bold' },
-  date: { color: '#94A3B8', fontSize: 14 },
-  avatar: { width: 45, height: 45, borderRadius: 22.5, backgroundColor: '#00BFA5', justifyContent: 'center', alignItems: 'center' },
-  avatarText: { fontWeight: 'bold', color: '#FFF' },
-  statusCard: { backgroundColor: '#161B29', borderRadius: 15, padding: 20, marginBottom: 25, position: 'relative' },
-  statusRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 5 },
-  dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: '#00C853', marginRight: 8 },
-  statusText: { color: '#FFF', fontWeight: '600' },
-  uptime: { color: '#94A3B8', fontSize: 12 },
-  checkIcon: { position: 'absolute', right: 20, top: 25 },
-  statsGrid: { flexDirection: 'row', gap: 10, marginBottom: 30 },
-  statBox: { flex: 1, backgroundColor: '#161B29', borderRadius: 15, padding: 15, alignItems: 'center' },
-  statValue: { color: '#FFF', fontSize: 20, fontWeight: 'bold', marginVertical: 5 },
-  statLabel: { color: '#94A3B8', fontSize: 10, textAlign: 'center' },
-  toggleContainer: { flexDirection: 'row', backgroundColor: '#161B29', borderRadius: 10, padding: 4, marginBottom: 20 },
-  toggleBtn: { flex: 1, paddingVertical: 12, alignItems: 'center', borderRadius: 8 },
-  toggleBtnActive: { backgroundColor: '#0F172A' },
-  toggleText: { color: '#94A3B8', fontSize: 14, fontWeight: '600' },
-  toggleTextActive: { color: '#00E5FF' },
-  sectionHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15, marginTop: 10 },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20 },
+  greeting: { color: '#94A3B8', fontSize: 14, marginBottom: 4 },
+  subtitle: { color: '#FFF', fontSize: 22, fontWeight: 'bold' },
+  profileBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#1E293B', justifyContent: 'center', alignItems: 'center' },
+  
+  scrollContent: { paddingBottom: 20 },
+  
+  uploadCard: { flexDirection: 'row', backgroundColor: '#00E5FF', marginHorizontal: 20, borderRadius: 16, padding: 20, alignItems: 'center', marginBottom: 20 },
+  uploadIconContainer: { width: 48, height: 48, borderRadius: 24, backgroundColor: 'rgba(0,0,0,0.1)', justifyContent: 'center', alignItems: 'center', marginRight: 15 },
+  uploadTextContainer: { flex: 1 },
+  uploadTitle: { color: '#000', fontSize: 18, fontWeight: 'bold', marginBottom: 4 },
+  uploadSubtitle: { color: '#000', fontSize: 14, opacity: 0.8 },
+
+  statsGrid: { flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 20, marginBottom: 20, justifyContent: 'space-between' },
+  statBox: { width: '47.5%', backgroundColor: '#161B29', borderRadius: 16, padding: 15, marginBottom: 15, borderWidth: 1, borderColor: '#242C3E' },
+  statIcon: { width: 36, height: 36, borderRadius: 18, backgroundColor: '#1E293B', justifyContent: 'center', alignItems: 'center', marginBottom: 12 },
+  statValue: { color: '#FFF', fontSize: 24, fontWeight: 'bold', marginBottom: 4 },
+  statLabel: { color: '#94A3B8', fontSize: 13 },
+  
+  summaryCard: { flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#161B29', marginHorizontal: 20, borderRadius: 16, padding: 20, marginBottom: 25, borderWidth: 1, borderColor: '#242C3E' },
+  summaryItem: { alignItems: 'center', width: '25%' },
+  summaryCount: { color: '#FFF', fontSize: 20, fontWeight: 'bold', marginTop: 8, marginBottom: 4 },
+  summaryLabel: { color: '#94A3B8', fontSize: 12 },
+
+  sectionHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, marginBottom: 15 },
   sectionTitle: { color: '#FFF', fontSize: 18, fontWeight: 'bold' },
-  sectionAction: { color: '#00E5FF', fontSize: 14 },
-  alertItem: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#161B29', borderRadius: 12, padding: 15, marginBottom: 10 },
-  alertDot: { width: 10, height: 10, borderRadius: 5, marginRight: 15 },
-  alertTitle: { color: '#FFF', fontWeight: '600' },
-  alertLoc: { color: '#94A3B8', fontSize: 12 },
-  liveCard: { backgroundColor: '#161B29', borderRadius: 15, overflow: 'hidden', marginBottom: 25 },
-  videoPlaceholder: { height: 180, backgroundColor: '#0F172A', justifyContent: 'center', alignItems: 'center' },
-  liveBadge: { position: 'absolute', top: 15, left: 15, zIndex: 10, backgroundColor: '#FF5252', flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 5, alignItems: 'center' },
-  liveDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#FFF', marginRight: 5 },
-  liveText: { color: '#FFF', fontSize: 10, fontWeight: 'bold' },
-  liveFooter: { padding: 15 },
-  cameraName: { color: '#FFF', fontWeight: 'bold' },
-  cameraStatus: { color: '#94A3B8', fontSize: 12 },
-  actionGrid: { flexDirection: 'row', gap: 10 },
-  actionBtn: { flex: 1, height: 80, borderRadius: 15, borderWidth: 1, backgroundColor: '#161B29', justifyContent: 'center', alignItems: 'center', gap: 8 },
-  actionLabel: { fontSize: 10, fontWeight: 'bold', textAlign: 'center' },
-  tabBar: { position: 'absolute', bottom: 0, left: 0, right: 0, flexDirection: 'row', 
-    justifyContent: 'space-between', 
-    paddingHorizontal: 30, 
-    paddingVertical: 15, 
-    borderTopWidth: 1, 
-    borderColor: '#1E293B', 
-    backgroundColor: '#0F172A' 
-  },
-  popupContainer: {
-    position: 'absolute',
-    top: 0,
-    left: 20,
-    right: 20,
-    backgroundColor: '#161B29',
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#242C3E',
-    borderLeftWidth: 4,
-    padding: 15,
-    flexDirection: 'row',
-    alignItems: 'center',
-    zIndex: 9999,
-    shadowColor: '#000',
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    elevation: 20
-  },
-  popupIconContainer: {
-      width: 40, height: 40, borderRadius: 20,
-      justifyContent: 'center', alignItems: 'center', marginRight: 15
-  },
-  popupText: { flex: 1 },
-  popupTitle: { fontSize: 16, fontWeight: 'bold', marginBottom: 4 },
-  popupDesc: { fontSize: 13, color: '#94A3B8' },
-  tabItem: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  tabLabel: { color: '#94A3B8', fontSize: 10, marginTop: 4 }
+  seeAll: { color: '#00E5FF', fontSize: 14, fontWeight: '500' },
+  emptyText: { color: '#94A3B8', textAlign: 'center', marginHorizontal: 20, marginBottom: 20 },
+  
+  videoItem: { flexDirection: 'row', backgroundColor: '#161B29', marginHorizontal: 20, borderRadius: 12, padding: 15, marginBottom: 12, alignItems: 'center', borderWidth: 1, borderColor: '#242C3E' },
+  videoIconContainer: { width: 40, height: 40, borderRadius: 8, backgroundColor: '#1E293B', justifyContent: 'center', alignItems: 'center', marginRight: 15 },
+  videoInfo: { flex: 1 },
+  videoTitle: { color: '#FFF', fontSize: 16, fontWeight: '600', marginBottom: 4 },
+  videoStatus: { fontSize: 12, fontWeight: 'bold' },
+
+  alertItem: { flexDirection: 'row', backgroundColor: '#161B29', marginHorizontal: 20, borderRadius: 12, marginBottom: 12, overflow: 'hidden', borderWidth: 1, borderColor: '#242C3E', alignItems: 'center' },
+  severityIndicator: { width: 4, height: '100%' },
+  alertThumb: { width: 70, height: 70, backgroundColor: '#000' },
+  alertThumbPlaceholder: { width: 70, height: 70, backgroundColor: '#1E293B', justifyContent: 'center', alignItems: 'center' },
+  alertContent: { flex: 1, padding: 12, justifyContent: 'center' },
+  alertHeaderRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 },
+  alertTitle: { color: '#FFF', fontSize: 16, fontWeight: 'bold' },
+  alertTime: { color: '#94A3B8', fontSize: 12 },
+  alertVideoName: { color: '#94A3B8', fontSize: 13, marginBottom: 6 },
+  alertFooterRow: { flexDirection: 'row', justifyContent: 'space-between' },
+  alertSeverity: { fontSize: 12, fontWeight: 'bold' },
+  alertConf: { color: '#00E5FF', fontSize: 12, fontWeight: '500' }
 });

@@ -67,9 +67,9 @@ WEAPON_CONF_THRESHOLD = 0.65
 WEAPON_CONSECUTIVE_FRAMES = 5
 
 # YOLOv8 Fight Detection Parameters
-FIGHT_DISTANCE_THRESHOLD = 120.0     # Max pixel distance between 2 people
-FIGHT_VELOCITY_THRESHOLD = 40.0      # Min movement velocity
-FIGHT_CONSECUTIVE_FRAMES = 15
+FIGHT_DISTANCE_THRESHOLD = 150.0     # Max pixel distance between 2 people
+FIGHT_VELOCITY_THRESHOLD = 15.0      # Min movement velocity
+FIGHT_CONSECUTIVE_FRAMES = 2
 
 # Centroid Tracking Loitering Parameters
 LOITER_RADIUS_THRESHOLD = 100.0      # Standing pixel radius

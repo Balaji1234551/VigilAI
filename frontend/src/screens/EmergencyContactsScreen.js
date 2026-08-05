@@ -8,7 +8,7 @@ import { ShieldAlert, Mail, User, Phone, Trash2, Send, Plus, ArrowLeft } from 'l
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://172.23.50.173:8000');
+const API_URL = 'http://192.168.137.1:8000';
 
 export default function EmergencyContactsScreen({ navigation }) {
   const [contacts, setContacts] = useState([]);
@@ -135,7 +135,7 @@ export default function EmergencyContactsScreen({ navigation }) {
         <Text style={styles.headerTitle}>Emergency Contacts</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent}>
         
         {/* Info Card */}
         <View style={styles.infoCard}>

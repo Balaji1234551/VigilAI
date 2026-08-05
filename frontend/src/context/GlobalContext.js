@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
-import { Platform } from 'react-native';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { Platform, AppState } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { camerasAPI, alertsAPI } from '../services/api';
 
@@ -10,37 +10,48 @@ export const useGlobalContext = () => {
 };
 
 export const GlobalProvider = ({ children }) => {
-  const [cameras, setCameras] = useState([]);
+  const [videos, setVideos] = useState([]);
   const [alerts, setAlerts] = useState([]);
   const [latestAlert, setLatestAlert] = useState(null);
   const [dashStats, setDashStats] = useState({
     activeCameras: 0,
     totalAlerts: 0,
     criticalAlerts: 0,
-    systemStatus: 'Optimal'
+    systemStatus: 'Optimal',
+    totalVideosProcessed: 0
   });
   
   const [isLoading, setIsLoading] = useState(true);
-  const wsRef = useRef(null);
-  const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://172.23.50.173:8000');
+  const API_URL = 'http://192.168.137.1:8000';
 
-  const fetchGlobalData = useCallback(async () => {
+  const fetchGlobalData = useCallback(async (isBackground = false) => {
     try {
-      setIsLoading(true);
+      if (!isBackground) setIsLoading(true);
       const token = await AsyncStorage.getItem('userToken');
       
       try {
-        const camData = await camerasAPI.getCameras();
-        setCameras(camData || []);
+        const vidData = await camerasAPI.getCameras();
+        setVideos(vidData || []);
+        
+        // Calculate total processed for dashboard
+        const processed = (vidData || []).filter(v => v.status === 'completed').length;
+        setDashStats(prev => ({ ...prev, totalVideosProcessed: processed }));
       } catch (e) {
-        console.error("GlobalContext: Failed to fetch cameras", e);
+        if (e.name !== 'AbortError') {
+            console.error("GlobalContext: Failed to fetch videos", e);
+        }
       }
       
       try {
         const alertData = await alertsAPI.getActiveAlerts();
         setAlerts(alertData || []);
+        if (alertData && alertData.length > 0) {
+            setLatestAlert(alertData[0]);
+        }
       } catch (e) {
-        console.error("GlobalContext: Failed to fetch alerts", e);
+        if (e.name !== 'AbortError') {
+            console.error("GlobalContext: Failed to fetch alerts", e);
+        }
       }
       
       if (token) {
@@ -50,7 +61,7 @@ export const GlobalProvider = ({ children }) => {
           });
           if (statsRes.ok) {
             const statsData = await statsRes.json();
-            setDashStats(statsData);
+            setDashStats(prev => ({ ...prev, ...statsData }));
           }
         } catch (e) {
           console.error("GlobalContext: Failed to fetch dash stats", e);
@@ -64,71 +75,40 @@ export const GlobalProvider = ({ children }) => {
   }, [API_URL]);
 
   useEffect(() => {
-    fetchGlobalData();
-
-    const wsHost = API_URL.replace('http://', '').replace('https://', '').split('/')[0];
-    const finalWsUrl = "ws://" + wsHost + "/api/ws/alerts";
-
-    wsRef.current = new WebSocket(finalWsUrl);
-
-    wsRef.current.onopen = () => {
-      console.log('GlobalContext: WebSocket connected for real-time updates');
-    };
-
-    wsRef.current.onmessage = (event) => {
-      try {
-        const message = JSON.parse(event.data);
-        if (message.type === 'NEW_ALERT') {
-          const incomingAlert = message.alert || message;
-          setAlerts(prev => [incomingAlert, ...prev]);
-          setLatestAlert(incomingAlert);
-          setDashStats(prev => ({
-            ...prev,
-            alerts_today: (prev.alerts_today || 0) + 1,
-            totalAlerts: (prev.totalAlerts || 0) + 1,
-            criticalAlerts: message.color === '#EF4444' ? (prev.criticalAlerts || 0) + 1 : prev.criticalAlerts
-          }));
-        } else if (message.type === 'CAMERA_STATUS_CHANGED') {
-          setCameras(prev => {
-            const updated = prev.map(c => c.id === message.camera_id ? { ...c, status: message.status } : c);
-            const activeCount = updated.filter(c => c.status === 'online').length;
-            setDashStats(statsPrev => ({
-              ...statsPrev,
-              active_cameras: activeCount
-            }));
-            return updated;
-          });
-        }
-      } catch (e) {
-        console.error('GlobalContext: WebSocket message error', e);
+    fetchGlobalData(false);
+    
+    // Poll every 5 seconds for status updates since we removed WebSockets
+    const interval = setInterval(() => {
+        fetchGlobalData(true);
+    }, 5000);
+    
+    // Instantly refresh when the user switches back to the app/web tab
+    const subscription = AppState.addEventListener('change', nextAppState => {
+      if (nextAppState === 'active') {
+        fetchGlobalData(true);
       }
-    };
-
-    wsRef.current.onclose = () => {
-      console.log('GlobalContext: WebSocket disconnected');
-    };
-
+    });
+    
     return () => {
-      if (wsRef.current) {
-        wsRef.current.close();
-      }
+      clearInterval(interval);
+      subscription.remove();
     };
-  }, [fetchGlobalData, API_URL]);
+  }, [fetchGlobalData]);
 
-  const addCamera = async (cameraData) => {
+  const addVideo = async (videoData) => {
     try {
-      const newCamera = await camerasAPI.addCamera(cameraData);
-      setCameras(prev => [...prev, newCamera]);
-      return newCamera;
+      const newVideo = await camerasAPI.addCamera(videoData);
+      setVideos(prev => [...prev, newVideo]);
+      return newVideo;
     } catch (e) {
       throw e;
     }
   };
 
-  const removeCamera = async (cameraId) => {
+  const removeVideo = async (videoId) => {
     try {
-      await camerasAPI.deleteCamera(cameraId);
-      setCameras(prev => prev.filter(c => c.id.toString() !== cameraId.toString()));
+      await camerasAPI.deleteCamera(videoId);
+      setVideos(prev => prev.filter(c => c.id.toString() !== videoId.toString()));
     } catch (e) {
       throw e;
     }
@@ -139,13 +119,13 @@ export const GlobalProvider = ({ children }) => {
   };
 
   const value = {
-    cameras,
+    videos,
     alerts,
     dashStats,
     latestAlert,
     isLoading,
-    addCamera,
-    removeCamera,
+    addVideo,
+    removeVideo,
     refreshGlobalData
   };
 
@@ -155,4 +135,3 @@ export const GlobalProvider = ({ children }) => {
     </GlobalContext.Provider>
   );
 };
-

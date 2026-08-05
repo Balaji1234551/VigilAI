@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Animated, A
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Mail, CheckCircle, ChevronLeft, Shield } from 'lucide-react-native';
 
-const BACKEND_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://172.23.50.173:8000');
+const BACKEND_URL = 'http://192.168.137.1:8000';
 
 export default function EmailVerificationScreen({ navigation }) {
   const [email, setEmail] = useState('');

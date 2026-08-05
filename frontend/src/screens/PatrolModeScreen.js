@@ -83,7 +83,7 @@ export default function PatrolModeScreen({ navigation }) {
         <Text style={styles.headerTitle}>Patrol Mode</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent}>
         <View style={styles.card}>
           <View style={styles.rowBetween}>
             <View>
@@ -175,7 +175,7 @@ export default function PatrolModeScreen({ navigation }) {
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>Select {activeTimeSelect === 'start' ? 'Start' : 'End'} Time</Text>
-            <ScrollView contentContainerStyle={styles.timeGrid}>
+            <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.timeGrid}>
               {timeOptions.map((time) => {
                 const isActive = activeTimeSelect === 'start' ? time === startTime : time === endTime;
                 return (

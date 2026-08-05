@@ -52,6 +52,16 @@ class Camera(Base):
     resolution = Column(String(30), default="1280x720", nullable=False)
     fps = Column(Integer, default=30, nullable=False)
     settings = Column(JSON, nullable=True)  # JSON config (e.g. enabled detections, quiet hours)
+    
+    # New Analytics & Reporting Fields
+    processing_duration = Column(Float, default=0.0)
+    min_confidence = Column(Float, default=0.0)
+    max_confidence = Column(Float, default=0.0)
+    avg_confidence = Column(Float, default=0.0)
+    total_frames = Column(Integer, default=0)
+    total_detections = Column(Integer, default=0)
+    object_counts = Column(JSON, default={})
+    
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
     # Relationships
@@ -200,6 +210,7 @@ class Analytics(Base):
     fight_count = Column(Integer, default=0, nullable=False)
     weapon_count = Column(Integer, default=0, nullable=False)
     loitering_count = Column(Integer, default=0, nullable=False)
+    object_counts = Column(JSON, default={})
     generated_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
     def __repr__(self):

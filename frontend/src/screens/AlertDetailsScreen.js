@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Play, Phone, Share2, CheckCircle, Home, Camera, Bell, BarChart2, User, Info } from 'lucide-react-native';
 
@@ -20,6 +20,51 @@ export default function AlertDetailsScreen({ route, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
+      <View style={styles.header}>
+        <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+          <ArrowLeft color="#FFF" size={24} />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Alert Details</Text>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={[styles.banner, { borderColor: alert.color }]}>
+          <Text style={[styles.bannerText, { color: alert.color }]}>{alert.title || "ALERT"}</Text>
+        </View>
+
+        <View style={styles.videoCard}>
+          <View style={styles.clipBadge}>
+            <Text style={styles.clipText}>Snapshot Preview</Text>
+          </View>
+          {alert.snapshot_path ? (
+            <Image 
+              source={{ uri: `http://192.168.137.1:8000${alert.snapshot_path}` }} 
+              style={{ width: '100%', height: '100%', borderRadius: 20 }}
+              resizeMode="cover"
+            />
+          ) : (
+            <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1, paddingTop: 40 }}>
+              <Camera color="#475569" size={64} style={{ opacity: 0.5 }} />
+              <Text style={{ color: '#64748B', marginTop: 10 }}>No image attached to this alert</Text>
+            </View>
+          )}
+        </View>
+
+        <View style={styles.card}>
+          <Text style={styles.cardHeader}>Detection Summary</Text>
+          <View style={styles.detailsGrid}>
+            <DetailItem label="Location" value={alert.camera || "N/A"} />
+            <DetailItem label="Time" value={alert.time || "N/A"} />
+            <DetailItem label="Confidence" value={alert.conf || "N/A"} valueColor={alert.color} />
+            <DetailItem label="Severity" value={alert.severity || "N/A"} valueColor={alert.color} />
+          </View>
+        </View>
+
+        <TouchableOpacity style={styles.resolveBtn} onPress={() => navigation.goBack()}>
+          <CheckCircle color="#000" size={20} />
+          <Text style={styles.resolveBtnText}>Mark as Resolved</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </SafeAreaView>
   );
 }

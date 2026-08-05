@@ -8,7 +8,7 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'web' ? 'http://localhost:8000' : 'http://172.23.50.173:8000');
+const API_URL = 'http://192.168.137.1:8000';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');

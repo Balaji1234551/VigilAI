@@ -12,8 +12,6 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 from app.database import SessionLocal
 from app.crud import get_camera, get_user_by_id, get_contacts, create_alert, update_alert_sent_status
-from app.video.snapshot import capture_blurred_snapshot
-from app.video.clip_extractor import ClipExtractor
 
 
 logger = logging.getLogger("VigilAI.AlertCoordinator")
@@ -27,23 +25,12 @@ class AlertCoordinator(threading.Thread):
     Consumer thread that parses incoming detection event queues,
     generates snapshot/clip evidence files, checks quiet hours, and fires channels.
     """
-    _instance = None
 
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance.initialized = False
-        return cls._instance
-
-    def __init__(self, alert_queue: Optional[queue.Queue] = None, clip_extractor: Optional[ClipExtractor] = None):
-        if self.initialized:
-            return
+    def __init__(self, alert_queue: Optional[queue.Queue] = None):
         super().__init__()
         self.daemon = True
         self.alert_queue = alert_queue or queue.Queue()
-        self.clip_extractor = clip_extractor
         self.is_running = False
-        self.initialized = True
 
     def run(self):
         """
@@ -107,32 +94,17 @@ class AlertCoordinator(threading.Thread):
             contacts = get_contacts(db, user.id)
             phone_numbers = [c.phone for c in contacts if c.phone]
 
-            # 2. GENERATE EVIDENCE ASSETS (Snapshot & Clip)
-            # Create Face-Blurred Snapshot image
-            snapshot_path = capture_blurred_snapshot(camera_id, raw_frame, anomaly_type)
-            snapshot_url_str = None
-            if snapshot_path:
-                # Formulate relative API endpoint URL
-                snapshot_url_str = f"http://localhost:8000/api/snapshots/{camera_id}/{snapshot_path.name}"
-
-            # Create 30-Second Clip (T-10s history + T+20s future)
-            clip_path = None
-            if self.clip_extractor:
-                clip_path = self.clip_extractor.trigger_incident_clip(camera_id, anomaly_type)
+            # 2. GET EVIDENCE ASSETS (Snapshot)
+            snapshot_url_str = event.get("snapshot_path")
             
-            clip_url_str = None
-            if clip_path:
-                clip_url_str = f"http://localhost:8000/api/clips/{camera_id}/{clip_path.name}"
-
-            # 3. SAVE ALERT RECORD TO SQLITE DB
             alert_db_data = {
                 "camera_id": camera_id,
                 "user_id": user.id,
                 "anomaly_type": anomaly_type,
                 "confidence": confidence,
-                "snapshot_path": str(snapshot_path) if snapshot_path else None,
-                "clip_path": str(clip_path) if clip_path else None,
+                "snapshot_path": snapshot_url_str,
                 "timestamp": datetime.utcnow(),
+                "alert_message": event.get("alert_message"),
                 "alert_sent": 0
             }
             alert_record = create_alert(db, alert_db_data)
@@ -166,27 +138,6 @@ class AlertCoordinator(threading.Thread):
                 trigger_anvil_web_alert(anomaly_type, camera.name)
             except Exception as ex_anvil:
                 logger.error(f"[AlertCoordinator] Failed to dispatch Anvil web popup: {ex_anvil}")
-
-            # --- Broadcast to Mobile WebSocket Clients ---
-            try:
-                from app.api.endpoints.websockets import manager
-                ws_payload = {
-                    "type": "NEW_ALERT",
-                    "anomaly_type": anomaly_type,
-                    "confidence": confidence,
-                    "camera_id": camera_id,
-                    "camera_name": camera.name,
-                    "timestamp": timestamp_str,
-                    "color": "#EF4444" if priority_level == "critical" else "#F59E0B"
-                }
-                # The AlertCoordinator runs in a separate thread without an asyncio event loop, 
-                # so we create a temporary one to send the websocket broadcast.
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                loop.run_until_complete(manager.broadcast(ws_payload))
-                loop.close()
-            except Exception as ws_err:
-                logger.error(f"[AlertCoordinator] Failed to broadcast WebSocket alert: {ws_err}")
 
             from app.services.notification_service import NotificationService
             notifier = NotificationService()

@@ -10,12 +10,25 @@ import { GlobalProvider } from '../context/GlobalContext';
 import WelcomeScreen from './WelcomeScreen';
 
 // Removed buggy global CSS scroll hack that breaks RNW flexbox
+// Instead, we inject the REQUIRED standard React Native Web CSS:
+if (Platform.OS === 'web') {
+  const style = document.createElement('style');
+  style.textContent = `
+    html, body, #root {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 import EmailVerificationScreen from './EmailVerificationScreen';
 import SignUpScreen from './SignUpScreen';
 import LoginScreen from './LoginScreen';
 import HomeScreen from './HomeScreen';
-import CameraScreen from './CameraScreen';
-import AddCameraScreen from './AddCameraScreen';
+import VideoDetectionScreen from './VideoDetectionScreen';
+import UploadVideoScreen from './UploadVideoScreen';
 import AlertsScreen from './AlertsScreen';
 import AnalyticsScreen from './AnalyticsScreen';
 import ProfileScreen from './ProfileScreen';
@@ -25,7 +38,7 @@ import PrivacyZonesScreen from './PrivacyZonesScreen';
 import AlertDetailsScreen from './AlertDetailsScreen';
 import HelpSupportScreen from './HelpSupportScreen';
 import TrustedPersonsScreen from './TrustedPersonsScreen';
-import CameraDetailsScreen from './CameraDetailsScreen';
+import VideoDetailsScreen from './VideoDetailsScreen';
 import CameraSettingsScreen from './CameraSettingsScreen';
 import EmergencyContactsScreen from './EmergencyContactsScreen';
 import VerificationCodeScreen from './VerificationCodeScreen';
@@ -33,7 +46,7 @@ import ForgotPasswordScreen from './ForgotPasswordScreen';
 import ResetPasswordScreen from './ResetPasswordScreen';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Camera, Bell, BarChart2, User } from 'lucide-react-native';
+import { Home, Film, Bell, BarChart2, User } from 'lucide-react-native';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -67,10 +80,10 @@ function MainTabs() {
       />
       <Tab.Screen 
         name="CamerasTab" 
-        component={CameraScreen} 
+        component={VideoDetectionScreen} 
         options={{
-          tabBarLabel: 'Cameras',
-          tabBarIcon: ({ color }) => <Camera size={24} color={color} />
+          tabBarLabel: 'Video',
+          tabBarIcon: ({ color }) => <Film size={24} color={color} />
         }}
       />
       <Tab.Screen 
@@ -155,7 +168,7 @@ export default function App() {
             <Stack.Screen name="MainTabs" component={MainTabs} />
             
             {/* Sub-screens (No tabs shown) */}
-            <Stack.Screen name="AddCamera" component={AddCameraScreen} />
+            <Stack.Screen name="AddCamera" component={UploadVideoScreen} />
             <Stack.Screen name="PatrolMode" component={PatrolModeScreen} />
             <Stack.Screen name="EmergencySOS" component={EmergencySOSScreen} />
             <Stack.Screen name="EmergencyContacts" component={EmergencyContactsScreen} />
@@ -163,7 +176,7 @@ export default function App() {
             <Stack.Screen name="AlertDetails" component={AlertDetailsScreen} />
             <Stack.Screen name="HelpSupport" component={HelpSupportScreen} />
             <Stack.Screen name="TrustedPersons" component={TrustedPersonsScreen} />
-            <Stack.Screen name="CameraDetails" component={CameraDetailsScreen} />
+            <Stack.Screen name="CameraDetails" component={VideoDetailsScreen} />
             <Stack.Screen name="CameraSettings" component={CameraSettingsScreen} />
           </Stack.Navigator>
         </NavigationContainer>

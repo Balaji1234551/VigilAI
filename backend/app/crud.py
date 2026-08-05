@@ -80,7 +80,7 @@ def get_camera(db: Session, camera_id: int) -> Optional[Camera]:
 
 
 def get_cameras(db: Session, user_id: int) -> List[Camera]:
-    return db.query(Camera).filter(Camera.user_id == user_id).all()
+    return db.query(Camera).filter(Camera.user_id == user_id).order_by(Camera.id.desc()).all()
 
 
 def create_camera(db: Session, user_id: int, camera_data: Dict[str, Any]) -> Camera:

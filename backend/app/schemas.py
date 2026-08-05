@@ -89,6 +89,14 @@ class CameraResponse(CameraBase):
     id: int
     user_id: int
     created_at: datetime
+    
+    processing_duration: Optional[float] = 0.0
+    min_confidence: Optional[float] = 0.0
+    max_confidence: Optional[float] = 0.0
+    avg_confidence: Optional[float] = 0.0
+    total_frames: Optional[int] = 0
+    total_detections: Optional[int] = 0
+    object_counts: Optional[Dict[str, Any]] = {}
 
     class Config:
         from_attributes = True

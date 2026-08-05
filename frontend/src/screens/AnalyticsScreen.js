@@ -1,207 +1,201 @@
-import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar, Platform } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar, Dimensions, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Calendar, TrendingUp, Map, Download, Home, Camera, Bell, BarChart2, User } from 'lucide-react-native';
-import { useGlobalContext } from '../context/GlobalContext';
+import { Calendar, TrendingUp, Bell, Target, UploadCloud, Video, CheckCircle, BarChart2 } from 'lucide-react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { BarChart, PieChart, LineChart } from 'react-native-chart-kit';
+
+const screenWidth = Dimensions.get("window").width;
 
 export default function AnalyticsScreen({ navigation }) {
-  const { dashStats, alerts } = useGlobalContext();
+  const [loading, setLoading] = useState(true);
+  const [dashboard, setDashboard] = useState(null);
 
-  const analyticsData = React.useMemo(() => {
-    const totalAlerts = dashStats?.totalAlerts || alerts?.length || 0;
-    
-    // Group by anomaly type
-    const distributionMap = {};
-    (alerts || []).forEach(a => {
-      const type = a.anomaly_type || 'Unknown';
-      distributionMap[type] = (distributionMap[type] || 0) + 1;
+  const API_URL = 'http://192.168.137.1:8000';
+
+  const fetchDashboard = useCallback(async () => {
+    try {
+      setLoading(true);
+      const token = await AsyncStorage.getItem('userToken');
+      const headers = { 'Authorization': `Bearer ${token}` };
+
+      const res = await fetch(`${API_URL}/api/analytics/dashboard`, { headers });
+      if (res.ok) {
+        setDashboard(await res.json());
+      }
+    } catch (e) {
+      console.error("Failed to fetch dashboard analytics:", e);
+    } finally {
+      setLoading(false);
+    }
+  }, [API_URL]);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      fetchDashboard();
     });
-    
-    const distribution = Object.keys(distributionMap)
-      .map(key => ({ label: key, count: distributionMap[key] }))
-      .sort((a, b) => b.count - a.count);
+    return unsubscribe;
+  }, [navigation, fetchDashboard]);
 
-    // Group by camera name
-    const locationMap = {};
-    (alerts || []).forEach(a => {
-      const cam = a.camera_name || `Camera ${a.camera_id}`;
-      if (!locationMap[cam]) locationMap[cam] = { count: 0, type: a.anomaly_type || 'Unknown' };
-      locationMap[cam].count++;
-    });
+  const chartConfig = {
+    backgroundGradientFrom: "#161B29",
+    backgroundGradientTo: "#161B29",
+    color: (opacity = 1) => `rgba(0, 229, 255, ${opacity})`,
+    labelColor: (opacity = 1) => `rgba(148, 163, 184, ${opacity})`,
+    strokeWidth: 2,
+    barPercentage: 0.5,
+    useShadowColorFromDataset: false,
+    decimalPlaces: 1
+  };
 
-    const locations = Object.keys(locationMap)
-      .map(key => ({ name: key, count: locationMap[key].count, type: locationMap[key].type }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 5);
+  const pieColors = ['#FF1744', '#FFC400', '#00E5FF', '#FF5722', '#94A3B8', '#00C853'];
 
-    // Fake last 7 days chart data based on alerts total (for visual purposes until we have historical data API)
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    const barData = days.map(() => Math.floor(Math.random() * (totalAlerts || 10)));
+  const objCounts = dashboard?.object_counts || {};
+  const pieData = Object.keys(objCounts).filter(k => k !== 'PERSON' && objCounts[k] > 0).map((key, index) => ({
+    name: key,
+    population: objCounts[key],
+    color: pieColors[index % pieColors.length],
+    legendFontColor: "#94A3B8",
+    legendFontSize: 12
+  }));
 
-    return {
-      totalAlerts,
-      distribution,
-      locations,
-      days,
-      barData
-    };
-  }, [alerts, dashStats]);
+  const trendLabels = dashboard?.trends ? Object.keys(dashboard.trends) : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  const trendValues = dashboard?.trends ? Object.values(dashboard.trends) : [0, 0, 0, 0, 0, 0, 0];
+  
+  // Hack to prevent react-native-chart-kit from bugging out if all values are perfectly 0
+  const maxTrend = Math.max(...trendValues, 0);
+  if (maxTrend === 0 && trendValues.length > 0) {
+      trendValues[0] = 0.01; // tiny invisible float to force Y-axis generation
+  }
+
+  const trendData = {
+    labels: trendLabels,
+    datasets: [{
+      data: trendValues
+    }]
+  };
+
+  const confData = {
+    labels: ['Min', 'Avg', 'Max'],
+    datasets: [{
+      data: [
+        (dashboard?.min_confidence || 0) * 100,
+        (dashboard?.avg_confidence || 0) * 100,
+        (dashboard?.max_confidence || 0) * 100
+      ]
+    }]
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
-      
-      {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Analytics</Text>
-        <TouchableOpacity style={styles.dateSelector}>
-          <Calendar size={16} color="#94A3B8" />
-          <Text style={styles.dateText}>Last 7 days</Text>
-        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Analytics Dashboard</Text>
       </View>
-
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        
-        {/* Top Stats Row */}
-        <View style={styles.statsRow}>
-          <HeaderStatBox value={analyticsData.totalAlerts.toString()} label="Total Alerts" color="#00E5FF" />
-          <HeaderStatBox value="1.8s" label="Avg Response" color="#00E5FF" />
-          <HeaderStatBox value="96%" label="Prevention Rate" color="#FFD600" />
-        </View>
-
-        {/* Alerts by Day Chart Area */}
-        <View style={styles.chartCard}>
-          <View style={styles.chartHeader}>
-            <Text style={styles.cardTitle}>Alerts by Day</Text>
-            <TrendingUp size={18} color="#00C853" />
-          </View>
-          <View style={styles.barChartContainer}>
-            {analyticsData.days.map((day, idx) => (
-              <View key={day} style={styles.barWrapper}>
-                <Text style={styles.barVal}>{analyticsData.barData[idx]}</Text>
-                <View style={[styles.bar, { height: Math.max(10, analyticsData.barData[idx] * 5) }]} />
-                <Text style={styles.dayLabel}>{day}</Text>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent}>
+        {loading ? (
+          <ActivityIndicator size="large" color="#00E5FF" style={{ marginTop: 50 }} />
+        ) : (
+          <>
+            <View style={styles.statsRow}>
+              <HeaderStatBox value={dashboard?.total_uploaded || 0} label="Total Uploaded" color="#00E5FF" Icon={UploadCloud} />
+              <HeaderStatBox value={dashboard?.total_processed || 0} label="Total Processed" color="#00C853" Icon={CheckCircle} />
+              <HeaderStatBox value={dashboard?.total_alerts || 0} label="Total Alerts" color="#FF5252" Icon={Bell} />
+            </View>
+            <View style={styles.statsRow}>
+              <HeaderStatBox value={dashboard?.most_frequent_object || 'None'} label="Most Frequent" color="#FFC400" Icon={Target} />
+              <HeaderStatBox value={`${((dashboard?.avg_confidence || 0) * 100).toFixed(1)}%`} label="Avg Confidence" color="#9C27B0" Icon={BarChart2} />
+              <HeaderStatBox value={dashboard?.trends?.daily || 0} label="Alerts Today" color="#FF1744" Icon={TrendingUp} />
+            </View>
+            <View style={styles.chartCard}>
+              <Text style={styles.cardTitle}>Total Object Counts</Text>
+              <View style={styles.countsContainer}>
+                {Object.keys(objCounts).map(obj => (
+                  <View key={obj} style={styles.countRow}>
+                    <Text style={styles.countLabel}>{obj}</Text>
+                    <Text style={styles.countValue}>{objCounts[obj]}</Text>
+                  </View>
+                ))}
+                {Object.keys(objCounts).length === 0 && (
+                  <Text style={{color: '#94A3B8'}}>No objects detected yet.</Text>
+                )}
               </View>
-            ))}
-          </View>
-        </View>
-
-        {/* Anomaly Distribution Section */}
-        <View style={styles.distributionCard}>
-          <Text style={styles.cardTitle}>Anomaly Distribution</Text>
-          {analyticsData.distribution.length === 0 && <Text style={{color: '#94A3B8'}}>No data available.</Text>}
-          {analyticsData.distribution.map((item, idx) => {
-            const pct = analyticsData.totalAlerts > 0 ? Math.round((item.count / analyticsData.totalAlerts) * 100) : 0;
-            const colors = ['#FF1744', '#FFC400', '#00E5FF', '#FF5722', '#94A3B8'];
-            return (
-              <DistItem 
-                key={item.label}
-                label={item.label.charAt(0).toUpperCase() + item.label.slice(1)} 
-                val={`${item.count} (${pct}%)`} 
-                color={colors[idx % colors.length]} 
-                progress={pct / 100} 
+            </View>
+            <View style={styles.chartCard}>
+              <View style={styles.chartHeader}>
+                <Text style={styles.cardTitle}>Alert Trends</Text>
+                <TrendingUp size={18} color="#00C853" />
+              </View>
+              <BarChart
+                data={trendData}
+                width={screenWidth - 80}
+                height={220}
+                yAxisLabel=""
+                chartConfig={{ ...chartConfig, color: (opacity = 1) => `rgba(0, 200, 83, ${opacity})` }}
+                style={{ marginVertical: 8, borderRadius: 16 }}
               />
-            );
-          })}
-        </View>
-
-        {/* Top Alert Locations Section */}
-        <View style={styles.locationCard}>
-          <Text style={styles.cardTitle}>Top Alert Locations</Text>
-          {analyticsData.locations.length === 0 && <Text style={{color: '#94A3B8'}}>No data available.</Text>}
-          {analyticsData.locations.map((loc, idx) => (
-             <LocationItem 
-               key={loc.name}
-               rank={(idx + 1).toString()} 
-               name={loc.name} 
-               type={(loc.type || '').charAt(0).toUpperCase() + (loc.type || '').slice(1)} 
-               count={loc.count.toString()} 
-               color={idx === 0 ? '#FF1744' : idx === 1 ? '#FFC400' : '#00BFA5'} 
-             />
-          ))}
-        </View>
-
+            </View>
+            <View style={styles.chartCard}>
+              <View style={styles.chartHeader}>
+                <Text style={styles.cardTitle}>Confidence Spread (%)</Text>
+                <BarChart2 size={18} color="#9C27B0" />
+              </View>
+              <LineChart
+                data={confData}
+                width={screenWidth - 80}
+                height={220}
+                chartConfig={{ ...chartConfig, color: (opacity = 1) => `rgba(156, 39, 176, ${opacity})` }}
+                bezier
+                style={{ marginVertical: 8, borderRadius: 16 }}
+              />
+            </View>
+            <View style={styles.chartCard}>
+              <Text style={styles.cardTitle}>Critical Threat Distribution</Text>
+              {pieData.length === 0 ? (
+                <Text style={{color: '#94A3B8', marginTop: 10}}>No critical threats available.</Text>
+              ) : (
+                <PieChart
+                  data={pieData}
+                  width={screenWidth - 80}
+                  height={220}
+                  chartConfig={chartConfig}
+                  accessor={"population"}
+                  backgroundColor={"transparent"}
+                  paddingLeft={"15"}
+                  center={[10, 0]}
+                  absolute
+                />
+              )}
+            </View>
+          </>
+        )}
       </ScrollView>
-
-
     </SafeAreaView>
   );
 }
 
-// Helper Components
-const HeaderStatBox = ({ value, label, color }) => (
-  <View style={styles.headerStat}>
+const HeaderStatBox = ({ value, label, color, Icon }) => (
+  <View style={styles.statBox}>
+    {Icon && <Icon size={20} color={color} style={{marginBottom: 5}} />}
     <Text style={[styles.statValue, { color }]}>{value}</Text>
     <Text style={styles.statLabel}>{label}</Text>
   </View>
 );
 
-const DistItem = ({ label, val, color, progress }) => (
-  <View style={styles.distItem}>
-    <View style={styles.distRow}>
-      <Text style={styles.distLabel}>{label}</Text>
-      <Text style={styles.distVal}>{val}</Text>
-    </View>
-    <View style={styles.progressBarBg}>
-      <View style={[styles.progressBarFill, { backgroundColor: color, width: `${progress * 100}%` }]} />
-    </View>
-  </View>
-);
-
-const LocationItem = ({ rank, name, type, count, color }) => (
-  <View style={styles.locItem}>
-    <View style={[styles.rankCircle, { backgroundColor: color + '33' }]}><Text style={{ color, fontWeight: 'bold' }}>{rank}</Text></View>
-    <View style={{ flex: 1, marginLeft: 15 }}>
-      <Text style={styles.locName}>{name}</Text>
-      <Text style={styles.locType}>{type}</Text>
-    </View>
-    <View style={styles.countRow}>
-       <Bell size={12} color="#94A3B8" />
-       <Text style={styles.locCount}>{count}</Text>
-    </View>
-  </View>
-);
-
-const TabItem = ({ icon, label, active, onPress }) => (
-  <TouchableOpacity style={styles.tabItem} onPress={onPress}>
-    {icon}
-    <Text style={[styles.tabLabel, active && { color: '#00E5FF' }]}>{label}</Text>
-  </TouchableOpacity>
-);
-
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#0A0E17' },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, width: '100%' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20 },
   headerTitle: { color: '#FFF', fontSize: 24, fontWeight: 'bold' },
-  dateSelector: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#1E293B', padding: 8, borderRadius: 10, gap: 8 },
-  dateText: { color: '#FFF', fontSize: 12 },
-  scrollContent: { paddingHorizontal: 20, paddingBottom: 120, width: '100%' },
-  statsRow: { flexDirection: 'row', gap: 10, marginBottom: 25 },
-  headerStat: { flex: 1, backgroundColor: '#161B29', borderRadius: 15, padding: 15, alignItems: 'center', borderWidth: 1, borderColor: '#1E293B' },
-  statValue: { fontSize: 20, fontWeight: 'bold' },
-  statLabel: { color: '#94A3B8', fontSize: 9, textAlign: 'center', marginTop: 4 },
-  chartCard: { backgroundColor: '#161B29', borderRadius: 15, padding: 20, marginBottom: 20 },
-  chartHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 },
-  cardTitle: { color: '#FFF', fontSize: 16, fontWeight: 'bold', marginBottom: 15 },
-  barChartContainer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', height: 100 },
-  barWrapper: { alignItems: 'center', gap: 5 },
-  barVal: { color: '#94A3B8', fontSize: 10 },
-  bar: { width: 30, backgroundColor: '#00E5FF33', borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, borderLeftWidth: 15, borderRightWidth: 15, borderColor: '#00E5FF' },
-  dayLabel: { color: '#64748B', fontSize: 10 },
-  distributionCard: { backgroundColor: '#161B29', borderRadius: 15, padding: 20, marginBottom: 20 },
-  distItem: { marginBottom: 15 },
-  distRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 6 },
-  distLabel: { color: '#FFF', fontSize: 13 },
-  distVal: { color: '#94A3B8', fontSize: 12 },
-  progressBarBg: { height: 6, backgroundColor: '#0F172A', borderRadius: 3 },
-  progressBarFill: { height: 6, borderRadius: 3 },
-  locationCard: { backgroundColor: '#161B29', borderRadius: 15, padding: 20, marginBottom: 20 },
-  locItem: { flexDirection: 'row', alignItems: 'center', marginBottom: 20 },
-  rankCircle: { width: 32, height: 32, borderRadius: 16, justifyContent: 'center', alignItems: 'center' },
-  locName: { color: '#FFF', fontSize: 14, fontWeight: 'bold' },
-  locType: { color: '#64748B', fontSize: 11 },
-  countRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  locCount: { color: '#FFF', fontSize: 13, fontWeight: 'bold' },
-  tabBar: { position: 'absolute', bottom: 0, flexDirection: 'row', backgroundColor: '#0F172A', width: '100%', height: 85, paddingBottom: 25, borderTopWidth: 1, borderColor: '#1E293B' },
-  tabItem: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  tabLabel: { color: '#94A3B8', fontSize: 10, marginTop: 4 }
+  scrollContent: { paddingHorizontal: 20, paddingBottom: 100 },
+  statsRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15 },
+  statBox: { flex: 1, backgroundColor: '#161B29', borderRadius: 15, padding: 15, alignItems: 'center', marginHorizontal: 4, borderWidth: 1, borderColor: '#1E293B' },
+  statValue: { fontSize: 16, fontWeight: 'bold', marginBottom: 2, textAlign: 'center' },
+  statLabel: { color: '#94A3B8', fontSize: 10, textAlign: 'center' },
+  chartCard: { backgroundColor: '#161B29', borderRadius: 15, padding: 20, marginBottom: 20, borderWidth: 1, borderColor: '#1E293B' },
+  chartHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 15 },
+  cardTitle: { color: '#FFF', fontSize: 16, fontWeight: 'bold' },
+  countsContainer: { marginTop: 10 },
+  countRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 8, borderBottomWidth: 1, borderBottomColor: '#1E293B' },
+  countLabel: { color: '#94A3B8', fontSize: 14, fontWeight: '500' },
+  countValue: { color: '#00E5FF', fontSize: 14, fontWeight: 'bold' }
 });

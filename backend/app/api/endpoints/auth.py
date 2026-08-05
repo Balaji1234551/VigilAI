@@ -26,6 +26,10 @@ class FCMTokenUpdate(BaseModel):
 class PasswordResetRequest(BaseModel):
     email: EmailStr
 
+class ChangePasswordRequest(BaseModel):
+    old_password: str
+    new_password: str
+
 class EmailRequestSchema(BaseModel):
     email: EmailStr
 
@@ -117,6 +121,7 @@ async def verify_code(data: VerifyCodeSchema):
     if cached["code"] != data.code:
         raise HTTPException(status_code=400, detail="Invalid verification code")
     
+    otp_cache[data.email]["verified"] = True
     return {"status": "success", "message": "Email verified successfully"}
 
 
@@ -126,6 +131,10 @@ async def signup(user: UserCreate, db: Session = Depends(get_db)):
     existing_user = UserRepository.get_by_email(db, user.email)
     if existing_user:
         raise HTTPException(status_code=400, detail="Email already registered")
+
+    cached_otp = otp_cache.get(user.email)
+    if not cached_otp or not cached_otp.get("verified"):
+        raise HTTPException(status_code=403, detail="Email not verified. Please verify OTP first.")
 
     hashed_password = auth_utils.hash_password(user.password)
     new_user = UserRepository.create_user(db, user, hashed_password)
@@ -260,7 +269,7 @@ async def reset_password(request: PasswordResetRequest, db: Session = Depends(ge
     """Mockup password reset. Dispatches reset code if email is registered."""
     user = UserRepository.get_by_email(db, request.email)
     if not user:
-        raise HTTPException(status_code=404, detail="Email address not found")
+        return {"status": "success", "message": "If an account exists, a reset email will be sent."}
         
     AuditLogRepository.log(
         db, 
@@ -270,3 +279,21 @@ async def reset_password(request: PasswordResetRequest, db: Session = Depends(ge
     )
     # Mocking SMTP send
     return {"status": "success", "message": "Password reset email sent successfully! Please check your inbox."}
+
+@router.post("/change-password")
+async def change_password(request: ChangePasswordRequest, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    """Change the authenticated user's password."""
+    if not auth_utils.verify_password(request.old_password, current_user.password_hash):
+        raise HTTPException(status_code=401, detail="Incorrect old password")
+        
+    current_user.password_hash = auth_utils.hash_password(request.new_password)
+    db.commit()
+    
+    AuditLogRepository.log(
+        db,
+        user_id=current_user.id,
+        action="change_password",
+        description="User changed their password."
+    )
+    return {"status": "success", "message": "Password updated successfully"}
+
