@@ -2,8 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar, Image, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Play, Phone, Share2, CheckCircle, Home, Camera, Bell, BarChart2, User, Info } from 'lucide-react-native';
+import { useGlobalContext } from '../context/GlobalContext';
 
 export default function AlertDetailsScreen({ route, navigation }) {
+  const { removeAlert } = useGlobalContext();
   const { alert } = route.params || { 
     alert: { 
       title: 'PACKAGE THEFT DETECTED', 
@@ -60,7 +62,15 @@ export default function AlertDetailsScreen({ route, navigation }) {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.resolveBtn} onPress={() => navigation.goBack()}>
+        <TouchableOpacity 
+          style={styles.resolveBtn} 
+          onPress={async () => {
+            if (alert.id) {
+              await removeAlert(alert.id);
+            }
+            navigation.goBack();
+          }}
+        >
           <CheckCircle color="#000" size={20} />
           <Text style={styles.resolveBtnText}>Mark as Resolved</Text>
         </TouchableOpacity>
