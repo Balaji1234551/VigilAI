@@ -147,13 +147,14 @@ export default function AlertsScreen({ navigation }) {
   );
 }
 
-const AlertCard = ({ color, title, loc, conf, isUnread, snapshot_path, navigation, onPress }) => (
+const AlertCard = ({ id, color, title, loc, conf, isUnread, snapshot_path, navigation, onPress }) => (
   <TouchableOpacity
     style={styles.alertCard}
     onPress={() => {
       if (onPress) onPress();
       navigation.navigate('AlertDetails', {
         alert: {
+          id,
           title: title.toUpperCase(),
           camera: loc.split(' • ')[0],
           time: loc.split(' • ')[1],
