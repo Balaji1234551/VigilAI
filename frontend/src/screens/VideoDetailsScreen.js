@@ -238,11 +238,7 @@ export default function VideoDetailsScreen({ route, navigation }) {
         {/* Downloads */}
         {video.status === 'completed' && (
           <View style={styles.downloadsContainer}>
-            <TouchableOpacity style={styles.downloadBtnSecondary} onPress={() => Linking.openURL(processedVideoUrl)}>
-              <VideoIcon color="#00E5FF" size={20} />
-              <Text style={styles.downloadBtnSecondaryText}>Download Video</Text>
-            </TouchableOpacity>
-            
+
             <TouchableOpacity style={styles.downloadBtnPrimary} onPress={async () => {
               const token = await AsyncStorage.getItem('userToken');
               Linking.openURL(`${API_URL}/api/cameras/${video.id}/report?token=${token}`);

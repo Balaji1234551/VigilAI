@@ -69,4 +69,4 @@ def generate_pdf_report(video_data: dict, alerts: list) -> bytes:
     pdf.cell(0, 10, f"Generated automatically by VigilAI on {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", ln=True)
     
     # Output to bytes
-    return pdf.output(dest='S')
+    return bytes(pdf.output())
