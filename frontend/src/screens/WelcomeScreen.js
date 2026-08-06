@@ -58,9 +58,9 @@ export default function WelcomeScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <ScrollView 
-        style={{ flex: 1, width: '100%' }}
+        style={{ flex: 1 }}
         contentContainerStyle={styles.scrollContent}
-        scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
           <Animated.View 

@@ -27,7 +27,7 @@ export default function AlertDetailsScreen({ route, navigation }) {
         <Text style={styles.headerTitle}>Alert Details</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scrollContent}>
         <View style={[styles.banner, { borderColor: alert.color }]}>
           <Text style={[styles.bannerText, { color: alert.color }]}>{alert.title || "ALERT"}</Text>
         </View>

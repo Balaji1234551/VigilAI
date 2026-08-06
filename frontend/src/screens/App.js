@@ -17,6 +17,11 @@ if (Platform.OS === 'web') {
     html, body, #root {
       height: 100%;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    #root {
+      flex: 1;
       overflow: hidden;
     }
   `;
