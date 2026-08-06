@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, StatusBar, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Search, ChevronDown, ChevronUp, ShieldAlert, FileText, Info } from 'lucide-react-native';
 
@@ -73,7 +73,7 @@ export default function HelpSupportScreen({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={[styles.container, { paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 }]}>
       <StatusBar barStyle="light-content" />
       
       {/* Header */}
@@ -134,7 +134,7 @@ export default function HelpSupportScreen({ navigation }) {
         </View>
 
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

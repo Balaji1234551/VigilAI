@@ -89,7 +89,7 @@ export default function VideoDetailsScreen({ route, navigation }) {
 
   if (!video) {
     return (
-      <SafeAreaView style={styles.container}>
+      <View style={[styles.container, { paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 }]}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
             <ArrowLeft color="#FFF" size={24} />
@@ -99,7 +99,7 @@ export default function VideoDetailsScreen({ route, navigation }) {
           <ActivityIndicator size="large" color="#00E5FF" />
           <Text style={{color: '#94A3B8', marginTop: 10}}>Loading video details...</Text>
         </View>
-      </SafeAreaView>
+      </View>
     );
   }
 
@@ -179,7 +179,7 @@ export default function VideoDetailsScreen({ route, navigation }) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={[styles.container, { paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 }]}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
           <ArrowLeft color="#FFF" size={24} />
@@ -332,7 +332,7 @@ export default function VideoDetailsScreen({ route, navigation }) {
         )}
 
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
