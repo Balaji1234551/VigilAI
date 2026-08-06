@@ -56,7 +56,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: unit-test-report
-          path: security_reports/API_Inventory.csv
+          path: security_reports/API_Unit_Test_Summary.csv
 
   validation_tests:
     name: Validation Tests (300)
@@ -73,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: validation-test-report
-          path: security_reports/SAST_Vulnerabilities.csv
+          path: security_reports/Validation_Test_Summary.csv
 
   deployment_tests:
     name: Deployment Status (300)
@@ -90,7 +90,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: deployment-test-report
-          path: security_reports/
+          path: security_reports/Deployment_Test_Summary.csv
 
   load_tests:
     name: Load Testing — Performance (300)
@@ -107,7 +107,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: load-test-report
-          path: security_reports/
+          path: security_reports/Load_Test_Summary.csv
 
   compile_master:
     name: Compile Master Report & Deploy
