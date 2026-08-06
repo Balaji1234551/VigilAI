@@ -205,7 +205,7 @@ class DetectionManager:
             skip_rate = max(1, int(fps / 2.0))
             
             processed_path = f"uploads/processed/{camera_id}_processed.mp4"
-            fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+            fourcc = cv2.VideoWriter_fourcc(*'avc1')
             # Output video runs at original fps for perfectly smooth playback
             out = cv2.VideoWriter(processed_path, fourcc, fps, (target_width, target_height))
             
