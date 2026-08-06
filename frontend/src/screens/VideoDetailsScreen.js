@@ -345,8 +345,8 @@ const styles = StyleSheet.create({
   center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   scrollContent: { paddingBottom: 50 },
   
-  playerContainer: { width: '100%', aspectRatio: 16/9, maxHeight: Platform.OS === 'web' ? 400 : undefined, backgroundColor: '#000', marginBottom: 20 },
-  playerPlaceholder: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20, backgroundColor: '#111827' },
+  playerContainer: { width: '100%', height: Platform.OS === 'web' ? 450 : undefined, aspectRatio: Platform.OS === 'web' ? undefined : 16/9, backgroundColor: '#000', marginBottom: 20 },
+  playerPlaceholder: { flex: 1, height: Platform.OS === 'web' ? 450 : undefined, justifyContent: 'center', alignItems: 'center', padding: 20, backgroundColor: '#111827' },
   placeholderText: { color: '#FFF', fontSize: 16, marginTop: 15, fontWeight: 'bold' },
   
   progressBarBg: { width: '100%', height: 10, backgroundColor: '#1E293B', borderRadius: 5, marginTop: 20, overflow: 'hidden' },

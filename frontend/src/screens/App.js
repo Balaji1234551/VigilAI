@@ -9,24 +9,7 @@ import { GlobalProvider } from '../context/GlobalContext';
 // LoginScreen lives one folder up from src/screens
 import WelcomeScreen from './WelcomeScreen';
 
-// Removed buggy global CSS scroll hack that breaks RNW flexbox
-// Instead, we inject the REQUIRED standard React Native Web CSS:
-if (Platform.OS === 'web') {
-  const style = document.createElement('style');
-  style.textContent = `
-    html, body, #root {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    #root {
-      flex: 1;
-      overflow: hidden;
-    }
-  `;
-  document.head.appendChild(style);
-}
+// Removed injected CSS hack to allow React Native Web and React Navigation to handle DOM layout natively.
 
 import EmailVerificationScreen from './EmailVerificationScreen';
 import SignUpScreen from './SignUpScreen';
@@ -161,7 +144,10 @@ export default function App() {
         <NavigationContainer linking={linking}>
           <Stack.Navigator 
             initialRouteName="Welcome"
-            screenOptions={{ headerShown: false }}
+            screenOptions={{ 
+              headerShown: false,
+              cardStyle: { flex: 1, backgroundColor: '#0A0E17' }
+            }}
           >
             <Stack.Screen name="Welcome" component={WelcomeScreen} />
             <Stack.Screen name="EmailVerification" component={EmailVerificationScreen} />
