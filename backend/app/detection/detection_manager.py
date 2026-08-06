@@ -227,7 +227,7 @@ class DetectionManager:
                 
                 # Determine stage text dynamically
                 progress_pct = 5.0 + ((frame_idx / total_frames_count) * 80.0)
-                stage_text = "Running YOLO..." if progress_pct < 45.0 else "Running MediaPipe..."
+                stage_text = "Analyzing Video (AI Inference)..."
                 
                 # Update progress in DB/Cache every ~1 second to save CPU
                 if frame_idx % max(1, int(fps)) == 0:
