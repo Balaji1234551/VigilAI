@@ -205,7 +205,10 @@ async def delete_video(
 
     # Delete local files
     if camera.stream_url and os.path.exists(camera.stream_url):
-        os.remove(camera.stream_url)
+        try:
+            os.remove(camera.stream_url)
+        except Exception as e:
+            print(f"Warning: Could not delete {camera.stream_url}: {e}")
         
     # Deep sweep: Delete ALL related physical files from the hard drive
     import glob
@@ -213,7 +216,10 @@ async def delete_video(
     # 1. Processed videos
     processed_file = os.path.join(PROCESSED_DIR, f"{camera.id}_processed.mp4")
     if os.path.exists(processed_file):
-        os.remove(processed_file)
+        try:
+            os.remove(processed_file)
+        except Exception as e:
+            print(f"Warning: Could not delete {processed_file}: {e}")
         
     # 2. Snapshots
     snapshot_pattern = os.path.join("uploads", "snapshots", f"{camera.id}_*.*")
