@@ -64,7 +64,7 @@ class DetectionManager:
         frame_boxes = []
         
         # Weapon
-        res_weapon = self.models.get_weapon_model()(frame, verbose=False)[0]
+        res_weapon = self.models.get_weapon_model()(frame, verbose=False, imgsz=320)[0]
         for box in res_weapon.boxes:
             conf = float(box.conf[0])
             if conf < 0.3: continue
@@ -74,7 +74,7 @@ class DetectionManager:
             frame_boxes.append({"label": label, "confidence": conf, "box": [x1, y1, x2-x1, y2-y1]})
 
         # Fire/Smoke
-        res_fire = self.models.get_fire_model()(frame, verbose=False)[0]
+        res_fire = self.models.get_fire_model()(frame, verbose=False, imgsz=320)[0]
         for box in res_fire.boxes:
             conf = float(box.conf[0])
             if conf < 0.3: continue
@@ -88,7 +88,7 @@ class DetectionManager:
         # Person/Crowd
         person_count = 0
         if self.models.get_person_model():
-            res_person = self.models.get_person_model()(frame, verbose=False)[0]
+            res_person = self.models.get_person_model()(frame, verbose=False, imgsz=320)[0]
             for box in res_person.boxes:
                 conf = float(box.conf[0])
                 label = res_person.names[int(box.cls[0])].upper()
@@ -103,7 +103,7 @@ class DetectionManager:
         # Pose
         pose_detector = self.models.get_pose_detector()
         if pose_detector:
-            pose_results = pose_detector(frame, verbose=False)
+            pose_results = pose_detector(frame, verbose=False, imgsz=320)
             if pose_results and pose_results[0].keypoints and pose_results[0].keypoints.data.shape[1] > 0:
                 kpts_tensor = pose_results[0].keypoints.data
                 for p_idx in range(kpts_tensor.shape[0]):
@@ -201,8 +201,8 @@ class DetectionManager:
                 "total_detections": 0
             }
             
-            # Process AI at 2 frames per second to drastically speed up processing
-            skip_rate = max(1, int(fps / 2.0))
+            # Process AI at 1 frame per second to maximize CPU speed
+            skip_rate = max(1, int(fps))
             
             processed_path = f"uploads/processed/{camera_id}_processed.mp4"
             fourcc = cv2.VideoWriter_fourcc(*'avc1')

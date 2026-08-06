@@ -61,7 +61,7 @@ class FightDetector:
             return False, 0.0, []
 
         # Run pose on full frame to get all keypoints
-        pose_results = pose_model(frame, verbose=False)
+        pose_results = pose_model(frame, verbose=False, imgsz=320)
         if not pose_results or not pose_results[0].keypoints or pose_results[0].keypoints.data.shape[1] == 0:
             state["consecutive_frames"] = max(0, state["consecutive_frames"] - 1)
             return False, 0.0, []
