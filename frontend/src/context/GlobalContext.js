@@ -116,18 +116,8 @@ export const GlobalProvider = ({ children }) => {
 
   const removeAlert = async (alertId) => {
     try {
-      const response = await fetch(`${API_URL}/api/v1/alerts/${alertId}`, {
-        method: 'DELETE',
-        headers: {
-          'Authorization': `Bearer ${user.token}`,
-          'Accept': 'application/json'
-        }
-      });
-      if (response.ok) {
-        setAlerts(prev => prev.filter(a => a.id.toString() !== alertId.toString()));
-      } else {
-        console.error('Failed to delete alert', await response.text());
-      }
+      await alertsAPI.deleteAlert(alertId);
+      setAlerts(prev => prev.filter(a => a.id.toString() !== alertId.toString()));
     } catch (e) {
       console.error('Error deleting alert:', e);
     }
